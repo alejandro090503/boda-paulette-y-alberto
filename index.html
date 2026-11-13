@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#F2EFC9">
-  <title>Ciro &amp; Osmara · 14 · Noviembre · 2026</title>
-  <meta name="description" content="Nos casamos. Ciro Rivera Espinoza y Osmara Esquivel Reyes · 14 de noviembre de 2026 · Valle de Bravo, Estado de México.">
+  <title>Paulette &amp; Alberto · 13 · Marzo · 2027</title>
+  <meta name="description" content="Nos casamos. Paulette Tosky Larque y Alberto Pasaran Rivera · sábado 13 de marzo de 2027 · Tequisquiapan, Querétaro.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ciro &amp; Osmara · 14 · Noviembre · 2026">
-  <meta property="og:description" content="Nos casamos. Valle de Bravo, Estado de México. Confirma tu asistencia.">
-  <meta property="og:image" content="https://boda-ciro-y-osmara.vercel.app/og.jpg?v=2">
+  <meta property="og:title" content="Paulette &amp; Alberto · 13 · Marzo · 2027">
+  <meta property="og:description" content="Nos casamos. Tequisquiapan, Querétaro. Confirma tu asistencia.">
+  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=1">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2029,6 +2029,414 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 }
 .music-btn.on .vinyl-arm{transform:rotate(2deg)}
   </style>
+<style>
+/* ═════════ PAULETTE & ALBERTO · capa propia ═════════ */
+:root{
+  --olive:#4F6334;          /* verde olivo legible (texto) */
+  --olive-cl:#7C9654;       /* verde olivo del cliente (ornamentos) */
+  --beige:#F2EFC9;          /* beige del cliente */
+  --paper:#F8F6E3;
+  --black:#121212;
+  --gold:#D4AF37;
+  --gold-hi:#F6E7A6;
+  --gold-deep:#8A6D12;
+  --foil:linear-gradient(100deg,#8A6D12 0%,#D4AF37 22%,#F6E7A6 38%,#D4AF37 52%,#A8842A 70%,#E9CF79 86%,#8A6D12 100%);
+}
+html{background:var(--beige)}
+body{color:var(--black);font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;
+  background:var(--paper)}
+/* Fondo botánico sutil (idea de la plantilla 181) */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:url('botanica1.webp') center/cover no-repeat;opacity:.16;
+}
+section{position:relative}
+#story,#calendar,#family,#hospedaje,#album{background:transparent}
+
+/* Tipografía: Cinzel en etiquetas (47) · Cormorant + Great Vibes (100 / base) */
+.lbl{font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.32em;color:var(--olive)}
+.ttl{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:36px;color:var(--olive);line-height:1.2}
+.ttl-script{font-family:'Great Vibes',cursive;font-weight:400;font-size:1.25em;color:var(--olive);letter-spacing:0;
+  padding:0 .12em}
+.gline{background:linear-gradient(to right,transparent,var(--gold),transparent);height:1px;width:70px}
+.btn{font-family:'Cinzel',serif;font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--olive);border-color:var(--olive)}
+.btn-olive{background:var(--olive);color:#FBFAEC;border-color:var(--olive)}
+.btn-olive:active{background:#3A4A26}
+
+/* Dorado metálico (foil) */
+.foil{
+  background:var(--foil);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent !important;
+  -webkit-text-fill-color:transparent;
+  animation:goldSweep 7s ease-in-out infinite;
+  text-shadow:none !important;filter:drop-shadow(0 1px 1px rgba(138,109,18,.25));
+}
+@keyframes goldSweep{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* ── HERO ── */
+.h-bg img{object-position:center;filter:none}
+.h-ov{background:radial-gradient(ellipse 70% 52% at 50% 50%,rgba(248,246,227,.92) 0%,rgba(248,246,227,.55) 60%,rgba(248,246,227,0) 100%)}
+.h-ov::after{display:none}
+#hero{justify-content:center;padding:70px 28px 110px}
+.h-frame{border-color:rgba(184,150,46,.45)}
+.h-frame::before,.h-frame::after{color:var(--gold);background:transparent}
+.h-we{font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.42em;color:var(--olive);text-shadow:none}
+.h-name{font-family:'Great Vibes',cursive;font-style:normal;font-weight:400;font-size:clamp(64px,19vw,84px);
+  color:var(--olive);letter-spacing:0;line-height:1.15;padding:0 .18em;
+  text-shadow:0 2px 18px rgba(248,246,227,.95),0 1px 1px rgba(28,30,23,.12)}
+.h-clip{padding:4px .2em 10px}
+.h-amp{font-size:58px;color:var(--gold)}
+.h-date{font-family:'Cinzel',serif;font-weight:600;font-size:15px;letter-spacing:.24em;color:var(--black);text-shadow:none}
+.h-city{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;letter-spacing:.06em;
+  text-transform:none;color:var(--olive);text-shadow:none}
+.h-scroll span{font-family:'Cinzel',serif;color:var(--olive);opacity:.85;font-size:11px}
+.h-ring{border-color:rgba(124,150,84,.20)}
+.h-para{margin-top:30px;padding:14px 22px 16px;border-top:1px solid rgba(184,150,46,.45);border-bottom:1px solid rgba(184,150,46,.45);max-width:320px}
+.h-para-lbl{display:block;font-family:'Cinzel',serif;font-weight:600;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--olive)}
+.h-para-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:28px;line-height:1.2;color:var(--black);margin-top:6px}
+
+/* ── NOSOTROS · foto con composición de la 100 ── */
+#story{padding-top:72px}
+.story-photo{margin:26px auto 30px;max-width:330px;text-align:center}
+.story-photo-in{
+  position:relative;padding:12px;background:#FBFAEC;
+  border:1px solid rgba(184,150,46,.5);
+  box-shadow:0 22px 50px rgba(28,30,23,.16),inset 0 0 0 5px #FBFAEC,inset 0 0 0 6px rgba(124,150,84,.35);
+  border-radius:200px 200px 6px 6px;overflow:hidden;
+}
+.story-photo-in img{display:block;width:100%;height:auto;border-radius:190px 190px 2px 2px;
+  transform:scale(1.08);will-change:transform}
+.story-photo figcaption{margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;color:var(--olive)}
+.story-card{background:rgba(251,250,236,.82)}
+.story-txt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;line-height:1.65;color:var(--black)}
+.story-txt-end{color:var(--olive);font-weight:600}
+
+/* ── CUENTA REGRESIVA ── */
+.cd-num{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--olive);font-variant-numeric:lining-nums}
+.cd-ring-lbl{font-family:'Cinzel',serif;font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--black)}
+.cd-num.tickflash{animation:cdFlash .9s ease-out}
+@keyframes cdFlash{0%{text-shadow:0 0 0 rgba(212,175,55,0)}30%{text-shadow:0 0 14px rgba(212,175,55,.75)}100%{text-shadow:0 0 0 rgba(212,175,55,0)}}
+
+/* ── UBICACIONES · efecto tejido (plantilla 161) ── */
+.loc-city-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--olive);margin:0 0 26px}
+.loc-card{background:rgba(251,250,236,.9);border-color:rgba(184,150,46,.4)}
+.loc-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;color:var(--black);line-height:1.25}
+.loc-dual-type{font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--olive)}
+.loc-dual-time{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:30px;color:var(--black);font-variant-numeric:lining-nums}
+.loc-addr{font-size:18px;color:var(--black)}
+.loc-photo-cap{font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.24em;color:var(--olive)}
+.loc-btn{max-width:280px;margin:16px auto 0;display:flex}
+.loc-btn .pin{animation:pinBeat 2.4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes pinBeat{0%,70%,100%{transform:scale(1)}80%{transform:scale(1.25)}90%{transform:scale(.95)}}
+.loc-photo-wrap.tejido{
+  position:relative;padding:14px;border-radius:10px;margin:18px auto 10px;max-width:320px;
+  background:
+    repeating-linear-gradient(0deg,rgba(124,150,84,.10) 0 1px,transparent 1px 4px),
+    repeating-linear-gradient(90deg,rgba(124,150,84,.10) 0 1px,transparent 1px 4px),
+    #EEEAC4;
+  box-shadow:0 14px 34px rgba(28,30,23,.16);
+  border:none;overflow:visible;
+}
+.loc-photo-wrap.tejido::before{ /* puntada perimetral */
+  content:'';position:absolute;inset:6px;border-radius:7px;pointer-events:none;
+  border:1.6px dashed rgba(79,99,52,.55);
+}
+.loc-photo-wrap.tejido img{border-radius:4px;position:relative;z-index:0}
+.loc-photo-wrap.tejido::after{ /* trama de lino sobre la imagen */
+  content:'';position:absolute;inset:14px;border-radius:4px;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
+  background:
+    repeating-linear-gradient(45deg,rgba(120,100,60,.10) 0 2px,transparent 2px 5px),
+    repeating-linear-gradient(-45deg,rgba(120,100,60,.08) 0 2px,transparent 2px 5px);
+}
+
+/* ── CALENDARIO ── */
+.cal-card{max-width:330px;margin:24px auto 0;padding:24px 18px 20px;background:rgba(251,250,236,.92);
+  border:1px solid rgba(184,150,46,.45);border-radius:14px;box-shadow:0 14px 34px rgba(28,30,23,.10)}
+.cal-month{text-align:center;font-family:'Great Vibes',cursive;font-size:44px;color:var(--olive);line-height:1;margin-bottom:14px}
+.cal-month span{font-family:'Cinzel',serif;font-size:15px;letter-spacing:.2em;color:var(--black);vertical-align:middle}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px 2px;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--black);font-variant-numeric:lining-nums}
+.cal-grid span{height:36px;display:flex;align-items:center;justify-content:center;position:relative}
+.cal-dow{font-family:'Cinzel',serif;font-size:12px;color:var(--olive);font-weight:700}
+.cal-day-on b{position:relative;z-index:1;color:#FBFAEC;font-weight:700}
+.cal-day-on svg{position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px)}
+.cal-heart{fill:var(--olive);transform-origin:50% 55%;animation:heartBeat 2.2s ease-in-out infinite}
+@keyframes heartBeat{0%,60%,100%{transform:scale(1)}70%{transform:scale(1.12)}80%{transform:scale(.97)}}
+
+/* ── ITINERARIO ── */
+.tl-t{font-family:'Cinzel',serif;font-weight:700;font-size:15px;letter-spacing:.12em;color:var(--olive)}
+.tl-ev{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--black)}
+.tl-de{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--olive)}
+
+/* ── FAMILIA ── */
+.fam-grid{background:rgba(251,250,236,.9)}
+.fam-col-role,.god-role{font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive)}
+.fam-col-nms{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--black);display:flex;flex-direction:column;gap:2px}
+.fam-sep{font-family:'Great Vibes',cursive;color:var(--gold);font-size:24px;line-height:1.1}
+.fam-god{background:rgba(251,250,236,.9)}
+.god-list{display:grid;gap:16px;margin-top:16px}
+.god-item{padding-top:14px;border-top:1px solid rgba(184,150,46,.3)}
+.god-item:first-child{border-top:none;padding-top:0}
+.god-role{display:block;font-size:11.5px;margin-bottom:4px}
+.god-nms{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;color:var(--black);line-height:1.4}
+.fam-n{display:inline-block}
+
+/* ── VESTIMENTA (de boda-fabiola-y-fernando, repintada) ── */
+#dresscode{background:transparent}
+.dc-note{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--olive);margin:6px 0 22px}
+.dc-looks{display:flex;flex-direction:column;gap:12px;max-width:380px;margin:8px auto 30px}
+.dc-look{
+  display:flex;align-items:center;gap:14px;width:100%;padding:14px 16px;
+  cursor:pointer;border-radius:14px;text-align:left;
+  border:1px solid rgba(79,99,52,.35);
+  background:linear-gradient(120deg,#FBFAEC 0%,#EEEAC4 100%);
+  box-shadow:0 10px 24px rgba(28,30,23,.10);
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),border-color .22s,box-shadow .22s;
+  -webkit-tap-highlight-color:transparent;
+  animation:dcLookBreathe 3.4s ease-in-out infinite;
+}
+.dc-looks .dc-look:nth-child(2){animation-delay:1.7s}
+@keyframes dcLookBreathe{
+  0%,100%{box-shadow:0 10px 24px rgba(28,30,23,.10),0 0 0 0 rgba(212,175,55,0)}
+  50%{box-shadow:0 10px 24px rgba(28,30,23,.10),0 0 20px 2px rgba(212,175,55,.28)}
+}
+.dc-look:hover,.dc-look:focus-visible{transform:translateY(-3px);border-color:var(--olive);outline:none}
+.dc-look:active{transform:translateY(-1px) scale(.985)}
+.dc-look-ico{
+  flex:0 0 auto;width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#FBFAEC;
+  background:linear-gradient(140deg,#7C9654,var(--olive) 55%,#2F3B1F);
+  box-shadow:0 4px 12px rgba(47,59,31,.35),inset 0 1px 0 rgba(255,255,255,.35);
+  animation:dcFloat 5s ease-in-out infinite;
+}
+.dc-looks .dc-look:nth-child(2) .dc-look-ico{animation-delay:-2.4s}
+@keyframes dcFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-4deg)}}
+.dc-look-ico svg{width:24px;height:24px}
+.dc-look-txt{display:flex;flex-direction:column;gap:2px;flex:1}
+.dc-look-rol{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:24px;color:var(--black);line-height:1.15}
+.dc-look-cta{font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive)}
+.dc-look-arrow{flex:0 0 auto;width:22px;height:22px;color:var(--olive);animation:dcArrowNudge 1.9s ease-in-out infinite}
+.dc-look-arrow svg{width:100%;height:100%}
+@keyframes dcArrowNudge{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(4px);opacity:1}}
+.dc-viewer{
+  position:fixed;inset:0;z-index:100000;
+  display:flex;align-items:center;justify-content:center;padding:16px;
+  background:rgba(28,30,23,.55);
+  opacity:0;transition:opacity .28s ease;
+}
+.dc-viewer.on{opacity:1}
+.dc-viewer[hidden]{display:none !important}
+.dc-viewer:not(.on){pointer-events:none}
+.dcv-box{
+  position:relative;width:min(92vw,440px);border-radius:20px;overflow:hidden;
+  background:var(--paper);border:1px solid rgba(184,150,46,.6);
+  box-shadow:0 26px 70px rgba(28,30,23,.45);padding:18px 0 16px;
+}
+.dcv-head{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:24px;color:var(--olive);text-align:center;margin:0 56px 14px}
+.dcv-viewport{overflow:hidden}
+.dcv-track{display:flex;transition:transform .42s cubic-bezier(.25,.8,.25,1);touch-action:pan-y}
+.dcv-slide{flex:0 0 100%;margin:0;display:flex;justify-content:center;padding:0 40px}
+.dcv-frame{
+  position:relative;width:100%;max-width:300px;height:min(56vh,440px);
+  padding:14px;border-radius:6px;
+  background:linear-gradient(145deg,#E9DFA6 0%,#B8962E 30%,#F6E7A6 52%,#A8842A 74%,#E6D58E 100%);
+  box-shadow:0 14px 30px rgba(28,30,23,.28),inset 0 0 0 1px rgba(255,255,255,.55),inset 0 0 0 4px rgba(79,99,52,.18);
+}
+.dcv-mat{
+  position:relative;height:100%;border-radius:3px;
+  display:flex;align-items:flex-end;justify-content:center;padding:20px 18px 14px;
+  background:radial-gradient(ellipse 72% 58% at 50% 62%,#FFFFFF 0%,#FAF8E6 62%,#EEEAC4 100%);
+  box-shadow:inset 0 0 0 1px rgba(79,99,52,.28),inset 0 0 0 7px #FAF8E6,inset 0 0 0 8px rgba(184,150,46,.55),inset 0 3px 10px rgba(28,30,23,.16);
+}
+.dcv-mat img{max-height:100%;max-width:100%;object-fit:contain;display:block;filter:drop-shadow(0 6px 10px rgba(28,30,23,.2))}
+.dcv-frame::before,.dcv-frame::after{content:'';position:absolute;width:18px;height:18px;border:1.5px solid var(--olive);opacity:.55;pointer-events:none}
+.dcv-frame::before{top:6px;left:6px;border-right:none;border-bottom:none}
+.dcv-frame::after{bottom:6px;right:6px;border-left:none;border-top:none}
+.dcv-cap{margin:14px 16px 8px;text-align:center;font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--black)}
+.dcv-dots{display:flex;justify-content:center;gap:9px}
+.dcv-dot{width:10px;height:10px;border-radius:50%;padding:0;cursor:pointer;border:1px solid var(--olive);background:transparent;transition:transform .2s,background .2s}
+.dcv-dot.on{background:var(--olive);transform:scale(1.25)}
+.dcv-nav,.dc-viewer-close{
+  position:absolute;z-index:3;width:44px;height:44px;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;color:#FBFAEC;border:none;
+  background:linear-gradient(140deg,#7C9654,var(--olive) 55%,#2F3B1F);
+  box-shadow:0 6px 16px rgba(28,30,23,.35);
+}
+.dcv-nav{top:50%;transform:translateY(-50%)}
+.dcv-nav svg{width:20px;height:20px}
+.dcv-prev{left:4px}.dcv-next{right:4px}
+.dc-viewer-close{top:10px;right:10px;z-index:4}
+.dc-viewer-close svg{width:18px;height:18px}
+.dc-avoid-block{max-width:340px;margin:0 auto;padding:22px 16px;border:1px solid rgba(184,150,46,.4);border-radius:14px;background:rgba(251,250,236,.9);text-align:center}
+.dc-avoid{font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:16px}
+.dc-swatches{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.dc-swatch{display:flex;flex-direction:column;align-items:center;gap:7px;width:66px}
+.dc-swatch-dot{width:40px;height:40px;border-radius:50%;position:relative;border:1.5px solid rgba(28,30,23,.3);box-shadow:0 2px 8px rgba(28,30,23,.12)}
+.dc-swatch-dot::after{content:'';position:absolute;left:50%;top:-3px;bottom:-3px;width:1.6px;background:#A3311F;transform:translateX(-50%) rotate(45deg);border-radius:2px}
+.dc-swatch-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;color:var(--black);line-height:1.2}
+.dc-avoid-msg{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--olive)}
+
+/* ── HOSPEDAJE · lista + mapa ── */
+.hs-sub{text-align:center;font-style:italic;font-weight:600;font-size:18px;color:var(--olive);margin:0 0 22px}
+.hs-switch{position:relative;display:flex;width:220px;margin:0 auto 24px;padding:4px;border-radius:40px;
+  background:rgba(251,250,236,.95);border:1px solid rgba(79,99,52,.3);box-shadow:0 6px 18px rgba(28,30,23,.08)}
+.hs-switch-ind{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:40px;background:var(--olive);
+  transition:transform .45s cubic-bezier(.34,1.3,.64,1)}
+.hs-switch.map .hs-switch-ind{transform:translateX(100%)}
+.hs-tab{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;
+  border:none;background:none;cursor:pointer;font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--olive);transition:color .3s}
+.hs-tab svg{width:17px;height:17px}
+.hs-tab.on{color:#FBFAEC}
+.hs-flip{position:relative;perspective:1600px}
+.hs-face{backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .7s cubic-bezier(.4,.1,.2,1)}
+.hs-front{transform:rotateY(0)}
+.hs-back{position:absolute;inset:0;transform:rotateY(-180deg);display:flex;flex-direction:column}
+.hs-flip.map .hs-front{transform:rotateY(180deg)}
+.hs-flip.map .hs-back{transform:rotateY(0)}
+.hs-flip.map{min-height:calc(70vh + 120px)}
+.hs-card{position:relative;margin:0 auto 16px;max-width:360px;padding:22px 20px 20px;border-radius:14px;
+  background:rgba(251,250,236,.94);border:1px solid rgba(184,150,46,.4);box-shadow:0 12px 30px rgba(28,30,23,.10);overflow:hidden}
+.hs-num{position:absolute;top:8px;right:16px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:52px;line-height:1;color:rgba(124,150,84,.28);font-variant-numeric:lining-nums}
+.hs-type{display:block;font-family:'Cinzel',serif;font-weight:600;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive)}
+.hs-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;line-height:1.2;color:var(--black);margin:6px 0 6px;padding-right:56px}
+.hs-addr{font-size:17px;color:var(--black)}
+.hs-dist{margin-top:8px;font-size:17px;color:var(--olive);line-height:1.5}
+.hs-dist b{font-weight:700;color:var(--black)}
+.hs-btns{display:flex;gap:10px;margin-top:14px}
+.hs-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 10px;border-radius:8px;
+  border:1px solid var(--olive);color:var(--olive);text-decoration:none;font-family:'Cinzel',serif;font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.hs-btn-fill{background:var(--olive);color:#FBFAEC}
+.hs-map{height:70vh;max-height:620px;min-height:380px;border-radius:14px;overflow:hidden;border:1px solid rgba(184,150,46,.5);box-shadow:0 14px 34px rgba(28,30,23,.14);background:#EEEAC4}
+.hs-map-hint{text-align:center;font-style:italic;font-weight:600;font-size:16px;color:var(--olive);margin:10px 0 8px}
+.hs-chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
+.hs-chips::-webkit-scrollbar{display:none}
+.hs-chip{flex:0 0 auto;display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 14px 6px 6px;border-radius:30px;cursor:pointer;
+  border:1px solid rgba(79,99,52,.35);background:#FBFAEC;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--black);white-space:nowrap}
+.hs-chip i{font-style:normal;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--olive);color:#FBFAEC;font-family:'Cinzel',serif;font-size:13px}
+.hs-chip small{font-weight:600;color:var(--olive);font-size:14px}
+.hs-chip.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,.35)}
+.mk-venue{display:flex;flex-direction:column;align-items:center;cursor:default}
+.mk-venue span{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:30px;background:#FBFAEC;border:1px solid var(--olive);
+  font-family:'Cinzel',serif;font-weight:700;font-size:11px;letter-spacing:.14em;color:var(--olive);box-shadow:0 6px 14px rgba(28,30,23,.2)}
+.mk-venue span svg{width:13px;height:13px}
+.mk-venue::after{content:'';width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:8px solid var(--olive)}
+.mk-hotel{width:32px;height:32px;border-radius:50%;background:var(--olive);color:#FBFAEC;border:2px solid #FBFAEC;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:14px;
+  box-shadow:0 4px 12px rgba(28,30,23,.3);transition:transform .25s}
+.mk-hotel.on{transform:scale(1.3);background:var(--gold-deep)}
+.maplibregl-popup-content{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--black);background:#FBFAEC;border-radius:10px;padding:10px 14px}
+.maplibregl-popup-content b{display:block;font-size:17px}
+.maplibregl-popup-content small{color:var(--olive);font-size:15px}
+
+/* ── REGALOS ── */
+.gf-amazon{display:block;max-width:340px;margin:26px auto 0;text-decoration:none;cursor:pointer;position:relative;overflow:hidden}
+.gf-go{display:block;margin-top:12px;text-align:center;font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
+.gf-ttl{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--black)}
+.gf-logo{color:var(--olive)}
+.env-title{font-size:34px;color:var(--olive)}
+.env-desc{font-size:17px;color:var(--black)}
+.sheen::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,250,220,.75),transparent);transform:skewX(-18deg)}
+.sheen.shine::after{animation:sheenPass 1.3s ease-out forwards}
+@keyframes sheenPass{to{left:130%}}
+
+/* ── RSVP ── */
+.rsvp-title{color:var(--olive)}
+.rsvp-text{font-size:18px;color:var(--black)}
+.rsvp-notice-ttl{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--black)}
+.rsvp-notice-script{font-family:'Great Vibes',cursive;color:var(--olive)}
+.rsvp-notice-msg{font-size:17px;color:var(--black)}
+.rsvp-para{margin:16px auto 6px;text-align:center}
+.rsvp-para-lbl{display:block;font-family:'Cinzel',serif;font-weight:600;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--olive)}
+.rsvp-para-name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:30px;line-height:1.2;margin-top:6px;
+  background:linear-gradient(100deg,#2F3B1F 0%,#4F6334 35%,#8A6D12 50%,#4F6334 65%,#2F3B1F 100%);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:goldSweep 6s ease-in-out infinite}
+.rsvp-contador-wrap{margin:18px auto 6px;max-width:300px;text-align:center}
+.rsvp-contador-nota{font-size:16px;color:var(--black);line-height:1.5;margin-bottom:12px}
+.rsvp-contador{display:flex;align-items:center;justify-content:center;gap:22px}
+.rsvp-contador-btn{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--olive);background:#FBFAEC;color:var(--olive);
+  font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rsvp-contador-btn:disabled{opacity:.35;cursor:default}
+.rsvp-contador-valor{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:38px;color:var(--olive);min-width:40px;font-variant-numeric:lining-nums}
+.rsvp-contador-pie{margin-top:6px;font-style:italic;font-weight:600;font-size:16px;color:var(--olive)}
+.rsvp-input{font-family:'Cormorant Garamond',serif !important;font-size:18px !important;font-weight:600 !important;color:var(--black) !important}
+.rsvp-input-falta{border-color:#A3311F !important;box-shadow:0 0 0 2px rgba(163,49,31,.18) !important}
+.rsvp-btn.breathe{animation:btnBreathe 3.2s ease-in-out infinite}
+@keyframes btnBreathe{0%,100%{transform:scale(1);box-shadow:0 6px 18px rgba(79,99,52,.25)}50%{transform:scale(1.025);box-shadow:0 8px 26px rgba(212,175,55,.45)}}
+.rsvp-feed{font-size:16px !important;line-height:1.5}
+.confetti{position:fixed;top:-12px;z-index:99999;pointer-events:none;width:8px;height:12px;border-radius:2px}
+
+/* ── PIE ── */
+.ft-nms{font-family:'Great Vibes',cursive;color:var(--olive)}
+.ft-dt{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.2em;color:var(--black)}
+.ft-note{font-size:17px;color:var(--black)}
+
+/* ── DIVISOR QUE SE DIBUJA ENTRE SECCIONES ── */
+.sec-draw{display:block;width:180px;height:24px;margin:0 auto;overflow:visible}
+.sec-draw path{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round}
+.sec-draw circle{fill:var(--olive-cl)}
+
+/* ═════════ MENÚ FLOTANTE ═════════ */
+.pill-nav{
+  position:fixed;z-index:8000;left:50%;
+  display:flex;align-items:center;gap:6px;padding:6px 6px 6px 16px;border-radius:60px;
+  background:rgba(248,246,227,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(184,150,46,.45);box-shadow:0 18px 50px rgba(28,30,23,.18);
+  opacity:0;pointer-events:none;transform:translate(-50%,40px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);
+  bottom:max(1rem,env(safe-area-inset-bottom));
+}
+.pill-nav.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.pn-mono{font-family:'Great Vibes',cursive;font-size:26px;color:var(--olive);text-decoration:none;line-height:1;padding:4px 6px 4px 0;white-space:nowrap}
+.pn-mono span{color:var(--gold);font-size:.8em;margin:0 1px}
+.pn-links{display:none;position:relative;align-items:center}
+.pn-links a{position:relative;z-index:1;padding:10px 12px;font-family:'Cinzel',serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);text-decoration:none;white-space:nowrap;transition:color .3s}
+.pn-links a.on{color:#FBFAEC}
+.pn-ind{position:absolute;top:2px;bottom:2px;left:0;width:0;border-radius:30px;background:var(--olive);transition:transform .45s cubic-bezier(.34,1.2,.64,1),width .45s cubic-bezier(.34,1.2,.64,1);opacity:0}
+.pn-sep{display:none;width:1px;height:22px;background:rgba(79,99,52,.3);margin:0 4px}
+.pn-share{width:44px;height:44px;border-radius:50%;border:1px solid rgba(79,99,52,.35);background:transparent;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pn-share svg{width:19px;height:19px}
+.pn-menu{min-height:44px;padding:0 18px;border-radius:40px;border:none;cursor:pointer;background:var(--olive);color:#FBFAEC;
+  font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+@media (min-width:1024px){
+  .pill-nav{top:20px;bottom:auto;transform:translate(-50%,-40px)}
+  .pill-nav.show{transform:translate(-50%,0)}
+  .pn-links,.pn-sep{display:flex}
+  .pn-menu{display:none}
+}
+.fs-menu{
+  position:fixed;inset:0;z-index:8500;display:flex;flex-direction:column;padding:22px 26px max(26px,env(safe-area-inset-bottom));
+  background:rgba(248,246,227,.95);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  clip-path:circle(0% at 85% 95%);visibility:hidden;
+  transition:clip-path .6s cubic-bezier(.2,.8,.2,1),visibility 0s linear .6s;
+}
+.fs-menu.open{clip-path:circle(150% at 85% 95%);visibility:visible;transition:clip-path .6s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.fs-top{display:flex;align-items:center;justify-content:space-between}
+.fs-mono{font-size:34px}
+.fs-close{width:48px;height:48px;border-radius:50%;border:1px solid rgba(79,99,52,.4);background:transparent;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.fs-close svg{width:20px;height:20px}
+.fs-list{list-style:none;margin:auto 0;padding:10px 0;display:flex;flex-direction:column;gap:2px}
+.fs-list li{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.fs-menu.open .fs-list li{opacity:1;transform:none}
+.fs-list a{display:flex;align-items:baseline;gap:16px;min-height:48px;padding:4px 0;text-decoration:none;color:var(--black);
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2rem,9vw,3rem);line-height:1.15}
+.fs-list a i{font-style:normal;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.1em;color:var(--olive);min-width:24px}
+.fs-list a.on{font-style:italic;color:var(--olive)}
+.fs-foot{text-align:center;font-family:'Cinzel',serif;font-weight:600;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive)}
+
+/* Tarjetas que levitan */
+.lev{animation:levitate 5.6s ease-in-out infinite;transition:box-shadow .35s ease}
+.lev:nth-of-type(2n){animation-delay:-2.2s}
+.lev:nth-of-type(3n){animation-delay:-3.7s}
+@keyframes levitate{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.lev.lift{box-shadow:0 30px 60px rgba(28,30,23,.22)}
+
+@media (prefers-reduced-motion:reduce){
+  .lev,.foil,.rsvp-btn.breathe,.dc-look,.dc-look-ico,.dc-look-arrow,.cal-heart,.loc-btn .pin,.rsvp-para-name{animation:none !important}
+  .fs-menu,.hs-face{transition-duration:.01s !important}
+}
+</style>
 </head>
 <body>
 
@@ -2040,7 +2448,7 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 <button id="musicBtn" class="music-btn" aria-label="Música de fondo">
   <span class="vinyl-wrap" aria-hidden="true">
     <span class="vinyl">
-      <span class="vinyl-label"><span class="vl-a">C&amp;O</span><span class="vl-b">2026</span></span>
+      <span class="vinyl-label"><span class="vl-a">P&amp;A</span><span class="vl-b">2027</span></span>
     </span>
     <svg class="vinyl-arm" viewBox="0 0 34 44" fill="none">
       <circle cx="30" cy="5" r="4.4" fill="#C9A227" stroke="#8A6D12" stroke-width="1"/>
@@ -2056,7 +2464,7 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 
 <!-- ═══════════════ SOBRE DE APERTURA ═══════════════ -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.jpg" alt="Sobre de invitación de Ciro y Osmara">
+  <img id="envImage" src="sobre.jpg" alt="Sobre de la invitación de Paulette y Alberto">
   <video id="envVideo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-ciro-y-osmara/sobre-apertura.mp4" muted playsinline preload="auto" poster="sobre.jpg"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
@@ -2069,31 +2477,46 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 <div id="toast"></div>
 
 
+<!-- ═══════════════ MENÚ DE SECCIONES ═══════════════ -->
+<nav class="pill-nav" id="pillNav" aria-label="Secciones de la invitación">
+  <a href="#hero" class="pn-mono" aria-label="Inicio">P<span>&amp;</span>A</a>
+  <div class="pn-links" id="pnLinks">
+    <span class="pn-ind" id="pnInd" aria-hidden="true"></span>
+    <a href="#story" data-sec="story">Nosotros</a>
+    <a href="#location" data-sec="location">Lugares</a>
+    <a href="#itinerary" data-sec="itinerary">Itinerario</a>
+    <a href="#dresscode" data-sec="dresscode">Vestimenta</a>
+    <a href="#hospedaje" data-sec="hospedaje">Hospedaje</a>
+    <a href="#gifts" data-sec="gifts">Regalos</a>
+    <a href="#rsvp" data-sec="rsvp">Confirmar</a>
+  </div>
+  <span class="pn-sep" aria-hidden="true"></span>
+  <button class="pn-share" id="pnShare" type="button" aria-label="Compartir invitación">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+  </button>
+  <button class="pn-menu" id="pnMenu" type="button" aria-expanded="false" aria-controls="fsMenu">&#9776; Menú</button>
+</nav>
+
+<div class="fs-menu" id="fsMenu" aria-hidden="true">
+  <div class="fs-top">
+    <span class="pn-mono fs-mono">P<span>&amp;</span>A</span>
+    <button class="fs-close" id="fsClose" type="button" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ol class="fs-list" id="fsList"></ol>
+  <p class="fs-foot">13 · Marzo · 2027 &nbsp;·&nbsp; Tequisquiapan, Querétaro</p>
+</div>
+
+
 <!-- ═══════════════ 1. HERO ════════════════════════════ -->
 <section id="hero">
-  <!-- Background photo (parallax target) -->
   <div class="h-bg" id="heroBg">
-    <img src="hero.jpg"
-         alt="Ciro y Osmara" loading="eager" id="heroPic">
+    <img src="botanica2.webp" alt="" loading="eager" id="heroPic">
   </div>
   <div class="h-ov"></div>
   <div class="h-frame"></div>
 
-  <!-- Ondas de viento superior e inferior -->
-  <div class="h-wave h-wave-top" aria-hidden="true">
-    <svg viewBox="0 0 1760 48" preserveAspectRatio="none">
-      <path d="M0,24 Q110,8 220,24 T440,24 T660,24 T880,24 T1100,24 T1320,24 T1540,24 T1760,24" fill="none" stroke="rgba(79,99,52,.38)" stroke-width="1"/>
-      <path d="M0,34 Q110,18 220,34 T440,34 T660,34 T880,34 T1100,34 T1320,34 T1540,34 T1760,34" fill="none" stroke="rgba(79,99,52,.18)" stroke-width=".8"/>
-    </svg>
-  </div>
-  <div class="h-wave h-wave-bot" aria-hidden="true">
-    <svg viewBox="0 0 1760 48" preserveAspectRatio="none">
-      <path d="M0,24 Q110,40 220,24 T440,24 T660,24 T880,24 T1100,24 T1320,24 T1540,24 T1760,24" fill="none" stroke="rgba(79,99,52,.38)" stroke-width="1"/>
-      <path d="M0,14 Q110,30 220,14 T440,14 T660,14 T880,14 T1100,14 T1320,14 T1540,14 T1760,14" fill="none" stroke="rgba(79,99,52,.18)" stroke-width=".8"/>
-    </svg>
-  </div>
-
-  <!-- Anillos decorativos detrás del texto -->
   <div class="h-rings" aria-hidden="true">
     <div class="h-ring h-ring-1"></div>
     <div class="h-ring h-ring-2"></div>
@@ -2111,21 +2534,26 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind" id="hN1">Ciro</span></div>
+      <div class="h-clip"><span class="h-name h-name-wind" id="hN1">Paulette</span></div>
       <span class="h-name-wind-line"></span>
     </div>
-    <div class="h-amp-clip"><span class="h-amp" id="hAmp">&amp;</span></div>
+    <div class="h-amp-clip"><span class="h-amp foil" id="hAmp">&amp;</span></div>
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind" id="hN2">Osmara</span></div>
+      <div class="h-clip"><span class="h-name h-name-wind" id="hN2">Alberto</span></div>
       <span class="h-name-wind-line"></span>
     </div>
 
-    <div class="gline" style="margin-top:32px" id="hLine"></div>
+    <div class="gline" style="margin-top:28px" id="hLine"></div>
 
     <div class="h-date-wrap" id="hDate">
-      <p class="h-date">14 · Noviembre · 2026</p>
-      <p class="h-city">Valle de Bravo · Estado de México</p>
+      <p class="h-date">Sábado · 13 · Marzo · 2027</p>
+      <p class="h-city">Tequisquiapan · Querétaro</p>
+    </div>
+
+    <div class="h-para" id="hPara" hidden>
+      <span class="h-para-lbl">Esta invitación es para</span>
+      <p class="h-para-name" id="hParaName"></p>
     </div>
   </div>
 
@@ -2136,21 +2564,26 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 </section>
 
 
-<!-- ═══════════════ 1b. NUESTRA HISTORIA ═════════════ -->
+<!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
+  <span class="lbl">Paulette &amp; Alberto</span>
+  <h2 class="ttl">Nuestra <span class="ttl-script">historia</span></h2>
+  <div class="gline"></div>
+
+  <figure class="story-photo" id="storyPhoto">
+    <div class="story-photo-in"><img src="pareja.jpg" alt="Paulette y Alberto caminando de la mano en la playa al atardecer" loading="lazy" width="694" height="867"></div>
+    <figcaption>Una de nuestras primeras sesiones juntos</figcaption>
+  </figure>
+
   <div class="story-card">
     <span class="story-orn" aria-hidden="true">&#10086;</span>
     <p class="story-txt">
-      El tiempo en nosotros no existe; pareciera que nos conocimos el día de ayer.
-      Hemos caminado juntos por tantos momentos que se volvieron inolvidables.
-      Aprendimos que el amor es una decisión de elegirnos todos los días,
-      con la certeza inquebrantable de que, pase lo que pase, nuestro lugar
-      favorito en el mundo siempre será estar juntos.
+      Con la bendición de Dios y el amor que nos une,
+      queremos compartir contigo el día en que uniremos nuestras vidas.
     </p>
     <div class="gline"></div>
     <p class="story-txt story-txt-end">
-      Los esperamos con el corazón abierto, listos para compartir
-      el día más especial de nuestras vidas.
+      Será un honor contar con tu presencia en este nuevo comienzo.
     </p>
   </div>
 </section>
@@ -2158,16 +2591,8 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
-  <!-- ondas decorativas superiores -->
-  <div class="cd-wave-top" aria-hidden="true">
-    <svg viewBox="0 0 800 50" preserveAspectRatio="none">
-      <path d="M0,25 Q100,5 200,25 T400,25 T600,25 T800,25" fill="none" stroke="rgba(79,99,52,.22)" stroke-width="1"/>
-      <path d="M0,32 Q100,14 200,32 T400,32 T600,32 T800,32" fill="none" stroke="rgba(216,210,166,.13)" stroke-width=".8"/>
-    </svg>
-  </div>
-
   <span class="lbl">El gran día llega en</span>
-  <h2 class="ttl">Cuenta Regresiva</h2>
+  <h2 class="ttl">Cuenta <span class="ttl-script">regresiva</span></h2>
   <div class="gline"></div>
 
   <div class="cd-ring-grid">
@@ -2183,7 +2608,6 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
         <span class="cd-ring-lbl">Días</span>
       </div>
     </div>
-
     <div class="cd-ring-item" id="cd-item-h">
       <svg class="cd-ring-svg" viewBox="0 0 120 120">
         <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
@@ -2196,7 +2620,6 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
         <span class="cd-ring-lbl">Horas</span>
       </div>
     </div>
-
     <div class="cd-ring-item" id="cd-item-m">
       <svg class="cd-ring-svg" viewBox="0 0 120 120">
         <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
@@ -2209,7 +2632,6 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
         <span class="cd-ring-lbl">Minutos</span>
       </div>
     </div>
-
     <div class="cd-ring-item" id="cd-item-s">
       <svg class="cd-ring-svg" viewBox="0 0 120 120">
         <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
@@ -2223,112 +2645,77 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
       </div>
     </div>
   </div>
-
-  <!-- ondas decorativas inferiores -->
-  <div class="cd-wave-bot" aria-hidden="true">
-    <svg viewBox="0 0 800 50" preserveAspectRatio="none">
-      <path d="M0,25 Q100,5 200,25 T400,25 T600,25 T800,25" fill="none" stroke="rgba(79,99,52,.22)" stroke-width="1"/>
-      <path d="M0,18 Q100,36 200,18 T400,18 T600,18 T800,18" fill="none" stroke="rgba(216,210,166,.13)" stroke-width=".8"/>
-    </svg>
-  </div>
 </section>
 
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
   <span class="lbl">¿Dónde y cuándo?</span>
-  <h2 class="ttl">La Celebración</h2>
+  <h2 class="ttl">La <span class="ttl-script">celebración</span></h2>
   <div class="gline"></div>
-  <p class="loc-city-sub" style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--peach);margin:0 0 26px">Valle de Bravo · Estado de México</p>
+  <p class="loc-city-sub">Tequisquiapan · Querétaro</p>
 
-  <div class="loc-card">
-    <div class="loc-wave loc-wave-top" aria-hidden="true">
-      <svg viewBox="0 0 1600 28" preserveAspectRatio="none">
-        <path d="M0,14 Q100,4 200,14 T400,14 T600,14 T800,14 T1000,14 T1200,14 T1400,14 T1600,14" fill="none" stroke="rgba(79,99,52,.42)" stroke-width="1"/>
-        <path d="M0,20 Q100,10 200,20 T400,20 T600,20 T800,20 T1000,20 T1200,20 T1400,20 T1600,20" fill="none" stroke="rgba(79,99,52,.22)" stroke-width=".8"/>
-      </svg>
-    </div>
-
-    <h3 class="loc-name">Parroquia de San Francisco de Asís</h3>
-
+  <div class="loc-card lev">
+    <h3 class="loc-name">Templo Parroquial Santa María de la Asunción</h3>
     <div class="loc-dual" style="justify-content:center">
       <div class="loc-dual-ev">
-        <span class="loc-dual-type">Ceremonia Religiosa</span>
-        <span class="loc-dual-time">12:00 <em>pm</em></span>
+        <span class="loc-dual-type">Ceremonia religiosa</span>
+        <span class="loc-dual-time">4:00 <em>pm</em></span>
       </div>
     </div>
-
-    <div class="loc-photo-wrap">
-      <img src="venue-iglesia.jpg" alt="Parroquia de San Francisco de Asís" loading="lazy" width="900">
+    <div class="loc-photo-wrap tejido">
+      <img src="venue-iglesia.jpg" alt="Templo Parroquial Santa María de la Asunción en Tequisquiapan" loading="lazy" width="720" height="900">
     </div>
     <p class="loc-photo-cap">La iglesia</p>
-    <p class="loc-addr">5 de Febrero Mz 011, Centro<br>51200 Valle de Bravo, Estado de México</p>
-    <a href="https://maps.app.goo.gl/SvRwoGn3JdZm9AxU9" target="_blank" rel="noopener"
-       class="btn" style="max-width:280px;margin:16px auto 0;display:flex">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <p class="loc-addr">Centro histórico<br>Tequisquiapan, Querétaro</p>
+    <a href="https://maps.app.goo.gl/unDvUAb7vxRs9d4e6" target="_blank" rel="noopener" class="btn loc-btn">
+      <svg class="pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Ver ubicación
     </a>
-
-    <div class="loc-wave loc-wave-bot" aria-hidden="true">
-      <svg viewBox="0 0 1600 28" preserveAspectRatio="none">
-        <path d="M0,14 Q100,24 200,14 T400,14 T600,14 T800,14 T1000,14 T1200,14 T1400,14 T1600,14" fill="none" stroke="rgba(79,99,52,.42)" stroke-width="1"/>
-        <path d="M0,8 Q100,18 200,8 T400,8 T600,8 T800,8 T1000,8 T1200,8 T1400,8 T1600,8" fill="none" stroke="rgba(79,99,52,.22)" stroke-width=".8"/>
-      </svg>
-    </div>
   </div>
 
-  <div class="loc-card">
-    <div class="loc-wave loc-wave-top" aria-hidden="true">
-      <svg viewBox="0 0 1600 28" preserveAspectRatio="none">
-        <path d="M0,14 Q100,4 200,14 T400,14 T600,14 T800,14 T1000,14 T1200,14 T1400,14 T1600,14" fill="none" stroke="rgba(79,99,52,.42)" stroke-width="1"/>
-        <path d="M0,20 Q100,10 200,20 T400,20 T600,20 T800,20 T1000,20 T1200,20 T1400,20 T1600,20" fill="none" stroke="rgba(79,99,52,.22)" stroke-width=".8"/>
-      </svg>
-    </div>
-
-    <h3 class="loc-name">Jardín El Tlapeue</h3>
-
+  <div class="loc-card lev">
+    <h3 class="loc-name">Alauda Jardín de Eventos</h3>
     <div class="loc-dual" style="justify-content:center">
       <div class="loc-dual-ev">
         <span class="loc-dual-type">Recepción</span>
-        <span class="loc-dual-time">2:30 <em>pm</em></span>
+        <span class="loc-dual-time">5:30 <em>pm</em></span>
       </div>
     </div>
-
-    <div class="loc-photo-wrap">
-      <img src="venue-jardin.jpg" alt="Jardín El Tlapeue" loading="lazy" width="900">
+    <div class="loc-photo-wrap tejido">
+      <img src="venue-jardin.jpg" alt="Alauda Jardín de Eventos" loading="lazy" width="720" height="900">
     </div>
     <p class="loc-photo-cap">El jardín</p>
-    <p class="loc-addr">Calle Flor, Ave de Paraíso s/n<br>51200 Santa María Pipioltepec, Estado de México</p>
-    <a href="https://maps.app.goo.gl/F2PYVX2KczFnCL9j6" target="_blank" rel="noopener"
-       class="btn" style="max-width:280px;margin:16px auto 0;display:flex">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <p class="loc-addr">Tequisquiapan, Querétaro<br>a 10 minutos de la iglesia</p>
+    <a href="https://maps.app.goo.gl/vYVsyHXeQfaRhkgG9" target="_blank" rel="noopener" class="btn loc-btn">
+      <svg class="pin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       Ver ubicación
     </a>
-
-    <div class="loc-wave loc-wave-bot" aria-hidden="true">
-      <svg viewBox="0 0 1600 28" preserveAspectRatio="none">
-        <path d="M0,14 Q100,24 200,14 T400,14 T600,14 T800,14 T1000,14 T1200,14 T1400,14 T1600,14" fill="none" stroke="rgba(79,99,52,.42)" stroke-width="1"/>
-        <path d="M0,8 Q100,18 200,8 T400,8 T600,8 T800,8 T1000,8 T1200,8 T1400,8 T1600,8" fill="none" stroke="rgba(79,99,52,.22)" stroke-width=".8"/>
-      </svg>
-    </div>
   </div>
-
 </section>
 
 
-<!-- ═══════════════ 4. CALENDAR ══════════════════════ -->
+<!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
   <span class="lbl">No lo olvides</span>
-  <h2 class="ttl">Reserva la Fecha en tu Calendario</h2>
+  <h2 class="ttl">Reserva la <span class="ttl-script">fecha</span></h2>
   <div class="gline"></div>
 
-  <div class="cal-img-wrap">
-    <img src="calendario.jpg" alt="Calendario de noviembre de 2026 con el 14 marcado con un corazón" loading="lazy" width="900">
+  <div class="cal-card" id="calCard">
+    <p class="cal-month">Marzo <span>2027</span></p>
+    <div class="cal-grid" aria-label="Calendario de marzo de 2027 con el sábado 13 marcado">
+      <span class="cal-dow">L</span><span class="cal-dow">M</span><span class="cal-dow">M</span><span class="cal-dow">J</span><span class="cal-dow">V</span><span class="cal-dow">S</span><span class="cal-dow">D</span>
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+      <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span class="cal-day-on"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="cal-heart" d="M20 34C9 26 3 20 3 12.5 3 7.4 7 3.6 11.8 3.6c3.4 0 6.3 1.9 8.2 4.9 1.9-3 4.8-4.9 8.2-4.9C33 3.6 37 7.4 37 12.5 37 20 31 26 20 34z"/></svg><b>13</b></span><span>14</span>
+      <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+      <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+      <span>29</span><span>30</span><span>31</span><span></span><span></span><span></span><span></span>
+    </div>
   </div>
 
-  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Ciro+%26+Osmara&dates=20261114T180000Z/20261115T040000Z&details=Ceremonia+religiosa+12:00+PM+en+la+Parroquia+de+San+Francisco+de+As%C3%ADs.+Recepci%C3%B3n+2:30+PM+en+Jard%C3%ADn+El+Tlapeue.&location=Valle+de+Bravo%2C+Estado+de+M%C3%A9xico"
+  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Paulette+%26+Alberto&dates=20270313T220000Z/20270314T073000Z&details=Ceremonia+religiosa+4:00+PM+en+el+Templo+Parroquial+Santa+Mar%C3%ADa+de+la+Asunci%C3%B3n.+Recepci%C3%B3n+5:30+PM+en+Alauda+Jard%C3%ADn+de+Eventos.&location=Tequisquiapan%2C+Quer%C3%A9taro"
      target="_blank" rel="noopener" id="calBtn"
-     class="btn btn-olive" style="max-width:310px;margin:0 auto;display:flex">
+     class="btn btn-olive" style="max-width:310px;margin:26px auto 0;display:flex">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     Agregar al calendario
   </a>
@@ -2363,35 +2750,206 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 
     <div class="tl-row" data-side="left">
       <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-      <div class="tl-row-inner"><p class="tl-t">12:00 PM</p><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Parroquia de San Francisco de As&iacute;s</p></div>
+      <div class="tl-row-inner"><p class="tl-t">4:00 PM</p><p class="tl-ev">Ceremonia religiosa</p><p class="tl-de">Templo Parroquial Santa María de la Asunción</p></div>
     </div>
     <div class="tl-row" data-side="right">
       <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-      <div class="tl-row-inner"><p class="tl-t">2:30 PM</p><p class="tl-ev">Recepci&oacute;n</p><p class="tl-de">Jard&iacute;n El Tlapeue</p></div>
+      <div class="tl-row-inner"><p class="tl-t">5:30 PM</p><p class="tl-ev">Cóctel de bienvenida</p><p class="tl-de">Alauda Jardín de Eventos</p></div>
     </div>
     <div class="tl-row" data-side="left">
       <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-      <div class="tl-row-inner"><p class="tl-t">3:00 PM</p><p class="tl-ev">Ceremonia Civil</p><p class="tl-de">Jard&iacute;n El Tlapeue</p></div>
+      <div class="tl-row-inner"><p class="tl-t">6:30 PM</p><p class="tl-ev">Recepción y banquete</p></div>
     </div>
     <div class="tl-row" data-side="right">
       <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-      <div class="tl-row-inner"><p class="tl-t">4:00 PM</p><p class="tl-ev">Comida</p></div>
+      <div class="tl-row-inner"><p class="tl-t">1:30 AM</p><p class="tl-ev">Fin del evento</p></div>
     </div>
-    <div class="tl-row" data-side="left">
-      <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-      <div class="tl-row-inner"><p class="tl-t">7:00 PM</p><p class="tl-ev">Vals de los Novios</p></div>
-    </div>
-  
   </div>
 </section>
 
 
-<!-- ═══════════════ 7. MESA DE REGALOS ═══════════════ -->
+<!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
+<section id="family">
+  <span class="lbl">Con la bendición de Dios</span>
+  <h2 class="ttl">y de nuestras <span class="ttl-script">familias</span></h2>
+  <div class="gline"></div>
+
+  <div class="fam-grid">
+    <div class="fam-col">
+      <span class="fam-col-role">Padres de la novia</span>
+      <p class="fam-col-nms"><span class="fam-n">Pilar Larque</span><span class="fam-sep">&amp;</span><span class="fam-n">Ramón Tosky</span></p>
+    </div>
+    <div class="fam-col">
+      <span class="fam-col-role">Padres del novio</span>
+      <p class="fam-col-nms"><span class="fam-n">Alexandra Rivera</span><span class="fam-sep">&amp;</span><span class="fam-n">Luis Pasaran</span></p>
+    </div>
+  </div>
+
+  <div class="fam-god">
+    <span class="fam-col-role">Nuestros padrinos</span>
+    <div class="god-list">
+      <div class="god-item"><span class="god-role">Anillos</span><p class="god-nms"><span class="fam-n">Itzel Tosky</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Juan Carlos Quintana</span></p></div>
+      <div class="god-item"><span class="god-role">Arras</span><p class="god-nms"><span class="fam-n">Diana Rivera</span> <span class="fam-sep">&amp;</span> <span class="fam-n">César Flores</span></p></div>
+      <div class="god-item"><span class="god-role">Velación</span><p class="god-nms"><span class="fam-n">Laura Moreno</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Roberto Rivera</span></p></div>
+      <div class="god-item"><span class="god-role">Lazo</span><p class="god-nms"><span class="fam-n">Evelyn Rodríguez</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Pavel Tosky</span></p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
+<!-- Copiado de boda-fabiola-y-fernando (#dresscode · botones "Ver ideas" + carrusel con marco) -->
+<section id="dresscode" aria-label="Código de vestimenta">
+  <span class="lbl">Código de vestimenta</span>
+  <h2 class="ttl">Formal</h2>
+  <div class="gline"></div>
+  <p class="dc-note">Acompáñanos vestido para la ocasión</p>
+
+  <div class="dc-looks">
+    <button class="dc-look" type="button" data-look="caballeros" aria-label="Ver ideas de vestimenta para caballeros">
+      <span class="dc-look-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3l4 3 4-3 3 2.2c1.2.9 1.9 2.3 1.9 3.8V21H3V9c0-1.5.7-2.9 1.9-3.8L8 3z"/>
+          <path d="M12 6v15"/><path d="M9.4 4.2L12 9l2.6-4.8"/>
+        </svg>
+      </span>
+      <span class="dc-look-txt">
+        <span class="dc-look-rol">Caballeros</span>
+        <span class="dc-look-cta">Ver ideas</span>
+      </span>
+      <span class="dc-look-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </span>
+    </button>
+    <button class="dc-look" type="button" data-look="damas" aria-label="Ver ideas de vestimenta para damas">
+      <span class="dc-look-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 3h6l-1.4 5.2L21 21H3l7.4-12.8L9 3z"/><path d="M10.6 8.2h2.8"/>
+        </svg>
+      </span>
+      <span class="dc-look-txt">
+        <span class="dc-look-rol">Damas</span>
+        <span class="dc-look-cta">Ver ideas</span>
+      </span>
+      <span class="dc-look-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </span>
+    </button>
+  </div>
+
+  <div class="dc-viewer" id="dcViewer" role="dialog" aria-modal="true" aria-label="Ideas de vestimenta" hidden>
+    <div class="dcv-box">
+      <button class="dc-viewer-close" id="dcViewerClose" type="button" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <p class="dcv-head" id="dcvHead"></p>
+      <div class="dcv-viewport"><div class="dcv-track" id="dcvTrack"></div></div>
+      <button class="dcv-nav dcv-prev" id="dcvPrev" type="button" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="dcv-nav dcv-next" id="dcvNext" type="button" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <p class="dcv-cap" id="dcvCap"></p>
+      <div class="dcv-dots" id="dcvDots"></div>
+    </div>
+  </div>
+
+  <div class="dc-avoid-block">
+    <p class="dc-avoid">Por favor evita estos colores</p>
+    <div class="dc-swatches">
+      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#FFFFFF"></span><span class="dc-swatch-name">Blanco</span></span>
+      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#F9F6E7"></span><span class="dc-swatch-name">Marfil</span></span>
+      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#F5F3CD"></span><span class="dc-swatch-name">Crema</span></span>
+      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#FFFCB3"></span><span class="dc-swatch-name">Amarillo claro</span></span>
+    </div>
+    <p class="dc-avoid-msg">El blanco y sus tonos están reservados para la novia.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
+<section id="hospedaje">
+  <span class="lbl">Para tu estancia</span>
+  <h2 class="ttl">Hospedaje <span class="ttl-script">sugerido</span></h2>
+  <div class="gline"></div>
+  <p class="hs-sub">Hoteles cerca de la iglesia y de la recepción</p>
+
+  <div class="hs-switch" role="tablist" aria-label="Ver hospedaje como lista o mapa">
+    <span class="hs-switch-ind" id="hsInd" aria-hidden="true"></span>
+    <button type="button" class="hs-tab on" id="hsTabList" role="tab" aria-selected="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
+      Lista
+    </button>
+    <button type="button" class="hs-tab" id="hsTabMap" role="tab" aria-selected="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+      Mapa
+    </button>
+  </div>
+
+  <div class="hs-flip" id="hsFlip">
+    <div class="hs-face hs-front" id="hsList">
+      <article class="hs-card lev" data-h="0">
+        <span class="hs-num">01</span>
+        <span class="hs-type">Hotel boutique</span>
+        <h3 class="hs-name">Hotel Boutique La Granja</h3>
+        <p class="hs-addr">Calle Moctezuma, Centro · Tequisquiapan</p>
+        <p class="hs-dist"><b>10 min</b> · 4.4 km en auto a la recepción<br>A pasos de la iglesia</p>
+        <div class="hs-btns">
+          <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&query=Hotel+Boutique+La+Granja+Tequisquiapan" target="_blank" rel="noopener">Ver en Maps</a>
+          <a class="hs-btn hs-btn-fill" href="http://hotelboutiquelagranja.com/" target="_blank" rel="noopener">Sitio web</a>
+        </div>
+      </article>
+      <article class="hs-card lev" data-h="1">
+        <span class="hs-num">02</span>
+        <span class="hs-type">Hotel</span>
+        <h3 class="hs-name">Hotel Río Tequisquiapan</h3>
+        <p class="hs-addr">Centro · Tequisquiapan</p>
+        <p class="hs-dist"><b>10 min</b> · 5.9 km en auto a la recepción<br>2 min en auto a la iglesia</p>
+        <div class="hs-btns">
+          <a class="hs-btn" href="https://maps.app.goo.gl/Z5aryYnSBUfc3JVP9" target="_blank" rel="noopener">Ver en Maps</a>
+          <a class="hs-btn hs-btn-fill" href="https://www.hotelesriotequisquiapan.com/es/index.html" target="_blank" rel="noopener">Sitio web</a>
+        </div>
+      </article>
+      <article class="hs-card lev" data-h="2">
+        <span class="hs-num">03</span>
+        <span class="hs-type">Hotel · BW Signature Collection</span>
+        <h3 class="hs-name">Hotel San Carlos Tequisquiapan</h3>
+        <p class="hs-addr">Centro · Tequisquiapan</p>
+        <p class="hs-dist"><b>9 min</b> · 4.1 km en auto a la recepción<br>1 min en auto a la iglesia</p>
+        <div class="hs-btns">
+          <a class="hs-btn" href="https://maps.app.goo.gl/QooeZH6SfHRnT7dz8" target="_blank" rel="noopener">Ver en Maps</a>
+          <a class="hs-btn hs-btn-fill" href="https://www.bestwestern.com/es-es/book/hotel/tequisquiapan/hecthorny-san-carlos-tequisquiapan-bw-signature-collection/70360" target="_blank" rel="noopener">Sitio web</a>
+        </div>
+      </article>
+      <article class="hs-card lev" data-h="3">
+        <span class="hs-num">04</span>
+        <span class="hs-type">Casa de huéspedes</span>
+        <h3 class="hs-name">La Casa Roja</h3>
+        <p class="hs-addr">Tequisquiapan, Querétaro</p>
+        <p class="hs-dist"><b>5 min</b> · 2.8 km en auto a la recepción<br>4 min en auto a la iglesia</p>
+        <div class="hs-btns">
+          <a class="hs-btn" href="https://maps.app.goo.gl/TJXwWEgBduShVJvu8" target="_blank" rel="noopener">Ver en Maps</a>
+          <a class="hs-btn hs-btn-fill" href="https://direct-book.com/properties/lacasarojadirect?locale=es&amp;currency=MXN" target="_blank" rel="noopener">Sitio web</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="hs-face hs-back" id="hsMapFace" aria-hidden="true">
+      <div class="hs-map" id="hsMap"></div>
+      <p class="hs-map-hint">Toca un número para ver el hotel</p>
+      <div class="hs-chips" id="hsChips"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
 <section id="gifts">
   <div class="env-rain" id="envRain" aria-hidden="true"></div>
   <div class="env-stage">
     <span class="lbl">Con cariño</span>
-    <h2 class="ttl">Mesa de Regalos</h2>
+    <h2 class="ttl">Mesa de <span class="ttl-script">regalos</span></h2>
     <div class="gline"></div>
 
     <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
@@ -2416,40 +2974,47 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
           </svg>
         </div>
         <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
-          <circle cx="30" cy="30" r="28" fill="#4F6334"/>
-          <circle cx="30" cy="30" r="28" fill="none" stroke="#2F3B1F" stroke-width="2" opacity=".55"/>
-          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#E8D9A0" stroke-width="1.1" opacity=".9"/>
-          <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="24" fill="#E8D9A0">C&amp;O</text>
+          <defs>
+            <radialGradient id="sealG" cx="38%" cy="32%" r="75%">
+              <stop offset="0%" stop-color="#F4E3A1"/><stop offset="45%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#8A6D12"/>
+            </radialGradient>
+          </defs>
+          <circle cx="30" cy="30" r="28" fill="url(#sealG)"/>
+          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#FBF6D8" stroke-width="1.1" opacity=".8"/>
+          <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#3A4A26">P&amp;A</text>
         </svg>
       </div>
       <div class="env-open-content" aria-live="polite">
-        <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <rect x="8" y="22" width="36" height="24" rx="5"/>
-          <path d="M8 30 Q26 38 44 30"/>
-          <rect x="18" y="8" width="16" height="16" rx="2"/>
-          <path d="M18 8 Q26 3 34 8"/>
-          <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
-        </svg>
         <p class="env-title">Tu presencia es nuestro regalo</p>
-        <p class="env-desc">Si deseas hacernos un obsequio, una aportación a nuestra nueva vida juntos será muy bienvenida. El día del evento habrá una urna donde podrás depositar tu sobre.</p>
+        <p class="env-desc">Si deseas tener un detalle con nosotros, preparamos una mesa de regalos en Amazon.</p>
         <span class="env-div" aria-hidden="true">&#10022;</span>
-        <p class="env-desc">También contaremos con una <strong>mesa de regalos física</strong> el día de la celebración.</p>
+        <p class="env-desc">Toca el botón de abajo para verla.</p>
       </div>
     </button>
     <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+
+    <a class="gf-card gf-amazon sheen" href="https://www.amazon.com.mx/wedding/guest-view/2AM7TIE8ZVVSX" target="_blank" rel="noopener">
+      <div class="gf-card-top">
+        <div class="gf-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+        </div>
+        <p class="gf-ttl">Mesa de regalos Amazon</p>
+      </div>
+      <span class="gf-go">Ver mesa de regalos</span>
+    </a>
   </div>
 </section>
 
 
-<!-- ═══════════════ 8. ÁLBUM COMPARTIDO ══════════════ -->
+<!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
   <span class="lbl">Comparte tus momentos</span>
-  <h2 class="ttl">Álbum de fotos</h2>
+  <h2 class="ttl">Álbum de <span class="ttl-script">fotos</span></h2>
   <div class="gline"></div>
   <p class="alb-sub">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
 
-  <!-- Álbum de Elysium: el QR abre /album → panel-invitados.vercel.app/subir/boda-ciro-y-osmara -->
-  <div class="alb-qr-wrap album-qr" id="albQrWrap" data-fecha="2026-11-14">
+  <!-- Álbum de Elysium: el QR abre /album → panel-invitados.vercel.app/subir/boda-paulette-y-alberto -->
+  <div class="alb-qr-wrap album-qr" id="albQrWrap" data-fecha="2027-03-13">
     <div class="alb-qr-frame">
       <img src="qr-album.png" alt="Código QR del álbum de fotos" class="alb-qr" width="260" height="260">
     </div>
@@ -2460,9 +3025,8 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
     Subir mis fotos
   </a>
 
-  <p class="alb-hint album-aviso" id="albHint">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la noche ✨</p>
+  <p class="alb-hint album-aviso" id="albHint">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la noche.</p>
   <script>
-    /* Se desbloquea solo el día del evento (la base además rechaza fotos antes de tiempo) */
     (function(){
       var box = document.querySelector('.album-qr');
       if(!box) return;
@@ -2474,104 +3038,20 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 </section>
 
 
-<!-- ═══════════════ 10. DRESS CODE ════════════════════ -->
-<section id="dresscode">
-  <span class="lbl">Vestimenta</span>
-  <h2 class="ttl">Código de Vestimenta</h2>
-  <div class="gline"></div>
-  <p class="dc-sub"><em style="font-family:'Cormorant Garamond',serif;font-size:19px">Formal</em></p>
-
-  <div class="dc-figs">
-    <div class="dc-fig">
-      <img src="caballero.png" alt="Caballero de etiqueta — traje formal" loading="lazy">
-      <span class="dc-fig-ttl">Caballeros</span>
-      <span class="dc-fig-sub">Traje formal</span>
-    </div>
-    <div class="dc-fig">
-      <img src="dama.png" alt="Dama de gala — vestido largo" loading="lazy">
-      <span class="dc-fig-ttl">Damas</span>
-      <span class="dc-fig-sub">Vestido largo o cocktail</span>
-    </div>
-  </div>
-
-  <div class="dc-avoid-wrap">
-    <div class="dc-avoid-head">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="#B4271A" stroke-width="1.7"/><line x1="5.4" y1="5.4" x2="18.6" y2="18.6" stroke="#B4271A" stroke-width="1.7"/></svg>
-      <span class="dc-avoid-lbl">Tonos a <strong>evitar</strong></span>
-    </div>
-
-    <p class="dc-avoid-who">Damas</p>
-    <div class="dc-avoid-row"><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FFFFFF;border:1px solid #D9D4AE"></div><span class="dc-avoid-name">Blanco</span></div><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FFFFE6;border:1px solid #D9D4AE"></div><span class="dc-avoid-name">Marfil</span></div><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#F5EECE;border:1px solid #D9D4AE"></div><span class="dc-avoid-name">Crema</span></div></div>
-    <div class="dc-avoid-row"><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#A9A3FF"></div><span class="dc-avoid-name">Lila</span></div><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FF0000"></div><span class="dc-avoid-name">Rojo</span></div><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#8C0000"></div><span class="dc-avoid-name">Vino</span></div></div>
-    <p class="dc-avoid-msg">El blanco y sus tonos están reservados para la novia.</p>
-
-    <div class="dc-avoid-sep" aria-hidden="true"></div>
-
-    <p class="dc-avoid-who">Caballeros</p>
-    <div class="dc-avoid-row"><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#FFFFE6;border:1px solid #D9D4AE"></div><span class="dc-avoid-name">Marfil</span></div><div class="dc-avoid-sw"><div class="dc-avoid-circle x" style="background:#B8E1FF"></div><span class="dc-avoid-name">Azul cielo</span></div></div>
-  </div>
-</section>
-
-
-<!-- ═══════════════ 10. FAMILIA ══════════════════════ -->
-<section id="family">
-  <span class="lbl">Con la bendición de Dios</span>
-  <h2 class="ttl">y de Nuestras Familias</h2>
-  <div class="gline"></div>
-
-  <div class="fam-grid">
-    <div class="fam-col">
-      <span class="fam-col-role">Padres del Novio</span>
-      <p class="fam-col-nms">Ciro Rivera<br><span class="fam-sep">&amp;</span><br>Isidora Espinoza</p>
-    </div>
-    <div class="fam-col">
-      <span class="fam-col-role">Padres de la Novia</span>
-      <p class="fam-col-nms">Victor Esquivel<br><span class="fam-sep">&amp;</span><br>Rosa Reyes</p>
-    </div>
-  </div>
-
-  <div class="fam-god">
-    <span class="fam-col-role">Nuestros Padrinos</span>
-    <p class="fam-col-nms">Luis Garduño <span class="fam-sep">&amp;</span> Cenobia Victoria</p>
-  </div>
-</section>
-
-
-<!-- ═══════════════ 11. GALERÍA · FOTOS QUE CAEN ══════════════ -->
-<section id="gallery">
-  <span class="lbl">Algunos recuerdos</span>
-  <h2 class="ttl">Momentos <span class="ttl-script">juntos</span></h2>
-  <div class="gline"></div>
-
-  <div class="wheel-scene" id="wheel-scene">
-    <div class="wheel-ring" id="wheel-ring">
-          <div class="wheel-card"><img data-src="w1.jpg" alt="Ciro y Osmara · la propuesta"></div>
-          <div class="wheel-card"><img data-src="w2.jpg" alt="Ciro y Osmara en la moto"></div>
-          <div class="wheel-card"><img data-src="w3.jpg" alt="Ciro y Osmara trabajando juntos"></div>
-          <div class="wheel-card"><img data-src="w4.jpg" alt="Ciro y Osmara de paseo"></div>
-          <div class="wheel-card"><img data-src="w5.jpg" alt="Ciro y Osmara · save the date"></div>
-          <div class="wheel-card"><img data-src="w6.jpg" alt="Ciro y Osmara tomados de la mano"></div>
-    </div>
-  </div>
-
-  <p class="gal-hint">Arrastra para girar</p>
-</section>
-
-
-<!-- ═══════════════ 12. RSVP ═════════════════════════ -->
+<!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
   <span class="lbl">Confirmación de asistencia</span>
-  <h2 class="ttl">¿Nos acompañas?</h2>
+  <h2 class="ttl">¿Nos <span class="ttl-script">acompañas?</span></h2>
   <div class="gline"></div>
 
   <div class="rsvp-notice">
     <span class="rsvp-notice-lbl">Aviso especial</span>
-    <p class="rsvp-notice-ttl">No <span class="rsvp-notice-script">Niños</span></p>
+    <p class="rsvp-notice-ttl">Evento solo para <span class="rsvp-notice-script">adultos</span></p>
     <p class="rsvp-notice-msg">
       Con todo nuestro cariño hemos pensado esta celebración para adultos.
       Sabemos que amas a tus pequeños tanto como nosotros, y por eso te
-      regalamos este evento libre para disfrutar con nosotros.
-      Esperamos tu comprensión.
+      regalamos esta noche para disfrutarla con nosotros.
+      Gracias por tu comprensión.
     </p>
   </div>
 
@@ -2588,24 +3068,25 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
           <path d="M190 28 Q214 42 238 28 Q270 10 302 28"/>
           <circle cx="160" cy="28" r="5.5"/>
           <circle cx="160" cy="28" r="2" fill="var(--peach)" stroke="none"/>
-          <path d="M148 28 L154 28" opacity=".5"/>
-          <path d="M166 28 L172 28" opacity=".5"/>
           <path d="M154 20 Q160 13 166 20" opacity=".55"/>
           <path d="M154 36 Q160 43 166 36" opacity=".55"/>
         </g>
       </svg>
 
       <h3 class="rsvp-title">Tu presencia lo <em>es todo</em></h3>
-      <p class="rsvp-text">Confírmanos tu asistencia antes del <strong>23 de octubre de 2026</strong>. Nos hará muy felices saber que estarás con nosotros.</p>
+      <p class="rsvp-text">Confírmanos tu asistencia antes del <strong>13 de febrero de 2027</strong>. Nos hará muy felices saber que estarás con nosotros.</p>
 
-      <p class="rsvp-name-display" id="rsvpHello" style="display:none"></p>
+      <div class="rsvp-para" id="rsvpParaWrap" style="display:none">
+        <span class="rsvp-para-lbl">Esta invitación es para</span>
+        <p class="rsvp-para-name" id="rsvpHello"></p>
+      </div>
 
       <div class="rsvp-divider">
         <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
       </div>
 
       <div id="rsvpBandeja">
-        <div class="rsvp-pases-display">
+        <div class="rsvp-pases-display" id="rsvpPasesDisp">
           <div class="rsvp-pases-label">Pases asignados</div>
           <div class="rsvp-pases-num" id="rsvpPasesNum">1</div>
         </div>
@@ -2615,10 +3096,20 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
           <button class="rsvp-toggle-btn" id="rsvpBtnNo"  type="button">No podré asistir</button>
         </div>
 
+        <div class="rsvp-contador-wrap" id="rsvpContWrap" style="display:none">
+          <p class="rsvp-contador-nota" id="rsvpContNota"></p>
+          <div class="rsvp-contador">
+            <button class="rsvp-contador-btn" id="rsvpMenos" type="button" aria-label="Quitar un pase">&minus;</button>
+            <span class="rsvp-contador-valor" id="rsvpContValor" aria-live="polite">1</span>
+            <button class="rsvp-contador-btn" id="rsvpMas" type="button" aria-label="Agregar un pase">+</button>
+          </div>
+          <p class="rsvp-contador-pie" id="rsvpContPie"></p>
+        </div>
+
         <p class="rsvp-names-lbl" id="rsvpNamesLbl" style="display:none">Escribe el nombre completo de cada persona</p>
         <div class="rsvp-fields" id="rsvpGuestsWrap" style="display:none"></div>
 
-        <button class="rsvp-btn" id="rsvpBtn" type="button" onclick="sendRSVP()">
+        <button class="rsvp-btn breathe" id="rsvpBtn" type="button">
           <span id="rsvpBtnTxt">Confirmar asistencia</span>
         </button>
       </div>
@@ -2642,7 +3133,7 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 
       <div class="rsvp-deadline">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-        Fecha límite · 23 de octubre de 2026
+        Fecha límite · 13 de febrero de 2027
       </div>
     </div>
   </div>
@@ -2662,18 +3153,18 @@ body.wheel-dragging{overflow-x:hidden;overscroll-behavior-x:none}
 </section>
 
 
-<!-- ═══════════════ 13. FOOTER ═══════════════════════ -->
+<!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
   <div class="ft-orn">✦ · ✦ · ✦</div>
-  <div class="ft-nms">Ciro &amp; Osmara</div>
+  <div class="ft-nms">Paulette &amp; Alberto</div>
   <div class="gline" style="margin-top:22px"></div>
-  <p class="ft-dt">14 · Noviembre · 2026</p>
-  <p class="ft-note">Valle de Bravo · Estado de México<br>Con amor, los novios</p>
+  <p class="ft-dt">13 · Marzo · 2027</p>
+  <p class="ft-note">Tequisquiapan · Querétaro<br>Con amor, los novios</p>
 
   <div class="el-sep"></div>
   <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    <span>@elysium.invitaciones</span>
+    <span>Diseño por @elysium.invitaciones</span>
   </a>
 </footer>
 
@@ -2756,7 +3247,10 @@ function bootInvitation(){
         countdown();
         setInterval(countdown, 1000);
         ambientWind();
-        initWheel();
+        initPillNav();
+        initHospedaje();
+        initVida();
+        failsafeVisibles();
         initEnvelopeRain();
         initPetals();
       }
@@ -2998,7 +3492,7 @@ function scrollAnims() {
 
   // Generic section titles
   document.querySelectorAll('section').forEach(sec => {
-    const els = sec.querySelectorAll('.lbl,.ttl,.gline');
+    const els = sec.querySelectorAll('.lbl,.gline');
     if (els.length) {
       gsap.from(els, {
         opacity: 0, y: 22, duration: .7, stagger: .1, ease,
@@ -3028,12 +3522,7 @@ function scrollAnims() {
     }
   });
 
-  // Calendar button
-  gsap.from(['#calendar .cal-img-wrap', '#calBtn'], {
-    opacity: 0, y: 18, scale: .96, duration: .65, stagger: .14,
-    ease: 'back.out(1.3)',
-    scrollTrigger: { trigger: '#calendar', start: 'top 84%', once: true }
-  });
+  gsap.from('#calBtn',{opacity:0,y:18,duration:.65,ease:'power3.out',scrollTrigger:{trigger:'#calBtn',start:'top 92%',once:true}});
 
   // Timeline — camino en S que se dibuja al hacer scroll
   buildTimelinePath();
@@ -3061,20 +3550,6 @@ function scrollAnims() {
     }
   });
 
-  // Dress code
-  gsap.from('.dc-sub', {
-    opacity: 0, y: 18, duration: .65, ease,
-    scrollTrigger: { trigger: '#dresscode', start: 'top 82%', once: true }
-  });
-  gsap.from('.dc-fig', {
-    opacity: 0, y: 26, duration: .7, stagger: .14, ease,
-    scrollTrigger: { trigger: '#dresscode', start: 'top 78%', once: true }
-  });
-  gsap.from('.dc-avoid-sw', {
-    opacity: 0, scale: .6, duration: .5, stagger: .07, ease: 'back.out(2.2)',
-    scrollTrigger: { trigger: '.dc-avoid-wrap', start: 'top 88%', once: true }
-  });
-
   // Family
   gsap.from('.fam-col, .fam-god', {
     opacity: 0, y: 18, duration: .6, stagger: .12, ease,
@@ -3099,11 +3574,6 @@ function scrollAnims() {
 
   // Gallery — fotos que caen (initGallery se llama al final)
 
-  // RSVP form fields
-  gsap.from(['#fg1','#fg2','#fg4'], {
-    opacity: 0, y: 18, duration: .55, stagger: .12, ease,
-    scrollTrigger: { trigger: '#rsvp', start: 'top 80%', once: true }
-  });
 
   // Footer
   gsap.from('#footer > *', {
@@ -3113,7 +3583,7 @@ function scrollAnims() {
 }
 
 /* ── COUNTDOWN ───────────────────────────────────────── */
-const WED = new Date('2026-11-14T12:00:00');
+const WED = new Date('2027-03-13T16:00:00-06:00');
 let prevS = '';
 const RING_C = 2 * Math.PI * 52;  // 326.73
 function pad(n) { return String(n).padStart(2,'0'); }
@@ -3156,203 +3626,6 @@ function countdown() {
   }
 }
 
-
-/* ── RADIO → show/hide guest counter ────────────────── */
-document.querySelectorAll('input[name="att"]').forEach(r => {
-  r.addEventListener('change', e => {
-    const g = document.getElementById('fg3');
-    if (e.target.value === 'yes') {
-      g.style.display = 'block';
-      gsap.from(g, { opacity: 0, y: 10, duration: .35, ease: 'power2.out' });
-    } else {
-      g.style.display = 'none';
-    }
-  });
-});
-
-/* ── RSVP · PANEL DE INVITADOS ───────────────────────── */
-const PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
-const RSVP_URL  = 'https://boda-ciro-y-osmara.vercel.app';
-const RSVP_DEADLINE = new Date('2026-10-24T00:00:00');
-
-const _q     = new URLSearchParams(location.search);
-const _para  = (_q.get('para') || '').trim();
-let   _pases = Math.min(20, Math.max(1, parseInt(_q.get('pases')) || 1));
-let   _saved = [];
-let   _choice = null;   /* 'yes' | 'no' */
-
-function renderRsvpGuests() {
-  const numEl = document.getElementById('rsvpPasesNum');
-  if (numEl) numEl.textContent = _pases;
-
-  const wrap = document.getElementById('rsvpGuestsWrap');
-  if (!wrap) return;
-  wrap.innerHTML = '';
-  for (let i = 0; i < _pases; i++) {
-    const inp = document.createElement('input');
-    inp.type = 'text';
-    inp.id = 'rsvpName' + i;
-    inp.className = 'rsvp-input';
-    inp.placeholder = 'Nombre completo del invitado ' + (i + 1);
-    inp.autocomplete = 'name';
-    inp.maxLength = 60;
-    inp.value = _saved[i] || '';
-    ((k) => inp.addEventListener('input', function(){ _saved[k] = this.value; }))(i);
-    wrap.appendChild(inp);
-  }
-}
-
-/* Cierra la bandeja (pases + toggle + nombres + botón) y muestra el agradecimiento. */
-function mostrarGracias(estado, nombres){
-  const bandeja = document.getElementById('rsvpBandeja');
-  const gracias = document.getElementById('rsvpGracias');
-  const feed    = document.getElementById('rsvpFeed');
-  const lista   = (nombres || []).filter(n => n && n.trim());
-  if (estado === 'confirmado') {
-    document.getElementById('rsvpGraciasTitle').textContent = '¡Gracias por confirmar!';
-    document.getElementById('rsvpGraciasSub').textContent = lista.length === 1
-      ? 'Te esperamos, ' + lista[0] + '.'
-      : 'Confirmamos ' + lista.length + ' lugares: ' + lista.join(', ') + '.';
-  } else {
-    document.getElementById('rsvpGraciasTitle').textContent = 'Gracias por avisarnos';
-    document.getElementById('rsvpGraciasSub').textContent = 'Lamentamos que no puedas acompañarnos. Te vamos a extrañar.';
-  }
-  const pase = document.getElementById('rsvpPase');
-  if (pase) pase.style.display = (estado === 'confirmado') ? 'block' : 'none';
-  bandeja.style.display = 'none';
-  gracias.style.display = '';
-  document.getElementById('rsvpEditarBtn').disabled = new Date() >= RSVP_DEADLINE;
-  if (feed) feed.style.display = 'none';
-}
-
-/* Reabre la bandeja conservando lo ya capturado. */
-function abrirBandeja(){
-  document.getElementById('rsvpGracias').style.display = 'none';
-  document.getElementById('rsvpBandeja').style.display = '';
-  const feed = document.getElementById('rsvpFeed');
-  if (feed) feed.style.display = 'none';
-}
-
-function selectRsvp(choice){
-  _choice = choice;
-  const yes = document.getElementById('rsvpBtnYes');
-  const no  = document.getElementById('rsvpBtnNo');
-  const lbl = document.getElementById('rsvpNamesLbl');
-  const wrap= document.getElementById('rsvpGuestsWrap');
-  yes.className = 'rsvp-toggle-btn' + (choice === 'yes' ? ' sel-yes' : '');
-  no.className  = 'rsvp-toggle-btn' + (choice === 'no'  ? ' sel-no'  : '');
-  const show = choice === 'yes';
-  lbl.style.display  = show ? 'block' : 'none';
-  wrap.style.display = show ? 'flex'  : 'none';
-  if (show) renderRsvpGuests();
-}
-
-(function initRsvp(){
-  const hello = document.getElementById('rsvpHello');
-  const btn   = document.getElementById('rsvpBtn');
-  const txt   = document.getElementById('rsvpBtnTxt');
-  const feed  = document.getElementById('rsvpFeed');
-  const yes   = document.getElementById('rsvpBtnYes');
-  const no    = document.getElementById('rsvpBtnNo');
-  if (!btn) return;
-
-  if (_para && hello) {
-    hello.textContent = '¡Hola, ' + _para + '!';
-    hello.style.display = 'block';
-  }
-  const numEl = document.getElementById('rsvpPasesNum');
-  if (numEl) numEl.textContent = _pases;
-
-  yes.addEventListener('click', () => selectRsvp('yes'));
-  no.addEventListener('click',  () => selectRsvp('no'));
-  document.getElementById('rsvpEditarBtn')
-    .addEventListener('click', () => { if (new Date() < RSVP_DEADLINE) abrirBandeja(); });
-
-  if (new Date() >= RSVP_DEADLINE) {
-    yes.disabled = true; no.disabled = true; btn.disabled = true;
-    txt.textContent = 'Fecha límite alcanzada';
-    feed.style.display = 'block';
-    feed.textContent = 'La fecha para confirmar asistencia ha pasado.';
-    return;
-  }
-
-  if (!_para) return;
-  btn.disabled = true;
-  fetch(PANEL_API + '?nombre=' + encodeURIComponent(_para) + '&url_boda=' + encodeURIComponent(RSVP_URL))
-    .then(r => r.json())
-    .then(resp => {
-      const d = resp && resp.invitado;
-      if (d && typeof d.pases === 'number' && d.pases > 0 && d.pases <= 20) _pases = d.pases;
-      if (d && d.nombres_confirmados && d.nombres_confirmados.length) _saved = d.nombres_confirmados.slice();
-      if (numEl) numEl.textContent = _pases;
-      if (d && (d.estado === 'confirmado' || d.estado === 'declino')) {
-        selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no');
-        txt.textContent = 'Actualizar respuesta';
-        /* Ya hay respuesta guardada: la sección arranca cerrada. */
-        mostrarGracias(d.estado, _saved);
-      }
-    })
-    .catch(() => {})
-    .then(() => { btn.disabled = false; });
-})();
-
-function sendRSVP() {
-  const btn  = document.getElementById('rsvpBtn');
-  const txt  = document.getElementById('rsvpBtnTxt');
-  const feed = document.getElementById('rsvpFeed');
-
-  if (!_choice) {
-    feed.style.display = 'block';
-    feed.style.color = '#B4271A';
-    feed.textContent = 'Por favor indícanos si podrás acompañarnos.';
-    return;
-  }
-
-  const names = [];
-  if (_choice === 'yes') {
-    for (let i = 0; i < _pases; i++) {
-      const n = (document.getElementById('rsvpName' + i)?.value || '').trim();
-      if (n) names.push(n);
-    }
-    if (!names.length) {
-      feed.style.display = 'block';
-      feed.style.color = '#B4271A';
-      feed.textContent = 'Por favor escribe al menos un nombre completo.';
-      toast('Escribe los nombres completos');
-      return;
-    }
-    _saved = names.slice();
-  }
-
-  btn.disabled = true;
-  txt.textContent = 'Enviando…';
-  feed.style.display = 'none';
-  fetch(PANEL_API, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      nombre: _para || names[0] || 'Invitado',
-      url_boda: RSVP_URL,
-      estado: _choice === 'yes' ? 'confirmado' : 'declino',
-      pases_confirmados: _choice === 'yes' ? names.length : 0,
-      nombres_confirmados: names
-    })
-  })
-  .then(r => { if (!r.ok) throw new Error('http'); return r.json(); })
-  .then(() => {
-    btn.disabled = false;
-    txt.textContent = 'Actualizar respuesta';
-    mostrarGracias(_choice === 'yes' ? 'confirmado' : 'declino', names);
-    toast(_choice === 'yes' ? '¡Confirmación enviada!' : 'Respuesta registrada');
-  })
-  .catch(() => {
-    btn.disabled = false;
-    txt.textContent = 'Confirmar asistencia';
-    feed.style.display = 'block';
-    feed.style.color = '#B4271A';
-    feed.textContent = 'Error de conexión. Por favor intenta de nuevo.';
-  });
-}
 
 /* ── COPY CLABE (stub) ───────────────────────────────── */
 function copyClabe() {
@@ -3825,6 +4098,555 @@ function toast(msg) {
     document.addEventListener(ev,onGesture,{capture:true,passive:true});
   });
 })();
+</script>
+<script>
+/* ═════════ PAULETTE & ALBERTO · JS propio ═════════ */
+var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── Invitado: ?i= (token del panel) o ?para=&pases= ── */
+var INV = (function(){
+  function decodeInvite(tok){
+    try{
+      var b64 = tok.replace(/-/g,'+').replace(/_/g,'/');
+      while(b64.length % 4) b64 += '=';
+      var bin = atob(b64), bytes = new Uint8Array(bin.length);
+      for(var i=0;i<bin.length;i++){ bytes[i] = bin.charCodeAt(i); }
+      var p = new TextDecoder().decode(bytes).split('|');
+      return { para:(p[0]||'').trim(), pases: parseInt(p[1],10) || 1 };
+    }catch(e){ return null; }
+  }
+  var qp = new URLSearchParams(location.search);
+  var hp = new URLSearchParams(location.hash.replace(/^#/,''));
+  var para = '', raw = 1, tok = qp.get('i') || hp.get('i');
+  if(tok){ var d = decodeInvite(tok); if(d && d.para){ para = d.para; raw = d.pases; } }
+  if(!para){ para = (qp.get('para') || hp.get('para') || '').trim(); raw = parseInt(qp.get('pases') || hp.get('pases'), 10); }
+  return { para: para, pases: (isNaN(raw) || raw < 1 || raw > 20) ? 1 : raw };
+})();
+
+/* Nombre del invitado en la portada (lo pidió la novia: que al abrir aparezca su nombre) */
+(function(){
+  if(!INV.para) return;
+  var w = document.getElementById('hPara'), n = document.getElementById('hParaName');
+  if(w && n){ n.textContent = INV.para; w.hidden = false; }
+})();
+
+/* ── RSVP · Panel de Invitados — X pases con contador ── */
+(function(){
+  var PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
+  var RSVP_URL  = 'https://boda-paulette-y-alberto.vercel.app';
+  var DEADLINE  = new Date('2027-02-13T23:59:59-06:00');   /* 13 feb 2027, hora del centro de México */
+  var frozen    = Date.now() > DEADLINE.getTime();
+  var ERR = '#A3311F';
+
+  var urlPara = INV.para, pasesAsignados = INV.pases;
+  var rsvpChoice = null, savedNames = [], pasesAUsar = 1;
+
+  var $ = function(id){ return document.getElementById(id); };
+  var helloWrap = $('rsvpParaWrap'), helloEl = $('rsvpHello'), pasesNumEl = $('rsvpPasesNum'),
+      fieldsEl = $('rsvpGuestsWrap'), namesLbl = $('rsvpNamesLbl'), bandejaEl = $('rsvpBandeja'),
+      graciasEl = $('rsvpGracias'), gTitleEl = $('rsvpGraciasTitle'), gSubEl = $('rsvpGraciasSub'),
+      editarBtn = $('rsvpEditarBtn'), btnYes = $('rsvpBtnYes'), btnNo = $('rsvpBtnNo'),
+      btnConf = $('rsvpBtn'), btnText = $('rsvpBtnTxt'), feedEl = $('rsvpFeed'),
+      contWrap = $('rsvpContWrap'), contNota = $('rsvpContNota'), contValor = $('rsvpContValor'),
+      contPie = $('rsvpContPie'), btnMenos = $('rsvpMenos'), btnMas = $('rsvpMas'), paseEl = $('rsvpPase');
+  if(!btnConf || !btnYes) return;
+
+  function say(msg, color){
+    if(!msg){ feedEl.style.display = 'none'; feedEl.textContent = ''; return; }
+    feedEl.style.display = 'block';
+    feedEl.style.color = color || 'var(--olive)';
+    feedEl.textContent = msg;
+  }
+  function paintHeader(){
+    pasesNumEl.textContent = pasesAsignados;
+    if(urlPara){ helloEl.textContent = urlPara; helloWrap.style.display = 'block'; }
+  }
+  paintHeader();
+
+  function renderFields(){
+    fieldsEl.innerHTML = '';
+    for(var i = 0; i < pasesAUsar; i++){
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'rsvp-input';
+      inp.placeholder = pasesAUsar === 1 ? 'Tu nombre completo' : 'Nombre completo del invitado ' + (i+1);
+      inp.autocomplete = 'off'; inp.maxLength = 60; inp.disabled = frozen;
+      inp.value = savedNames[i] || '';
+      (function(idx){ inp.addEventListener('input', function(){ savedNames[idx] = this.value; this.classList.remove('rsvp-input-falta'); }); })(i);
+      fieldsEl.appendChild(inp);
+    }
+  }
+  function pintaContador(){
+    var ver = rsvpChoice === 'yes' && pasesAsignados > 1;
+    contWrap.style.display = ver ? 'block' : 'none';
+    if(!ver) return;
+    contValor.textContent = pasesAUsar;
+    contNota.textContent = 'Tienes ' + pasesAsignados + ' pases reservados. Aumenta el número de pases que vayas a ocupar.';
+    contPie.textContent = pasesAUsar >= pasesAsignados ? 'Usarás todos tus pases' : pasesAUsar + ' de ' + pasesAsignados + ' pases';
+    btnMenos.disabled = frozen || pasesAUsar <= 1;
+    btnMas.disabled   = frozen || pasesAUsar >= pasesAsignados;
+  }
+  function setPases(n){
+    if(frozen) return;
+    var v = Math.max(1, Math.min(pasesAsignados, n));
+    if(v === pasesAUsar) return;
+    pasesAUsar = v; pintaContador(); renderFields(); say('');
+  }
+  btnMenos.addEventListener('click', function(){ setPases(pasesAUsar - 1); });
+  btnMas.addEventListener('click',   function(){ setPases(pasesAUsar + 1); });
+
+  function selectRsvp(choice){
+    rsvpChoice = choice;
+    btnYes.className = 'rsvp-toggle-btn' + (choice === 'yes' ? ' sel-yes' : '');
+    btnNo.className  = 'rsvp-toggle-btn' + (choice === 'no'  ? ' sel-no'  : '');
+    var show = choice === 'yes';
+    namesLbl.style.display = show ? 'block' : 'none';
+    fieldsEl.style.display = show ? 'flex' : 'none';
+    if(show) renderFields(); else fieldsEl.innerHTML = '';
+    pintaContador();
+  }
+  btnYes.addEventListener('click', function(){ if(!frozen){ selectRsvp('yes'); say(''); } });
+  btnNo.addEventListener('click',  function(){ if(!frozen){ selectRsvp('no');  say(''); } });
+
+  function mostrarGracias(estado, nombres){
+    var lista = (nombres || []).filter(function(n){ return n && String(n).trim(); });
+    if(estado === 'confirmado'){
+      gTitleEl.textContent = '¡Gracias por confirmar!';
+      gSubEl.textContent = lista.length === 1 ? 'Te esperamos, ' + lista[0] + '.'
+        : 'Confirmamos ' + lista.length + ' lugares: ' + lista.join(', ') + '.';
+    } else {
+      gTitleEl.textContent = 'Gracias por avisarnos';
+      gSubEl.textContent = 'Lamentamos que no puedas acompañarnos. Te vamos a extrañar.';
+    }
+    if(paseEl) paseEl.style.display = estado === 'confirmado' ? 'block' : 'none';
+    bandejaEl.style.display = 'none';
+    graciasEl.style.display = '';
+    editarBtn.disabled = frozen;
+    say('');
+  }
+  function abrirBandeja(){ graciasEl.style.display = 'none'; bandejaEl.style.display = ''; say(''); }
+  editarBtn.addEventListener('click', function(){ if(!frozen) abrirBandeja(); });
+
+  function applyFreeze(){
+    if(!frozen) return;
+    btnYes.disabled = btnNo.disabled = btnConf.disabled = editarBtn.disabled = true;
+    fieldsEl.querySelectorAll('.rsvp-input').forEach(function(i){ i.disabled = true; });
+    btnMenos.disabled = btnMas.disabled = true;
+    btnText.textContent = 'Fecha límite alcanzada';
+    say('La fecha para confirmar asistencia ha pasado.');
+  }
+
+  if(urlPara){
+    btnYes.disabled = true; btnNo.disabled = true;
+    fetch(PANEL_API + '?nombre=' + encodeURIComponent(urlPara) + '&url_boda=' + encodeURIComponent(RSVP_URL))
+      .then(function(r){ return r.json(); })
+      .then(function(resp){
+        var d = resp && resp.invitado;
+        if(resp && resp.ok && !d){
+          btnConf.disabled = true;
+          say('No encontramos tu invitación. Pide a los novios que te envíen tu enlace de nuevo.', ERR);
+          applyFreeze(); return;
+        }
+        if(d && typeof d.pases === 'number' && d.pases > 0 && d.pases <= 20){ pasesAsignados = d.pases; }
+        paintHeader();
+        if(!frozen){ btnYes.disabled = false; btnNo.disabled = false; }
+        if(d && (d.estado === 'confirmado' || d.estado === 'declino')){
+          if(d.nombres_confirmados && d.nombres_confirmados.length){ savedNames = d.nombres_confirmados.slice(); }
+          pasesAUsar = Math.min(pasesAsignados, Math.max(1, savedNames.length));
+          selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no');
+          btnText.textContent = 'Actualizar respuesta';
+          mostrarGracias(d.estado, d.nombres_confirmados || []);
+        }
+        applyFreeze();
+      })
+      .catch(function(){ if(!frozen){ btnYes.disabled = false; btnNo.disabled = false; } applyFreeze(); });
+  } else {
+    btnConf.disabled = true;
+    say('Para confirmar necesitas abrir el enlace personalizado que te enviamos. Ese enlace lleva tu nombre y tus pases.');
+    applyFreeze();
+  }
+
+  btnConf.addEventListener('click', function(){
+    if(frozen || btnConf.disabled) return;
+    if(!rsvpChoice){ say('Por favor indícanos si podrás acompañarnos.', ERR); return; }
+    var nombres = [];
+    if(rsvpChoice === 'yes'){
+      var inputs = fieldsEl.querySelectorAll('.rsvp-input');
+      for(var i = 0; i < inputs.length; i++){ var v = inputs[i].value.trim(); if(v) nombres.push(v); }
+      if(!nombres.length){ say('Por favor escribe al menos un nombre completo.', ERR); if(inputs[0]) inputs[0].focus(); return; }
+      var doble = null;
+      for(var k = 0; k < inputs.length; k++){
+        var malo = /[&\/+,]|\s(y|and)\s/i.test(inputs[k].value.trim());
+        inputs[k].classList.toggle('rsvp-input-falta', malo);
+        if(malo && !doble) doble = inputs[k];
+      }
+      if(doble){ say('Escribe un solo nombre en cada campo. Si vienen más personas, sube el contador y escribe cada nombre en su propio campo.', ERR); doble.focus(); return; }
+      if(nombres.length < pasesAUsar){
+        var faltan = pasesAUsar - nombres.length, primero = null;
+        for(var j = 0; j < inputs.length; j++){ if(!inputs[j].value.trim()){ inputs[j].classList.add('rsvp-input-falta'); if(!primero) primero = inputs[j]; } }
+        say('Elegiste ' + pasesAUsar + ' pases pero escribiste ' + nombres.length + ' nombre' + (nombres.length === 1 ? '' : 's') +
+            '. Escribe ' + (faltan === 1 ? 'el nombre que falta' : 'los ' + faltan + ' nombres que faltan') +
+            ' o baja el contador a los pases que vas a utilizar.', ERR);
+        if(primero) primero.focus();
+        return;
+      }
+    }
+    var estadoFinal = rsvpChoice === 'yes' ? 'confirmado' : 'declino';
+    btnText.textContent = 'Enviando…'; btnConf.disabled = true; say('');
+    fetch(PANEL_API, {
+      method:'POST', headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({ nombre:urlPara, url_boda:RSVP_URL, estado:estadoFinal,
+        pases_confirmados: estadoFinal === 'confirmado' ? nombres.length : 0,
+        nombres_confirmados: estadoFinal === 'confirmado' ? nombres : [] })
+    })
+    .then(function(r){ return r.json().then(function(d){ return { ok:r.ok, d:d }; }).catch(function(){ return { ok:r.ok, d:null }; }); })
+    .then(function(res){
+      btnConf.disabled = false;
+      if(res.ok && res.d && res.d.ok){
+        btnText.textContent = 'Actualizar respuesta';
+        mostrarGracias(estadoFinal, nombres);
+        if(estadoFinal === 'confirmado') confetti();
+        return;
+      }
+      btnText.textContent = 'Confirmar asistencia';
+      var err = res.d && res.d.error;
+      say(err === 'no_match' ? 'No pudimos identificar tu invitación. Abre el enlace personalizado que te enviamos; ese es el único que registra tu confirmación.'
+        : err === 'invitacion_borrada' ? 'Esta invitación ya no está activa. Por favor contacta a los novios para que te envíen un enlace nuevo.'
+        : 'Hubo un problema al enviar. Inténtalo de nuevo.', ERR);
+    })
+    .catch(function(){ btnConf.disabled = false; btnText.textContent = 'Confirmar asistencia'; say('Sin conexión. Verifica tu internet e inténtalo de nuevo.', ERR); });
+  });
+})();
+
+/* Confeti con los colores de la invitación */
+function confetti(){
+  if(REDUCED || typeof gsap === 'undefined') return;
+  var cols = ['#4F6334','#7C9654','#D4AF37','#F6E7A6','#F2EFC9'];
+  for(var i=0;i<46;i++){
+    var c = document.createElement('span'); c.className = 'confetti';
+    c.style.left = (Math.random()*100) + 'vw'; c.style.background = cols[i % cols.length];
+    document.body.appendChild(c);
+    (function(el){
+      gsap.to(el, { y: window.innerHeight + 40, x:(Math.random()-.5)*160, rotation: Math.random()*720,
+        duration: 2.4 + Math.random()*1.6, ease:'power1.in', delay: Math.random()*.5, onComplete:function(){ el.remove(); } });
+    })(c);
+  }
+}
+
+/* ── VESTIMENTA · carrusel de ideas (de boda-fabiola-y-fernando) ── */
+(function(){
+  function init(){
+    var viewer = document.getElementById('dcViewer');
+    if(!viewer) return;
+    if(viewer.parentNode !== document.body) document.body.appendChild(viewer);
+    var track = document.getElementById('dcvTrack'), head = document.getElementById('dcvHead'),
+        cap = document.getElementById('dcvCap'), dots = document.getElementById('dcvDots'),
+        close = document.getElementById('dcViewerClose');
+    var LOOKS = {
+      caballeros:{head:'Caballeros', items:[
+        {src:'looks/cab-1.png', cap:'Traje negro'},
+        {src:'looks/cab-2.png', cap:'Traje gris con chaleco'},
+        {src:'looks/cab-3.png', cap:'Traje oscuro con corbata'}]},
+      damas:{head:'Damas', items:[
+        {src:'looks/dama-1.png', cap:'Vestido largo marino'},
+        {src:'looks/dama-2.png', cap:'Vestido largo negro'},
+        {src:'looks/dama-3.png', cap:'Vestido largo terracota'}]}
+    };
+    var items = [], idx = 0, last = null;
+    function render(){
+      track.style.transform = 'translateX(' + (-idx*100) + '%)';
+      cap.textContent = items[idx].cap + '  ·  ' + (idx+1) + ' / ' + items.length;
+      [].forEach.call(dots.children, function(d,i){ d.classList.toggle('on', i===idx); });
+    }
+    function go(i){ idx = (i + items.length) % items.length; render(); }
+    function open(key){
+      var L = LOOKS[key]; if(!L) return;
+      items = L.items; idx = 0; last = document.activeElement;
+      head.textContent = L.head; track.innerHTML = ''; dots.innerHTML = '';
+      items.forEach(function(it,i){
+        var sl = document.createElement('figure'); sl.className = 'dcv-slide';
+        sl.innerHTML = '<div class="dcv-frame"><div class="dcv-mat"><img alt=""></div></div>';
+        var im = sl.querySelector('img'); im.src = it.src; im.alt = L.head + ' — ' + it.cap;
+        track.appendChild(sl);
+        var d = document.createElement('button'); d.type='button'; d.className='dcv-dot';
+        d.setAttribute('aria-label','Ver idea '+(i+1));
+        d.addEventListener('click', function(){ go(i); }); dots.appendChild(d);
+      });
+      render();
+      viewer.removeAttribute('hidden'); requestAnimationFrame(function(){ viewer.classList.add('on'); });
+      document.body.style.overflow = 'hidden'; close.focus();
+    }
+    function hide(){
+      viewer.classList.remove('on'); document.body.style.overflow = '';
+      setTimeout(function(){ viewer.setAttribute('hidden',''); }, 300);
+      if(last && last.focus) last.focus();
+    }
+    document.querySelectorAll('.dc-look').forEach(function(b){
+      b.addEventListener('click', function(e){ e.preventDefault(); open(b.dataset.look); });
+    });
+    close.addEventListener('click', hide);
+    document.getElementById('dcvPrev').addEventListener('click', function(e){ e.stopPropagation(); go(idx-1); });
+    document.getElementById('dcvNext').addEventListener('click', function(e){ e.stopPropagation(); go(idx+1); });
+    viewer.addEventListener('click', function(e){ if(e.target === viewer) hide(); });
+    document.addEventListener('keydown', function(e){
+      if(!viewer.classList.contains('on')) return;
+      if(e.key==='Escape') hide(); if(e.key==='ArrowLeft') go(idx-1); if(e.key==='ArrowRight') go(idx+1);
+    });
+    var x0 = null;
+    track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      if(x0===null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if(Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    }, {passive:true});
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
+/* ── MENÚ DE SECCIONES ── */
+function initPillNav(){
+  var nav = document.getElementById('pillNav'), fs = document.getElementById('fsMenu'),
+      list = document.getElementById('fsList'), btn = document.getElementById('pnMenu'),
+      cls = document.getElementById('fsClose'), ind = document.getElementById('pnInd');
+  if(!nav) return;
+  var links = [].slice.call(nav.querySelectorAll('.pn-links a'));
+  links.forEach(function(a,i){
+    var li = document.createElement('li');
+    li.style.transitionDelay = (0.12 + i*0.07) + 's';
+    li.innerHTML = '<a href="' + a.getAttribute('href') + '" data-sec="' + a.dataset.sec + '"><i>' + String(i+1).padStart(2,'0') + '</i>' + a.textContent + '</a>';
+    list.appendChild(li);
+  });
+  var fsLinks = [].slice.call(list.querySelectorAll('a'));
+  setTimeout(function(){ nav.classList.add('show'); }, 900);
+
+  function openMenu(){ fs.classList.add('open'); fs.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ fs.classList.remove('open'); fs.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click', openMenu);
+  cls.addEventListener('click', closeMenu);
+  function go(e){
+    var id = this.getAttribute('href').slice(1), t = document.getElementById(id);
+    if(!t) return; e.preventDefault(); closeMenu();
+    setTimeout(function(){ t.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'start'}); }, fs.classList.contains('open') ? 0 : 280);
+  }
+  links.concat(fsLinks).forEach(function(a){ a.addEventListener('click', go); });
+  nav.querySelector('.pn-mono').addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+
+  document.getElementById('pnShare').addEventListener('click', function(){
+    var data = { title:'Paulette & Alberto · 13 de marzo de 2027', text:'Nos casamos en Tequisquiapan, Querétaro.', url: location.origin + location.pathname };
+    if(navigator.share){ navigator.share(data).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(data.url).then(function(){ if(typeof toast==='function') toast('Enlace copiado'); }); }
+  });
+
+  function mark(id){
+    links.concat(fsLinks).forEach(function(a){ a.classList.toggle('on', a.dataset.sec === id); });
+    var on = links.filter(function(a){ return a.dataset.sec === id; })[0];
+    if(on && ind){ ind.style.opacity = '1'; ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + on.offsetLeft + 'px)'; }
+    else if(ind){ ind.style.opacity = '0'; }
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting) mark(en.target.id); });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  links.forEach(function(a){ var s = document.getElementById(a.dataset.sec); if(s) io.observe(s); });
+  var hero = document.getElementById('hero');
+  if(hero) new IntersectionObserver(function(es){ if(es[0].isIntersecting) mark(''); }, { rootMargin:'-45% 0px -50% 0px' }).observe(hero);
+}
+
+/* ── HOSPEDAJE · lista / mapa (MapLibre + OpenFreeMap) ── */
+var HOTELS = [
+  { n:'Hotel Boutique La Granja', lat:20.5244236, lng:-99.8925468, min:10 },
+  { n:'Hotel Río Tequisquiapan',  lat:20.5204808, lng:-99.8950589, min:10 },
+  { n:'Hotel San Carlos',         lat:20.5257708, lng:-99.894355,  min:9  },
+  { n:'La Casa Roja',             lat:20.5366253, lng:-99.8932282, min:5  }
+];
+var VENUES = [
+  { t:'Recepción', lat:20.5608221, lng:-99.8876551 },
+  { t:'Ceremonia', lat:20.5231776, lng:-99.8915349 }
+];
+function initHospedaje(){
+  var flip = document.getElementById('hsFlip'), sw = document.querySelector('.hs-switch'),
+      tL = document.getElementById('hsTabList'), tM = document.getElementById('hsTabMap'),
+      back = document.getElementById('hsMapFace'), front = document.getElementById('hsList');
+  if(!flip) return;
+  var map = null, markers = [], chips = [];
+  function setView(m){
+    flip.classList.toggle('map', m); sw.classList.toggle('map', m);
+    tL.classList.toggle('on', !m); tM.classList.toggle('on', m);
+    tL.setAttribute('aria-selected', !m); tM.setAttribute('aria-selected', m);
+    back.setAttribute('aria-hidden', !m); front.setAttribute('aria-hidden', m);
+    if(m) loadMap(function(){ setTimeout(function(){ map.resize(); fitAll(); }, 720); });
+  }
+  tL.addEventListener('click', function(){ setView(false); });
+  tM.addEventListener('click', function(){ setView(true); });
+
+  function loadMap(cb){
+    if(map){ cb(); return; }
+    if(window.maplibregl){ build(); cb(); return; }
+    var css = document.createElement('link'); css.rel='stylesheet'; css.href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
+    document.head.appendChild(css);
+    var s = document.createElement('script'); s.src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
+    s.onload = function(){ build(); cb(); };
+    document.head.appendChild(s);
+  }
+  function fitAll(){
+    var b = new maplibregl.LngLatBounds();
+    HOTELS.concat(VENUES).forEach(function(p){ b.extend([p.lng,p.lat]); });
+    map.fitBounds(b, { padding:{top:70,bottom:40,left:40,right:40}, duration:800 });
+  }
+  function paint(){
+    var st = map.getStyle(); if(!st || !st.layers) return;
+    st.layers.forEach(function(l){
+      var id = l.id, t = l.type;
+      try{
+        if(t === 'background') map.setPaintProperty(id,'background-color','#F4F1D2');
+        else if(t === 'fill' && /water/.test(id)) map.setPaintProperty(id,'fill-color','#C9D6B4');
+        else if(t === 'fill' && /park|wood|grass|landcover|landuse/.test(id)) map.setPaintProperty(id,'fill-color','#E3E3B8');
+        else if(t === 'fill' && /building/.test(id)) map.setPaintProperty(id,'fill-color','#E9E4C0');
+        else if(t === 'line' && /water|river/.test(id)) map.setPaintProperty(id,'line-color','#B7C79E');
+        else if(t === 'line' && /road|highway|street|bridge|tunnel/.test(id)) map.setPaintProperty(id,'line-color','#FFFDF0');
+        else if(t === 'symbol'){ map.setPaintProperty(id,'text-color','#4F6334'); map.setPaintProperty(id,'text-halo-color','#F8F6E3'); }
+      }catch(e){}
+    });
+  }
+  function build(){
+    map = new maplibregl.Map({
+      container:'hsMap', style:'https://tiles.openfreemap.org/styles/positron',
+      center:[-99.891,20.54], zoom:12.5, attributionControl:{compact:true},
+      cooperativeGestures:true
+    });
+    map.addControl(new maplibregl.NavigationControl({ showCompass:false }), 'top-right');
+    map.on('load', paint);
+    VENUES.forEach(function(v){
+      var el = document.createElement('div'); el.className = 'mk-venue';
+      el.innerHTML = '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + v.t.toUpperCase() + '</span>';
+      new maplibregl.Marker({ element:el, anchor:'bottom' }).setLngLat([v.lng,v.lat]).addTo(map);
+    });
+    var chipsBox = document.getElementById('hsChips');
+    HOTELS.forEach(function(h,i){
+      var el = document.createElement('button'); el.type='button'; el.className = 'mk-hotel'; el.textContent = i+1;
+      el.setAttribute('aria-label', h.n);
+      var pop = new maplibregl.Popup({ offset:20, closeButton:false }).setHTML('<b>' + h.n + '</b><small>' + h.min + ' min a la recepción</small>');
+      var mk = new maplibregl.Marker({ element:el }).setLngLat([h.lng,h.lat]).setPopup(pop).addTo(map);
+      el.addEventListener('click', function(){ focus(i, true); });
+      markers.push(mk);
+      var c = document.createElement('button'); c.type='button'; c.className='hs-chip';
+      c.innerHTML = '<i>' + (i+1) + '</i>' + h.n + ' <small>· ' + h.min + ' min a la recepción</small>';
+      c.addEventListener('click', function(){ focus(i); });
+      chipsBox.appendChild(c); chips.push(c);
+    });
+  }
+  function focus(i, fromMarker){
+    markers.forEach(function(m,k){ m.getElement().classList.toggle('on', k===i); if(k!==i && m.getPopup().isOpen()) m.togglePopup(); });
+    chips.forEach(function(c,k){ c.classList.toggle('on', k===i); });
+    map.flyTo({ center:[HOTELS[i].lng, HOTELS[i].lat], zoom:15.2, speed:1.2 });
+    if(!fromMarker && !markers[i].getPopup().isOpen()) markers[i].togglePopup();
+    chips[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+  }
+}
+
+/* ── CAPA DE VIDA ── */
+function initVida(){
+  if(typeof gsap === 'undefined') return;
+  var E = 'power3.out';
+
+  /* Divisor que se dibuja entre secciones */
+  document.querySelectorAll('main > section, body > section').forEach(function(sec, i){
+    if(i === 0 || sec.id === 'hero') return;
+    var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 180 24'); svg.setAttribute('class','sec-draw'); svg.setAttribute('aria-hidden','true');
+    svg.innerHTML = '<path d="M4 12 C40 2 60 22 90 12 C120 2 140 22 176 12"/><circle cx="90" cy="12" r="2.6"/>';
+    sec.insertBefore(svg, sec.firstChild);
+    svg.style.marginBottom = '22px';
+    var p = svg.querySelector('path'), L = p.getTotalLength();
+    p.style.strokeDasharray = L; p.style.strokeDashoffset = REDUCED ? 0 : L;
+    if(!REDUCED) ScrollTrigger.create({ trigger: svg, start:'top 92%', once:true,
+      onEnter:function(){ gsap.to(p, { strokeDashoffset:0, duration:1.4, ease:'power2.out' }); } });
+  });
+
+  if(REDUCED) return;
+
+  /* Portada: parallax de fondo (baja lento y se acerca) + nombres que suben y se desvanecen + Ken Burns */
+  gsap.to('#heroPic', { scale:1.06, duration:16, ease:'sine.inOut', yoyo:true, repeat:-1 });
+  gsap.to('#heroBg', { scale:1.08, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+  gsap.to('#hCnt', { yPercent:-18, opacity:.15, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+
+  /* Títulos: reveal por palabras */
+  document.querySelectorAll('section .ttl').forEach(function(t){
+    gsap.fromTo(t, { opacity:0, y:24, letterSpacing:'.06em' }, { opacity:1, y:0, letterSpacing:'0em', duration:1, ease:E,
+      clearProps:'letterSpacing', scrollTrigger:{ trigger:t, start:'top 90%', once:true } });
+  });
+
+  /* Foto de la pareja: reveal con clip-path + parallax interno */
+  var sp = document.querySelector('#storyPhoto .story-photo-in');
+  if(sp){
+    gsap.fromTo(sp, { clipPath:'inset(100% 0% 0% 0% round 200px 200px 6px 6px)' },
+      { clipPath:'inset(0% 0% 0% 0% round 200px 200px 6px 6px)', duration:1.3, ease:'power3.inOut',
+        scrollTrigger:{ trigger:sp, start:'top 85%', once:true } });
+    gsap.fromTo('#storyPhoto img', { yPercent:-6 }, { yPercent:6, ease:'none',
+      scrollTrigger:{ trigger:'#storyPhoto', start:'top bottom', end:'bottom top', scrub:true } });
+  }
+
+  /* Fotos de los lugares (tejido): reveal con máscara */
+  document.querySelectorAll('.loc-photo-wrap.tejido img').forEach(function(img){
+    gsap.fromTo(img, { clipPath:'inset(0 50% 0 50%)' }, { clipPath:'inset(0 0% 0 0%)', duration:1.1, ease:'power3.out',
+      scrollTrigger:{ trigger:img, start:'top 88%', once:true } });
+  });
+
+  /* Itinerario: cada momento entra alternando izquierda/derecha y su punto hace pop */
+  document.querySelectorAll('.tl-row').forEach(function(r){
+    var left = r.dataset.side === 'left';
+    gsap.fromTo(r.querySelector('.tl-row-inner'), { opacity:0, x: left ? -34 : 34 }, { opacity:1, x:0, duration:.9, ease:E,
+      scrollTrigger:{ trigger:r, start:'top 86%', once:true } });
+    gsap.fromTo(r.querySelector('.tl-dot'), { scale:0 }, { scale:1, duration:.6, ease:'back.out(3)',
+      scrollTrigger:{ trigger:r, start:'top 84%', once:true } });
+  });
+
+  /* Padres y padrinos: nombre por nombre */
+  gsap.fromTo('#family .fam-n', { opacity:0, y:14 }, { opacity:1, y:0, duration:.6, stagger:.08, ease:E,
+    scrollTrigger:{ trigger:'#family .fam-grid', start:'top 84%', once:true } });
+
+  /* Hospedaje: cards desde un costado con leve rotación que se endereza */
+  document.querySelectorAll('.hs-card').forEach(function(c,i){
+    gsap.fromTo(c, { opacity:0, x: i % 2 ? 50 : -50, rotation: i % 2 ? 3 : -3 }, { opacity:1, x:0, rotation:0, duration:1, ease:E,
+      scrollTrigger:{ trigger:c, start:'top 90%', once:true } });
+  });
+
+  /* Mesa de regalos: destello al entrar */
+  document.querySelectorAll('.sheen').forEach(function(el){
+    ScrollTrigger.create({ trigger:el, start:'top 85%', once:true, onEnter:function(){ el.classList.add('shine'); } });
+  });
+
+  /* Calendario */
+  gsap.fromTo('#calCard', { opacity:0, y:26, scale:.96 }, { opacity:1, y:0, scale:1, duration:.9, ease:'back.out(1.4)',
+    scrollTrigger:{ trigger:'#calCard', start:'top 88%', once:true } });
+
+  /* Cards que levitan: al tocarlas se elevan con tilt ligero */
+  document.querySelectorAll('.lev').forEach(function(c){
+    function up(e){
+      c.classList.add('lift');
+      var r = c.getBoundingClientRect(), x = ((e.clientX || r.left + r.width/2) - r.left)/r.width - .5;
+      gsap.to(c, { y:-10, rotationY: x*6, rotationX: 3, transformPerspective:900, duration:.45, ease:'power2.out' });
+    }
+    function down(){ c.classList.remove('lift'); gsap.to(c, { y:0, rotationY:0, rotationX:0, duration:.6, ease:'power2.out' }); }
+    c.addEventListener('pointerenter', up); c.addEventListener('pointerdown', up);
+    c.addEventListener('pointerleave', down); c.addEventListener('pointerup', function(){ setTimeout(down, 450); });
+  });
+
+  ScrollTrigger.refresh();
+}
+
+/* Red de seguridad: nada se queda en opacity:0 si un trigger no dispara */
+function failsafeVisibles(){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var el = en.target;
+      setTimeout(function(){
+        if(parseFloat(getComputedStyle(el).opacity) < .05 && typeof gsap !== 'undefined') gsap.to(el, { opacity:1, y:0, x:0, duration:.5 });
+      }, 2600);
+      io.unobserve(el);
+    });
+  });
+  document.querySelectorAll('section .lbl, section .ttl, .loc-card, .fam-col, .fam-god, .gf-card, .hs-card, .tl-row-inner, .fam-n, .cd-ring-item, .alb-qr-frame, .cal-card, .dc-look')
+    .forEach(function(el){ io.observe(el); });
+}
 </script>
 </body>
 </html>
