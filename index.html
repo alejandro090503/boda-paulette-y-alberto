@@ -3079,7 +3079,7 @@ body > footer{padding-bottom:120px !important}
 .pa-hs-route{display:none}
 .pa-hs-mk-h{transform:scale(.74);transform-origin:center}
 .pa-hs-mk-h:not(.on) .pa-hs-pulse{display:none}
-.pa-hs-far .pa-hs-mk-v.cer{font-size:0 !important;padding:6px !important;gap:0 !important}
+.pa-hs-far .pa-hs-mk-v.cer{font-size:0 !important;padding:0 !important;gap:0 !important;width:30px;height:30px;margin:8px auto 0}
 .pa-hs-far .pa-hs-mk-v.cer b{font-size:14px}
 .pa-hs-hint{transition:opacity .6s ease}
 .pa-hs-hint.gone{opacity:0;pointer-events:none}
@@ -5376,7 +5376,7 @@ function initHospedaje(){
       var w = Math.round(46 + (v.t.length * 9.5));
       var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[w,38], iconAnchor:[w/2,46],
         html:'<div class="pa-hs-mk-v' + (v.t === 'Ceremonia' ? ' cer' : '') + '" role="button" aria-label="' + esc(v.t + (v.nombre && v.nombre !== v.t ? ': ' + v.nombre : '')) + '"><b>' + esc(v.ico || '♥') + '</b>' + esc(v.t) + '</div>' });
-      L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:900 }).addTo(map).on('click', function(){ focusVenue(v); });
+      L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:(v.t === 'Ceremonia' ? 100 : 900) }).addTo(map).on('click', function(){ focusVenue(v); });
       bounds.extend([v.lat, v.lng]);
     });
     /* hoteles: círculo numerado con aro oro y pulso */
