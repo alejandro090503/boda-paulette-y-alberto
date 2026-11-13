@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Paulette &amp; Alberto · 13 · Marzo · 2027">
   <meta property="og:description" content="Nos casamos. Tequisquiapan, Querétaro. Confirma tu asistencia.">
-  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=1">
+  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=2">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3035,6 +3035,8 @@ body > footer{padding-bottom:120px !important}
 #hero{padding:44px 24px 120px !important}
 .h-name{font-size:clamp(58px,17vw,78px) !important}
 .h-para{margin-top:22px}
+
+.loc-photo-wrap.tejido::after{display:none}
 </style>
 </head>
 <body>
@@ -3811,10 +3813,10 @@ function initEnvelope(){
     }
     if (video.readyState >= 2) play();
     else { video.load(); video.addEventListener('canplay', play, {once:true}); setTimeout(play, 1500); }
-    /* el fundido arranca en el segundo 6.4 para encadenar con el final del video (8s) */
-    video.addEventListener('timeupdate', function(){ if (video.currentTime >= 6.4) finish(); });
+    /* el video se corta en 2.4 s (antes de que aparezca el segundo sello) y funde al color de la invitación */
+    video.addEventListener('timeupdate', function(){ if (video.currentTime >= 1.95) finish(); });
     video.addEventListener('ended', finish, {once:true});
-    setTimeout(finish, 9000);
+    setTimeout(finish, 5000);
   }
   screen.addEventListener('click', onTap, {passive:false});
   screen.addEventListener('touchstart', onTap, {passive:false});
