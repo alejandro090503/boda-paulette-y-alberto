@@ -3086,6 +3086,8 @@ body > footer{padding-bottom:120px !important}
 
 /* ── fondo botánico de la 181 visible a través de las tintas ── */
 .ink-bg{opacity:.3}
+
+.pa-hs-mk-h,.pa-hs-mk-v{transition:translate .35s ease}
 </style>
 </head>
 <body>
@@ -5392,7 +5394,24 @@ function initHospedaje(){
     });
 
     map.on('click', function(){ if(sheet.classList.contains('open')) closeSheet(); });
-    function zcls(){ $('paHsMap').classList.toggle('pa-hs-far', map.getZoom() < 15.25); }
+    var vMarkers = [];
+    map.eachLayer(function(l){ if(l instanceof L.Marker && hMarkers.indexOf(l) < 0) vMarkers.push(l); });
+    /* separa marcadores encimados (la iglesia y 3 hoteles quedan a <300 m) */
+    function declutter(){
+      var ms = hMarkers.concat(vMarkers.filter(function(m){ var e = m.getElement(); return e && e.querySelector('.cer'); }));
+      var pts = ms.map(function(m){ return { m:m, p:map.latLngToContainerPoint(m.getLatLng()), dx:0, dy:0 }; });
+      var MIN = 40;
+      for(var it=0; it<6; it++){
+        for(var a=0; a<pts.length; a++) for(var c=a+1; c<pts.length; c++){
+          var A = pts[a], C = pts[c];
+          var x = (C.p.x + C.dx) - (A.p.x + A.dx), y = (C.p.y + C.dy) - (A.p.y + A.dy), d = Math.sqrt(x*x + y*y) || .01;
+          if(d < MIN){ var k = (MIN - d) / 2 / d; A.dx -= x*k; A.dy -= y*k; C.dx += x*k; C.dy += y*k; }
+        }
+      }
+      pts.forEach(function(o){ var e = o.m.getElement(); if(!e || !e.firstChild) return;
+        e.firstChild.style.translate = Math.abs(o.dx) + Math.abs(o.dy) < .5 ? '' : (o.dx.toFixed(1) + 'px ' + o.dy.toFixed(1) + 'px'); });
+    }
+    function zcls(){ $('paHsMap').classList.toggle('pa-hs-far', map.getZoom() < 15.25); declutter(); }
     map.on('zoomend', zcls); map.whenReady(zcls);
     setTimeout(function(){ if(hint) hint.classList.add('gone'); }, 5000);
     root.querySelectorAll('.pa-hs-ctrl').forEach(function(b){
