@@ -3037,6 +3037,55 @@ body > footer{padding-bottom:120px !important}
 .h-para{margin-top:22px}
 
 .loc-photo-wrap.tejido::after{display:none}
+
+/* ── PADRINOS · fade con íconos ── */
+.pd-wrap{position:relative;text-align:center}
+.pd-stage{position:relative;min-height:212px;margin-top:10px}
+.pd-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:6px 40px 0;
+  opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease;pointer-events:none}
+.pd-slide.on{opacity:1;transform:none;pointer-events:auto}
+.pd-icon{width:68px;height:68px;margin-bottom:12px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle,#FBFAEC 0%,#F2EFC9 100%);box-shadow:inset 0 0 0 1px rgba(184,150,46,.55),0 6px 16px rgba(28,30,23,.1)}
+.pd-icon svg{width:44px;height:44px;fill:none;stroke:var(--olive);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pd-slide.on .pd-icon{animation:pdPop .9s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pdPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+.pd-rol{display:block;font-family:'Cinzel',serif;font-weight:600;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}
+.pd-names{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.35;color:var(--black);display:flex;flex-direction:column;align-items:center}
+.pd-amp{font-family:'Great Vibes',cursive;font-weight:400;color:#B8962E;font-size:26px;line-height:1.1}
+.pd-arrow{position:absolute;top:96px;width:44px;height:44px;border:none;background:none;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.pd-arrow svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+.pd-arrow.prev{left:0}.pd-arrow.next{right:0}
+.pd-dots{display:flex;justify-content:center;gap:8px;margin-top:10px}
+.pd-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:1px solid var(--olive);background:transparent;cursor:pointer;transition:transform .25s,background .25s}
+.pd-dots button.on{background:var(--olive);transform:scale(1.25)}
+@media (prefers-reduced-motion:reduce){.pd-slide{transition-duration:.01s}.pd-slide.on .pd-icon{animation:none}}
+
+/* ── HOSPEDAJE · carrusel ── */
+.hc-wrap{position:relative}
+.pa-hs-list.hc-track{display:flex !important;flex-direction:row !important;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:4px 2px 6px;overscroll-behavior-x:contain}
+.pa-hs-list.hc-track::-webkit-scrollbar{display:none}
+.pa-hs-list.hc-track > .pa-hs-hotel{flex:0 0 100%;scroll-snap-align:center;margin:0 !important}
+.hc-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.hc-arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(79,99,52,.4);background:#FBFAEC;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.hc-arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.hc-arrow:disabled{opacity:.35;cursor:default}
+.hc-dots{display:flex;gap:8px}
+.hc-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:1px solid var(--olive);background:transparent;cursor:pointer}
+.hc-dots button.on{background:var(--olive);transform:scale(1.25)}
+.hc-count{display:block;text-align:center;margin-top:8px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:16px;color:var(--olive)}
+
+/* ── MAPA · más despejado ── */
+.pa-hs-route{display:none}
+.pa-hs-mk-h{transform:scale(.74);transform-origin:center}
+.pa-hs-mk-h:not(.on) .pa-hs-pulse{display:none}
+.pa-hs-far .pa-hs-mk-v.cer{font-size:0 !important;padding:6px !important;gap:0 !important}
+.pa-hs-far .pa-hs-mk-v.cer b{font-size:14px}
+.pa-hs-hint{transition:opacity .6s ease}
+.pa-hs-hint.gone{opacity:0;pointer-events:none}
+
+/* ── fondo botánico de la 181 visible a través de las tintas ── */
+.ink-bg{opacity:.3}
 </style>
 </head>
 <body>
@@ -3396,14 +3445,33 @@ body > footer{padding-bottom:120px !important}
     </div>
   </div>
 
-  <div class="fam-god">
+  <div class="fam-god pd-wrap" id="pdWrap">
     <span class="fam-col-role">Nuestros padrinos</span>
-    <div class="god-list">
-      <div class="god-item"><span class="god-role">Anillos</span><p class="god-nms"><span class="fam-n">Itzel Tosky</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Juan Carlos Quintana</span></p></div>
-      <div class="god-item"><span class="god-role">Arras</span><p class="god-nms"><span class="fam-n">Diana Rivera</span> <span class="fam-sep">&amp;</span> <span class="fam-n">César Flores</span></p></div>
-      <div class="god-item"><span class="god-role">Velación</span><p class="god-nms"><span class="fam-n">Laura Moreno</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Roberto Rivera</span></p></div>
-      <div class="god-item"><span class="god-role">Lazo</span><p class="god-nms"><span class="fam-n">Evelyn Rodríguez</span> <span class="fam-sep">&amp;</span> <span class="fam-n">Pavel Tosky</span></p></div>
+    <div class="pd-stage" id="pdStage" aria-live="polite">
+      <div class="pd-slide on" role="group" aria-roledescription="padrinos" aria-label="Padrinos de anillos">
+        <div class="pd-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="26" cy="34" r="13"/><circle cx="40" cy="34" r="13"/><path d="M36 17l4-5 4 5-4 4z"/></svg></div>
+        <span class="pd-rol">Padrinos de anillos</span>
+        <p class="pd-names">Itzel Tosky<span class="pd-amp">&amp;</span>Juan Carlos Quintana</p>
+      </div>
+      <div class="pd-slide" role="group" aria-roledescription="padrinos" aria-label="Padrinos de arras">
+        <div class="pd-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="46" rx="16" ry="5"/><path d="M16 46v-5c0 2.8 7.2 5 16 5s16-2.2 16-5v5"/><ellipse cx="32" cy="36" rx="16" ry="5"/><path d="M16 36v-5c0 2.8 7.2 5 16 5s16-2.2 16-5v5"/><ellipse cx="32" cy="26" rx="16" ry="5"/><path d="M28 26h8"/></svg></div>
+        <span class="pd-rol">Padrinos de arras</span>
+        <p class="pd-names">Diana Rivera<span class="pd-amp">&amp;</span>César Flores</p>
+      </div>
+      <div class="pd-slide" role="group" aria-roledescription="padrinos" aria-label="Padrinos de velación">
+        <div class="pd-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="22" y="28" width="8" height="24" rx="1.5"/><rect x="34" y="28" width="8" height="24" rx="1.5"/><line x1="26" y1="28" x2="26" y2="22"/><line x1="38" y1="28" x2="38" y2="22"/><path d="M26 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><path d="M38 22c-2.2-2.2-2.2-4.5 0-6.8 2.2 2.3 2.2 4.6 0 6.8Z"/><line x1="17" y1="52" x2="47" y2="52"/></svg></div>
+        <span class="pd-rol">Padrinos de velación</span>
+        <p class="pd-names">Laura Moreno<span class="pd-amp">&amp;</span>Roberto Rivera</p>
+      </div>
+      <div class="pd-slide" role="group" aria-roledescription="padrinos" aria-label="Padrinos de lazo">
+        <div class="pd-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M44 24c-6.6 0-10 8-12 8s-5.4-8-12-8a8 8 0 000 16c6.6 0 10-8 12-8s5.4 8 12 8a8 8 0 000-16Z"/><path d="M29 36l-5 14M35 36l5 14"/></svg></div>
+        <span class="pd-rol">Padrinos de lazo</span>
+        <p class="pd-names">Evelyn Rodríguez<span class="pd-amp">&amp;</span>Pavel Tosky</p>
+      </div>
     </div>
+    <button type="button" class="pd-arrow prev" id="pdPrev" aria-label="Padrinos anteriores"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button type="button" class="pd-arrow next" id="pdNext" aria-label="Padrinos siguientes"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="pd-dots" id="pdDots"><button type="button" class="on" aria-label="Padrinos 1"></button><button type="button" class="" aria-label="Padrinos 2"></button><button type="button" class="" aria-label="Padrinos 3"></button><button type="button" class="" aria-label="Padrinos 4"></button></div>
   </div>
 </section>
 
@@ -3844,6 +3912,7 @@ function bootInvitation(){
         initVida();
         failsafeVisibles();
         initGiftsPA();
+        initPadrinos();
         setTimeout(function(){ if(window.paShowMusicBtn) paShowMusicBtn(); }, 700);
         initPetals();
       }
@@ -5124,7 +5193,7 @@ function initAutoScroll(){
    }]
    VENUES = [{ t:'Recepción', ico:'♥', nombre:'…', dir:'…', lat, lng, maps:'…' }, { t:'Ceremonia', ico:'✝', … }]
    (Datos de abajo = los que ya tenía el destino; faltan fotos[] y ruta[]. Sustituir cuando lleguen.) */
-var HOTELS = [{"n": "Hotel Boutique La Granja", "tipo": "Hotel boutique", "dir": "Morelos 12, Centro, Tequisquiapan", "lat": 20.5244236, "lng": -99.8925468, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/534584269.jpg?k=deba5321d1faba5c5a571a6a9868e6f7f4ac71f3fd2044edabe4ca0f7ffa1460", "https://cf.bstatic.com/xdata/images/hotel/max500/927996217.jpg?k=12060423f78f6a819ef7ffca07d43947fced97e55d7fb9956e22f82539ca92d4", "https://cf.bstatic.com/xdata/images/hotel/max500/927992517.jpg?k=3fede7656099548210cd71d7e01728a76fc74514cbc7cc4088e9c8d339acc5fb", "https://cf.bstatic.com/xdata/images/hotel/max500/534349710.jpg?k=0779c227ffb012ecdb2af7fc8f18ab7d0cdc63eef3211dadd29cbafe225b2ff1", "https://cf.bstatic.com/xdata/images/hotel/max500/534350296.jpg?k=d7fafccf964c8ce4fbb1f239b77208fd52a374f2b90f8bc21405d149c6fe8bf1"], "maps": "https://www.google.com/maps/search/?api=1&query=Hotel+Boutique+La+Granja+Morelos+12+Tequisquiapan", "web": "http://hotelboutiquelagranja.com/", "mi": 2.8, "km": 4.4, "min": 10, "minCeremonia": "A pasos de la iglesia", "ruta": [[20.52437, -99.89254], [20.52437, -99.89252], [20.524, -99.89259], [20.5237, -99.8926], [20.52371, -99.89285], [20.52372, -99.89288], [20.52422, -99.8931], [20.52434, -99.89275], [20.52501, -99.89309], [20.52514, -99.89313], [20.52558, -99.89331], [20.52599, -99.8934], [20.52847, -99.89409], [20.52958, -99.89436], [20.5299, -99.89442], [20.53008, -99.89448], [20.53024, -99.89462], [20.53063, -99.89491], [20.53079, -99.89499], [20.53111, -99.89509], [20.53124, -99.89516], [20.53138, -99.89526], [20.53156, -99.89535], [20.5319, -99.89539], [20.53209, -99.89537], [20.53229, -99.8953], [20.5328, -99.89504], [20.53338, -99.89479], [20.53487, -99.89393], [20.53525, -99.89369], [20.53566, -99.8935], [20.53629, -99.89324], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "Hotel Río Tequisquiapan", "tipo": "Hotel", "dir": "Av. Niños Héroes 33, Centro, Tequisquiapan", "lat": 20.5204808, "lng": -99.8950589, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/581784385.jpg?k=b050bf955934c960a5e29367ca6f5f7e8d87d4c4ef463f541e50f07b1851a418", "https://cf.bstatic.com/xdata/images/hotel/max500/581784376.jpg?k=4433466563bfe4f267d9f063d251549e879a8c40e75ae6db546aeefc33b77497", "https://cf.bstatic.com/xdata/images/hotel/max500/252610182.jpg?k=19658b3eb10b33ede49cea1e64db9103d50db12edaeb749f0daa64a6f35f17ee", "https://cf.bstatic.com/xdata/images/hotel/max500/259673399.jpg?k=375b43292bb158777b4e92d51b71a624491f7642d1a8a283fa7302e2aea860fe", "https://cf.bstatic.com/xdata/images/hotel/max500/581784407.jpg?k=5a0695047637c9f73a835d231cfb4445eef06ae23b84a79131973003d7216698"], "maps": "https://www.google.com/maps/place/Hotel+R%C3%ADo+Tequisquiapan/@20.5204808,-99.8950589,17z", "web": "https://www.hotelesriotequisquiapan.com/es/index.html", "mi": 3.7, "km": 5.9, "min": 10, "minCeremonia": 2, "ruta": [[20.52056, -99.89514], [20.52011, -99.89565], [20.52002, -99.89569], [20.51958, -99.89621], [20.51953, -99.89626], [20.51916, -99.89671], [20.51976, -99.89786], [20.52027, -99.89793], [20.52061, -99.89799], [20.52147, -99.89812], [20.523, -99.89838], [20.52403, -99.89854], [20.52441, -99.89862], [20.52451, -99.89865], [20.52651, -99.899], [20.52681, -99.89906], [20.52807, -99.89927], [20.52879, -99.89938], [20.52973, -99.89955], [20.52999, -99.89959], [20.53026, -99.89965], [20.53159, -99.89991], [20.53554, -99.90055], [20.53597, -99.90065], [20.53646, -99.90075], [20.53661, -99.90077], [20.538, -99.90103], [20.53858, -99.90113], [20.53886, -99.90117], [20.54065, -99.90148], [20.54199, -99.90173], [20.54367, -99.902], [20.54556, -99.90236], [20.54745, -99.90268], [20.54766, -99.90192], [20.54784, -99.90139], [20.54802, -99.90091], [20.54851, -99.89939], [20.54904, -99.89771], [20.54939, -99.89657], [20.55066, -99.89257], [20.55125, -99.89062], [20.55132, -99.89046], [20.55145, -99.89031], [20.55352, -99.88904], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "Hotel San Carlos Tequisquiapan", "tipo": "Hotel", "dir": "Heroico Colegio Militar 7, Centro, Tequisquiapan", "lat": 20.5257708, "lng": -99.894355, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/808094222.jpg?k=c452101612057ecfc9948e89e500dae2be56d16dbc270ef0c14d7b6fe9602003", "https://cf.bstatic.com/xdata/images/hotel/max500/808094523.jpg?k=3a637664005d2ed3c3295923b73170ad8f487266977a51eb8dea53b2083762c2", "https://cf.bstatic.com/xdata/images/hotel/max500/808094299.jpg?k=c2a0ef2b46c718aadb3d0bfeb8eab4abc0d9d66e23f22ba5473d6d8be41dc133", "https://cf.bstatic.com/xdata/images/hotel/max500/808094283.jpg?k=b30a9cdb74a2ea06b819e7cf19c8d537e0e153cb0d3a8d6e84ff050ba4e9e940", "https://cf.bstatic.com/xdata/images/hotel/max500/808094243.jpg?k=1523d2bc980638eb6f52350bc6d6324d7da4be3d1ecbf54783c3320fb0ba5391"], "maps": "https://www.google.com/maps/place/Hotel+San+Carlos+Tequisquiapan/@20.5257708,-99.894355,17z", "web": "https://www.bestwestern.com/es-es/book/hotel/tequisquiapan/hecthorny-san-carlos-tequisquiapan-bw-signature-collection/70360", "mi": 2.6, "km": 4.1, "min": 9, "minCeremonia": 1, "ruta": [[20.52572, -99.89434], [20.52599, -99.8934], [20.52847, -99.89409], [20.52958, -99.89436], [20.5299, -99.89442], [20.53008, -99.89448], [20.53024, -99.89462], [20.53063, -99.89491], [20.53079, -99.89499], [20.53093, -99.89504], [20.53111, -99.89509], [20.53124, -99.89516], [20.53138, -99.89526], [20.53156, -99.89535], [20.5319, -99.89539], [20.53209, -99.89537], [20.53229, -99.8953], [20.53246, -99.89522], [20.5326, -99.89514], [20.5328, -99.89504], [20.53338, -99.89479], [20.53487, -99.89393], [20.53525, -99.89369], [20.53566, -99.8935], [20.53629, -99.89324], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "La Casa Roja", "tipo": "Casa de huéspedes", "dir": "Calle Francisco I. Madero, Tequisquiapan", "lat": 20.5366253, "lng": -99.8932282, "fotos": ["https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192943/1192943/0.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192957/1192957/1.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192959/1192959/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192946/1192946/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70"], "maps": "https://www.google.com/maps/place/La+Casa+Roja/@20.5366253,-99.8932282,17z", "web": "https://direct-book.com/properties/lacasarojadirect?locale=es&currency=MXN", "mi": 1.7, "km": 2.8, "min": 5, "minCeremonia": 4, "ruta": [[20.53658, -99.89311], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}];
+var HOTELS = [{"n": "Hotel Boutique La Granja", "tipo": "Hotel boutique", "dir": "Morelos 12, Centro, Tequisquiapan", "lat": 20.5244236, "lng": -99.8925468, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/534584269.jpg?k=deba5321d1faba5c5a571a6a9868e6f7f4ac71f3fd2044edabe4ca0f7ffa1460", "https://cf.bstatic.com/xdata/images/hotel/max500/927996217.jpg?k=12060423f78f6a819ef7ffca07d43947fced97e55d7fb9956e22f82539ca92d4", "https://cf.bstatic.com/xdata/images/hotel/max500/927992517.jpg?k=3fede7656099548210cd71d7e01728a76fc74514cbc7cc4088e9c8d339acc5fb", "https://cf.bstatic.com/xdata/images/hotel/max500/534349710.jpg?k=0779c227ffb012ecdb2af7fc8f18ab7d0cdc63eef3211dadd29cbafe225b2ff1", "https://cf.bstatic.com/xdata/images/hotel/max500/534350296.jpg?k=d7fafccf964c8ce4fbb1f239b77208fd52a374f2b90f8bc21405d149c6fe8bf1"], "maps": "https://www.google.com/maps/search/?api=1&query=Hotel+Boutique+La+Granja+Morelos+12+Tequisquiapan", "web": "http://hotelboutiquelagranja.com/", "mi": 2.8, "km": 4.4, "min": 10, "minCeremonia": "A pasos de la iglesia", "ruta":[]}, {"n": "Hotel Río Tequisquiapan", "tipo": "Hotel", "dir": "Av. Niños Héroes 33, Centro, Tequisquiapan", "lat": 20.5204808, "lng": -99.8950589, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/581784385.jpg?k=b050bf955934c960a5e29367ca6f5f7e8d87d4c4ef463f541e50f07b1851a418", "https://cf.bstatic.com/xdata/images/hotel/max500/581784376.jpg?k=4433466563bfe4f267d9f063d251549e879a8c40e75ae6db546aeefc33b77497", "https://cf.bstatic.com/xdata/images/hotel/max500/252610182.jpg?k=19658b3eb10b33ede49cea1e64db9103d50db12edaeb749f0daa64a6f35f17ee", "https://cf.bstatic.com/xdata/images/hotel/max500/259673399.jpg?k=375b43292bb158777b4e92d51b71a624491f7642d1a8a283fa7302e2aea860fe", "https://cf.bstatic.com/xdata/images/hotel/max500/581784407.jpg?k=5a0695047637c9f73a835d231cfb4445eef06ae23b84a79131973003d7216698"], "maps": "https://www.google.com/maps/place/Hotel+R%C3%ADo+Tequisquiapan/@20.5204808,-99.8950589,17z", "web": "https://www.hotelesriotequisquiapan.com/es/index.html", "mi": 3.7, "km": 5.9, "min": 10, "minCeremonia": 2, "ruta":[]}, {"n": "Hotel San Carlos Tequisquiapan", "tipo": "Hotel", "dir": "Heroico Colegio Militar 7, Centro, Tequisquiapan", "lat": 20.5257708, "lng": -99.894355, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/808094222.jpg?k=c452101612057ecfc9948e89e500dae2be56d16dbc270ef0c14d7b6fe9602003", "https://cf.bstatic.com/xdata/images/hotel/max500/808094523.jpg?k=3a637664005d2ed3c3295923b73170ad8f487266977a51eb8dea53b2083762c2", "https://cf.bstatic.com/xdata/images/hotel/max500/808094299.jpg?k=c2a0ef2b46c718aadb3d0bfeb8eab4abc0d9d66e23f22ba5473d6d8be41dc133", "https://cf.bstatic.com/xdata/images/hotel/max500/808094283.jpg?k=b30a9cdb74a2ea06b819e7cf19c8d537e0e153cb0d3a8d6e84ff050ba4e9e940", "https://cf.bstatic.com/xdata/images/hotel/max500/808094243.jpg?k=1523d2bc980638eb6f52350bc6d6324d7da4be3d1ecbf54783c3320fb0ba5391"], "maps": "https://www.google.com/maps/place/Hotel+San+Carlos+Tequisquiapan/@20.5257708,-99.894355,17z", "web": "https://www.bestwestern.com/es-es/book/hotel/tequisquiapan/hecthorny-san-carlos-tequisquiapan-bw-signature-collection/70360", "mi": 2.6, "km": 4.1, "min": 9, "minCeremonia": 1, "ruta":[]}, {"n": "La Casa Roja", "tipo": "Casa de huéspedes", "dir": "Calle Francisco I. Madero, Tequisquiapan", "lat": 20.5366253, "lng": -99.8932282, "fotos": ["https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192943/1192943/0.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192957/1192957/1.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192959/1192959/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192946/1192946/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70"], "maps": "https://www.google.com/maps/place/La+Casa+Roja/@20.5366253,-99.8932282,17z", "web": "https://direct-book.com/properties/lacasarojadirect?locale=es&currency=MXN", "mi": 1.7, "km": 2.8, "min": 5, "minCeremonia": 4, "ruta":[]}];
 var VENUES = [
   { t:'Recepción', ico:'♥', nombre:'Alauda Jardín de Eventos', dir:'Tequisquiapan, Querétaro', lat:20.5608221, lng:-99.8876551, maps:'https://maps.app.goo.gl/vYVsyHXeQfaRhkgG9' },
   { t:'Ceremonia', ico:'✝', nombre:'Templo Parroquial Santa María de la Asunción', dir:'Centro histórico, Tequisquiapan', lat:20.5231776, lng:-99.8915349, maps:'https://maps.app.goo.gl/unDvUAb7vxRs9d4e6' }
@@ -5192,6 +5261,7 @@ function initHospedaje(){
     list.appendChild(art);
     if(many) initGallery(art, fotos, h.n);
   });
+  initHotelCarousel(list);
 
   /* carrusel por hotel: flechas, puntos, miniaturas, swipe */
   function initGallery(art, fotos, name){
@@ -5243,7 +5313,7 @@ function initHospedaje(){
   /* ── 3. Mapa ── */
   var map = null, bounds = null, hMarkers = [], routes = [];
   var sheet = $('paHsSheet'), hint = $('paHsHint');
-  var FIT = { paddingTopLeft:[46,96], paddingBottomRight:[64,112], maxZoom:16 };  /* arriba: aire para la píldora del lugar */
+  var FIT = { paddingTopLeft:[40,78], paddingBottomRight:[56,70], maxZoom:16 };  /* arriba: aire para la píldora del lugar */
   function fitAll(anim){
     if(!map || !bounds) return;
     if(anim && !RM) map.flyToBounds(bounds, Object.assign({ duration:.9 }, FIT)); else map.fitBounds(bounds, FIT);
@@ -5305,7 +5375,7 @@ function initHospedaje(){
     VENUES.forEach(function(v){
       var w = Math.round(46 + (v.t.length * 9.5));
       var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[w,38], iconAnchor:[w/2,46],
-        html:'<div class="pa-hs-mk-v" role="button" aria-label="' + esc(v.t + (v.nombre && v.nombre !== v.t ? ': ' + v.nombre : '')) + '"><b>' + esc(v.ico || '♥') + '</b>' + esc(v.t) + '</div>' });
+        html:'<div class="pa-hs-mk-v' + (v.t === 'Ceremonia' ? ' cer' : '') + '" role="button" aria-label="' + esc(v.t + (v.nombre && v.nombre !== v.t ? ': ' + v.nombre : '')) + '"><b>' + esc(v.ico || '♥') + '</b>' + esc(v.t) + '</div>' });
       L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:900 }).addTo(map).on('click', function(){ focusVenue(v); });
       bounds.extend([v.lat, v.lng]);
     });
@@ -5322,6 +5392,9 @@ function initHospedaje(){
     });
 
     map.on('click', function(){ if(sheet.classList.contains('open')) closeSheet(); });
+    function zcls(){ $('paHsMap').classList.toggle('pa-hs-far', map.getZoom() < 15.25); }
+    map.on('zoomend', zcls); map.whenReady(zcls);
+    setTimeout(function(){ if(hint) hint.classList.add('gone'); }, 5000);
     root.querySelectorAll('.pa-hs-ctrl').forEach(function(b){
       b.addEventListener('click', function(){
         var z = b.getAttribute('data-z');
@@ -5632,6 +5705,66 @@ function initGiftsPA(){
       if(inView) start(); else stop();
     }, { rootMargin:'80px 0px 80px 0px' }).observe(sec);
   } else { inView = true; start(); }
+}
+</script>
+<script>
+/* ── HOSPEDAJE · carrusel de opciones (un hotel a la vez) ── */
+function initHotelCarousel(list){
+  if(!list || list.dataset.car) return; list.dataset.car = '1';
+  var cards = [].slice.call(list.children); if(cards.length < 2) return;
+  var wrap = document.createElement('div'); wrap.className = 'hc-wrap';
+  list.parentNode.insertBefore(wrap, list); wrap.appendChild(list);
+  list.classList.add('hc-track');
+  var prev = document.createElement('button'), next = document.createElement('button');
+  prev.type = next.type = 'button'; prev.className = 'hc-arrow prev'; next.className = 'hc-arrow next';
+  prev.setAttribute('aria-label','Hotel anterior'); next.setAttribute('aria-label','Hotel siguiente');
+  prev.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>';
+  next.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>';
+  var nav = document.createElement('div'); nav.className = 'hc-nav';
+  var count = document.createElement('span'); count.className = 'hc-count';
+  var dots = document.createElement('div'); dots.className = 'hc-dots';
+  cards.forEach(function(c, i){
+    var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Hotel ' + (i+1));
+    d.addEventListener('click', function(){ go(i); }); dots.appendChild(d);
+  });
+  nav.appendChild(prev); nav.appendChild(dots); nav.appendChild(next);
+  wrap.appendChild(nav); wrap.appendChild(count);
+  var idx = 0;
+  function go(i){ idx = Math.max(0, Math.min(cards.length-1, i)); list.scrollTo({ left: cards[idx].offsetLeft - list.offsetLeft, behavior: REDUCED ? 'auto' : 'smooth' }); paint(); }
+  function paint(){
+    [].forEach.call(dots.children, function(d, k){ d.classList.toggle('on', k === idx); });
+    prev.disabled = idx === 0; next.disabled = idx === cards.length - 1;
+    count.textContent = (idx+1) + ' de ' + cards.length + ' opciones';
+  }
+  prev.addEventListener('click', function(){ go(idx-1); });
+  next.addEventListener('click', function(){ go(idx+1); });
+  var t = 0;
+  list.addEventListener('scroll', function(){ clearTimeout(t); t = setTimeout(function(){
+    var x = list.scrollLeft, best = 0, bd = 1e9;
+    cards.forEach(function(c, k){ var dd = Math.abs(c.offsetLeft - list.offsetLeft - x); if(dd < bd){ bd = dd; best = k; } });
+    if(best !== idx){ idx = best; paint(); }
+  }, 80); }, { passive:true });
+  paint();
+}
+
+/* ── PADRINOS · aparecen y se desvanecen uno a uno ── */
+function initPadrinos(){
+  var st = document.getElementById('pdStage'); if(!st) return;
+  var sl = [].slice.call(st.querySelectorAll('.pd-slide')), dots = [].slice.call(document.querySelectorAll('#pdDots button'));
+  var i = 0, timer = 0, vis = false;
+  function show(n){
+    i = (n + sl.length) % sl.length;
+    sl.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
+  }
+  function auto(){ clearInterval(timer); if(!REDUCED && vis) timer = setInterval(function(){ show(i+1); }, 4200); }
+  document.getElementById('pdPrev').addEventListener('click', function(){ show(i-1); auto(); });
+  document.getElementById('pdNext').addEventListener('click', function(){ show(i+1); auto(); });
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ show(k); auto(); }); });
+  var x0 = null;
+  st.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive:true });
+  st.addEventListener('touchend', function(e){ if(x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if(Math.abs(dx) > 40){ show(i + (dx < 0 ? 1 : -1)); auto(); } }, { passive:true });
+  new IntersectionObserver(function(es){ vis = es[0].isIntersecting; if(vis) auto(); else clearInterval(timer); }, { threshold:.35 }).observe(st);
 }
 </script>
 </body>
