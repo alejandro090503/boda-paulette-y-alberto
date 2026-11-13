@@ -1219,6 +1219,20 @@ body.env-locked{overflow:hidden;height:100vh}
   to  {transform:translateX(-50%)}
 }
 section{position:relative}
+html,body{overflow-x:clip !important}
+
+/* ── ajustes tras revisión a 375px ── */
+.cd-num,.loc-dual-time,.rsvp-contador-valor,.hs-num,.rsvp-pases-num{font-family:'Cinzel',serif !important;letter-spacing:0 !important;font-style:normal}
+.cd-num{font-weight:600}
+.h-date{font-size:14px;letter-spacing:.14em;white-space:nowrap}
+#musicBtn.music-btn{bottom:calc(max(1rem,env(safe-area-inset-bottom)) + 70px) !important}
+@media (min-width:1024px){#musicBtn.music-btn{bottom:24px !important}}
+#dresscode .dc-note{border:none !important;background:none !important;padding:0 !important;box-shadow:none !important}
+.dc-swatches{gap:6px}.dc-swatch{width:62px}
+.hs-flip.map{height:calc(min(70vh,620px) + 130px);min-height:0}
+.mk-hotel{position:relative;z-index:3}
+.maplibregl-marker:has(.mk-hotel){z-index:3}
+.maplibregl-ctrl-attrib.maplibregl-compact{font-size:11px}
 /* Las ondas y el aura van debajo del contenido; NO tocamos position de hijos
    para no romper los elementos ya absolutos del hero (.h-bg, .h-ov, etc.) */
 .sec-wave{z-index:0}
@@ -4186,7 +4200,7 @@ var INV = (function(){
     btnMas.disabled   = frozen || pasesAUsar >= pasesAsignados;
   }
   function setPases(n){
-    if(frozen) return;
+    if(frozen || btnConf.disabled) return;
     var v = Math.max(1, Math.min(pasesAsignados, n));
     if(v === pasesAUsar) return;
     pasesAUsar = v; pintaContador(); renderFields(); say('');
