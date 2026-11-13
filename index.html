@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
 /* ── TOKENS ───────────────────────────────────────────── */
 :root {
@@ -1225,8 +1225,6 @@ html,body{overflow-x:clip !important}
 .cd-num,.loc-dual-time,.rsvp-contador-valor,.hs-num,.rsvp-pases-num{font-family:'Cinzel',serif !important;letter-spacing:0 !important;font-style:normal}
 .cd-num{font-weight:600}
 .h-date{font-size:14px;letter-spacing:.14em;white-space:nowrap}
-#musicBtn.music-btn{bottom:calc(max(1rem,env(safe-area-inset-bottom)) + 70px) !important}
-@media (min-width:1024px){#musicBtn.music-btn{bottom:24px !important}}
 #dresscode .dc-note{border:none !important;background:none !important;padding:0 !important;box-shadow:none !important}
 .dc-swatches{gap:6px}.dc-swatch{width:62px}
 .hs-flip.map{height:calc(min(70vh,620px) + 130px);min-height:0}
@@ -2078,7 +2076,7 @@ section{position:relative}
 .btn-olive:active{background:#3A4A26}
 
 /* Dorado metálico (foil) */
-.foil{
+.foil-legacy{
   background:var(--foil);background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent !important;
   -webkit-text-fill-color:transparent;
@@ -2391,65 +2389,652 @@ section{position:relative}
 .sec-draw path{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round}
 .sec-draw circle{fill:var(--olive-cl)}
 
-/* ═════════ MENÚ FLOTANTE ═════════ */
-.pill-nav{
-  position:fixed;z-index:8000;left:50%;
-  display:flex;align-items:center;gap:6px;padding:6px 6px 6px 16px;border-radius:60px;
-  background:rgba(248,246,227,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(184,150,46,.45);box-shadow:0 18px 50px rgba(28,30,23,.18);
-  opacity:0;pointer-events:none;transform:translate(-50%,40px);
-  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);
-  bottom:max(1rem,env(safe-area-inset-bottom));
-}
-.pill-nav.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
-.pn-mono{font-family:'Great Vibes',cursive;font-size:26px;color:var(--olive);text-decoration:none;line-height:1;padding:4px 6px 4px 0;white-space:nowrap}
-.pn-mono span{color:var(--gold);font-size:.8em;margin:0 1px}
-.pn-links{display:none;position:relative;align-items:center}
-.pn-links a{position:relative;z-index:1;padding:10px 12px;font-family:'Cinzel',serif;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);text-decoration:none;white-space:nowrap;transition:color .3s}
-.pn-links a.on{color:#FBFAEC}
-.pn-ind{position:absolute;top:2px;bottom:2px;left:0;width:0;border-radius:30px;background:var(--olive);transition:transform .45s cubic-bezier(.34,1.2,.64,1),width .45s cubic-bezier(.34,1.2,.64,1);opacity:0}
-.pn-sep{display:none;width:1px;height:22px;background:rgba(79,99,52,.3);margin:0 4px}
-.pn-share{width:44px;height:44px;border-radius:50%;border:1px solid rgba(79,99,52,.35);background:transparent;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.pn-share svg{width:19px;height:19px}
-.pn-menu{min-height:44px;padding:0 18px;border-radius:40px;border:none;cursor:pointer;background:var(--olive);color:#FBFAEC;
-  font-family:'Cinzel',serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
-@media (min-width:1024px){
-  .pill-nav{top:20px;bottom:auto;transform:translate(-50%,-40px)}
-  .pill-nav.show{transform:translate(-50%,0)}
-  .pn-links,.pn-sep{display:flex}
-  .pn-menu{display:none}
-}
-.fs-menu{
-  position:fixed;inset:0;z-index:8500;display:flex;flex-direction:column;padding:22px 26px max(26px,env(safe-area-inset-bottom));
-  background:rgba(248,246,227,.95);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  clip-path:circle(0% at 85% 95%);visibility:hidden;
-  transition:clip-path .6s cubic-bezier(.2,.8,.2,1),visibility 0s linear .6s;
-}
-.fs-menu.open{clip-path:circle(150% at 85% 95%);visibility:visible;transition:clip-path .6s cubic-bezier(.2,.8,.2,1),visibility 0s}
-.fs-top{display:flex;align-items:center;justify-content:space-between}
-.fs-mono{font-size:34px}
-.fs-close{width:48px;height:48px;border-radius:50%;border:1px solid rgba(79,99,52,.4);background:transparent;color:var(--olive);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.fs-close svg{width:20px;height:20px}
-.fs-list{list-style:none;margin:auto 0;padding:10px 0;display:flex;flex-direction:column;gap:2px}
-.fs-list li{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
-.fs-menu.open .fs-list li{opacity:1;transform:none}
-.fs-list a{display:flex;align-items:baseline;gap:16px;min-height:48px;padding:4px 0;text-decoration:none;color:var(--black);
-  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2rem,9vw,3rem);line-height:1.15}
-.fs-list a i{font-style:normal;font-family:'Cinzel',serif;font-size:13px;letter-spacing:.1em;color:var(--olive);min-width:24px}
-.fs-list a.on{font-style:italic;color:var(--olive)}
-.fs-foot{text-align:center;font-family:'Cinzel',serif;font-weight:600;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive)}
-
-/* Tarjetas que levitan */
-.lev{animation:levitate 5.6s ease-in-out infinite;transition:box-shadow .35s ease}
-.lev:nth-of-type(2n){animation-delay:-2.2s}
-.lev:nth-of-type(3n){animation-delay:-3.7s}
-@keyframes levitate{0%,100%{translate:0 0}50%{translate:0 -6px}}
-.lev.lift{box-shadow:0 30px 60px rgba(28,30,23,.22)}
 
 @media (prefers-reduced-motion:reduce){
   .lev,.foil,.rsvp-btn.breathe,.dc-look,.dc-look-ico,.dc-look-arrow,.cal-heart,.loc-btn .pin,.rsvp-para-name{animation:none !important}
   .fs-menu,.hs-face{transition-duration:.01s !important}
 }
+</style>
+<style>
+/* ═════════ PAQUETE DE EFECTOS ═════════ */
+:root{
+  /* metálico sobre fondo claro: olivo → oro → olivo (el pico es el oro base, nunca blanco) */
+  --foil:linear-gradient(100deg,#2F3B1F 0%,#4F6334 28%,#9C7D1E 50%,#4F6334 72%,#2F3B1F 100%);
+  --foil-gold:linear-gradient(100deg,#8A6D12 0%,#B8962E 28%,#D4AF37 50%,#B8962E 72%,#8A6D12 100%);
+  --gold-deep:#8A6D12;
+}
+
+/* 10 + 11 · títulos con brillo metálico (sin cortar trazos script) */
+.foil-text{
+  background:var(--foil);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--olive);
+  animation:goldSweep 7s ease-in-out infinite;text-shadow:none !important;
+  padding:.22em .45em;margin-left:-.45em;margin-right:-.45em;margin-top:-.22em;margin-bottom:-.22em;line-height:1.25;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.foil-text.foil-gold{background-image:var(--foil-gold);background-size:220% 100%}
+.foil-text .ttl-script{color:inherit;-webkit-text-fill-color:transparent;padding:0}
+h2.foil-text{display:block;width:fit-content;margin-left:auto;margin-right:auto;margin-top:calc(6px - .22em);max-width:calc(100% + .9em)}
+#location .ttl{animation-delay:-1.2s}#calendar .ttl{animation-delay:-2.4s}#itinerary .ttl{animation-delay:-3.6s}
+#family .ttl{animation-delay:-4.8s}#dresscode .ttl{animation-delay:-6s}#hospedaje .ttl{animation-delay:-.6s}
+#gifts .ttl{animation-delay:-1.8s}#album .ttl{animation-delay:-3s}#rsvp .ttl{animation-delay:-4.2s}#hN2{animation-delay:-2s}#hAmp{animation-delay:-3.5s}
+.h-name.foil-text{filter:drop-shadow(0 2px 10px rgba(248,246,227,.9))}
+.h-clip{padding:.15em .3em .3em}
+.ft-nms.foil-text{display:block;width:fit-content;margin:0 auto}
+@keyframes goldSweep{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+
+/* 1 · HERO: deriva lenta de la foto + luz premium */
+#hero{isolation:isolate}
+.h-bg{inset:-14% 0 !important;top:-14% !important;bottom:-14% !important;overflow:hidden;will-change:transform}
+.hero-drift{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;
+  animation:heroDrift 20s ease-in-out infinite alternate;transform-origin:50% 45%}
+@keyframes heroDrift{0%{transform:translate3d(-4%,-3%,0) scale(1.04)}100%{transform:translate3d(4%,3%,0) scale(1.16)}}
+.hero-fx{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hf-glow{position:absolute;border-radius:50%;opacity:.25;
+  background:radial-gradient(circle,rgba(246,231,166,.35) 0%,rgba(246,231,166,.14) 38%,rgba(246,231,166,0) 70%);
+  animation:hfFloat 28s ease-in-out infinite alternate,hfBreathe 9s ease-in-out infinite}
+.hf-glow.g1{width:70%;aspect-ratio:1;left:-12%;top:6%}
+.hf-glow.g2{width:55%;aspect-ratio:1;right:-10%;top:32%;animation-duration:32s,11s;animation-delay:-6s,-3s}
+.hf-glow.g3{width:48%;aspect-ratio:1;left:22%;bottom:4%;animation-duration:24s,8s;animation-delay:-12s,-5s}
+.hf-glow.g4{width:40%;aspect-ratio:1;right:8%;top:-6%;animation-duration:30s,10s;animation-delay:-18s,-1s}
+@keyframes hfFloat{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(9%,-6%,0)}100%{transform:translate3d(-7%,8%,0)}}
+@keyframes hfBreathe{0%,100%{opacity:.25}50%{opacity:.55}}
+.hf-sweep{position:absolute;top:-20%;bottom:-20%;left:0;width:38%;mix-blend-mode:soft-light;opacity:0;
+  background:linear-gradient(100deg,rgba(255,250,225,0) 0%,rgba(255,250,225,.9) 50%,rgba(255,250,225,0) 100%);
+  transform:translateX(-120%) skewX(-12deg);animation:hfSweep 12s ease-in-out infinite}
+@keyframes hfSweep{0%,58%{transform:translateX(-120%) skewX(-12deg);opacity:0}62%{opacity:.18}86%{opacity:.18}92%,100%{transform:translateX(320%) skewX(-12deg);opacity:0}}
+.hf-dust{position:absolute;inset:0}
+.hf-dust b{position:absolute;bottom:-10px;border-radius:50%;background:radial-gradient(circle,#F6E7A6 0%,#D4AF37 60%,rgba(212,175,55,0) 100%);
+  animation:hfRise linear infinite,hfTwinkle ease-in-out infinite}
+@keyframes hfRise{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--dx,10px),-105vh,0)}}
+@keyframes hfTwinkle{0%,100%{opacity:var(--o1,.3)}50%{opacity:var(--o2,.7)}}
+.hf-vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 48%,rgba(0,0,0,0) 60%,rgba(47,59,31,.16) 100%)}
+.h-particles{display:none}
+
+/* 2 · fundidos entre secciones (los inserta initSectionFades) */
+body > section,body > footer{isolation:isolate}
+.sf{position:absolute;left:0;right:0;z-index:-1;pointer-events:none}
+.sf-top{top:0}.sf-bot{bottom:0}
+
+/* 4 · tarjetas que levitan y ondean (translate/rotate propios: no chocan con GSAP) */
+.lev,.loc-card,.fam-grid,.fam-god{animation:levitate 6.5s ease-in-out infinite}
+.loc-card:nth-of-type(2n),.fam-god{animation-delay:-2.2s}
+.loc-card:nth-of-type(3n){animation-delay:-4.1s}
+@keyframes levitate{0%,100%{translate:0 0;rotate:0deg}30%{translate:0 -9px;rotate:.6deg}70%{translate:0 -4px;rotate:-.6deg}}
+.lift{box-shadow:0 30px 60px rgba(28,30,23,.22) !important}
+
+/* 12 · menú: un solo botón abajo al centro */
+.mn-btn{position:fixed;z-index:8000;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);
+  display:flex;align-items:center;gap:9px;height:46px;padding:0 20px 0 16px;border-radius:30px;cursor:pointer;
+  background:rgba(251,250,236,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(184,150,46,.7);box-shadow:0 10px 28px rgba(28,30,23,.16);color:var(--olive);
+  opacity:0;pointer-events:none;transition:opacity .8s ease}
+.mn-btn.show{opacity:1;pointer-events:auto}
+.mn-ic{display:flex;flex-direction:column;gap:4px;width:18px}
+.mn-ic i{display:block;height:1.4px;background:currentColor;border-radius:2px}
+.mn-ic i:nth-child(2){width:70%;margin-left:auto}
+.mn-tx{font-family:'Cinzel',serif;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.mn-panel{position:fixed;inset:0;z-index:9500;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+  padding:60px 24px calc(40px + env(safe-area-inset-bottom));background:#F8F6E3;
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.mn-panel::before{content:'';position:absolute;inset:0;z-index:-1;background:url('botanica1.webp') center/cover;opacity:.18}
+.mn-panel.open{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+.mn-x{position:absolute;top:calc(14px + env(safe-area-inset-top));right:14px;width:48px;height:48px;border:none;background:none;color:var(--olive);cursor:pointer}
+.mn-x svg{width:26px;height:26px}
+.mn-rule{display:block;width:120px;height:1px;background:linear-gradient(90deg,transparent,#B8962E,transparent)}
+.mn-list{list-style:none;margin:0;padding:0;text-align:center;display:flex;flex-direction:column;gap:6px}
+.mn-list li{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.mn-panel.open .mn-list li{opacity:1;transform:none}
+.mn-list a{display:inline-block;padding:7px 10px;min-height:44px;text-decoration:none;color:var(--black);
+  font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(25px,7.4vw,32px);line-height:1.25}
+.mn-list a:active{color:var(--olive)}
+body > footer{padding-bottom:120px !important}
+#rsvp{padding-bottom:110px}
+
+@media (prefers-reduced-motion:reduce){
+  .foil-text{animation:none}
+  .hero-drift,.hf-glow,.hf-sweep,.hf-dust b,.lev,.loc-card,.fam-grid,.fam-god{animation:none !important}
+  .hf-sweep,.hf-dust{display:none}
+  .mn-panel,.mn-list li{transition-duration:.01s}
+}
+/* ═════════ CÓDIGO DE VESTIMENTA · pa-dc (de boda-fabiola-y-fernando, repintado olivo/oro) ═════════
+   Pegar al FINAL del último <style>. Usa .lbl/.ttl/.gline del destino para el encabezado. */
+#dresscode.pa-dc{background:transparent;text-align:center}
+
+.pa-dc-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19px;
+  color:var(--olive,#4F6334);margin:6px 0 30px}
+
+/* ── Dibujos: 2 columnas, sin tarjetas, separador fino al centro (como fabiola) ── */
+.pa-dc-figs{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  max-width:380px;margin:6px auto 40px;padding:0 4px}
+.pa-dc-figs::before{content:'';position:absolute;left:50%;top:6%;bottom:22%;width:1px;transform:translateX(-50%);
+  background:linear-gradient(180deg,transparent,rgba(212,175,55,.55) 18%,rgba(212,175,55,.55) 82%,transparent)}
+.pa-dc-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.pa-dc-fig img{display:block;height:220px;width:auto;max-width:100%;object-fit:contain;
+  filter:drop-shadow(0 6px 14px rgba(18,18,18,.22));
+  transform-origin:50% 100%;
+  animation:paDcSway 5.2s ease-in-out infinite;will-change:transform}
+.pa-dc-fig:nth-child(2) img{animation-delay:-2.6s}
+@keyframes paDcSway{
+  0%,100%{transform:translateY(0) rotate(-1.4deg)}
+  50%    {transform:translateY(-8px) rotate(1.4deg)}
+}
+.pa-dc-fig figcaption{display:flex;flex-direction:column;align-items:center;gap:4px}
+.pa-dc-fig-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:23px;
+  letter-spacing:.02em;line-height:1.1;color:var(--olive,#4F6334)}
+.pa-dc-fig-sub{font-family:'Cinzel',serif;font-weight:600;font-size:12.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--black,#121212);opacity:.82}
+
+/* ── Subtítulos ── */
+.pa-dc-block{margin:0 auto 30px;max-width:380px}
+.pa-dc-sub{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 18px;
+  font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--olive,#4F6334)}
+.pa-dc-sub::before,.pa-dc-sub::after{content:'';flex:0 0 34px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold,#D4AF37))}
+.pa-dc-sub::after{background:linear-gradient(90deg,var(--gold,#D4AF37),transparent)}
+.pa-dc-free{margin:-4px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:22px;color:var(--black,#121212)}
+
+/* ── Bolitas (una por color) ── */
+.pa-dc-sws{list-style:none;margin:0 auto;padding:6px 0 0;display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 6px;justify-items:center;max-width:360px}
+.pa-dc-sw{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;
+  animation:paDcFloat 4.6s ease-in-out infinite;animation-delay:var(--d,0s);will-change:transform}
+@keyframes paDcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* aro metálico fino (todos los colores son claros) + glow dorado pulsante */
+.pa-dc-dot{position:relative;display:block;width:48px;height:48px;border-radius:50%;padding:1.6px;
+  background:var(--foil,linear-gradient(100deg,#8A6D12 0%,#D4AF37 22%,#F6E7A6 38%,#D4AF37 52%,#A8842A 70%,#E9CF79 86%,#8A6D12 100%));
+  box-shadow:0 3px 10px rgba(18,18,18,.14),0 0 0 0 rgba(212,175,55,0);
+  animation:paDcGlow 3.4s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes paDcGlow{
+  0%,100%{box-shadow:0 3px 10px rgba(18,18,18,.14),0 0 6px 1px rgba(212,175,55,.28)}
+  50%    {box-shadow:0 3px 12px rgba(18,18,18,.16),0 0 18px 5px rgba(212,175,55,.55)}
+}
+.pa-dc-fill{position:relative;display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;
+  background:var(--c,#fff);box-shadow:inset 0 1px 3px rgba(255,255,255,.9),inset 0 -2px 5px rgba(138,109,18,.16)}
+/* barrido de luz diagonal, desfasado por bolita */
+.pa-dc-fill::after{content:'';position:absolute;top:-30%;bottom:-30%;left:-90%;width:55%;
+  background:linear-gradient(105deg,transparent 0%,rgba(246,231,166,.0) 20%,rgba(255,255,255,.95) 50%,rgba(246,231,166,.0) 80%,transparent 100%);
+  transform:skewX(-18deg);
+  animation:paDcSweep 3.8s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes paDcSweep{0%,55%{left:-90%}100%{left:150%}}
+
+.pa-dc-name{font-family:'Cinzel',serif;font-weight:600;font-size:14px;line-height:1.25;letter-spacing:.04em;
+  color:var(--black,#121212);text-align:center}
+
+/* ── Nota final ── */
+.pa-dc-msg{max-width:330px;margin:8px auto 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:19px;line-height:1.6;color:var(--olive,#4F6334)}
+.pa-dc-star{display:block;font-style:normal;font-size:13px;color:var(--gold,#D4AF37);margin-bottom:6px}
+
+@media (max-width:360px){
+  .pa-dc-fig img{height:196px}
+  .pa-dc-dot{width:42px;height:42px}
+  .pa-dc-name{font-size:14px;letter-spacing:.02em}
+}
+@media (prefers-reduced-motion:reduce){
+  .pa-dc-fig img,.pa-dc-sw,.pa-dc-dot,.pa-dc-fill::after{animation:none !important}
+  .pa-dc-fill::after{display:none}
+  .pa-dc-dot{box-shadow:0 3px 10px rgba(18,18,18,.14)}
+}
+/* ═════════ MESA DE REGALOS · lluvia de sobres · pa-gf (de boda-jeffersson-y-vanessa, olivo/oro) ═════════
+   Pegar al FINAL del último <style>. Las reglas viejas .env-* del destino pueden quedarse: ya no aplican. */
+#gifts.pa-gf{position:relative;overflow:hidden;background:transparent;text-align:center;isolation:isolate}
+
+/* lluvia: siempre detrás del contenido */
+.pa-gf-rain{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+/* sin filter/drop-shadow a propósito: 22 capas filtradas en movimiento tumban Safari iOS */
+.pa-gf-drop{position:absolute;top:-60px;left:0;display:block;will-change:transform,opacity;opacity:0}
+.pa-gf-stage{position:relative;z-index:1}
+
+/* ── Sobre principal ── */
+.pa-env-wrap{display:flex;flex-direction:column;align-items:center;margin:26px auto 0}
+.pa-env{display:block;margin:0 auto;padding:0;border:0;background:none;cursor:pointer;outline:none;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.pa-env:focus-visible{outline:2px solid var(--gold,#D4AF37);outline-offset:6px;border-radius:10px}
+/* el JS pone .is-armed: el sobre espera invisible (pero tocable) hasta aterrizar. Sin JS se ve normal. */
+.pa-gf.is-armed .pa-env{opacity:0}
+.pa-gf.is-armed .pa-env.is-landed{opacity:1}
+.pa-env-body{position:relative;display:block;width:min(258px,74vw);aspect-ratio:260/200;perspective:700px;
+  filter:drop-shadow(0 12px 26px rgba(79,99,52,.22)) drop-shadow(0 2px 4px rgba(138,109,18,.18))}
+.pa-env-svg{display:block;width:100%;height:100%}
+.pa-env-flap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;z-index:2;display:block;
+  transform-origin:top center;transform-style:preserve-3d;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.pa-env-flap svg{display:block;width:100%;height:100%}
+.pa-env-seal{position:absolute;top:52%;left:50%;z-index:3;width:23%;aspect-ratio:1;
+  transform:translate(-50%,-50%);pointer-events:none;
+  filter:drop-shadow(0 3px 6px rgba(46,59,30,.35));
+  transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1)}
+
+/* respiración tras aterrizar (se pausa mientras está abierto) */
+.pa-env-body.breathing{animation:paEnvBreathe 3.6s ease-in-out infinite}
+@keyframes paEnvBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+
+/* abierto */
+.pa-env-wrap.open .pa-env-flap{transform:rotateX(-175deg)}
+.pa-env-wrap.open .pa-env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+
+/* "Toca para abrir / cerrar" — también es botón */
+.pa-env-hint{display:inline-block;margin:16px auto 0;padding:10px 18px;min-height:44px;border:0;background:none;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--olive,#4F6334);animation:paEnvHint 2.4s ease-in-out infinite}
+@keyframes paEnvHint{0%,100%{opacity:.6}50%{opacity:1}}
+.pa-env-wrap.open .pa-env-hint{animation:none;opacity:.85}
+
+/* mensaje */
+.pa-env-msg{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:350px;margin:0 auto;padding:0 12px;
+  overflow:hidden;max-height:0;opacity:0;pointer-events:none;
+  transition:max-height .55s .25s ease,opacity .4s .32s ease,margin .4s ease}
+.pa-env-wrap.open .pa-env-msg{max-height:340px;opacity:1;pointer-events:auto;margin-top:8px}
+.pa-env-title{margin:0;font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(28px,8.4vw,33px);line-height:1.35;
+  color:var(--olive,#4F6334);padding:0 .12em}
+.pa-env-div{font-size:12px;color:var(--gold,#D4AF37)}
+.pa-env-desc{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18.5px;
+  line-height:1.65;color:var(--black,#121212)}
+
+/* tarjeta Amazon (reusa .gf-card del destino) */
+.pa-gf-amz{margin-top:28px !important}
+
+@media (prefers-reduced-motion:reduce){
+  .pa-gf-rain{display:none}
+  .pa-gf.is-armed .pa-env{opacity:1}
+  .pa-env-body.breathing,.pa-env-hint{animation:none !important}
+  .pa-env-flap,.pa-env-seal,.pa-env-msg{transition:none !important}
+}
+/* ═════════ HOSPEDAJE · pa-hs (lista con carrusel + mapa Leaflet olivo/oro) ═════════
+   Pegar al FINAL del último <style>. Prefijo .pa-hs- para no chocar con las .hs-* viejas del destino
+   (que pueden borrarse junto con las reglas .maplibregl-* y .mk-hotel/.mk-venue). */
+#hospedaje.pa-hs{
+  --hs-olive:#4F6334; --hs-olive-cl:#7C9654; --hs-paper:#F8F6E3; --hs-surface:#FBFAEC; --hs-beige:#F2EFC9;
+  --hs-gold:#D4AF37; --hs-gold-hi:#F6E7A6; --hs-gold-deep:#8A6D12; --hs-ink:#121212;
+  --hs-night:#1A2112; --hs-night-2:#232C18; --hs-night-3:#12170C;
+  --hs-metal:linear-gradient(100deg,#8A6D12 0%,#D4AF37 22%,#F6E7A6 38%,#D4AF37 52%,#A8842A 70%,#E9CF79 86%,#8A6D12 100%);
+  text-align:center;background:transparent}
+.pa-hs-sub{max-width:340px;margin:0 auto 4px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+  font-size:18px;line-height:1.5;color:var(--hs-olive)}
+
+/* ── Selector Lista / Mapa ── */
+.pa-hs-toggle{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;margin:26px auto 0;padding:5px;
+  border-radius:999px;background:var(--hs-surface);border:1px solid rgba(212,175,55,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 26px rgba(79,99,52,.14)}
+.pa-hs-ind{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;
+  background:linear-gradient(135deg,var(--hs-olive-cl),var(--hs-olive) 70%);
+  box-shadow:inset 0 0 0 1px rgba(246,231,166,.55),0 4px 14px rgba(79,99,52,.35);
+  transition:transform .45s cubic-bezier(.65,.05,.25,1)}
+.pa-hs-toggle[data-view="map"] .pa-hs-ind{transform:translateX(100%)}
+.pa-hs-tab{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-width:118px;min-height:44px;padding:0 18px;border:0;background:none;border-radius:999px;cursor:pointer;
+  font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.08em;color:var(--hs-olive);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:color .35s}
+.pa-hs-tab svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-tab[aria-selected="true"]{color:var(--hs-surface)}
+.pa-hs-tab:focus-visible{outline:2px solid var(--hs-gold);outline-offset:2px}
+
+/* ── Giro 3D entre caras ── */
+.pa-hs-flip{perspective:1700px;margin:24px auto 0;max-width:420px}
+.pa-hs-card{position:relative;display:grid;transform-style:preserve-3d;
+  transition:transform .7s cubic-bezier(.65,.05,.25,1),height .7s cubic-bezier(.65,.05,.25,1)}
+.pa-hs-face{grid-area:1/1;align-self:start;min-width:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.pa-hs-back{transform:rotateY(180deg)}
+.pa-hs-off{display:none !important}
+
+/* ── Tarjeta de hotel ── */
+.pa-hs-list{display:flex;flex-direction:column;gap:22px}
+.pa-hs-hotel{position:relative;padding:30px 18px 26px;border-radius:26px;
+  background:linear-gradient(180deg,var(--hs-surface),#F5F2D6);
+  border:1px solid rgba(212,175,55,.5);box-shadow:0 18px 44px rgba(79,99,52,.14)}
+.pa-hs-hotel::before{content:'';position:absolute;inset:7px;border:1px solid rgba(212,175,55,.22);border-radius:20px;pointer-events:none}
+
+.pa-hs-gal{position:relative;width:216px;margin:0 auto}
+.pa-hs-orbit{animation:paHsLev 6.5s ease-in-out infinite;will-change:transform}
+.pa-hs-hotel:nth-child(2n) .pa-hs-orbit{animation-delay:-3.2s}
+@keyframes paHsLev{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-8px) rotate(.6deg)}}
+.pa-hs-ring{padding:3px;border-radius:50%;background:var(--hs-metal);box-shadow:0 18px 36px rgba(79,99,52,.25),0 0 34px rgba(212,175,55,.25)}
+.pa-hs-vp{width:210px;height:210px;border-radius:50%;overflow:hidden;background:var(--hs-beige);border:3px solid var(--hs-surface);touch-action:pan-y}
+.pa-hs-track{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.pa-hs-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.pa-hs-ph{flex:0 0 100%;display:flex;align-items:center;justify-content:center;color:var(--hs-olive-cl)}
+.pa-hs-ph svg{width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-badge{position:absolute;top:6px;right:2px;z-index:2;width:44px;height:44px;border-radius:50%;padding:2px;
+  background:var(--hs-metal);box-shadow:0 6px 14px rgba(79,99,52,.35)}
+.pa-hs-badge span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#6A8244,var(--hs-olive) 60%,#33421F);
+  font-family:'Cinzel',serif;font-weight:700;font-size:18px;color:var(--hs-gold-hi)}
+.pa-hs-arrow{position:absolute;top:108px;transform:translateY(-50%);z-index:2;width:42px;height:42px;display:flex;
+  align-items:center;justify-content:center;padding:0;border-radius:50%;border:1px solid rgba(212,175,55,.6);
+  background:rgba(251,250,236,.94);color:var(--hs-olive);cursor:pointer;touch-action:manipulation;
+  box-shadow:0 4px 12px rgba(79,99,52,.16);transition:background .25s}
+.pa-hs-arrow:hover{background:var(--hs-beige)}
+.pa-hs-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-arrow.prev{left:-52px}
+.pa-hs-arrow.next{right:-52px}
+.pa-hs-dots{display:flex;justify-content:center;gap:4px;margin-top:18px}
+.pa-hs-dots button{width:24px;height:24px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pa-hs-dots button::before{content:'';width:7px;height:7px;border-radius:50%;background:rgba(79,99,52,.28);transition:transform .25s,background .25s}
+.pa-hs-dots button.on::before{background:var(--hs-gold);transform:scale(1.4)}
+.pa-hs-thumbs{display:flex;justify-content:center;gap:8px;margin:8px auto 0;flex-wrap:wrap}
+.pa-hs-thumbs button{width:46px;height:46px;padding:2px;border-radius:50%;border:0;background:rgba(212,175,55,.25);cursor:pointer;
+  opacity:.6;transition:opacity .25s,transform .25s,background .25s}
+.pa-hs-thumbs button.on{background:var(--hs-metal);opacity:1;transform:translateY(-2px)}
+.pa-hs-thumbs img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:2px solid var(--hs-surface)}
+
+.pa-hs-type{display:block;margin-top:22px;font-family:'Cinzel',serif;font-weight:600;font-size:12.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--hs-olive)}
+.pa-hs-name{margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(25px,7vw,30px);line-height:1.15;color:var(--hs-ink)}
+.pa-hs-addr{margin:10px auto 0;max-width:320px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17.5px;line-height:1.5;color:var(--hs-ink);opacity:.88}
+.pa-hs-dist{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.pa-hs-chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 13px;border-radius:999px;
+  background:rgba(124,150,84,.12);border:1px solid rgba(212,175,55,.5);
+  font-family:'Cinzel',serif;font-weight:600;font-size:13px;letter-spacing:.02em;color:var(--hs-olive)}
+.pa-hs-chip svg{width:15px;height:15px;fill:none;stroke:var(--hs-gold-deep);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-dist-cap{display:block;width:100%;margin-top:2px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--hs-olive)}
+.pa-hs-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pa-hs-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;
+  font-family:'Cinzel',serif;font-weight:600;font-size:13.5px;letter-spacing:.06em;text-decoration:none;cursor:pointer;
+  touch-action:manipulation;transition:transform .2s,box-shadow .25s,background .25s}
+.pa-hs-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-btn--pri{background:linear-gradient(135deg,var(--hs-olive-cl),var(--hs-olive) 70%);color:var(--hs-surface);border:0;
+  box-shadow:inset 0 0 0 1px rgba(246,231,166,.45),0 8px 20px rgba(79,99,52,.28)}
+.pa-hs-btn--pri:hover{box-shadow:inset 0 0 0 1px rgba(246,231,166,.6),0 10px 26px rgba(79,99,52,.4)}
+.pa-hs-btn--sec{background:transparent;color:var(--hs-olive);border:1px solid var(--hs-gold)}
+.pa-hs-btn--sec:hover{background:rgba(212,175,55,.1)}
+.pa-hs-btn:active{transform:scale(.97)}
+.pa-hs-btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+/* ── Mapa ── */
+.pa-hs-frame{padding:1px;border-radius:28px;background:var(--hs-metal);box-shadow:0 22px 54px rgba(26,33,18,.35)}
+.pa-hs-frame-in{position:relative;height:580px;border-radius:27px;overflow:hidden;background:var(--hs-night);isolation:isolate;text-align:left}
+.pa-hs-map{position:absolute;inset:0;z-index:0;background:var(--hs-night)}
+/* gris oscuro de Esri → olivo noche */
+.pa-hs-map .leaflet-tile-pane{filter:sepia(1) hue-rotate(42deg) saturate(1.35) brightness(.85) contrast(1.08)}
+.pa-hs-map .leaflet-control-attribution{background:rgba(18,23,12,.72) !important;color:rgba(246,231,166,.72) !important;
+  font:400 9px/1.4 'Cinzel',serif !important;border-radius:8px 0 0 0;padding:1px 6px !important}
+.pa-hs-map .leaflet-control-attribution a{color:var(--hs-gold-hi) !important}
+.pa-hs-divicon{background:none !important;border:0 !important}
+.pa-hs-vig{position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:27px;
+  box-shadow:inset 0 0 70px 18px rgba(18,23,12,.86);background:radial-gradient(ellipse at center,transparent 55%,rgba(18,23,12,.42) 100%)}
+.pa-hs-loading{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.1em;color:var(--hs-gold-hi);pointer-events:none;transition:opacity .4s}
+.pa-hs-loading.gone{opacity:0}
+/* marcador hotel: círculo numerado, aro oro, pulso */
+.pa-hs-mk-h{position:relative;width:46px;height:46px;cursor:pointer}
+.pa-hs-mk-h .pa-hs-pulse{position:absolute;inset:0;border-radius:50%;border:2px solid var(--hs-gold-hi);animation:paHsPulse 2.2s ease-out infinite}
+.pa-hs-mk-h .pa-hs-pulse.b{animation-delay:1.1s}
+@keyframes paHsPulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(2.2);opacity:0}}
+.pa-hs-mk-h .pa-hs-mk-ring{position:absolute;inset:0;padding:2.5px;border-radius:50%;background:var(--hs-metal);box-shadow:0 6px 18px rgba(0,0,0,.55)}
+.pa-hs-mk-h .pa-hs-mk-in{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#6A8244,var(--hs-olive) 55%,#2C3A1B);
+  font-family:'Cinzel',serif;font-weight:700;font-size:19px;color:var(--hs-gold-hi)}
+.pa-hs-mk-h.on .pa-hs-mk-ring{box-shadow:0 0 0 3px rgba(246,231,166,.45),0 6px 18px rgba(0,0,0,.55)}
+/* marcador lugar: píldora clara con piquito */
+.pa-hs-mk-v{position:relative;display:flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 15px;border-radius:999px;
+  background:var(--hs-surface);color:var(--hs-olive);font-family:'Cinzel',serif;font-weight:700;font-size:13px;letter-spacing:.04em;white-space:nowrap;
+  box-shadow:0 0 0 1px rgba(212,175,55,.75),0 8px 22px rgba(0,0,0,.55);cursor:pointer}
+.pa-hs-mk-v b{color:var(--hs-gold-deep);font-size:15px;font-family:serif}
+.pa-hs-mk-v::after{content:'';position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);
+  border-left:7px solid transparent;border-right:7px solid transparent;border-top:8px solid var(--hs-surface)}
+/* rutas */
+.pa-hs-route{animation:paHsDash 1.1s linear infinite}
+@keyframes paHsDash{to{stroke-dashoffset:-22}}
+/* controles */
+.pa-hs-ctrls{position:absolute;top:14px;right:14px;z-index:2;display:flex;flex-direction:column;gap:8px}
+.pa-hs-ctrl{width:42px;height:42px;display:flex;align-items:center;justify-content:center;padding:0;border-radius:50%;
+  border:1px solid rgba(212,175,55,.6);background:rgba(18,23,12,.84);color:var(--hs-gold-hi);cursor:pointer;touch-action:manipulation;
+  box-shadow:0 6px 16px rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .25s}
+.pa-hs-ctrl:hover{background:rgba(79,99,52,.85)}
+.pa-hs-ctrl svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-hint{position:absolute;left:50%;bottom:24px;z-index:2;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;
+  max-width:calc(100% - 32px);padding:11px 18px;border-radius:999px;background:rgba(18,23,12,.88);border:1px solid rgba(212,175,55,.5);
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--hs-gold-hi);white-space:nowrap;pointer-events:none;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:opacity .35s,transform .35s}
+.pa-hs-hint i{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--hs-metal);
+  color:#2C3A1B;font-style:normal;font-family:'Cinzel',serif;font-weight:700;font-size:12px}
+.pa-hs-hint.gone{opacity:0;transform:translate(-50%,12px)}
+.pa-hs-2f{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;
+  background:rgba(18,23,12,.62);font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;line-height:1.4;color:var(--hs-gold-hi);
+  pointer-events:none;opacity:0;transition:opacity .3s}
+.pa-hs-2f.on{opacity:1}
+/* ficha flotante */
+.pa-hs-sheet{position:absolute;left:12px;right:12px;bottom:12px;z-index:4;padding:20px 18px 18px;border-radius:22px;
+  background:linear-gradient(180deg,rgba(35,44,24,.97),rgba(18,23,12,.98));border:1px solid rgba(212,175,55,.5);
+  box-shadow:0 -10px 40px rgba(0,0,0,.6);text-align:left;transform:translateY(calc(100% + 20px));
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.pa-hs-sheet.open{transform:translateY(0);visibility:visible}
+.pa-hs-sh-x{position:absolute;top:10px;right:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;padding:0;
+  border-radius:50%;border:1px solid rgba(212,175,55,.45);background:transparent;color:var(--hs-gold-hi);cursor:pointer}
+.pa-hs-sh-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.pa-hs-sh-top{display:flex;align-items:center;gap:12px;padding-right:40px}
+.pa-hs-sh-num{flex:0 0 40px;height:40px;border-radius:50%;padding:2px;background:var(--hs-metal)}
+.pa-hs-sh-num span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;background:var(--hs-olive);
+  font-family:'Cinzel',serif;font-weight:700;font-size:17px;color:var(--hs-gold-hi)}
+.pa-hs-sh-type{display:block;font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--hs-gold)}
+.pa-hs-sh-name{display:block;margin-top:2px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;line-height:1.15;color:var(--hs-surface)}
+.pa-hs-sh-addr{margin:12px 0 0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;line-height:1.45;color:rgba(251,250,236,.86)}
+.pa-hs-sh-dist{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font-family:'Cinzel',serif;font-weight:600;font-size:13.5px;color:var(--hs-gold-hi)}
+.pa-hs-sh-dist svg{width:16px;height:16px;fill:none;stroke:var(--hs-gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pa-hs-sh-btns{display:flex;gap:8px;margin-top:16px}
+.pa-hs-sh-btns .pa-hs-btn{flex:1 1 0;padding:0 10px;min-height:46px;font-size:12.5px;gap:6px;white-space:nowrap;letter-spacing:.02em}
+.pa-hs-sheet .pa-hs-btn--sec{color:var(--hs-gold-hi);border-color:rgba(212,175,55,.7)}
+.pa-hs-sheet .pa-hs-btn--pri{background:var(--hs-metal);color:#2C3A1B;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+
+@media (max-width:420px){
+  .pa-hs-frame-in{height:min(72vh,580px)}
+  .pa-hs-gal{width:186px}
+  .pa-hs-vp{width:180px;height:180px}
+  .pa-hs-arrow{top:93px;width:40px;height:40px}
+  .pa-hs-arrow.prev{left:-48px}
+  .pa-hs-arrow.next{right:-48px}
+  .pa-hs-hotel{padding:26px 14px 24px}
+  .pa-hs-tab{min-width:108px}
+}
+@media (prefers-reduced-motion:reduce){
+  .pa-hs-orbit,.pa-hs-mk-h .pa-hs-pulse,.pa-hs-route{animation:none !important}
+  .pa-hs-card,.pa-hs-track,.pa-hs-ind,.pa-hs-sheet{transition:none !important}
+}
+/* ═════════ BOTÓN DE MÚSICA · vinilo (pa-vinyl-btn) ═════════
+   Pegar al FINAL del último <style>. Estado "sonando" del destino = clase .on en #musicBtn
+   (la pone/quita el IIFE "MÚSICA AMBIENTAL"). Aparición = clase .visible (la agregas al abrir el sobre). */
+#musicBtn.pa-vinyl-btn{
+  position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));left:auto;top:auto;z-index:999;
+  width:64px;height:64px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 8px 22px rgba(18,18,18,.38),0 0 0 2px rgba(212,175,55,.6),0 0 0 6px rgba(212,175,55,.12);
+  opacity:0;transform:scale(.7);pointer-events:none;
+  transition:opacity .6s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+#musicBtn.pa-vinyl-btn.visible{opacity:1;transform:scale(1);pointer-events:auto}
+#musicBtn.pa-vinyl-btn.visible:active{transform:scale(.94)}
+#musicBtn.pa-vinyl-btn:focus-visible{outline:2px solid #D4AF37;outline-offset:6px}
+@media (hover:hover){#musicBtn.pa-vinyl-btn.visible:hover{transform:scale(1.08)}}
+
+/* pulso dorado mientras suena */
+#musicBtn.pa-vinyl-btn::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid #D4AF37;
+  opacity:0;pointer-events:none}
+#musicBtn.pa-vinyl-btn.on::after{animation:vinylPulse 1.6s ease-in-out infinite}
+@keyframes vinylPulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.14);opacity:.05}}
+
+/* disco: gira solo con .on (se pausa en su ángulo, no regresa a 0) */
+#musicBtn .vinyl-spin{display:block;width:100%;height:100%;border-radius:50%;
+  animation:vinylSpin 1.8s linear infinite;animation-play-state:paused}
+#musicBtn.on .vinyl-spin{animation-play-state:running}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+#musicBtn .vinyl-disc{position:relative;display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;
+  background:
+    repeating-radial-gradient(circle,
+      transparent 0, transparent 2.4px,
+      rgba(255,255,255,.05) 2.6px, transparent 3.2px),
+    radial-gradient(circle,#1A2112 0%,#222B17 60%,#151B0E 100%);
+  box-shadow:inset 0 0 8px rgba(0,0,0,.5),inset 0 0 0 1px rgba(212,175,55,.25)}
+/* centro liso dorado con orificio pequeño */
+#musicBtn .vinyl-disc::after{content:'';position:absolute;left:50%;top:50%;width:36%;height:36%;transform:translate(-50%,-50%);
+  border-radius:50%;z-index:1;
+  background:
+    radial-gradient(circle,#12170C 0 9%,rgba(18,23,12,.6) 11%,transparent 13%),
+    radial-gradient(circle at 34% 28%,#FFF3C4 0%,#F6E7A6 22%,#D4AF37 58%,#8A6D12 100%);
+  box-shadow:0 0 0 1.5px rgba(40,30,4,.55),inset 0 0 6px rgba(255,255,255,.35)}
+#musicBtn .vinyl-sheen{position:absolute;inset:0;z-index:2;border-radius:50%;pointer-events:none;
+  background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.08) 42%,rgba(255,255,255,.16) 48%,rgba(255,255,255,.08) 54%,transparent 66%)}
+
+/* aguja en oro: sube en pausa, baja a -12deg al sonar */
+#musicBtn .vinyl-tonearm{position:absolute;top:-8px;right:-9px;z-index:3;display:block;width:28px;height:40px;
+  transform-origin:top right;transform:rotate(-28deg);pointer-events:none;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+#musicBtn.on .vinyl-tonearm{transform:rotate(-12deg)}
+#musicBtn .vinyl-tonearm-pivot{position:absolute;top:0;right:2px;width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#FFF3C4,#D4AF37 55%,#8A6D12);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+#musicBtn .vinyl-tonearm-line{position:absolute;top:4px;right:6px;width:3px;height:31px;border-radius:2px;
+  background:linear-gradient(to bottom,#8A6D12,#F6E7A6 40%,#8A6D12);transform:rotate(-5deg);transform-origin:top center}
+#musicBtn .vinyl-tonearm-head{position:absolute;bottom:0;right:3px;width:7px;height:9px;border-radius:1px 1px 3px 3px;
+  background:linear-gradient(180deg,#F6E7A6,#D4AF37 60%,#8A6D12);box-shadow:0 1px 2px rgba(0,0,0,.35)}
+
+@media (prefers-reduced-motion:reduce){
+  #musicBtn.pa-vinyl-btn{transition:opacity .3s ease}
+  #musicBtn .vinyl-spin,#musicBtn.pa-vinyl-btn::after{animation:none !important}
+  #musicBtn .vinyl-tonearm{transition:none}
+}
+/* ═════════ RSVP · piel de boda-jennifer-y-marcel repintada a olivo/oro (pa-rsvp) ═════════
+   SOLO CSS. Pegar al FINAL del último <style> (después de todas las reglas .rsvp-* del destino).
+   No toca IDs ni lógica. Estados que pone el JS del destino y que aquí se estilizan:
+     .rsvp-toggle-btn.sel-yes / .sel-no  · .rsvp-input / .rsvp-input-falta · button:disabled
+     #rsvpGuestsWrap display:flex · #rsvpContWrap display:block · .rsvp-btn.breathe · #rsvpPase
+   Evento solo adultos: no hay recuadro de menores (el aviso .rsvp-notice existente se queda). */
+#rsvp{
+  --rv-olive:#4F6334; --rv-olive-cl:#7C9654; --rv-paper:#F8F6E3; --rv-surface:#FBFAEC; --rv-beige:#F2EFC9;
+  --rv-gold:#D4AF37; --rv-gold-hi:#F6E7A6; --rv-gold-deep:#8A6D12; --rv-ink:#121212; --rv-ink-soft:#3A3A33;
+  --rv-hair:rgba(79,99,52,.24); --rv-err:#A3311F;
+}
+
+/* ── Tarjeta ── */
+#rsvp .rsvp-card{max-width:420px;margin:30px auto 0;padding:46px 22px 34px;border-radius:4px;
+  background:var(--rv-surface);-webkit-backdrop-filter:none;backdrop-filter:none;
+  border:1px solid rgba(212,175,55,.55);
+  box-shadow:0 22px 56px rgba(79,99,52,.12),0 2px 10px rgba(138,109,18,.08)}
+#rsvp .rsvp-card::before{inset:9px;border:1px solid rgba(212,175,55,.3)}
+#rsvp .rsvp-corner path{stroke:var(--rv-gold);opacity:.8}
+#rsvp .rsvp-corner circle{fill:var(--rv-gold);opacity:.75}
+#rsvp .rsvp-ornament g{stroke:var(--rv-gold)}
+#rsvp .rsvp-ornament circle[fill]{fill:var(--rv-gold)}
+#rsvp .rsvp-title{color:var(--rv-olive)}
+#rsvp .rsvp-text{font-size:18px;color:var(--rv-ink);opacity:1}
+#rsvp .rsvp-text strong{color:var(--rv-olive);font-weight:700}
+#rsvp .rsvp-divider::before,#rsvp .rsvp-divider::after{background:linear-gradient(to right,transparent,rgba(212,175,55,.7),transparent)}
+#rsvp .rsvp-divider-heart{color:var(--rv-gold)}
+
+/* ── Para quién es (serif, nunca script) ── */
+#rsvp .rsvp-para{margin:22px auto 8px}
+#rsvp .rsvp-para-lbl{font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.28em;color:var(--rv-olive-cl)}
+#rsvp .rsvp-para-name{font-family:'Cormorant Garamond',serif !important;font-style:normal;font-weight:700;font-size:32px;line-height:1.2;
+  margin-top:6px;color:var(--rv-ink);background:none;-webkit-text-fill-color:currentColor;animation:none}
+
+/* ── Recuadro de pases ── */
+#rsvp .rsvp-pases-display{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  margin:14px auto 22px;padding:14px 30px;border-radius:4px;
+  background:var(--rv-paper);border:1px solid var(--rv-hair);box-shadow:inset 0 0 0 4px var(--rv-paper),inset 0 0 0 5px rgba(212,175,55,.35)}
+#rsvp .rsvp-pases-label{font-family:'Cinzel',serif;font-weight:600;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--rv-olive-cl);opacity:1;text-align:center}
+#rsvp .rsvp-pases-num{font-family:'Cinzel',serif !important;font-style:normal;font-weight:600;font-size:52px;line-height:1.05;color:var(--rv-olive)}
+
+/* ── Sí / No en 2 columnas ── */
+#rsvp .rsvp-toggle{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 auto 18px}
+#rsvp .rsvp-toggle-btn{min-height:54px;padding:10px 8px;border-radius:14px;border:1.5px solid var(--rv-hair);background:var(--rv-surface);
+  font-family:'Cormorant Garamond',serif;font-style:normal;font-weight:700;font-size:18px;line-height:1.25;color:var(--rv-ink);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background .25s,border-color .25s,color .25s,box-shadow .25s}
+#rsvp .rsvp-toggle-btn:hover:not(:disabled){border-color:var(--rv-gold)}
+#rsvp .rsvp-toggle-btn.sel-yes,
+#rsvp .rsvp-toggle-btn.sel-no{background:var(--rv-olive);border-color:var(--rv-olive);color:var(--rv-surface);
+  box-shadow:inset 0 0 0 1px rgba(246,231,166,.45),0 6px 16px rgba(79,99,52,.25)}
+#rsvp .rsvp-toggle-btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* ── Contador de pases (solo cuando hay >1 pase) ── */
+#rsvp .rsvp-contador-wrap{margin:6px auto 16px;max-width:320px;padding:16px 14px 14px;border-radius:14px;
+  background:var(--rv-paper);border:1px solid var(--rv-hair)}
+#rsvp .rsvp-contador-nota{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;line-height:1.5;color:var(--rv-ink-soft);margin-bottom:12px}
+#rsvp .rsvp-contador{display:flex;align-items:center;justify-content:center;gap:22px}
+#rsvp .rsvp-contador-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--rv-gold);background:var(--rv-surface);color:var(--rv-olive);
+  font-family:'Cinzel',serif;font-size:24px;line-height:1;touch-action:manipulation;box-shadow:0 3px 10px rgba(79,99,52,.12)}
+#rsvp .rsvp-contador-btn:disabled{opacity:.35;cursor:default;box-shadow:none}
+#rsvp .rsvp-contador-valor{font-family:'Cinzel',serif !important;font-weight:600;font-size:38px;color:var(--rv-olive);min-width:44px}
+#rsvp .rsvp-contador-pie{margin-top:8px;font-family:'Cinzel',serif;font-style:normal;font-weight:600;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--rv-olive-cl)}
+
+/* ── Nombres ── */
+#rsvp .rsvp-names-lbl{margin:6px 0 10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--rv-ink-soft)}
+#rsvp .rsvp-fields{gap:10px;margin:0 auto 4px}
+#rsvp .rsvp-input{width:100%;min-height:52px;padding:12px 16px;border-radius:12px;border:1.5px solid rgba(79,99,52,.35);background:#fff;
+  font-family:'Cormorant Garamond',serif !important;font-weight:600 !important;font-size:18px !important;color:var(--rv-ink) !important;
+  outline:none;text-align:left;transition:border-color .2s,box-shadow .2s}
+#rsvp .rsvp-input::placeholder{color:#6E7066;opacity:1}
+#rsvp .rsvp-input:focus{border-color:var(--rv-olive);box-shadow:0 0 0 3px rgba(124,150,84,.2)}
+#rsvp .rsvp-input:disabled{background:var(--rv-paper);opacity:.7}
+#rsvp .rsvp-input.rsvp-input-falta{border-color:var(--rv-err) !important;box-shadow:0 0 0 3px rgba(163,49,31,.16) !important}
+
+/* ── Botón confirmar (píldora que respira) ── */
+#rsvp .rsvp-btn{width:100%;margin:18px auto 0;min-height:56px;padding:16px 22px;border-radius:999px;border:0;
+  background:linear-gradient(135deg,var(--rv-olive-cl) 0%,var(--rv-olive) 55%,#3F5029 100%);color:var(--rv-surface);
+  font-family:'Cinzel',serif;font-weight:700;font-size:14px;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:inset 0 0 0 1px rgba(246,231,166,.5),0 8px 22px rgba(79,99,52,.28);touch-action:manipulation}
+#rsvp .rsvp-btn.breathe{animation:paRvBreathe 3.2s ease-in-out infinite}
+@keyframes paRvBreathe{
+  0%,100%{transform:scale(1);box-shadow:inset 0 0 0 1px rgba(246,231,166,.5),0 0 0 0 rgba(212,175,55,.38),0 8px 22px rgba(79,99,52,.28)}
+  50%    {transform:scale(1.015);box-shadow:inset 0 0 0 1px rgba(246,231,166,.5),0 0 0 12px rgba(212,175,55,0),0 8px 22px rgba(79,99,52,.28)}
+}
+#rsvp .rsvp-btn:disabled{opacity:.5;cursor:not-allowed;animation:none}
+
+/* ── Gracias (la bandeja se cierra y aparece esta tarjeta) ── */
+#rsvp .rsvp-gracias{max-width:400px;margin:8px auto 0;padding:28px 22px;border-radius:16px;
+  background:var(--rv-paper);border:1.5px solid var(--rv-hair);box-shadow:inset 0 0 0 5px var(--rv-paper),inset 0 0 0 6px rgba(212,175,55,.3)}
+#rsvp .rsvp-gracias-icon{color:var(--rv-olive-cl);margin:0 auto 10px}
+#rsvp .rsvp-gracias-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;line-height:1.3;color:var(--rv-ink);margin-bottom:8px}
+#rsvp .rsvp-gracias-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;line-height:1.6;color:var(--rv-ink-soft);opacity:1;margin-bottom:18px}
+#rsvp .rsvp-editar-btn{min-height:46px;padding:10px 22px;border-radius:999px;border:1.5px solid var(--rv-gold);background:transparent;
+  font-family:'Cinzel',serif;font-style:normal;font-weight:600;font-size:13px;letter-spacing:.1em;color:var(--rv-olive);cursor:pointer;touch-action:manipulation}
+#rsvp .rsvp-editar-btn:hover:not(:disabled){background:rgba(212,175,55,.12)}
+#rsvp .rsvp-editar-btn:disabled{opacity:.45;cursor:not-allowed}
+/* "Este es tu pase" dentro de gracias */
+#rsvp .rsvp-pase{border-radius:12px;border:1px solid rgba(212,175,55,.55);background:linear-gradient(160deg,var(--rv-beige),var(--rv-surface))}
+#rsvp .rsvp-pase::before,#rsvp .rsvp-pase::after{background:var(--rv-paper);border-color:rgba(212,175,55,.45)}
+#rsvp .rsvp-pase-lbl,#rsvp .rsvp-pase-sub{font-family:'Cinzel',serif;color:var(--rv-olive);opacity:1}
+#rsvp .rsvp-pase-ttl{color:var(--rv-olive)}
+
+/* ── Mensajes / fecha límite ── */
+#rsvp .rsvp-feed{margin-top:14px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px !important;line-height:1.5}
+#rsvp .rsvp-deadline{font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--rv-olive)}
+
+@media (max-width:360px){
+  #rsvp .rsvp-toggle-btn{font-size:16.5px}
+  #rsvp .rsvp-para-name{font-size:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  #rsvp .rsvp-btn.breathe{animation:none !important}
+  #rsvp .rsvp-toggle-btn,#rsvp .rsvp-input{transition:none}
+}
+
+/* ===== TINTA OLIVO/ORO (estilo Lekshmy) ===== */
+#story,#family,#location,#itinerary,#dresscode,#gifts,#album,#rsvp{isolation:isolate;overflow:hidden}
+.ink-bg{position:absolute;inset:-10%;z-index:-2;pointer-events:none;overflow:hidden;opacity:.45;
+  -webkit-mask:linear-gradient(transparent 0,#000 150px,#000 calc(100% - 150px),transparent);
+          mask:linear-gradient(transparent 0,#000 150px,#000 calc(100% - 150px),transparent)}
+.ink-bg i{position:absolute;inset:0;background:center/cover no-repeat;animation:inkA 22s ease-in-out infinite alternate}
+.ink-flip{transform:scaleX(-1)}
+.ink-v2 i{animation-name:inkB;animation-delay:-6s}
+.ink-v3 i{animation-direction:alternate-reverse;animation-delay:-11s}
+.ink-v4 i{animation-name:inkB;animation-direction:alternate-reverse;animation-delay:-16s}
+@keyframes inkA{from{transform:translate(-4%,-2%) scale(1.02) rotate(-1.2deg)}to{transform:translate(4%,3%) scale(1.16) rotate(1.2deg)}}
+@keyframes inkB{from{transform:translate(3%,4%) scale(1.04) rotate(1.2deg)}to{transform:translate(-4%,-3%) scale(1.16) rotate(-1.2deg)}}
+#gifts .ink-bg i{background-size:100% 100%}
+#story .lbl,#family .lbl,#location .lbl,#itinerary .lbl,#dresscode .lbl,#gifts .lbl,#album .lbl,#rsvp .lbl,
+.story-photo figcaption,.loc-city-sub,.alb-sub,.alb-hint,.pa-dc-note,.pa-dc-msg{text-shadow:0 0 12px rgba(248,246,227,.95),0 0 3px rgba(248,246,227,.9)}
+@media (prefers-reduced-motion:reduce){.ink-bg i{animation:none;transform:scale(1.06)}}
+
+/* números legibles (en Cinzel el 1 parece I) */
+.pa-hs-mk-in,.pa-hs-badge span,.pa-hs-sh-num span,.pa-hs-num,.pa-hs-badge,.pa-hs-sh-num,.pa-hs-mk-h,.pa-hs-mk-h span,.pa-hs-hint i,.pa-hs-mk-n{font-family:'Playfair Display',serif !important;font-weight:700 !important;letter-spacing:0 !important}
+#hero{padding:44px 24px 120px !important}
+.h-name{font-size:clamp(58px,17vw,78px) !important}
+.h-para{margin-top:22px}
 </style>
 </head>
 <body>
@@ -2459,27 +3044,42 @@ section{position:relative}
 <audio id="bgMusic" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-ciro-y-osmara/cancion.mp3" loop preload="none"></audio>
 
 <!-- Botón flotante de música · disco de vinilo -->
-<button id="musicBtn" class="music-btn" aria-label="Música de fondo">
-  <span class="vinyl-wrap" aria-hidden="true">
-    <span class="vinyl">
-      <span class="vinyl-label"><span class="vl-a">P&amp;A</span><span class="vl-b">2027</span></span>
-    </span>
-    <svg class="vinyl-arm" viewBox="0 0 34 44" fill="none">
-      <circle cx="30" cy="5" r="4.4" fill="#C9A227" stroke="#8A6D12" stroke-width="1"/>
-      <circle cx="30" cy="5" r="1.5" fill="#8A6F1E"/>
-      <path d="M30 6.5 L14 33" stroke="#C9A227" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M30 6.5 L14 33" stroke="#E6D58E" stroke-width=".9" stroke-linecap="round" opacity=".7"/>
-      <path d="M15.6 30.5 L9.5 38.5 L13.6 41.2 L19 33.4 Z" fill="#C9A227" stroke="#8A6D12" stroke-width=".9" stroke-linejoin="round"/>
-    </svg>
+<button id="musicBtn" class="pa-vinyl-btn" type="button" aria-label="Reproducir música">
+  <span class="vinyl-tonearm" aria-hidden="true">
+    <span class="vinyl-tonearm-pivot"></span>
+    <span class="vinyl-tonearm-line"></span>
+    <span class="vinyl-tonearm-head"></span>
+  </span>
+  <span class="vinyl-spin" aria-hidden="true">
+    <span class="vinyl-disc"><span class="vinyl-sheen"></span></span>
   </span>
 </button>
+<script>/* ═════════ BOTÓN DE MÚSICA · vinilo — solo apariencia/accesibilidad ═════════
+   NO reemplaza la lógica de audio del destino (IIFE "MÚSICA AMBIENTAL" + "ELYSIUM AUDIO v2").
+   Ese código pone/quita .on en #musicBtn; aquí solo:
+     1) mantenemos el aria-label en sincronía con .on ("Pausar música" / "Reproducir música");
+     2) exponemos paShowMusicBtn() para mostrarlo con fundido al abrir el sobre.
+   Pegar en un <script> DESPUÉS del <button id="musicBtn">. */
+(function(){
+  var btn = document.getElementById('musicBtn');
+  if(!btn || btn.__paVinyl) return; btn.__paVinyl = true;
+  function sync(){
+    btn.setAttribute('aria-label', btn.classList.contains('on') ? 'Pausar música' : 'Reproducir música');
+  }
+  sync();
+  if('MutationObserver' in window){
+    new MutationObserver(sync).observe(btn, { attributes:true, attributeFilter:['class'] });
+  }
+  window.paShowMusicBtn = function(){ btn.classList.add('visible'); };
+})();
+</script>
 
 <div id="petals" aria-hidden="true"></div>
 
 <!-- ═══════════════ SOBRE DE APERTURA ═══════════════ -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.jpg" alt="Sobre de la invitación de Paulette y Alberto">
-  <video id="envVideo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-ciro-y-osmara/sobre-apertura.mp4" muted playsinline preload="auto" poster="sobre.jpg"></video>
+  <img id="envImage" src="sobre.webp" alt="Sobre de la invitación de Paulette y Alberto">
+  <video id="envVideo" src="sobre-apertura.mp4" muted playsinline preload="auto" poster="sobre.webp"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
 
@@ -2491,51 +3091,42 @@ section{position:relative}
 <div id="toast"></div>
 
 
-<!-- ═══════════════ MENÚ DE SECCIONES ═══════════════ -->
-<nav class="pill-nav" id="pillNav" aria-label="Secciones de la invitación">
-  <a href="#hero" class="pn-mono" aria-label="Inicio">P<span>&amp;</span>A</a>
-  <div class="pn-links" id="pnLinks">
-    <span class="pn-ind" id="pnInd" aria-hidden="true"></span>
-    <a href="#story" data-sec="story">Nosotros</a>
-    <a href="#location" data-sec="location">Lugares</a>
-    <a href="#itinerary" data-sec="itinerary">Itinerario</a>
-    <a href="#dresscode" data-sec="dresscode">Vestimenta</a>
-    <a href="#hospedaje" data-sec="hospedaje">Hospedaje</a>
-    <a href="#gifts" data-sec="gifts">Regalos</a>
-    <a href="#rsvp" data-sec="rsvp">Confirmar</a>
-  </div>
-  <span class="pn-sep" aria-hidden="true"></span>
-  <button class="pn-share" id="pnShare" type="button" aria-label="Compartir invitación">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-  </button>
-  <button class="pn-menu" id="pnMenu" type="button" aria-expanded="false" aria-controls="fsMenu">&#9776; Menú</button>
-</nav>
-
-<div class="fs-menu" id="fsMenu" aria-hidden="true">
-  <div class="fs-top">
-    <span class="pn-mono fs-mono">P<span>&amp;</span>A</span>
-    <button class="fs-close" id="fsClose" type="button" aria-label="Cerrar menú">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-  </div>
-  <ol class="fs-list" id="fsList"></ol>
-  <p class="fs-foot">13 · Marzo · 2027 &nbsp;·&nbsp; Tequisquiapan, Querétaro</p>
+<!-- ═══════════════ MENÚ (un solo botón) ═══════════════ -->
+<button class="mn-btn" id="mnBtn" type="button" aria-expanded="false" aria-controls="mnPanel">
+  <span class="mn-ic" aria-hidden="true"><i></i><i></i><i></i></span><span class="mn-tx">Menú</span>
+</button>
+<div class="mn-panel" id="mnPanel" role="dialog" aria-modal="true" aria-label="Secciones de la invitación" aria-hidden="true">
+  <button class="mn-x" id="mnX" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <span class="mn-rule" aria-hidden="true"></span>
+  <ol class="mn-list" id="mnList">
+    <li><a href="#story">Nuestra historia</a></li>
+    <li><a href="#location">La celebración</a></li>
+    <li><a href="#itinerary">Itinerario</a></li>
+    <li><a href="#family">Familias</a></li>
+    <li><a href="#dresscode">Vestimenta</a></li>
+    <li><a href="#hospedaje">Hospedaje</a></li>
+    <li><a href="#gifts">Mesa de regalos</a></li>
+    <li><a href="#album">Álbum</a></li>
+    <li><a href="#rsvp">Confirmar asistencia</a></li>
+  </ol>
+  <span class="mn-rule" aria-hidden="true"></span>
 </div>
 
 
 <!-- ═══════════════ 1. HERO ════════════════════════════ -->
 <section id="hero">
   <div class="h-bg" id="heroBg">
-    <img src="botanica2.webp" alt="" loading="eager" id="heroPic">
+    <i class="hero-drift" id="heroPic" style="background-image:url('botanica2.webp')"></i>
   </div>
   <div class="h-ov"></div>
+  <div class="hero-fx" aria-hidden="true">
+    <span class="hf-glow g1"></span><span class="hf-glow g2"></span><span class="hf-glow g3"></span><span class="hf-glow g4"></span>
+    <span class="hf-sweep"></span>
+    <div class="hf-dust" id="hfDust"></div>
+    <span class="hf-vig"></span>
+  </div>
   <div class="h-frame"></div>
 
-  <div class="h-rings" aria-hidden="true">
-    <div class="h-ring h-ring-1"></div>
-    <div class="h-ring h-ring-2"></div>
-    <div class="h-ring h-ring-3"></div>
-  </div>
 
   <div class="h-particles" id="hPart"></div>
 
@@ -2548,13 +3139,13 @@ section{position:relative}
 
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind" id="hN1">Paulette</span></div>
+      <div class="h-clip"><span class="h-name h-name-wind foil-text" id="hN1">Paulette</span></div>
       <span class="h-name-wind-line"></span>
     </div>
-    <div class="h-amp-clip"><span class="h-amp foil" id="hAmp">&amp;</span></div>
+    <div class="h-amp-clip"><span class="h-amp foil-text foil-gold" id="hAmp">&amp;</span></div>
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind" id="hN2">Alberto</span></div>
+      <div class="h-clip"><span class="h-name h-name-wind foil-text" id="hN2">Alberto</span></div>
       <span class="h-name-wind-line"></span>
     </div>
 
@@ -2580,8 +3171,9 @@ section{position:relative}
 
 <!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
+  <div class="ink-bg ink-v1" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">Paulette &amp; Alberto</span>
-  <h2 class="ttl">Nuestra <span class="ttl-script">historia</span></h2>
+  <h2 class="ttl foil-text">Nuestra <span class="ttl-script">historia</span></h2>
   <div class="gline"></div>
 
   <figure class="story-photo" id="storyPhoto">
@@ -2606,7 +3198,7 @@ section{position:relative}
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
   <span class="lbl">El gran día llega en</span>
-  <h2 class="ttl">Cuenta <span class="ttl-script">regresiva</span></h2>
+  <h2 class="ttl foil-text">Cuenta <span class="ttl-script">regresiva</span></h2>
   <div class="gline"></div>
 
   <div class="cd-ring-grid">
@@ -2664,8 +3256,9 @@ section{position:relative}
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
+  <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
-  <h2 class="ttl">La <span class="ttl-script">celebración</span></h2>
+  <h2 class="ttl foil-text">La <span class="ttl-script">celebración</span></h2>
   <div class="gline"></div>
   <p class="loc-city-sub">Tequisquiapan · Querétaro</p>
 
@@ -2712,7 +3305,7 @@ section{position:relative}
 <!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
   <span class="lbl">No lo olvides</span>
-  <h2 class="ttl">Reserva la <span class="ttl-script">fecha</span></h2>
+  <h2 class="ttl foil-text">Reserva la <span class="ttl-script">fecha</span></h2>
   <div class="gline"></div>
 
   <div class="cal-card" id="calCard">
@@ -2738,8 +3331,9 @@ section{position:relative}
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
+  <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">El día de la boda</span>
-  <h2 class="ttl">Itinerario</h2>
+  <h2 class="ttl foil-text">Itinerario</h2>
   <div class="gline"></div>
   <div class="timeline" id="tlWrap">
     <svg class="tl-svg" id="tlSvg" preserveAspectRatio="none" aria-hidden="true">
@@ -2784,8 +3378,9 @@ section{position:relative}
 
 <!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
 <section id="family">
+  <div class="ink-bg ink-v2 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Con la bendición de Dios</span>
-  <h2 class="ttl">y de nuestras <span class="ttl-script">familias</span></h2>
+  <h2 class="ttl foil-text">y de nuestras <span class="ttl-script">familias</span></h2>
   <div class="gline"></div>
 
   <div class="fam-grid">
@@ -2812,205 +3407,182 @@ section{position:relative}
 
 
 <!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
-<!-- Copiado de boda-fabiola-y-fernando (#dresscode · botones "Ver ideas" + carrusel con marco) -->
-<section id="dresscode" aria-label="Código de vestimenta">
+<section id="dresscode" class="pa-dc" aria-label="Código de vestimenta">
+  <div class="ink-bg ink-v1 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">Código de vestimenta</span>
-  <h2 class="ttl">Formal</h2>
+  <h2 class="ttl foil-text">Formal</h2>
   <div class="gline"></div>
-  <p class="dc-note">Acompáñanos vestido para la ocasión</p>
+  <p class="pa-dc-note">Acompáñanos vestido para la ocasión</p>
 
-  <div class="dc-looks">
-    <button class="dc-look" type="button" data-look="caballeros" aria-label="Ver ideas de vestimenta para caballeros">
-      <span class="dc-look-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 3l4 3 4-3 3 2.2c1.2.9 1.9 2.3 1.9 3.8V21H3V9c0-1.5.7-2.9 1.9-3.8L8 3z"/>
-          <path d="M12 6v15"/><path d="M9.4 4.2L12 9l2.6-4.8"/>
-        </svg>
-      </span>
-      <span class="dc-look-txt">
-        <span class="dc-look-rol">Caballeros</span>
-        <span class="dc-look-cta">Ver ideas</span>
-      </span>
-      <span class="dc-look-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </span>
-    </button>
-    <button class="dc-look" type="button" data-look="damas" aria-label="Ver ideas de vestimenta para damas">
-      <span class="dc-look-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 3h6l-1.4 5.2L21 21H3l7.4-12.8L9 3z"/><path d="M10.6 8.2h2.8"/>
-        </svg>
-      </span>
-      <span class="dc-look-txt">
-        <span class="dc-look-rol">Damas</span>
-        <span class="dc-look-cta">Ver ideas</span>
-      </span>
-      <span class="dc-look-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </span>
-    </button>
+  <div class="pa-dc-figs">
+    <figure class="pa-dc-fig">
+      <img src="caballero.png" alt="Caballero con traje formal" width="300" height="610" decoding="async">
+      <figcaption>
+        <span class="pa-dc-fig-label">Caballeros</span>
+        <span class="pa-dc-fig-sub">Traje formal</span>
+      </figcaption>
+    </figure>
+    <figure class="pa-dc-fig">
+      <img src="dama.png" alt="Dama con vestido formal" width="248" height="604" decoding="async">
+      <figcaption>
+        <span class="pa-dc-fig-label">Damas</span>
+        <span class="pa-dc-fig-sub">Vestido formal</span>
+      </figcaption>
+    </figure>
   </div>
 
-  <div class="dc-viewer" id="dcViewer" role="dialog" aria-modal="true" aria-label="Ideas de vestimenta" hidden>
-    <div class="dcv-box">
-      <button class="dc-viewer-close" id="dcViewerClose" type="button" aria-label="Cerrar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-      <p class="dcv-head" id="dcvHead"></p>
-      <div class="dcv-viewport"><div class="dcv-track" id="dcvTrack"></div></div>
-      <button class="dcv-nav dcv-prev" id="dcvPrev" type="button" aria-label="Anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-      </button>
-      <button class="dcv-nav dcv-next" id="dcvNext" type="button" aria-label="Siguiente">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
-      <p class="dcv-cap" id="dcvCap"></p>
-      <div class="dcv-dots" id="dcvDots"></div>
-    </div>
+  <div class="pa-dc-block">
+    <p class="pa-dc-sub">Colores a evitar</p>
+    <ul class="pa-dc-sws" role="list">
+      <li class="pa-dc-sw" style="--c:#FFFFFF;--d:0s"><span class="pa-dc-dot" aria-hidden="true"><span class="pa-dc-fill"></span></span><span class="pa-dc-name">Blanco</span></li>
+      <li class="pa-dc-sw" style="--c:#F9F6E7;--d:-.9s"><span class="pa-dc-dot" aria-hidden="true"><span class="pa-dc-fill"></span></span><span class="pa-dc-name">Marfil</span></li>
+      <li class="pa-dc-sw" style="--c:#F5F3CD;--d:-1.8s"><span class="pa-dc-dot" aria-hidden="true"><span class="pa-dc-fill"></span></span><span class="pa-dc-name">Crema</span></li>
+      <li class="pa-dc-sw" style="--c:#FFFCB3;--d:-2.7s"><span class="pa-dc-dot" aria-hidden="true"><span class="pa-dc-fill"></span></span><span class="pa-dc-name">Amarillo claro</span></li>
+    </ul>
   </div>
 
-  <div class="dc-avoid-block">
-    <p class="dc-avoid">Por favor evita estos colores</p>
-    <div class="dc-swatches">
-      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#FFFFFF"></span><span class="dc-swatch-name">Blanco</span></span>
-      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#F9F6E7"></span><span class="dc-swatch-name">Marfil</span></span>
-      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#F5F3CD"></span><span class="dc-swatch-name">Crema</span></span>
-      <span class="dc-swatch"><span class="dc-swatch-dot" style="background:#FFFCB3"></span><span class="dc-swatch-name">Amarillo claro</span></span>
-    </div>
-    <p class="dc-avoid-msg">El blanco y sus tonos están reservados para la novia.</p>
+  <div class="pa-dc-block">
+    <p class="pa-dc-sub">Colores sugeridos</p>
+    <p class="pa-dc-free">A tu elección</p>
   </div>
+
+  <p class="pa-dc-msg"><span class="pa-dc-star" aria-hidden="true">&#10022;</span>El blanco y sus tonos están reservados para la novia. ¡Gracias por tu comprensión!</p>
 </section>
 
 
 <!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
-<section id="hospedaje">
+<section id="hospedaje" class="pa-hs">
   <span class="lbl">Para tu estancia</span>
-  <h2 class="ttl">Hospedaje <span class="ttl-script">sugerido</span></h2>
+  <h2 class="ttl foil-text">Hospedaje <span class="ttl-script">sugerido</span></h2>
   <div class="gline"></div>
-  <p class="hs-sub">Hoteles cerca de la iglesia y de la recepción</p>
+  <p class="pa-hs-sub">Quédate cerca de la iglesia y de la recepción</p>
 
-  <div class="hs-switch" role="tablist" aria-label="Ver hospedaje como lista o mapa">
-    <span class="hs-switch-ind" id="hsInd" aria-hidden="true"></span>
-    <button type="button" class="hs-tab on" id="hsTabList" role="tab" aria-selected="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
-      Lista
+  <!-- Selector Lista / Mapa (píldora con indicador deslizante) -->
+  <div class="pa-hs-toggle" id="paHsToggle" data-view="list" role="tablist" aria-label="Ver hospedaje como lista o mapa">
+    <span class="pa-hs-ind" aria-hidden="true"></span>
+    <button type="button" class="pa-hs-tab" role="tab" aria-selected="true" aria-controls="paHsFront" data-view="list">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg>Lista
     </button>
-    <button type="button" class="hs-tab" id="hsTabMap" role="tab" aria-selected="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
-      Mapa
+    <button type="button" class="pa-hs-tab" role="tab" aria-selected="false" aria-controls="paHsBack" data-view="map">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Mapa
     </button>
   </div>
 
-  <div class="hs-flip" id="hsFlip">
-    <div class="hs-face hs-front" id="hsList">
-      <article class="hs-card lev" data-h="0">
-        <span class="hs-num">01</span>
-        <span class="hs-type">Hotel boutique</span>
-        <h3 class="hs-name">Hotel Boutique La Granja</h3>
-        <p class="hs-addr">Calle Moctezuma, Centro · Tequisquiapan</p>
-        <p class="hs-dist"><b>10 min</b> · 4.4 km en auto a la recepción<br>A pasos de la iglesia</p>
-        <div class="hs-btns">
-          <a class="hs-btn" href="https://www.google.com/maps/search/?api=1&query=Hotel+Boutique+La+Granja+Tequisquiapan" target="_blank" rel="noopener">Ver en Maps</a>
-          <a class="hs-btn hs-btn-fill" href="http://hotelboutiquelagranja.com/" target="_blank" rel="noopener">Sitio web</a>
-        </div>
-      </article>
-      <article class="hs-card lev" data-h="1">
-        <span class="hs-num">02</span>
-        <span class="hs-type">Hotel</span>
-        <h3 class="hs-name">Hotel Río Tequisquiapan</h3>
-        <p class="hs-addr">Centro · Tequisquiapan</p>
-        <p class="hs-dist"><b>10 min</b> · 5.9 km en auto a la recepción<br>2 min en auto a la iglesia</p>
-        <div class="hs-btns">
-          <a class="hs-btn" href="https://maps.app.goo.gl/Z5aryYnSBUfc3JVP9" target="_blank" rel="noopener">Ver en Maps</a>
-          <a class="hs-btn hs-btn-fill" href="https://www.hotelesriotequisquiapan.com/es/index.html" target="_blank" rel="noopener">Sitio web</a>
-        </div>
-      </article>
-      <article class="hs-card lev" data-h="2">
-        <span class="hs-num">03</span>
-        <span class="hs-type">Hotel · BW Signature Collection</span>
-        <h3 class="hs-name">Hotel San Carlos Tequisquiapan</h3>
-        <p class="hs-addr">Centro · Tequisquiapan</p>
-        <p class="hs-dist"><b>9 min</b> · 4.1 km en auto a la recepción<br>1 min en auto a la iglesia</p>
-        <div class="hs-btns">
-          <a class="hs-btn" href="https://maps.app.goo.gl/QooeZH6SfHRnT7dz8" target="_blank" rel="noopener">Ver en Maps</a>
-          <a class="hs-btn hs-btn-fill" href="https://www.bestwestern.com/es-es/book/hotel/tequisquiapan/hecthorny-san-carlos-tequisquiapan-bw-signature-collection/70360" target="_blank" rel="noopener">Sitio web</a>
-        </div>
-      </article>
-      <article class="hs-card lev" data-h="3">
-        <span class="hs-num">04</span>
-        <span class="hs-type">Casa de huéspedes</span>
-        <h3 class="hs-name">La Casa Roja</h3>
-        <p class="hs-addr">Tequisquiapan, Querétaro</p>
-        <p class="hs-dist"><b>5 min</b> · 2.8 km en auto a la recepción<br>4 min en auto a la iglesia</p>
-        <div class="hs-btns">
-          <a class="hs-btn" href="https://maps.app.goo.gl/TJXwWEgBduShVJvu8" target="_blank" rel="noopener">Ver en Maps</a>
-          <a class="hs-btn hs-btn-fill" href="https://direct-book.com/properties/lacasarojadirect?locale=es&amp;currency=MXN" target="_blank" rel="noopener">Sitio web</a>
-        </div>
-      </article>
-    </div>
+  <div class="pa-hs-flip">
+    <div class="pa-hs-card" id="paHsCard">
 
-    <div class="hs-face hs-back" id="hsMapFace" aria-hidden="true">
-      <div class="hs-map" id="hsMap"></div>
-      <p class="hs-map-hint">Toca un número para ver el hotel</p>
-      <div class="hs-chips" id="hsChips"></div>
+      <!-- CARA A · LISTA (la llena hospedaje.js) -->
+      <div class="pa-hs-face pa-hs-front" id="paHsFront" role="tabpanel">
+        <div class="pa-hs-list" id="paHsList"></div>
+      </div>
+
+      <!-- CARA B · MAPA -->
+      <div class="pa-hs-face pa-hs-back pa-hs-off" id="paHsBack" role="tabpanel">
+        <div class="pa-hs-frame">
+          <div class="pa-hs-frame-in">
+            <div class="pa-hs-map" id="paHsMap" aria-label="Mapa de hoteles, iglesia y recepción"></div>
+            <div class="pa-hs-loading" id="paHsLoading">Cargando mapa…</div>
+            <div class="pa-hs-vig" aria-hidden="true"></div>
+            <div class="pa-hs-ctrls">
+              <button type="button" class="pa-hs-ctrl" data-z="in" aria-label="Acercar"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+              <button type="button" class="pa-hs-ctrl" data-z="out" aria-label="Alejar"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+              <button type="button" class="pa-hs-ctrl" data-z="all" aria-label="Ver todo"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+            </div>
+            <div class="pa-hs-hint" id="paHsHint"><i>1</i>Toca un número para ver el hotel</div>
+            <div class="pa-hs-2f" id="paHs2f">Usa dos dedos para mover el mapa</div>
+            <div class="pa-hs-sheet" id="paHsSheet" aria-live="polite">
+              <button type="button" class="pa-hs-sh-x" id="paHsShX" aria-label="Cerrar"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+              <div class="pa-hs-sh-top">
+                <div class="pa-hs-sh-num"><span id="paHsShNum">1</span></div>
+                <div><span class="pa-hs-sh-type" id="paHsShType"></span><span class="pa-hs-sh-name" id="paHsShName"></span></div>
+              </div>
+              <p class="pa-hs-sh-addr" id="paHsShAddr"></p>
+              <span class="pa-hs-sh-dist" id="paHsShDist"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span></span></span>
+              <div class="pa-hs-sh-btns">
+                <a class="pa-hs-btn pa-hs-btn--sec" id="paHsShMap" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ver ubicación</a>
+                <a class="pa-hs-btn pa-hs-btn--pri" id="paHsShBook" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>Reservar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
-<section id="gifts">
-  <div class="env-rain" id="envRain" aria-hidden="true"></div>
-  <div class="env-stage">
+<section id="gifts" class="pa-gf">
+  <div class="ink-bg ink-v2" aria-hidden="true"><i style="background-image:url(ink/ink-oval.webp)"></i></div>
+  <div class="pa-gf-rain" id="paGfRain" aria-hidden="true"></div>
+
+  <div class="pa-gf-stage">
     <span class="lbl">Con cariño</span>
-    <h2 class="ttl">Mesa de <span class="ttl-script">regalos</span></h2>
+    <h2 class="ttl foil-text">Mesa de <span class="ttl-script">regalos</span></h2>
     <div class="gline"></div>
 
-    <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
-      <div class="env-body" id="envGiftBody">
-        <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stop-color="#FAF8E6"/><stop offset="100%" stop-color="#EEEAC4"/>
-            </linearGradient>
-          </defs>
-          <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(79,99,52,.45)" stroke-width="1.4"/>
-          <path d="M18 184 L130 110 L242 184" stroke="rgba(79,99,52,.28)" stroke-width="1" fill="none"/>
-        </svg>
-        <div class="env-flap-wrap" aria-hidden="true">
-          <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+    <div class="pa-env-wrap" id="paEnvWrap">
+      <button class="pa-env" id="paEnv" type="button" aria-expanded="false" aria-controls="paEnvMsg"
+              aria-label="Sobre de regalos: toca para abrir">
+        <span class="pa-env-body" id="paEnvBody">
+          <svg class="pa-env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#EEEAC4"/><stop offset="100%" stop-color="#FBFAEC"/>
+              <linearGradient id="paEnvPaper" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#F2EFC9"/><stop offset="100%" stop-color="#FBFAEC"/>
+              </linearGradient>
+              <linearGradient id="paEnvGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8A6D12"/><stop offset="30%" stop-color="#D4AF37"/>
+                <stop offset="50%" stop-color="#F6E7A6"/><stop offset="72%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#8A6D12"/>
               </linearGradient>
             </defs>
-            <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(79,99,52,.45)" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#paEnvPaper)" stroke="url(#paEnvGold)" stroke-width="1.6"/>
+            <rect x="24" y="58" width="212" height="120" rx="5" fill="none" stroke="rgba(212,175,55,.35)" stroke-width=".8"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(138,109,18,.42)" stroke-width="1.1" fill="none"/>
           </svg>
-        </div>
-        <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
-          <defs>
-            <radialGradient id="sealG" cx="38%" cy="32%" r="75%">
-              <stop offset="0%" stop-color="#F4E3A1"/><stop offset="45%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#8A6D12"/>
-            </radialGradient>
-          </defs>
-          <circle cx="30" cy="30" r="28" fill="url(#sealG)"/>
-          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#FBF6D8" stroke-width="1.1" opacity=".8"/>
-          <text x="30" y="38" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#3A4A26">P&amp;A</text>
-        </svg>
-      </div>
-      <div class="env-open-content" aria-live="polite">
-        <p class="env-title">Tu presencia es nuestro regalo</p>
-        <p class="env-desc">Si deseas tener un detalle con nosotros, preparamos una mesa de regalos en Amazon.</p>
-        <span class="env-div" aria-hidden="true">&#10022;</span>
-        <p class="env-desc">Toca el botón de abajo para verla.</p>
-      </div>
-    </button>
-    <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+          <span class="pa-env-flap" aria-hidden="true">
+            <svg viewBox="0 0 224 86" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="paEnvFlap" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#EEEAC4"/><stop offset="100%" stop-color="#FBFAEC"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#paEnvFlap)" stroke="url(#paEnvGold)" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M10 3 L112 80 L214 3" fill="none" stroke="rgba(212,175,55,.4)" stroke-width=".8"/>
+            </svg>
+          </span>
+          <svg class="pa-env-seal" viewBox="0 0 60 60" aria-hidden="true">
+            <defs>
+              <radialGradient id="paSealWax" cx="38%" cy="32%" r="75%">
+                <stop offset="0%" stop-color="#7C9654"/><stop offset="55%" stop-color="#4F6334"/><stop offset="100%" stop-color="#2E3B1E"/>
+              </radialGradient>
+              <linearGradient id="paSealFoil" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F6E7A6"/><stop offset="45%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#A8842A"/>
+              </linearGradient>
+            </defs>
+            <circle cx="30" cy="30" r="28" fill="url(#paSealWax)"/>
+            <circle cx="30" cy="30" r="27.2" fill="none" stroke="url(#paSealFoil)" stroke-width="1.6"/>
+            <circle cx="30" cy="30" r="21.5" fill="none" stroke="url(#paSealFoil)" stroke-width=".9" opacity=".85"/>
+            <text x="30" y="35.6" text-anchor="middle" font-family="'Cinzel', serif" font-weight="600" font-size="15" letter-spacing=".5" fill="url(#paSealFoil)">P&amp;A</text>
+          </svg>
+        </span>
+      </button>
 
-    <a class="gf-card gf-amazon sheen" href="https://www.amazon.com.mx/wedding/guest-view/2AM7TIE8ZVVSX" target="_blank" rel="noopener">
+      <button class="pa-env-hint" id="paEnvHint" type="button" aria-controls="paEnvMsg">Toca para abrir</button>
+
+      <div class="pa-env-msg" id="paEnvMsg" aria-live="polite">
+        <p class="pa-env-title">Tu presencia es nuestro regalo</p>
+        <span class="pa-env-div" aria-hidden="true">&#10022;</span>
+        <p class="pa-env-desc">Si deseas tener un detalle con nosotros, preparamos una mesa de regalos en Amazon.</p>
+      </div>
+    </div>
+
+    <!-- Tarjeta Amazon: misma marca de clases que ya estiliza el destino (.gf-card .gf-amazon .sheen) -->
+    <a class="gf-card gf-amazon sheen pa-gf-amz" href="https://www.amazon.com.mx/wedding/guest-view/2AM7TIE8ZVVSX" target="_blank" rel="noopener">
       <div class="gf-card-top">
         <div class="gf-logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
         </div>
         <p class="gf-ttl">Mesa de regalos Amazon</p>
       </div>
@@ -3022,8 +3594,9 @@ section{position:relative}
 
 <!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
+  <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Comparte tus momentos</span>
-  <h2 class="ttl">Álbum de <span class="ttl-script">fotos</span></h2>
+  <h2 class="ttl foil-text">Álbum de <span class="ttl-script">fotos</span></h2>
   <div class="gline"></div>
   <p class="alb-sub">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
 
@@ -3054,8 +3627,9 @@ section{position:relative}
 
 <!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
+  <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-footer.webp)"></i></div>
   <span class="lbl">Confirmación de asistencia</span>
-  <h2 class="ttl">¿Nos <span class="ttl-script">acompañas?</span></h2>
+  <h2 class="ttl foil-text">¿Nos <span class="ttl-script">acompañas?</span></h2>
   <div class="gline"></div>
 
   <div class="rsvp-notice">
@@ -3170,7 +3744,7 @@ section{position:relative}
 <!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
   <div class="ft-orn">✦ · ✦ · ✦</div>
-  <div class="ft-nms">Paulette &amp; Alberto</div>
+  <div class="ft-nms foil-text">Paulette &amp; Alberto</div>
   <div class="gline" style="margin-top:22px"></div>
   <p class="ft-dt">13 · Marzo · 2027</p>
   <p class="ft-note">Tequisquiapan · Querétaro<br>Con amor, los novios</p>
@@ -3256,16 +3830,19 @@ function bootInvitation(){
         addWindOrns();
         addAuras();
         heroAnim();
-        spawnParticles();
         scrollAnims();
         countdown();
         setInterval(countdown, 1000);
         ambientWind();
-        initPillNav();
+        initMenu();
+        initSectionFades();
+        initHeroDust();
+        initAutoScroll();
         initHospedaje();
         initVida();
         failsafeVisibles();
-        initEnvelopeRain();
+        initGiftsPA();
+        setTimeout(function(){ if(window.paShowMusicBtn) paShowMusicBtn(); }, 700);
         initPetals();
       }
     }
@@ -3296,11 +3873,6 @@ function heroAnim() {
     .to('#hDate',  { opacity: 1, duration: .7  }, 1.28)
     .to('#hScroll',{ opacity: 1, duration: .5  }, 1.7);
 
-  // Hero parallax
-  gsap.to('#heroBg', {
-    yPercent: 7, ease: 'none',
-    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true }
-  });
 }
 
 /* ── PARTÍCULAS CON FÍSICA — CAEN · REBOTAN BAJO · SE DESVANECEN ── */
@@ -4415,145 +4987,405 @@ function confetti(){
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 
-/* ── MENÚ DE SECCIONES ── */
-function initPillNav(){
-  var nav = document.getElementById('pillNav'), fs = document.getElementById('fsMenu'),
-      list = document.getElementById('fsList'), btn = document.getElementById('pnMenu'),
-      cls = document.getElementById('fsClose'), ind = document.getElementById('pnInd');
-  if(!nav) return;
-  var links = [].slice.call(nav.querySelectorAll('.pn-links a'));
-  links.forEach(function(a,i){
-    var li = document.createElement('li');
-    li.style.transitionDelay = (0.12 + i*0.07) + 's';
-    li.innerHTML = '<a href="' + a.getAttribute('href') + '" data-sec="' + a.dataset.sec + '"><i>' + String(i+1).padStart(2,'0') + '</i>' + a.textContent + '</a>';
-    list.appendChild(li);
+/* ── 12 · MENÚ: un solo botón ── */
+function initMenu(){
+  var btn = document.getElementById('mnBtn'), pan = document.getElementById('mnPanel'), x = document.getElementById('mnX');
+  if(!btn || !pan) return;
+  [].forEach.call(pan.querySelectorAll('.mn-list li'), function(li,i){ li.style.transitionDelay = (.08 + i*.05) + 's'; });
+  setTimeout(function(){ btn.classList.add('show'); }, 900);
+  function open(){ pan.classList.add('open'); pan.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; x.focus(); }
+  function close(){ pan.classList.remove('open'); pan.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click', open);
+  x.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && pan.classList.contains('open')) close(); });
+  [].forEach.call(pan.querySelectorAll('a'), function(a){
+    a.addEventListener('click', function(e){
+      var t = document.getElementById(a.getAttribute('href').slice(1));
+      if(!t) return; e.preventDefault(); close();
+      setTimeout(function(){ t.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block:'start' }); }, 120);
+    });
   });
-  var fsLinks = [].slice.call(list.querySelectorAll('a'));
-  setTimeout(function(){ nav.classList.add('show'); }, 900);
-
-  function openMenu(){ fs.classList.add('open'); fs.setAttribute('aria-hidden','false'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeMenu(){ fs.classList.remove('open'); fs.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  btn.addEventListener('click', openMenu);
-  cls.addEventListener('click', closeMenu);
-  function go(e){
-    var id = this.getAttribute('href').slice(1), t = document.getElementById(id);
-    if(!t) return; e.preventDefault(); closeMenu();
-    setTimeout(function(){ t.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'start'}); }, fs.classList.contains('open') ? 0 : 280);
-  }
-  links.concat(fsLinks).forEach(function(a){ a.addEventListener('click', go); });
-  nav.querySelector('.pn-mono').addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
-
-  document.getElementById('pnShare').addEventListener('click', function(){
-    var data = { title:'Paulette & Alberto · 13 de marzo de 2027', text:'Nos casamos en Tequisquiapan, Querétaro.', url: location.origin + location.pathname };
-    if(navigator.share){ navigator.share(data).catch(function(){}); }
-    else if(navigator.clipboard){ navigator.clipboard.writeText(data.url).then(function(){ if(typeof toast==='function') toast('Enlace copiado'); }); }
-  });
-
-  function mark(id){
-    links.concat(fsLinks).forEach(function(a){ a.classList.toggle('on', a.dataset.sec === id); });
-    var on = links.filter(function(a){ return a.dataset.sec === id; })[0];
-    if(on && ind){ ind.style.opacity = '1'; ind.style.width = on.offsetWidth + 'px'; ind.style.transform = 'translateX(' + on.offsetLeft + 'px)'; }
-    else if(ind){ ind.style.opacity = '0'; }
-  }
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(en){ if(en.isIntersecting) mark(en.target.id); });
-  }, { rootMargin:'-45% 0px -50% 0px' });
-  links.forEach(function(a){ var s = document.getElementById(a.dataset.sec); if(s) io.observe(s); });
-  var hero = document.getElementById('hero');
-  if(hero) new IntersectionObserver(function(es){ if(es[0].isIntersecting) mark(''); }, { rootMargin:'-45% 0px -50% 0px' }).observe(hero);
 }
 
-/* ── HOSPEDAJE · lista / mapa (MapLibre + OpenFreeMap) ── */
-var HOTELS = [
-  { n:'Hotel Boutique La Granja', lat:20.5244236, lng:-99.8925468, min:10 },
-  { n:'Hotel Río Tequisquiapan',  lat:20.5204808, lng:-99.8950589, min:10 },
-  { n:'Hotel San Carlos',         lat:20.5257708, lng:-99.894355,  min:9  },
-  { n:'La Casa Roja',             lat:20.5366253, lng:-99.8932282, min:5  }
-];
+/* ── 1 · polvo de luz del hero ── */
+function initHeroDust(){
+  var box = document.getElementById('hfDust');
+  if(!box || REDUCED) return;
+  for(var i=0;i<15;i++){
+    var b = document.createElement('b'), sz = 2 + Math.random()*2;
+    b.style.width = b.style.height = sz + 'px';
+    b.style.left = (4 + Math.random()*92) + '%';
+    b.style.setProperty('--dx', ((Math.random()-.5)*60).toFixed(0) + 'px');
+    b.style.setProperty('--o1', (.3 + Math.random()*.15).toFixed(2));
+    b.style.setProperty('--o2', (.55 + Math.random()*.15).toFixed(2));
+    var d = 16 + Math.random()*14;
+    b.style.animationDuration = d.toFixed(1) + 's,' + (2.5 + Math.random()*3).toFixed(1) + 's';
+    b.style.animationDelay = (-Math.random()*d).toFixed(1) + 's,' + (-Math.random()*3).toFixed(1) + 's';
+    box.appendChild(b);
+  }
+}
+
+/* ── 2 · fundido uniforme entre secciones ── */
+function initSectionFades(){
+  var secs = [].slice.call(document.querySelectorAll('body > section, body > footer'));
+  if(secs.length < 2) return;
+  function parse(c){ var m = (c||'').match(/rgba?\(([^)]+)\)/); if(!m) return null; var v = m[1].split(',').map(parseFloat); return { r:v[0], g:v[1], b:v[2], a: v.length > 3 ? v[3] : 1 }; }
+  var page = parse(getComputedStyle(document.body).backgroundColor) || { r:248, g:246, b:227, a:1 };
+  if(page.a === 0) page = { r:248, g:246, b:227, a:1 };
+  function edge(sec, side){
+    var d = sec.getAttribute(side === 'top' ? 'data-top' : 'data-bot');
+    if(d){ var t = document.createElement('i'); t.style.color = d; document.body.appendChild(t); var c = parse(getComputedStyle(t).color); t.remove(); if(c) return c; }
+    var bg = parse(getComputedStyle(sec).backgroundColor);
+    if(!bg || bg.a === 0) return page;
+    return { r: bg.r*bg.a + page.r*(1-bg.a), g: bg.g*bg.a + page.g*(1-bg.a), b: bg.b*bg.a + page.b*(1-bg.a), a:1 };
+  }
+  function grad(c, dir){
+    var stops = [];
+    for(var i=0;i<=8;i++){ var t = i/8, a = 1 - t*t*(3-2*t); stops.push('rgba(' + [c.r|0,c.g|0,c.b|0,a.toFixed(3)].join(',') + ') ' + (t*100).toFixed(1) + '%'); }
+    return 'linear-gradient(' + dir + ',' + stops.join(',') + ')';
+  }
+  function put(sec, side, c, h){
+    var el = document.createElement('span');
+    el.className = 'sf sf-' + side; el.setAttribute('aria-hidden','true');
+    el.style.height = h + 'px';
+    el.style.background = grad(c, side === 'top' ? 'to bottom' : 'to top');
+    sec.appendChild(el);
+  }
+  for(var i=0;i<secs.length-1;i++){
+    var A = secs[i], B = secs[i+1], a = edge(A,'bot'), b = edge(B,'top');
+    var mid = { r:(a.r+b.r)/2, g:(a.g+b.g)/2, b:(a.b+b.b)/2 };
+    var hero = A.id === 'hero';
+    put(A, 'bot', mid, hero ? 90 : 170);
+    put(B, 'top', mid, hero ? 90 : 170);
+  }
+}
+
+/* ── 14 · recorrido automático sin botón ── */
+function initAutoScroll(){
+  if(REDUCED || location.hash || /[?&]noauto/.test(location.search)) return;
+  var stopped = false, running = false, raf = 0, acc = 0, last = 0, v = 0, expectY = -1, startAt = 0;
+  var BASE = 37, SLOW = 26;
+  function slowHere(){
+    var y = window.innerHeight * .5;
+    var sl = ['#hero','#story','#location','#itinerary','#gifts'];
+    for(var i=0;i<sl.length;i++){ var e = document.querySelector(sl[i]); if(!e) continue; var r = e.getBoundingClientRect(); if(r.top < y && r.bottom > y) return true; }
+    return false;
+  }
+  function stop(){ if(stopped) return; stopped = true; running = false; cancelAnimationFrame(raf); off(); }
+  function frame(t){
+    if(stopped || !running) return;
+    if(!last) last = t;
+    var dt = Math.min(64, t - last) / 1000; last = t;
+    var target = slowHere() ? SLOW : BASE;
+    var ramp = Math.min(1, (t - startAt) / 1000);
+    v += (target*ramp - v) * Math.min(1, dt*2.2);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if(window.scrollY >= max - 2){ stop(); return; }
+    acc += v * dt;
+    var step = Math.floor(acc);
+    if(step >= 1){ acc -= step; expectY = Math.round(window.scrollY + step); window.scrollTo({ top: expectY, behavior: 'instant' }); }
+    raf = requestAnimationFrame(frame);
+  }
+  function start(){ if(stopped || running || document.hidden) return; expectY = window.scrollY; running = true; last = 0; startAt = performance.now(); raf = requestAnimationFrame(frame); }
+  function pause(){ running = false; cancelAnimationFrame(raf); v = 0; }
+  var evs = ['wheel','touchstart','pointerdown','keydown','mousedown'];
+  function onUser(e){ stop(e); }
+  function onScroll(){ if(!running || expectY < 0) return; if(Math.abs(window.scrollY - expectY) > 4) stop(); }
+  function onVis(){ if(document.hidden) pause(); else if(!stopped) setTimeout(start, 400); }
+  function off(){
+    evs.forEach(function(e){ window.removeEventListener(e, onUser, true); });
+    window.removeEventListener('scroll', onScroll, true);
+    document.removeEventListener('visibilitychange', onVis);
+  }
+  evs.forEach(function(e){ window.addEventListener(e, onUser, { capture:true, passive:true }); });
+  window.addEventListener('scroll', onScroll, { capture:true, passive:true });
+  document.addEventListener('visibilitychange', onVis);
+  document.documentElement.style.scrollBehavior = 'auto';
+  setTimeout(start, 2600);
+}
+
+/* ═════════ HOSPEDAJE · lista (carrusel por hotel) + mapa Leaflet (pa-hs) ═════════
+   REEMPLAZA en el destino el bloque viejo "HOSPEDAJE · lista / mapa (MapLibre + OpenFreeMap)":
+   var HOTELS…, var VENUES…, function initHospedaje(){…}. Se llama igual (initHospedaje), así que
+   la llamada que ya existe en bootInvitation() sigue sirviendo.
+
+   Esquema de datos:
+   HOTELS = [{
+     n:'Nombre', tipo:'Hotel boutique', dir:'Dirección corta',
+     fotos:['https://…/1.jpg', …],          // 0..n (0 = círculo con ícono)
+     maps:'https://maps.app.goo.gl/…',      // "Cómo llegar" / "Ver ubicación"
+     web:'https://…',                        // "Reservar" (vacío = botón oculto)
+     km:4.4, mi:2.7, min:10,                 // a la recepción
+     minCeremonia:2,                         // número (min) o texto ('A pasos de la iglesia'); null = no se muestra
+     lat:20.52, lng:-99.89,                  // marcador
+     ruta:[[lat,lng],…]                      // OSRM hotel→recepción (vacío = sin línea)
+   }]
+   VENUES = [{ t:'Recepción', ico:'♥', nombre:'…', dir:'…', lat, lng, maps:'…' }, { t:'Ceremonia', ico:'✝', … }]
+   (Datos de abajo = los que ya tenía el destino; faltan fotos[] y ruta[]. Sustituir cuando lleguen.) */
+var HOTELS = [{"n": "Hotel Boutique La Granja", "tipo": "Hotel boutique", "dir": "Morelos 12, Centro, Tequisquiapan", "lat": 20.5244236, "lng": -99.8925468, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/534584269.jpg?k=deba5321d1faba5c5a571a6a9868e6f7f4ac71f3fd2044edabe4ca0f7ffa1460", "https://cf.bstatic.com/xdata/images/hotel/max500/927996217.jpg?k=12060423f78f6a819ef7ffca07d43947fced97e55d7fb9956e22f82539ca92d4", "https://cf.bstatic.com/xdata/images/hotel/max500/927992517.jpg?k=3fede7656099548210cd71d7e01728a76fc74514cbc7cc4088e9c8d339acc5fb", "https://cf.bstatic.com/xdata/images/hotel/max500/534349710.jpg?k=0779c227ffb012ecdb2af7fc8f18ab7d0cdc63eef3211dadd29cbafe225b2ff1", "https://cf.bstatic.com/xdata/images/hotel/max500/534350296.jpg?k=d7fafccf964c8ce4fbb1f239b77208fd52a374f2b90f8bc21405d149c6fe8bf1"], "maps": "https://www.google.com/maps/search/?api=1&query=Hotel+Boutique+La+Granja+Morelos+12+Tequisquiapan", "web": "http://hotelboutiquelagranja.com/", "mi": 2.8, "km": 4.4, "min": 10, "minCeremonia": "A pasos de la iglesia", "ruta": [[20.52437, -99.89254], [20.52437, -99.89252], [20.524, -99.89259], [20.5237, -99.8926], [20.52371, -99.89285], [20.52372, -99.89288], [20.52422, -99.8931], [20.52434, -99.89275], [20.52501, -99.89309], [20.52514, -99.89313], [20.52558, -99.89331], [20.52599, -99.8934], [20.52847, -99.89409], [20.52958, -99.89436], [20.5299, -99.89442], [20.53008, -99.89448], [20.53024, -99.89462], [20.53063, -99.89491], [20.53079, -99.89499], [20.53111, -99.89509], [20.53124, -99.89516], [20.53138, -99.89526], [20.53156, -99.89535], [20.5319, -99.89539], [20.53209, -99.89537], [20.53229, -99.8953], [20.5328, -99.89504], [20.53338, -99.89479], [20.53487, -99.89393], [20.53525, -99.89369], [20.53566, -99.8935], [20.53629, -99.89324], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "Hotel Río Tequisquiapan", "tipo": "Hotel", "dir": "Av. Niños Héroes 33, Centro, Tequisquiapan", "lat": 20.5204808, "lng": -99.8950589, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/581784385.jpg?k=b050bf955934c960a5e29367ca6f5f7e8d87d4c4ef463f541e50f07b1851a418", "https://cf.bstatic.com/xdata/images/hotel/max500/581784376.jpg?k=4433466563bfe4f267d9f063d251549e879a8c40e75ae6db546aeefc33b77497", "https://cf.bstatic.com/xdata/images/hotel/max500/252610182.jpg?k=19658b3eb10b33ede49cea1e64db9103d50db12edaeb749f0daa64a6f35f17ee", "https://cf.bstatic.com/xdata/images/hotel/max500/259673399.jpg?k=375b43292bb158777b4e92d51b71a624491f7642d1a8a283fa7302e2aea860fe", "https://cf.bstatic.com/xdata/images/hotel/max500/581784407.jpg?k=5a0695047637c9f73a835d231cfb4445eef06ae23b84a79131973003d7216698"], "maps": "https://www.google.com/maps/place/Hotel+R%C3%ADo+Tequisquiapan/@20.5204808,-99.8950589,17z", "web": "https://www.hotelesriotequisquiapan.com/es/index.html", "mi": 3.7, "km": 5.9, "min": 10, "minCeremonia": 2, "ruta": [[20.52056, -99.89514], [20.52011, -99.89565], [20.52002, -99.89569], [20.51958, -99.89621], [20.51953, -99.89626], [20.51916, -99.89671], [20.51976, -99.89786], [20.52027, -99.89793], [20.52061, -99.89799], [20.52147, -99.89812], [20.523, -99.89838], [20.52403, -99.89854], [20.52441, -99.89862], [20.52451, -99.89865], [20.52651, -99.899], [20.52681, -99.89906], [20.52807, -99.89927], [20.52879, -99.89938], [20.52973, -99.89955], [20.52999, -99.89959], [20.53026, -99.89965], [20.53159, -99.89991], [20.53554, -99.90055], [20.53597, -99.90065], [20.53646, -99.90075], [20.53661, -99.90077], [20.538, -99.90103], [20.53858, -99.90113], [20.53886, -99.90117], [20.54065, -99.90148], [20.54199, -99.90173], [20.54367, -99.902], [20.54556, -99.90236], [20.54745, -99.90268], [20.54766, -99.90192], [20.54784, -99.90139], [20.54802, -99.90091], [20.54851, -99.89939], [20.54904, -99.89771], [20.54939, -99.89657], [20.55066, -99.89257], [20.55125, -99.89062], [20.55132, -99.89046], [20.55145, -99.89031], [20.55352, -99.88904], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "Hotel San Carlos Tequisquiapan", "tipo": "Hotel", "dir": "Heroico Colegio Militar 7, Centro, Tequisquiapan", "lat": 20.5257708, "lng": -99.894355, "fotos": ["https://cf.bstatic.com/xdata/images/hotel/max500/808094222.jpg?k=c452101612057ecfc9948e89e500dae2be56d16dbc270ef0c14d7b6fe9602003", "https://cf.bstatic.com/xdata/images/hotel/max500/808094523.jpg?k=3a637664005d2ed3c3295923b73170ad8f487266977a51eb8dea53b2083762c2", "https://cf.bstatic.com/xdata/images/hotel/max500/808094299.jpg?k=c2a0ef2b46c718aadb3d0bfeb8eab4abc0d9d66e23f22ba5473d6d8be41dc133", "https://cf.bstatic.com/xdata/images/hotel/max500/808094283.jpg?k=b30a9cdb74a2ea06b819e7cf19c8d537e0e153cb0d3a8d6e84ff050ba4e9e940", "https://cf.bstatic.com/xdata/images/hotel/max500/808094243.jpg?k=1523d2bc980638eb6f52350bc6d6324d7da4be3d1ecbf54783c3320fb0ba5391"], "maps": "https://www.google.com/maps/place/Hotel+San+Carlos+Tequisquiapan/@20.5257708,-99.894355,17z", "web": "https://www.bestwestern.com/es-es/book/hotel/tequisquiapan/hecthorny-san-carlos-tequisquiapan-bw-signature-collection/70360", "mi": 2.6, "km": 4.1, "min": 9, "minCeremonia": 1, "ruta": [[20.52572, -99.89434], [20.52599, -99.8934], [20.52847, -99.89409], [20.52958, -99.89436], [20.5299, -99.89442], [20.53008, -99.89448], [20.53024, -99.89462], [20.53063, -99.89491], [20.53079, -99.89499], [20.53093, -99.89504], [20.53111, -99.89509], [20.53124, -99.89516], [20.53138, -99.89526], [20.53156, -99.89535], [20.5319, -99.89539], [20.53209, -99.89537], [20.53229, -99.8953], [20.53246, -99.89522], [20.5326, -99.89514], [20.5328, -99.89504], [20.53338, -99.89479], [20.53487, -99.89393], [20.53525, -99.89369], [20.53566, -99.8935], [20.53629, -99.89324], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}, {"n": "La Casa Roja", "tipo": "Casa de huéspedes", "dir": "Calle Francisco I. Madero, Tequisquiapan", "lat": 20.5366253, "lng": -99.8932282, "fotos": ["https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192943/1192943/0.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192957/1192957/1.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192959/1192959/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70", "https://tbb-prod-emea.imgix.net/attachments/room_type_photos/images/1192946/1192946/2.jpg?auto=compress&fit=crop&w=800&h=533&q=70"], "maps": "https://www.google.com/maps/place/La+Casa+Roja/@20.5366253,-99.8932282,17z", "web": "https://direct-book.com/properties/lacasarojadirect?locale=es&currency=MXN", "mi": 1.7, "km": 2.8, "min": 5, "minCeremonia": 4, "ruta": [[20.53658, -99.89311], [20.53718, -99.89285], [20.5382, -99.89249], [20.53889, -99.89246], [20.5398, -99.8925], [20.5401, -99.89246], [20.5421, -99.89212], [20.54451, -99.8917], [20.54475, -99.89165], [20.54507, -99.89151], [20.54663, -99.89071], [20.54706, -99.89048], [20.54761, -99.89027], [20.54825, -99.89007], [20.54991, -99.88978], [20.55016, -99.88971], [20.5516, -99.88938], [20.55558, -99.88868], [20.55575, -99.88862], [20.55614, -99.88831], [20.55629, -99.88824], [20.55811, -99.888], [20.55881, -99.88793], [20.55893, -99.88787], [20.55972, -99.8878], [20.56082, -99.88764]]}];
 var VENUES = [
-  { t:'Recepción', lat:20.5608221, lng:-99.8876551 },
-  { t:'Ceremonia', lat:20.5231776, lng:-99.8915349 }
+  { t:'Recepción', ico:'♥', nombre:'Alauda Jardín de Eventos', dir:'Tequisquiapan, Querétaro', lat:20.5608221, lng:-99.8876551, maps:'https://maps.app.goo.gl/vYVsyHXeQfaRhkgG9' },
+  { t:'Ceremonia', ico:'✝', nombre:'Templo Parroquial Santa María de la Asunción', dir:'Centro histórico, Tequisquiapan', lat:20.5231776, lng:-99.8915349, maps:'https://maps.app.goo.gl/unDvUAb7vxRs9d4e6' }
 ];
-function initHospedaje(){
-  var flip = document.getElementById('hsFlip'), sw = document.querySelector('.hs-switch'),
-      tL = document.getElementById('hsTabList'), tM = document.getElementById('hsTabMap'),
-      back = document.getElementById('hsMapFace'), front = document.getElementById('hsList');
-  if(!flip) return;
-  var map = null, markers = [], chips = [];
-  function setView(m){
-    flip.classList.toggle('map', m); sw.classList.toggle('map', m);
-    tL.classList.toggle('on', !m); tM.classList.toggle('on', m);
-    tL.setAttribute('aria-selected', !m); tM.setAttribute('aria-selected', m);
-    back.setAttribute('aria-hidden', !m); front.setAttribute('aria-hidden', m);
-    if(m) loadMap(function(){ setTimeout(function(){ map.resize(); fitAll(); }, 720); });
-  }
-  tL.addEventListener('click', function(){ setView(false); });
-  tM.addEventListener('click', function(){ setView(true); });
 
-  function loadMap(cb){
-    if(map){ cb(); return; }
-    if(window.maplibregl){ build(); cb(); return; }
-    var css = document.createElement('link'); css.rel='stylesheet'; css.href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
-    document.head.appendChild(css);
-    var s = document.createElement('script'); s.src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
-    s.onload = function(){ build(); cb(); };
-    document.head.appendChild(s);
+function initHospedaje(){
+  var root = document.getElementById('hospedaje');
+  if(!root || root.__paHs) return; root.__paHs = true;
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var COARSE = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  var ICO = {
+    car:'<svg viewBox="0 0 24 24"><path d="M5 17h14M7 17l1.5-5h7L17 17M6 17v2M18 17v2"/><circle cx="8" cy="14.5" r=".6"/><circle cx="16" cy="14.5" r=".6"/></svg>',
+    pin:'<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    church:'<svg viewBox="0 0 24 24"><path d="M12 2v5M10 4h4M6 21V11l6-4 6 4v10M6 21h12M10 21v-4a2 2 0 014 0v4"/></svg>',
+    bed:'<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg>',
+    nav:'<svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>',
+    prev:'<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>',
+    next:'<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>',
+    ph:'<svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg>'
+  };
+  function distRecep(h){
+    var p = [];
+    if(h.min != null) p.push(h.min + ' min');
+    if(h.km != null) p.push(h.km + ' km');
+    if(h.mi != null) p.push(h.mi + ' mi');
+    return p.join(' · ');
   }
-  function fitAll(){
-    var b = new maplibregl.LngLatBounds();
-    HOTELS.concat(VENUES).forEach(function(p){ b.extend([p.lng,p.lat]); });
-    map.fitBounds(b, { padding:{top:70,bottom:40,left:40,right:40}, duration:800 });
+  function ceremoniaTxt(h){
+    if(h.minCeremonia == null || h.minCeremonia === '') return '';
+    return typeof h.minCeremonia === 'number' ? h.minCeremonia + ' min en auto a la iglesia' : String(h.minCeremonia);
   }
-  function paint(){
-    var st = map.getStyle(); if(!st || !st.layers) return;
-    st.layers.forEach(function(l){
-      var id = l.id, t = l.type;
-      try{
-        if(t === 'background') map.setPaintProperty(id,'background-color','#F4F1D2');
-        else if(t === 'fill' && /water/.test(id)) map.setPaintProperty(id,'fill-color','#C9D6B4');
-        else if(t === 'fill' && /park|wood|grass|landcover|landuse/.test(id)) map.setPaintProperty(id,'fill-color','#E3E3B8');
-        else if(t === 'fill' && /building/.test(id)) map.setPaintProperty(id,'fill-color','#E9E4C0');
-        else if(t === 'line' && /water|river/.test(id)) map.setPaintProperty(id,'line-color','#B7C79E');
-        else if(t === 'line' && /road|highway|street|bridge|tunnel/.test(id)) map.setPaintProperty(id,'line-color','#FFFDF0');
-        else if(t === 'symbol'){ map.setPaintProperty(id,'text-color','#4F6334'); map.setPaintProperty(id,'text-halo-color','#F8F6E3'); }
-      }catch(e){}
+
+  /* ── 1. Lista (render desde HOTELS) ── */
+  var list = $('paHsList');
+  HOTELS.forEach(function(h, i){
+    var fotos = (h.fotos || []).filter(Boolean), many = fotos.length > 1;
+    var art = document.createElement('article');
+    art.className = 'pa-hs-hotel';
+    var slides = fotos.length
+      ? fotos.map(function(src, k){ return '<img src="' + esc(src) + '" alt="' + esc(h.n) + ' — foto ' + (k+1) + '" decoding="async" draggable="false">'; }).join('')
+      : '<span class="pa-hs-ph" aria-hidden="true">' + ICO.ph + '</span>';
+    var cer = ceremoniaTxt(h);
+    art.innerHTML =
+      '<div class="pa-hs-gal">' +
+        (many ? '<button type="button" class="pa-hs-arrow prev" aria-label="Foto anterior">' + ICO.prev + '</button>' +
+                '<button type="button" class="pa-hs-arrow next" aria-label="Foto siguiente">' + ICO.next + '</button>' : '') +
+        '<div class="pa-hs-orbit"><div class="pa-hs-ring"><div class="pa-hs-vp"><div class="pa-hs-track">' + slides + '</div></div></div>' +
+        '<div class="pa-hs-badge" aria-hidden="true"><span>' + (i+1) + '</span></div></div>' +
+      '</div>' +
+      (many ? '<div class="pa-hs-dots"></div><div class="pa-hs-thumbs"></div>' : '') +
+      '<span class="pa-hs-type">' + esc(h.tipo) + '</span>' +
+      '<h3 class="pa-hs-name">' + esc(h.n) + '</h3>' +
+      (h.dir ? '<p class="pa-hs-addr">' + esc(h.dir) + '</p>' : '') +
+      '<div class="pa-hs-dist">' +
+        '<span class="pa-hs-chip">' + ICO.car + esc(distRecep(h)) + '</span>' +
+        '<span class="pa-hs-dist-cap">en auto a la recepción</span>' +
+        (cer ? '<span class="pa-hs-chip">' + ICO.church + esc(cer) + '</span>' : '') +
+      '</div>' +
+      '<div class="pa-hs-btns">' +
+        (h.web ? '<a class="pa-hs-btn pa-hs-btn--pri" href="' + esc(h.web) + '" target="_blank" rel="noopener">' + ICO.bed + 'Reservar</a>' : '') +
+        (h.maps ? '<a class="pa-hs-btn pa-hs-btn--sec" href="' + esc(h.maps) + '" target="_blank" rel="noopener">' + ICO.nav + 'Cómo llegar</a>' : '') +
+      '</div>';
+    list.appendChild(art);
+    if(many) initGallery(art, fotos, h.n);
+  });
+
+  /* carrusel por hotel: flechas, puntos, miniaturas, swipe */
+  function initGallery(art, fotos, name){
+    var track = art.querySelector('.pa-hs-track'), vp = art.querySelector('.pa-hs-vp');
+    var dotsBox = art.querySelector('.pa-hs-dots'), thBox = art.querySelector('.pa-hs-thumbs');
+    var n = fotos.length, idx = 0, dots = [], ths = [];
+    fotos.forEach(function(src, k){
+      var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Foto ' + (k+1) + ' de ' + name);
+      d.addEventListener('click', function(){ go(k); }); dotsBox.appendChild(d); dots.push(d);
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Ver foto ' + (k+1));
+      var im = document.createElement('img'); im.src = src; im.alt = ''; im.decoding = 'async'; b.appendChild(im);
+      b.addEventListener('click', function(){ go(k); }); thBox.appendChild(b); ths.push(b);
+    });
+    function go(i){
+      idx = (i + n) % n;
+      track.style.transform = 'translateX(' + (-idx*100) + '%)';
+      for(var k=0;k<n;k++){ dots[k].classList.toggle('on', k===idx); ths[k].classList.toggle('on', k===idx); }
+    }
+    art.querySelector('.pa-hs-arrow.prev').addEventListener('click', function(){ go(idx-1); });
+    art.querySelector('.pa-hs-arrow.next').addEventListener('click', function(){ go(idx+1); });
+    var sx = 0, sy = 0;
+    vp.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive:true });
+    vp.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      if(Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? idx+1 : idx-1);
+    }, { passive:true });
+    go(0);
+  }
+
+  /* ── 2. Leaflet bajo demanda (cdnjs 1.9.4) ── */
+  var LP = null;
+  function loadLeaflet(){
+    if(window.L && window.L.map) return Promise.resolve(window.L);
+    if(LP) return LP;
+    LP = new Promise(function(res, rej){
+      var base = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/';
+      if(!document.querySelector('link[data-pa-leaflet]')){
+        var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = base + 'leaflet.css';
+        l.setAttribute('data-pa-leaflet', ''); document.head.appendChild(l);
+      }
+      var s = document.createElement('script'); s.src = base + 'leaflet.js'; s.async = true;
+      s.onload = function(){ res(window.L); };
+      s.onerror = function(){ LP = null; rej(new Error('leaflet')); };
+      document.head.appendChild(s);
+    });
+    return LP;
+  }
+
+  /* ── 3. Mapa ── */
+  var map = null, bounds = null, hMarkers = [], routes = [];
+  var sheet = $('paHsSheet'), hint = $('paHsHint');
+  var FIT = { paddingTopLeft:[46,96], paddingBottomRight:[64,112], maxZoom:16 };  /* arriba: aire para la píldora del lugar */
+  function fitAll(anim){
+    if(!map || !bounds) return;
+    if(anim && !RM) map.flyToBounds(bounds, Object.assign({ duration:.9 }, FIT)); else map.fitBounds(bounds, FIT);
+  }
+  function highlight(i){
+    hMarkers.forEach(function(m, k){ var el = m.getElement(); if(el){ var d = el.querySelector('.pa-hs-mk-h'); if(d) d.classList.toggle('on', k===i); } });
+    routes.forEach(function(r){
+      var on = (i == null || r.i === i);
+      r.line.setStyle({ opacity: on ? .95 : .3 }); r.glow.setStyle({ opacity: on ? .18 : .05 });
     });
   }
-  function build(){
-    map = new maplibregl.Map({
-      container:'hsMap', style:'https://tiles.openfreemap.org/styles/positron',
-      center:[-99.891,20.54], zoom:12.5, attributionControl:{compact:true},
-      cooperativeGestures:true
+  function openSheet(p){
+    $('paHsShNum').textContent = p.num; $('paHsShType').textContent = p.type; $('paHsShName').textContent = p.name;
+    var ad = $('paHsShAddr'); ad.textContent = p.addr || ''; ad.style.display = p.addr ? '' : 'none';
+    var ds = $('paHsShDist'); ds.querySelector('span').textContent = p.dist || ''; ds.style.display = p.dist ? '' : 'none';
+    var mp = $('paHsShMap'), bk = $('paHsShBook');
+    if(p.maps){ mp.href = p.maps; mp.style.display = ''; } else mp.style.display = 'none';
+    if(p.book){ bk.href = p.book; bk.style.display = ''; } else bk.style.display = 'none';
+    sheet.classList.add('open'); hint.classList.add('gone');
+    var z = 15, sh = sheet.offsetHeight || 200;
+    var target = map.unproject(map.project([p.lat, p.lng], z).add([0, sh/2 + 10]), z);  /* marcador queda arriba de la ficha */
+    if(RM) map.setView(target, z); else map.flyTo(target, z, { duration:1 });
+  }
+  function closeSheet(){ sheet.classList.remove('open'); hint.classList.remove('gone'); highlight(null); }
+  $('paHsShX').addEventListener('click', function(){ closeSheet(); fitAll(true); });
+
+  function focusHotel(i){
+    var h = HOTELS[i];
+    highlight(i);
+    openSheet({ num:String(i+1), type:h.tipo, name:h.n, addr:h.dir, lat:h.lat, lng:h.lng, maps:h.maps, book:h.web,
+      dist:(h.mi != null ? h.mi + ' mi · ' : (h.km != null ? h.km + ' km · ' : '')) + h.min + ' min a la recepción' });
+  }
+  function focusVenue(v){
+    highlight(null);
+    openSheet({ num:v.ico || '♥', type:v.t, name:v.nombre || v.t, addr:v.dir, lat:v.lat, lng:v.lng, maps:v.maps, book:'', dist:'' });
+  }
+
+  function buildMap(L){
+    if(map) return;
+    map = L.map('paHsMap', { zoomControl:false, attributionControl:true, scrollWheelZoom:false,
+      dragging:!COARSE, touchZoom:true, doubleClickZoom:true, zoomSnap:.25, minZoom:9, maxZoom:18 });
+    var esri = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+    L.tileLayer(esri + 'World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom:16, maxZoom:18,
+      attribution:'Tiles &copy; Esri — Esri, HERE, Garmin, &copy; OpenStreetMap' }).addTo(map);
+    L.tileLayer(esri + 'World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', { maxNativeZoom:16, maxZoom:18 }).addTo(map);
+    map.attributionControl.setPrefix(false);
+
+    bounds = L.latLngBounds([]);
+    /* rutas OSRM: halo + punteado dorado animado */
+    HOTELS.forEach(function(h, i){
+      if(!h.ruta || h.ruta.length < 2) return;
+      var glow = L.polyline(h.ruta, { color:'#F6E7A6', weight:9, opacity:.18, lineCap:'round', lineJoin:'round', interactive:false }).addTo(map);
+      var line = L.polyline(h.ruta, { color:'#D4AF37', weight:3.5, opacity:.95, dashArray:'2 9', lineCap:'round', lineJoin:'round',
+        className:'pa-hs-route', interactive:false }).addTo(map);
+      routes.push({ i:i, glow:glow, line:line });
+      h.ruta.forEach(function(p){ bounds.extend(p); });
     });
-    map.addControl(new maplibregl.NavigationControl({ showCompass:false }), 'top-right');
-    map.on('load', paint);
+    /* lugares: píldora clara con piquito */
     VENUES.forEach(function(v){
-      var el = document.createElement('div'); el.className = 'mk-venue';
-      el.innerHTML = '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + v.t.toUpperCase() + '</span>';
-      new maplibregl.Marker({ element:el, anchor:'bottom' }).setLngLat([v.lng,v.lat]).addTo(map);
+      var w = Math.round(46 + (v.t.length * 9.5));
+      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[w,38], iconAnchor:[w/2,46],
+        html:'<div class="pa-hs-mk-v" role="button" aria-label="' + esc(v.t + (v.nombre && v.nombre !== v.t ? ': ' + v.nombre : '')) + '"><b>' + esc(v.ico || '♥') + '</b>' + esc(v.t) + '</div>' });
+      L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:900 }).addTo(map).on('click', function(){ focusVenue(v); });
+      bounds.extend([v.lat, v.lng]);
     });
-    var chipsBox = document.getElementById('hsChips');
-    HOTELS.forEach(function(h,i){
-      var el = document.createElement('button'); el.type='button'; el.className = 'mk-hotel'; el.textContent = i+1;
-      el.setAttribute('aria-label', h.n);
-      var pop = new maplibregl.Popup({ offset:20, closeButton:false }).setHTML('<b>' + h.n + '</b><small>' + h.min + ' min a la recepción</small>');
-      var mk = new maplibregl.Marker({ element:el }).setLngLat([h.lng,h.lat]).setPopup(pop).addTo(map);
-      el.addEventListener('click', function(){ focus(i, true); });
-      markers.push(mk);
-      var c = document.createElement('button'); c.type='button'; c.className='hs-chip';
-      c.innerHTML = '<i>' + (i+1) + '</i>' + h.n + ' <small>· ' + h.min + ' min a la recepción</small>';
-      c.addEventListener('click', function(){ focus(i); });
-      chipsBox.appendChild(c); chips.push(c);
+    /* hoteles: círculo numerado con aro oro y pulso */
+    HOTELS.forEach(function(h, i){
+      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[46,46], iconAnchor:[23,23],
+        html:'<div class="pa-hs-mk-h" role="button" aria-label="Hotel ' + (i+1) + ': ' + esc(h.n) + '">' +
+             (RM ? '' : '<span class="pa-hs-pulse"></span><span class="pa-hs-pulse b"></span>') +
+             '<span class="pa-hs-mk-ring"><span class="pa-hs-mk-in">' + (i+1) + '</span></span></div>' });
+      var m = L.marker([h.lat, h.lng], { icon:icon, keyboard:true, zIndexOffset:500 + i }).addTo(map)
+        .on('click', function(){ focusHotel(i); });
+      hMarkers.push(m);
+      bounds.extend([h.lat, h.lng]);
     });
+
+    map.on('click', function(){ if(sheet.classList.contains('open')) closeSheet(); });
+    root.querySelectorAll('.pa-hs-ctrl').forEach(function(b){
+      b.addEventListener('click', function(){
+        var z = b.getAttribute('data-z');
+        if(z === 'in') map.zoomIn(1); else if(z === 'out') map.zoomOut(1); else { closeSheet(); fitAll(true); }
+      });
+    });
+
+    /* Móvil: 1 dedo = scroll de la página (dragging off → touch-action pan-x pan-y);
+       2 dedos = mover/acercar (touchZoom de Leaflet desplaza con el centro del pellizco). */
+    if(COARSE){
+      var ov = $('paHs2f'), tt, mapEl = $('paHsMap');
+      mapEl.addEventListener('touchmove', function(e){
+        if(e.touches.length === 1){ ov.classList.add('on'); clearTimeout(tt); tt = setTimeout(function(){ ov.classList.remove('on'); }, 1300); }
+        else ov.classList.remove('on');
+      }, { passive:true });
+      mapEl.addEventListener('touchend', function(){ clearTimeout(tt); tt = setTimeout(function(){ ov.classList.remove('on'); }, 700); }, { passive:true });
+    }
+    $('paHsLoading').classList.add('gone');
   }
-  function focus(i, fromMarker){
-    markers.forEach(function(m,k){ m.getElement().classList.toggle('on', k===i); if(k!==i && m.getPopup().isOpen()) m.togglePopup(); });
-    chips.forEach(function(c,k){ c.classList.toggle('on', k===i); });
-    map.flyTo({ center:[HOTELS[i].lng, HOTELS[i].lat], zoom:15.2, speed:1.2 });
-    if(!fromMarker && !markers[i].getPopup().isOpen()) markers[i].togglePopup();
-    chips[i].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+
+  /* ── 4. Selector + giro 3D (el mapa se construye al abrir la vista Mapa) ── */
+  var toggle = $('paHsToggle'), card = $('paHsCard'), front = $('paHsFront'), back = $('paHsBack');
+  var tabs = toggle.querySelectorAll('.pa-hs-tab'), isMap = false, busy = false;
+  function setTabs(toMap){
+    toggle.setAttribute('data-view', toMap ? 'map' : 'list');
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String((t.getAttribute('data-view') === 'map') === toMap)); });
   }
+  function afterShow(){
+    if(isMap && map){ map.invalidateSize(); if(!sheet.classList.contains('open')) fitAll(false); }
+  }
+  function flip(toMap){
+    if(busy || toMap === isMap) return;
+    busy = true; setTabs(toMap);
+    var from = isMap ? back : front, to = toMap ? back : front;
+    var h0 = from.offsetHeight;
+    to.classList.remove('pa-hs-off');
+    if(toMap){
+      loadLeaflet().then(function(L){ buildMap(L); if(!busy) afterShow(); })
+        .catch(function(){ $('paHsLoading').textContent = 'No se pudo cargar el mapa'; });
+    }
+    var h1 = to.offsetHeight;
+    function end(){
+      card.style.transition = 'none';
+      from.classList.add('pa-hs-off');
+      card.style.transform = ''; back.style.transform = toMap ? 'none' : ''; card.style.height = '';
+      void card.offsetWidth; card.style.transition = '';
+      isMap = toMap; busy = false; afterShow();
+      if(window.ScrollTrigger) ScrollTrigger.refresh();   /* la sección cambió de alto */
+    }
+    if(RM){ end(); return; }
+    card.style.transition = 'none';
+    back.style.transform = 'rotateY(180deg)';
+    card.style.transform = isMap ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    card.style.height = h0 + 'px';
+    void card.offsetWidth;
+    card.style.transition = '';
+    card.style.transform = toMap ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    card.style.height = h1 + 'px';
+    setTimeout(end, 730);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ flip(t.getAttribute('data-view') === 'map'); }); });
+  /* precarga ligera al acercar el dedo/cursor a "Mapa" */
+  tabs[1].addEventListener('pointerenter', function(){ loadLeaflet().catch(function(){}); }, { once:true });
+  tabs[1].addEventListener('touchstart', function(){ loadLeaflet().catch(function(){}); }, { once:true, passive:true });
 }
+
 
 /* ── CAPA DE VIDA ── */
 function initVida(){
@@ -4576,10 +5408,11 @@ function initVida(){
 
   if(REDUCED) return;
 
-  /* Portada: parallax de fondo (baja lento y se acerca) + nombres que suben y se desvanecen + Ken Burns */
-  gsap.to('#heroPic', { scale:1.06, duration:16, ease:'sine.inOut', yoyo:true, repeat:-1 });
-  gsap.to('#heroBg', { scale:1.08, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
-  gsap.to('#hCnt', { yPercent:-18, opacity:.15, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+  /* Portada: los textos suben, se desvanecen y se difuminan; la foto solo sube un poco */
+  gsap.fromTo('#hCnt', { y:0, opacity:1, filter:'blur(0px)' }, { y:-110, opacity:0, filter:'blur(10px)', ease:'none',
+    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+  gsap.fromTo('#heroBg', { y:0 }, { y:-70, ease:'none',
+    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
 
   /* Títulos: reveal por palabras */
   document.querySelectorAll('section .ttl').forEach(function(t){
@@ -4660,6 +5493,143 @@ function failsafeVisibles(){
   });
   document.querySelectorAll('section .lbl, section .ttl, .loc-card, .fam-col, .fam-god, .gf-card, .hs-card, .tl-row-inner, .fam-n, .cd-ring-item, .alb-qr-frame, .cal-card, .dc-look')
     .forEach(function(el){ io.observe(el); });
+}
+</script>
+<script>/* ═════════ MESA DE REGALOS · lluvia de sobres + sobre que aterriza (pa-gf) ═════════
+   Llamar initGiftsPA() donde hoy se llama initEnvelopeRain() (bootInvitation, tras abrir el sobre).
+   Requiere GSAP (ya cargado en el destino). ScrollTrigger es opcional.
+   IDs: #gifts #paGfRain #paEnvWrap #paEnv #paEnvBody #paEnvHint #paEnvMsg */
+function initGiftsPA(){
+  var sec  = document.getElementById('gifts'),
+      rain = document.getElementById('paGfRain'),
+      wrap = document.getElementById('paEnvWrap'),
+      btn  = document.getElementById('paEnv'),
+      body = document.getElementById('paEnvBody'),
+      hint = document.getElementById('paEnvHint');
+  if(!sec || !wrap || !btn || sec.__paGifts) return;
+  sec.__paGifts = true;
+
+  var RM   = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G    = window.gsap;
+  var landed = false, landing = false, openAfter = false, isOpen = false;
+
+  /* ── abrir / cerrar ── */
+  function setOpen(o){
+    isOpen = o;
+    wrap.classList.toggle('open', o);
+    btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+    btn.setAttribute('aria-label', 'Sobre de regalos: toca para ' + (o ? 'cerrar' : 'abrir'));
+    hint.textContent = o ? 'Toca para cerrar' : 'Toca para abrir';
+    body.classList.toggle('breathing', landed && !o && !RM);
+    if(window.ScrollTrigger) setTimeout(function(){ ScrollTrigger.refresh(); }, 720);
+  }
+
+  /* ── aterrizaje con rebote ── */
+  function finishLanding(){
+    landed = true; landing = false;
+    btn.classList.add('is-landed');
+    if(G) G.set(btn, { clearProps:'transform,opacity' });
+    if(!RM) body.classList.add('breathing');
+    if(openAfter){ openAfter = false; setOpen(true); }
+  }
+  function land(fast){
+    if(landed || landing) return;
+    landing = true;
+    if(RM || !G){ finishLanding(); return; }
+    G.fromTo(btn,
+      { opacity:0, y:-150, rotation:-12, scale:.82 },
+      { opacity:1, y:0, rotation:0, scale:1, duration: fast ? .8 : 1.15, ease:'back.out(1.5)',
+        onComplete: finishLanding });
+  }
+
+  /* ── toque: sobre o texto. Antes de aterrizar: aterriza y abre ── */
+  function onTap(e){
+    if(e) e.preventDefault();
+    if(!landed){ openAfter = true; land(true); return; }
+    setOpen(!isOpen);
+  }
+  btn.addEventListener('click', onTap);
+  hint.addEventListener('click', onTap);
+
+  if(RM || !G){ finishLanding(); }
+  else {
+    sec.classList.add('is-armed');
+    /* aterriza cuando el sobre llega a ~60% de la pantalla (centro de la sección) */
+    if('IntersectionObserver' in window){
+      var ioLand = new IntersectionObserver(function(es){
+        if(es[0].isIntersecting){ land(false); ioLand.disconnect(); }
+      }, { rootMargin:'0px 0px -38% 0px', threshold:.55 });
+      ioLand.observe(wrap);
+      /* red de seguridad: si pasan rápido por la sección y el umbral nunca se cruza,
+         aterriza igual a los 2.5 s de haberla visto (nunca queda un sobre invisible) */
+      var safety = null;
+      var ioSafe = new IntersectionObserver(function(es){
+        if(es[0].isIntersecting && !safety){
+          safety = setTimeout(function(){ land(false); ioSafe.disconnect(); }, 2500);
+        }
+      });
+      ioSafe.observe(sec);
+    } else { land(false); }
+  }
+
+  /* ── lluvia: 3 profundidades, máx ~22 vivos, solo con la sección en pantalla ── */
+  if(RM || !G || !rain) return;
+  var MAX_ALIVE = 22, alive = 0, inView = false, spawnCall = null;
+  var DEPTHS = [
+    /* lejos      */ { w:[14,20], op:.38, dur:[12,15],  drift:30, rot:40,  z:1, p:.45 },
+    /* medio      */ { w:[21,28], op:.62, dur:[9,11],   drift:55, rot:90,  z:2, p:.35 },
+    /* cerca      */ { w:[30,38], op:.88, dur:[6.5,8],  drift:80, rot:140, z:3, p:.20 }
+  ];
+  var SVG_IN =
+    '<rect x="1" y="1" width="32" height="22" rx="2.2" fill="#FBF8E4" stroke="#D4AF37" stroke-width="1.1"/>' +
+    '<path d="M1.6 22.4 L13 12.4 M32.4 22.4 L21 12.4" stroke="rgba(138,109,18,.32)" stroke-width=".7" fill="none"/>' +
+    '<path d="M1.6 1.6 L17 13 L32.4 1.6 Z" fill="#F2EFC9" stroke="#C9A227" stroke-width="1" stroke-linejoin="round"/>' +
+    '<circle cx="17" cy="13" r="3.1" fill="#4F6334" stroke="#D4AF37" stroke-width=".7"/>';
+  function rnd(a,b){ return a + Math.random()*(b-a); }
+  function pickDepth(){ var r = Math.random(), acc = 0; for(var i=0;i<DEPTHS.length;i++){ acc += DEPTHS[i].p; if(r <= acc) return DEPTHS[i]; } return DEPTHS[0]; }
+
+  function makeDrop(){
+    if(alive >= MAX_ALIVE) return;
+    alive++;
+    var d = pickDepth();
+    var el = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    el.setAttribute('viewBox','0 0 34 24');
+    el.setAttribute('class','pa-gf-drop');
+    el.setAttribute('aria-hidden','true');
+    var w = rnd(d.w[0], d.w[1]);
+    el.style.width = w + 'px'; el.style.height = (w*24/34) + 'px';
+    el.style.left = rnd(-2, 98) + '%';
+    el.style.zIndex = d.z;
+    el.innerHTML = SVG_IN;
+    rain.appendChild(el);
+    var H = sec.offsetHeight + 70, dur = rnd(d.dur[0], d.dur[1]);
+    var r0 = (Math.random()-.5)*d.rot*.5, r1 = r0 + (Math.random()<.5?-1:1)*rnd(d.rot*.4, d.rot);
+    function kill(){ if(el.parentNode){ el.parentNode.removeChild(el); alive--; } }
+    G.timeline({ onComplete:kill })
+      .fromTo(el, { y:-60, rotation:r0 }, { y:H, rotation:r1, duration:dur, ease:'none' }, 0)
+      .fromTo(el, { x:0 }, { x:(Math.random()-.5)*2*d.drift, duration:dur, ease:'sine.inOut' }, 0)
+      .fromTo(el, { opacity:0 }, { opacity:d.op, duration:dur*.15, ease:'power1.out' }, 0)
+      .to(el, { opacity:0, duration:dur*.2, ease:'power1.in' }, dur*.8);
+  }
+  function loop(){
+    spawnCall = G.delayedCall(rnd(.34, .56), function(){
+      if(!inView){ spawnCall = null; return; }
+      makeDrop(); loop();
+    });
+  }
+  function start(){
+    if(spawnCall) return;
+    for(var i=0;i<6;i++) G.delayedCall(i*.22, function(){ if(inView) makeDrop(); });
+    loop();
+  }
+  function stop(){ if(spawnCall){ spawnCall.kill(); spawnCall = null; } }
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      inView = es[0].isIntersecting;
+      if(inView) start(); else stop();
+    }, { rootMargin:'80px 0px 80px 0px' }).observe(sec);
+  } else { inView = true; start(); }
 }
 </script>
 </body>
