@@ -5399,8 +5399,8 @@ function initHospedaje(){
     /* separa marcadores encimados (la iglesia y 3 hoteles quedan a <300 m) */
     function declutter(){
       var ms = hMarkers.concat(vMarkers.filter(function(m){ var e = m.getElement(); return e && e.querySelector('.cer'); }));
-      var pts = ms.map(function(m){ return { m:m, p:map.latLngToContainerPoint(m.getLatLng()), dx:0, dy:0 }; });
-      var MIN = 40;
+      var pts = ms.map(function(m){ var q = map.latLngToContainerPoint(m.getLatLng()); if(hMarkers.indexOf(m) < 0) q = L.point(q.x, q.y - 30); return { m:m, p:q, dx:0, dy:0 }; });
+      var MIN = 42;
       for(var it=0; it<6; it++){
         for(var a=0; a<pts.length; a++) for(var c=a+1; c<pts.length; c++){
           var A = pts[a], C = pts[c];
