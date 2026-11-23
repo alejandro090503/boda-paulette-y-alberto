@@ -3109,9 +3109,6 @@ body > footer{padding-bottom:120px !important}
 #hero .hf-vig{background:radial-gradient(ellipse 80% 70% at 50% 48%,rgba(0,0,0,0) 55%,rgba(0,0,0,.35) 100%)}
 
 /* SECCIONES EN NEGRO (referencia Pinterest: negro + olivo + dorado sobre base clara) */
-#countdown,#itinerary{background:#121212 !important;color:#F2EFC9}
-#countdown .lbl,#itinerary .lbl{color:#D8D2A6;text-shadow:none !important}
-#countdown .ttl.foil-text,#itinerary .ttl.foil-text{background-image:linear-gradient(100deg,#8A6D12 0%,#D4AF37 30%,#FFFBEA 50%,#D4AF37 70%,#8A6D12 100%)}
 #countdown .cd-num{color:#F2EFC9 !important}
 #countdown .cd-ring-lbl{color:#D8D2A6 !important}
 #countdown .cd-ring-track{stroke:rgba(242,239,201,.14) !important}
@@ -3183,6 +3180,81 @@ body > footer{padding-bottom:120px !important}
 
 /* RSVP · "adultos" en la misma letra de la frase */
 .rsvp-notice-script{font-family:'Cormorant Garamond',serif !important;font-style:normal !important;font-size:inherit !important;color:inherit !important;font-weight:inherit !important}
+
+/* ═════ UNA SOLA PÁGINA CONTINUA ═════ */
+html{background:#F8F6E3 !important}
+body{background:#F8F6E3 !important;isolation:isolate}
+body > section:not(#hero),body > footer{background:transparent !important;isolation:auto !important;overflow:visible !important;padding-top:50px !important;padding-bottom:50px !important;box-shadow:none !important;border:0 !important}
+#rsvp{padding-bottom:70px !important}
+body > footer{padding-bottom:120px !important}
+#hero::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:140px;z-index:3;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(248,246,227,0) 0%,rgba(248,246,227,.04) 12.5%,rgba(248,246,227,.16) 25%,rgba(248,246,227,.32) 37.5%,rgba(248,246,227,.5) 50%,rgba(248,246,227,.68) 62.5%,rgba(248,246,227,.84) 75%,rgba(248,246,227,.96) 87.5%,#F8F6E3 100%)}
+#hero .h-frame{bottom:60px}
+#hero .h-scroll{z-index:5}#hero .h-scroll span{color:var(--olive) !important}
+.ink-bg{inset:-180px -6% !important;opacity:.3;z-index:-2;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34%,#000 66%,transparent 100%),linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent 0,#000 34%,#000 66%,transparent 100%),linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%);
+  mask-composite:intersect}
+
+/* negro en tarjetas: conserva la referencia negro + olivo + oro sin bandas horizontales */
+#countdown .cd-ring-grid{background:linear-gradient(160deg,#1A1C15,#121212 62%,#22281A);border-radius:26px;padding:24px 10px;box-shadow:0 18px 40px rgba(18,18,18,.25),inset 0 0 0 1px rgba(212,175,55,.5)}
+.it-list{background:linear-gradient(160deg,#1A1C15,#121212 62%,#22281A);border-radius:26px;padding:32px 18px;max-width:360px;box-shadow:0 18px 40px rgba(18,18,18,.25),inset 0 0 0 1px rgba(212,175,55,.5)}
+.it-list::before{left:114px;top:38px;bottom:38px}
+
+/* adornos */
+.orn{position:absolute;z-index:-1;pointer-events:none;user-select:none;height:auto;max-width:none}
+.orn-float{width:clamp(112px,33vw,150px);opacity:.92;animation:ornFloat 7s ease-in-out infinite alternate;animation-play-state:paused}
+.orn-float.on{animation-play-state:running}
+.orn-soft{width:clamp(190px,58vw,250px);opacity:.28}
+.orn-flip{scale:-1 1}
+#location::before{display:none !important}
+.orn-tl{left:-24px;top:-8px}.orn-tr{right:-24px;top:-8px}.orn-bl{left:-24px;bottom:-8px}.orn-br{right:-24px;bottom:-8px}
+@keyframes ornFloat{from{translate:0 -6px;rotate:-1deg}to{translate:0 6px;rotate:1deg}}
+#petals{z-index:-1 !important;perspective:640px}
+.pa-leaf{position:absolute;left:0;top:0;height:auto;backface-visibility:visible}
+@media (prefers-reduced-motion:reduce){.orn-float{animation:none}}
+
+/* ═════ MAPA MINIMALISTA ═════ */
+.pa-hs-toggle{margin-top:22px !important;margin-bottom:26px !important}
+.pa-hs-frame-in{height:auto !important;aspect-ratio:4/3;border-radius:26px}
+@media (min-width:768px){.pa-hs-frame-in{aspect-ratio:16/10}}
+.pa-hs-pt{position:relative;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:translate .35s ease}
+.pa-hs-pt i{position:relative;z-index:1;display:block;width:15px;height:15px;border-radius:50%;background:linear-gradient(140deg,#F6E7A6,#D4AF37 55%,#A8842A);box-shadow:0 0 0 1.5px rgba(251,250,236,.92),0 2px 5px rgba(0,0,0,.35);transition:transform .25s}
+.pa-hs-pt::after{content:'';position:absolute;left:50%;top:50%;width:15px;height:15px;margin:-7.5px;border-radius:50%;background:rgba(212,175,55,.26);animation:ptPulse 3.6s ease-out infinite}
+.pa-hs-divicon:nth-of-type(2n) .pa-hs-pt::after{animation-delay:-1.4s}
+.pa-hs-pt.on i{transform:scale(1.22)}
+@keyframes ptPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.2);opacity:0}}
+.pa-hs-pill{position:relative;display:flex;align-items:center;justify-content:center;height:26px;border-radius:999px;background:#FBFAEC;color:#2F3B1F;
+  font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.02em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer}
+.pa-hs-pill::after{content:'';position:absolute;left:50%;bottom:-5px;margin-left:-4px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid #FBFAEC}
+.pa-hs-ctrls{top:10px !important;right:10px !important;gap:4px !important}
+.pa-hs-ctrl{width:30px !important;height:30px !important}
+.pa-hs-ctrl svg{width:14px !important;height:14px !important}
+.pa-hs-hint{bottom:12px !important;padding:6px 14px !important;font-size:13px !important;white-space:nowrap}
+.pa-hs-sh-num{display:none !important}
+.pa-hs-sheet{left:8px !important;right:8px !important;bottom:8px !important;padding:14px 16px !important;border-radius:18px !important;max-height:calc(100% - 16px);overflow:auto}
+.pa-hs-sh-name{font-size:19px !important;line-height:1.2}
+.pa-hs-sh-addr{font-size:15px !important;margin-top:3px !important}
+.pa-hs-sh-dist{margin-top:5px !important;font-size:13px !important}
+.pa-hs-sh-btns{display:grid !important;grid-template-columns:1fr 1fr;gap:8px !important;margin-top:9px !important}
+.pa-hs-sh-btns .pa-hs-btn{min-height:40px !important;padding:0 6px !important;font-size:11px !important;width:auto !important}
+
+/* hoteles con aire */
+.pa-hs-list.hc-track > .pa-hs-hotel{padding:30px 24px 28px !important}
+.pa-hs-hotel .pa-hs-type{margin-top:16px}
+.pa-hs-hotel .pa-hs-name{margin-top:8px}
+.pa-hs-hotel .pa-hs-addr{margin-top:10px}
+.pa-hs-hotel .pa-hs-dist{margin-top:16px;gap:10px}
+.pa-hs-hotel .pa-hs-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin-top:22px}
+
+/* vinilo: centro liso, solo el orificio */
+#musicBtn .vinyl-disc::after{width:9% !important;height:9% !important;background:#050505 !important;box-shadow:0 0 0 1px rgba(255,255,255,.14) !important}
+
+.pa-hs-hotel .pa-hs-btns .pa-hs-btn{white-space:nowrap;padding-left:8px;padding-right:8px;font-size:11px;justify-content:center}
+
+/* sin costuras entre mosaicos del mapa */
+.pa-hs-map .leaflet-tile-container img{width:256.6px !important;height:256.6px !important}
 </style>
 </head>
 <body>
@@ -3320,6 +3392,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
+  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/rbs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v1" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">Paulette &amp; Alberto</span>
   <h2 class="ttl foil-text">Nuestra <span class="ttl-script">historia</span></h2>
@@ -3346,6 +3420,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
+  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-soft orn-flip" src="orn/r2s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">El gran día llega en</span>
   <h2 class="ttl foil-text">Cuenta <span class="ttl-script">regresiva</span></h2>
   <div class="gline"></div>
@@ -3405,6 +3481,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
+  <img class="orn orn-tr orn-float" src="orn/ra.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
   <h2 class="ttl foil-text">La <span class="ttl-script">celebración</span></h2>
@@ -3453,6 +3531,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
+  <img class="orn orn-bl orn-float" src="orn/r2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">No lo olvides</span>
   <h2 class="ttl foil-text">Reserva la <span class="ttl-script">fecha</span></h2>
   <div class="gline"></div>
@@ -3480,6 +3560,9 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
+  <img class="orn orn-br orn-float orn-flip" src="orn/r3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-soft orn-flip" src="orn/ras.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">El día de la boda</span>
   <h2 class="ttl foil-text">Itinerario</h2>
   <div class="gline"></div>
@@ -3494,6 +3577,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
 <section id="family">
+  <img class="orn orn-bl orn-float" src="orn/rb.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/r4s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v2 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Con la bendición de Dios</span>
   <h2 class="ttl foil-text">y de nuestras <span class="ttl-script">familias</span></h2>
@@ -3543,6 +3628,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
 <section id="dresscode" class="pa-dc" aria-label="Código de vestimenta">
+  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v1 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">Código de vestimenta</span>
   <h2 class="ttl foil-text">Formal</h2>
@@ -3592,6 +3679,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
 <section id="hospedaje" class="pa-hs">
+  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-soft orn-flip" src="orn/rbs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">Para tu estancia</span>
   <h2 class="ttl foil-text">Hospedaje <span class="ttl-script">sugerido</span></h2>
   <div class="gline"></div>
@@ -3628,7 +3717,7 @@ body > footer{padding-bottom:120px !important}
               <button type="button" class="pa-hs-ctrl" data-z="out" aria-label="Alejar"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
               <button type="button" class="pa-hs-ctrl" data-z="all" aria-label="Ver todo"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
             </div>
-            <div class="pa-hs-hint" id="paHsHint"><i>1</i>Toca un número para ver el hotel</div>
+            <div class="pa-hs-hint" id="paHsHint">Toca un hotel para ver sus datos</div>
             <div class="pa-hs-2f" id="paHs2f">Usa dos dedos para mover el mapa</div>
             <div class="pa-hs-sheet" id="paHsSheet" aria-live="polite">
               <button type="button" class="pa-hs-sh-x" id="paHsShX" aria-label="Cerrar"><svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
@@ -3654,6 +3743,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
 <section id="clima">
+  <img class="orn orn-bl orn-float" src="orn/r2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">Para que vengas preparado</span>
   <h2 class="ttl foil-text">El clima</h2>
   <div class="gline"></div>
@@ -3682,6 +3773,8 @@ body > footer{padding-bottom:120px !important}
 </section>
 
 <section id="gifts" class="pa-gf">
+  <img class="orn orn-tr orn-float" src="orn/ra.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v2" aria-hidden="true"><i style="background-image:url(ink/ink-oval.webp)"></i></div>
   <div class="pa-gf-rain" id="paGfRain" aria-hidden="true"></div>
 
@@ -3770,6 +3863,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
+  <img class="orn orn-br orn-float orn-flip" src="orn/r3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-soft orn-flip" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Comparte tus momentos</span>
   <h2 class="ttl foil-text">Álbum de <span class="ttl-script">fotos</span></h2>
@@ -3803,6 +3898,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
+  <img class="orn orn-bl orn-float" src="orn/rb.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-footer.webp)"></i></div>
   <span class="lbl">Confirmación de asistencia</span>
   <h2 class="ttl foil-text">¿Nos <span class="ttl-script">acompañas?</span></h2>
@@ -3907,6 +4004,8 @@ body > footer{padding-bottom:120px !important}
 
 <!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
+  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ft-orn">✦ · ✦ · ✦</div>
   <div class="ft-nms foil-text">Paulette &amp; Alberto</div>
   <div class="gline" style="margin-top:22px"></div>
@@ -3988,18 +4087,12 @@ function bootInvitation(){
   requestAnimationFrame(() => {
     {
       {
-        addSectionWaves();
         addSectionMedals();
-        addCorners();
-        addWindOrns();
-        addAuras();
         heroAnim();
         scrollAnims();
         countdown();
         setInterval(countdown, 1000);
-        ambientWind();
         initMenu();
-        initSectionFades();
         initHeroDust();
         initAutoScroll();
         initHospedaje();
@@ -4388,35 +4481,25 @@ function copyClabe() {
    ticker (rAF) y en pestañas en segundo plano se congela, dejando la
    invitación sin pétalos al volver. */
 function initPetals(){
-  const box = document.getElementById('petals');
-  if(!box) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const COLORS = ['rgba(216,210,166,.95)','rgba(184,150,46,.55)','rgba(124,150,84,.75)','rgba(79,99,52,.32)'];
-  const MAX = window.innerWidth < 520 ? 12 : 18;
-
-  function spawn(){
-    if(box.childElementCount >= MAX) return;
-    const el = document.createElement('span');
-    el.className = 'petal';
-    const w = 9 + Math.random()*10;
-    el.style.width  = w + 'px';
-    el.style.height = (w*0.7) + 'px';
-    el.style.background = COLORS[(Math.random()*COLORS.length)|0];
-    el.style.left = (Math.random()*100) + '%';
+  var box = document.getElementById('petals');
+  if(!box || REDUCED || typeof gsap === 'undefined') return;
+  var N = window.innerWidth < 520 ? 14 : 18, r = gsap.utils.random;
+  for(var i = 0; i < N; i++) (function(i){
+    var big = i % 4 === 0, n = (i % 6) + 1, w = big ? r(42, 58) : r(16, 28);
+    var el = new Image(); el.className = 'pa-leaf'; el.alt = ''; el.onerror = function(){ el.remove(); };
+    el.src = 'orn/h' + n + (big ? 'b' : '') + '.webp'; el.style.width = w + 'px';
     box.appendChild(el);
-    const H = window.innerHeight || 800;
-    const dur = 12 + Math.random()*9;
-    gsap.timeline({onComplete(){ el.remove(); }})
-      .fromTo(el,
-        {y:-40, x:0, rotation:Math.random()*360, opacity:0},
-        {y:H+60, x:(Math.random()-.5)*160, rotation:'+=' + (240+Math.random()*360),
-         duration:dur, ease:'none'}, 0)
-      .to(el, {opacity:.85, duration:dur*.12, ease:'power1.out'}, 0)
-      .to(el, {opacity:0,   duration:dur*.28, ease:'power1.in'}, dur*.72);
-  }
-
-  for(let i=0;i<5;i++) setTimeout(spawn, i*700);
-  setInterval(spawn, 1400);
+    function fall(first){
+      var H = window.innerHeight || 800, d = big ? r(24, 32) : r(15, 24);
+      gsap.set(el, { x: r(-20, (box.clientWidth || 375) - 10), y: -80, opacity: big ? r(.2, .3) : r(.3, .5) });
+      var t = gsap.to(el, { y: H + 90, duration: d, ease: 'none', onComplete: function(){ fall(false); } });
+      if(first) t.progress(Math.random());
+    }
+    fall(true);
+    gsap.to(el, { x: '+=' + r(24, 58), duration: r(3.4, 5.6), ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    gsap.fromTo(el, { rotationX: r(-55, -15), rotationY: r(-60, -20) }, { rotationX: r(20, 60), rotationY: r(25, 70), duration: r(2.4, 4.2), ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    gsap.fromTo(el, { rotation: r(-30, 30) }, { rotation: '+=' + r(120, 240), duration: r(12, 20), ease: 'none', repeat: -1 });
+  })(i);
 }
 
 /* ── LLUVIA DE SOBRES ────────────────────────────────── */
@@ -5407,17 +5490,13 @@ function initHospedaje(){
   /* ── 3. Mapa ── */
   var map = null, bounds = null, hMarkers = [], routes = [];
   var sheet = $('paHsSheet'), hint = $('paHsHint');
-  var FIT = { paddingTopLeft:[40,78], paddingBottomRight:[56,70], maxZoom:16 };  /* arriba: aire para la píldora del lugar */
+  var FIT = { paddingTopLeft:[40,62], paddingBottomRight:[40,66], maxZoom:15 };  /* arriba: aire para la píldora del lugar */
   function fitAll(anim){
     if(!map || !bounds) return;
     if(anim && !RM) map.flyToBounds(bounds, Object.assign({ duration:.9 }, FIT)); else map.fitBounds(bounds, FIT);
   }
   function highlight(i){
-    hMarkers.forEach(function(m, k){ var el = m.getElement(); if(el){ var d = el.querySelector('.pa-hs-mk-h'); if(d) d.classList.toggle('on', k===i); } });
-    routes.forEach(function(r){
-      var on = (i == null || r.i === i);
-      r.line.setStyle({ opacity: on ? .95 : .3 }); r.glow.setStyle({ opacity: on ? .18 : .05 });
-    });
+    hMarkers.forEach(function(m, k){ var el = m.getElement(); if(el){ var d = el.querySelector('.pa-hs-pt'); if(d) d.classList.toggle('on', k===i); } });
   }
   function openSheet(p){
     $('paHsShNum').textContent = p.num; $('paHsShType').textContent = p.type; $('paHsShName').textContent = p.name;
@@ -5431,7 +5510,7 @@ function initHospedaje(){
     var target = map.unproject(map.project([p.lat, p.lng], z).add([0, sh/2 + 10]), z);  /* marcador queda arriba de la ficha */
     if(RM) map.setView(target, z); else map.flyTo(target, z, { duration:1 });
   }
-  function closeSheet(){ sheet.classList.remove('open'); hint.classList.remove('gone'); highlight(null); }
+  function closeSheet(){ sheet.classList.remove('open'); highlight(null); }
   $('paHsShX').addEventListener('click', function(){ closeSheet(); fitAll(true); });
 
   function focusHotel(i){
@@ -5456,29 +5535,18 @@ function initHospedaje(){
     map.attributionControl.setPrefix(false);
 
     bounds = L.latLngBounds([]);
-    /* rutas OSRM: halo + punteado dorado animado */
-    HOTELS.forEach(function(h, i){
-      if(!h.ruta || h.ruta.length < 2) return;
-      var glow = L.polyline(h.ruta, { color:'#F6E7A6', weight:9, opacity:.18, lineCap:'round', lineJoin:'round', interactive:false }).addTo(map);
-      var line = L.polyline(h.ruta, { color:'#D4AF37', weight:3.5, opacity:.95, dashArray:'2 9', lineCap:'round', lineJoin:'round',
-        className:'pa-hs-route', interactive:false }).addTo(map);
-      routes.push({ i:i, glow:glow, line:line });
-      h.ruta.forEach(function(p){ bounds.extend(p); });
-    });
     /* lugares: píldora clara con piquito */
     VENUES.forEach(function(v){
-      var w = Math.round(46 + (v.t.length * 9.5));
-      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[w,38], iconAnchor:[w/2,46],
-        html:'<div class="pa-hs-mk-v' + (v.t === 'Ceremonia' ? ' cer' : '') + '" role="button" aria-label="' + esc(v.t + (v.nombre && v.nombre !== v.t ? ': ' + v.nombre : '')) + '"><b>' + esc(v.ico || '♥') + '</b>' + esc(v.t) + '</div>' });
-      L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:(v.t === 'Ceremonia' ? 100 : 900) }).addTo(map).on('click', function(){ focusVenue(v); });
+      var w = Math.round(26 + v.t.length * 7.6);
+      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[w,26], iconAnchor:[w/2,33],
+        html:'<div class="pa-hs-pill" role="button" aria-label="' + esc(v.t + ': ' + v.nombre) + '">' + esc(v.t) + '</div>' });
+      L.marker([v.lat, v.lng], { icon:icon, keyboard:true, zIndexOffset:900 }).addTo(map).on('click', function(){ focusVenue(v); });
       bounds.extend([v.lat, v.lng]);
     });
     /* hoteles: círculo numerado con aro oro y pulso */
     HOTELS.forEach(function(h, i){
-      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[46,46], iconAnchor:[23,23],
-        html:'<div class="pa-hs-mk-h" role="button" aria-label="Hotel ' + (i+1) + ': ' + esc(h.n) + '">' +
-             (RM ? '' : '<span class="pa-hs-pulse"></span><span class="pa-hs-pulse b"></span>') +
-             '<span class="pa-hs-mk-ring"><span class="pa-hs-mk-in">' + (i+1) + '</span></span></div>' });
+      var icon = L.divIcon({ className:'pa-hs-divicon', iconSize:[28,28], iconAnchor:[14,14],
+        html:'<div class="pa-hs-pt" role="button" aria-label="' + esc(h.n) + '"><i></i></div>' });
       var m = L.marker([h.lat, h.lng], { icon:icon, keyboard:true, zIndexOffset:500 + i }).addTo(map)
         .on('click', function(){ focusHotel(i); });
       hMarkers.push(m);
@@ -5486,26 +5554,28 @@ function initHospedaje(){
     });
 
     map.on('click', function(){ if(sheet.classList.contains('open')) closeSheet(); });
-    var vMarkers = [];
-    map.eachLayer(function(l){ if(l instanceof L.Marker && hMarkers.indexOf(l) < 0) vMarkers.push(l); });
-    /* separa marcadores encimados (la iglesia y 3 hoteles quedan a <300 m) */
+    /* los puntos se apartan entre sí y de las píldoras (las píldoras no se mueven) */
     function declutter(){
-      var ms = hMarkers.concat(vMarkers.filter(function(m){ var e = m.getElement(); return e && e.querySelector('.cer'); }));
-      var pts = ms.map(function(m){ var q = map.latLngToContainerPoint(m.getLatLng()); if(hMarkers.indexOf(m) < 0) q = L.point(q.x, q.y - 30); return { m:m, p:q, dx:0, dy:0 }; });
-      var MIN = 42;
-      for(var it=0; it<6; it++){
-        for(var a=0; a<pts.length; a++) for(var c=a+1; c<pts.length; c++){
-          var A = pts[a], C = pts[c];
-          var x = (C.p.x + C.dx) - (A.p.x + A.dx), y = (C.p.y + C.dy) - (A.p.y + A.dy), d = Math.sqrt(x*x + y*y) || .01;
-          if(d < MIN){ var k = (MIN - d) / 2 / d; A.dx -= x*k; A.dy -= y*k; C.dx += x*k; C.dy += y*k; }
+      var pills = VENUES.map(function(v){ var q = map.latLngToContainerPoint([v.lat, v.lng]); return { x:q.x, y:q.y - 20, hw:Math.round(13 + v.t.length * 3.8) + 12, hh:25 }; });
+      var pts = hMarkers.map(function(m){ var q = map.latLngToContainerPoint(m.getLatLng()); return { m:m, x:q.x, y:q.y, dx:0, dy:0 }; });
+      for(var it = 0; it < 12; it++){
+        for(var a = 0; a < pts.length; a++){
+          for(var c = a + 1; c < pts.length; c++){
+            var A = pts[a], C = pts[c], x = (C.x + C.dx) - (A.x + A.dx), y = (C.y + C.dy) - (A.y + A.dy), d = Math.sqrt(x*x + y*y) || .01;
+            if(d < 28){ var k = (28 - d) / 2 / d; A.dx -= x*k; A.dy -= y*k; C.dx += x*k; C.dy += y*k; }
+          }
+          pills.forEach(function(P){
+            var O = pts[a], ox = O.x + O.dx - P.x, oy = O.y + O.dy - P.y;
+            if(Math.abs(ox) < P.hw && Math.abs(oy) < P.hh){
+              if(P.hh - Math.abs(oy) <= P.hw - Math.abs(ox)) O.dy += (oy >= 0 ? 1 : -1) * (P.hh - Math.abs(oy));
+              else O.dx += (ox >= 0 ? 1 : -1) * (P.hw - Math.abs(ox));
+            }
+          });
         }
       }
-      pts.forEach(function(o){ var e = o.m.getElement(); if(!e || !e.firstChild) return;
-        e.firstChild.style.translate = Math.abs(o.dx) + Math.abs(o.dy) < .5 ? '' : (o.dx.toFixed(1) + 'px ' + o.dy.toFixed(1) + 'px'); });
+      pts.forEach(function(o){ var e = o.m.getElement(); if(e && e.firstChild) e.firstChild.style.translate = o.dx.toFixed(1) + 'px ' + o.dy.toFixed(1) + 'px'; });
     }
-    function zcls(){ $('paHsMap').classList.toggle('pa-hs-far', map.getZoom() < 15.25); declutter(); }
-    map.on('zoomend', zcls); map.whenReady(zcls);
-    setTimeout(function(){ if(hint) hint.classList.add('gone'); }, 5000);
+    map.on('zoomend', declutter); map.whenReady(declutter);
     root.querySelectorAll('.pa-hs-ctrl').forEach(function(b){
       b.addEventListener('click', function(){
         var z = b.getAttribute('data-z');
@@ -5908,6 +5978,14 @@ function initPadrinos(){
       document.getElementById('clLive').hidden = false;
       document.getElementById('clWait').hidden = true;
     }).catch(function(){});
+})();
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.orn-float');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('on', e.isIntersecting); }); }, { rootMargin:'60px' });
+  els.forEach(function(e, i){ e.style.animationDelay = (-(i * 1.7) % 8).toFixed(1) + 's'; io.observe(e); });
 })();
 </script>
 </body>
