@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Paulette &amp; Alberto · 13 · Marzo · 2027">
   <meta property="og:description" content="Nos casamos. Tequisquiapan, Querétaro. Confirma tu asistencia.">
-  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=2">
+  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=3">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3355,8 +3355,8 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ SOBRE DE APERTURA ═══════════════ -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.webp" alt="Sobre de la invitación de Paulette y Alberto">
-  <video id="envVideo" src="sobre-apertura.mp4" muted playsinline preload="auto" poster="sobre.webp"></video>
+  <img id="envImage" src="sobre.webp?v=3" alt="Sobre de la invitación de Paulette y Alberto">
+  <video id="envVideo" src="sobre-apertura.mp4?v=3" muted playsinline preload="auto" poster="sobre.webp?v=3"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
 
@@ -4074,7 +4074,7 @@ function initEnvelope(){
       const a = document.getElementById('bgMusic');
       if (a) { a.volume = .32; a.play().catch(()=>{}); }
     }
-    gsap.to(tap, {opacity:0, duration:.3});
+    gsap.killTweensOf(tap); gsap.to(tap, {opacity:0, duration:.3});
     function crossfade(){
       gsap.to(img,   {opacity:0, duration:.45, ease:'power2.inOut'});
       gsap.to(video, {opacity:1, duration:.45, ease:'power2.inOut'});
@@ -4087,10 +4087,10 @@ function initEnvelope(){
     }
     if (video.readyState >= 2) play();
     else { video.load(); video.addEventListener('canplay', play, {once:true}); setTimeout(play, 1500); }
-    /* el video se corta en 2.4 s (antes de que aparezca el segundo sello) y funde al color de la invitación */
-    video.addEventListener('timeupdate', function(){ if (video.currentTime >= 1.95) finish(); });
+    /* el fundido arranca en 6.5 s, durante el destello final del video (7.9 s) */
+    video.addEventListener('timeupdate', function(){ if (video.currentTime >= 6.5) finish(); });
     video.addEventListener('ended', finish, {once:true});
-    setTimeout(finish, 5000);
+    setTimeout(finish, 9000);
   }
   screen.addEventListener('click', onTap, {passive:false});
   screen.addEventListener('touchstart', onTap, {passive:false});
