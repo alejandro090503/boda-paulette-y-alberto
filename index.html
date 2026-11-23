@@ -3203,7 +3203,7 @@ body > footer{padding-bottom:120px !important}
 .it-list::before{left:114px;top:38px;bottom:38px}
 
 /* adornos */
-.orn{position:absolute;z-index:-1;pointer-events:none;user-select:none;height:auto;max-width:none}
+.orn{position:absolute !important;z-index:-1 !important;margin:0 !important;pointer-events:none;user-select:none;height:auto;max-width:none}
 .orn-float{width:clamp(112px,33vw,150px);opacity:.92;animation:ornFloat 7s ease-in-out infinite alternate;animation-play-state:paused}
 .orn-float.on{animation-play-state:running}
 .orn-soft{width:clamp(190px,58vw,250px);opacity:.28}
@@ -3255,6 +3255,13 @@ body > footer{padding-bottom:120px !important}
 
 /* sin costuras entre mosaicos del mapa */
 .pa-hs-map .leaflet-tile-container img{width:256.6px !important;height:256.6px !important}
+
+/* ═════ CUENTA REGRESIVA MINIMALISTA ═════ */
+.cdm{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;max-width:350px;margin:30px auto 0}
+.cdm-item{display:flex;flex-direction:column;align-items:center;gap:9px;padding:4px 2px;border-left:1px solid rgba(184,150,46,.6)}
+.cdm-item:first-child{border-left:0}
+#countdown .cdm-num{font-family:'Playfair Display',serif !important;font-weight:600 !important;font-size:clamp(36px,11vw,44px) !important;line-height:1 !important;letter-spacing:0 !important;color:#121212 !important;font-variant-numeric:lining-nums tabular-nums;text-shadow:none !important}
+.cdm-lbl{font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
 </style>
 </head>
 <body>
@@ -3426,55 +3433,11 @@ body > footer{padding-bottom:120px !important}
   <h2 class="ttl foil-text">Cuenta <span class="ttl-script">regresiva</span></h2>
   <div class="gline"></div>
 
-  <div class="cd-ring-grid">
-    <div class="cd-ring-item" id="cd-item-d">
-      <svg class="cd-ring-svg" viewBox="0 0 120 120">
-        <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
-        <circle class="cd-ring-prog"  cx="60" cy="60" r="52" id="ring-d"/>
-      </svg>
-      <div class="cd-rotor"><span class="cd-dot"></span></div>
-      <div class="cd-ripple"></div>
-      <div class="cd-ring-center">
-        <span class="cd-num" id="cd-d">--</span>
-        <span class="cd-ring-lbl">Días</span>
-      </div>
-    </div>
-    <div class="cd-ring-item" id="cd-item-h">
-      <svg class="cd-ring-svg" viewBox="0 0 120 120">
-        <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
-        <circle class="cd-ring-prog"  cx="60" cy="60" r="52" id="ring-h"/>
-      </svg>
-      <div class="cd-rotor cd-rotor-mid"><span class="cd-dot"></span></div>
-      <div class="cd-ripple"></div>
-      <div class="cd-ring-center">
-        <span class="cd-num" id="cd-h">--</span>
-        <span class="cd-ring-lbl">Horas</span>
-      </div>
-    </div>
-    <div class="cd-ring-item" id="cd-item-m">
-      <svg class="cd-ring-svg" viewBox="0 0 120 120">
-        <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
-        <circle class="cd-ring-prog"  cx="60" cy="60" r="52" id="ring-m"/>
-      </svg>
-      <div class="cd-rotor cd-rotor-rev"><span class="cd-dot"></span></div>
-      <div class="cd-ripple"></div>
-      <div class="cd-ring-center">
-        <span class="cd-num" id="cd-m">--</span>
-        <span class="cd-ring-lbl">Minutos</span>
-      </div>
-    </div>
-    <div class="cd-ring-item" id="cd-item-s">
-      <svg class="cd-ring-svg" viewBox="0 0 120 120">
-        <circle class="cd-ring-track" cx="60" cy="60" r="52"/>
-        <circle class="cd-ring-prog"  cx="60" cy="60" r="52" id="ring-s"/>
-      </svg>
-      <div class="cd-rotor cd-rotor-fast"><span class="cd-dot"></span></div>
-      <div class="cd-ripple"></div>
-      <div class="cd-ring-center">
-        <span class="cd-num" id="cd-s">--</span>
-        <span class="cd-ring-lbl">Segundos</span>
-      </div>
-    </div>
+  <div class="cdm" role="timer" aria-label="Tiempo que falta para la boda">
+    <div class="cdm-item" id="cd-item-d"><span class="cd-num cdm-num" id="cd-d">--</span><span class="cdm-lbl">Días</span></div>
+    <div class="cdm-item" id="cd-item-h"><span class="cd-num cdm-num" id="cd-h">--</span><span class="cdm-lbl">Horas</span></div>
+    <div class="cdm-item" id="cd-item-m"><span class="cd-num cdm-num" id="cd-m">--</span><span class="cdm-lbl">Min</span></div>
+    <div class="cdm-item" id="cd-item-s"><span class="cd-num cdm-num" id="cd-s">--</span><span class="cdm-lbl">Seg</span></div>
   </div>
 </section>
 
@@ -4346,7 +4309,7 @@ function scrollAnims() {
   });
 
   // Countdown rings — entrada suave (sin scale, evita que queden encogidos)
-  gsap.from('.cd-ring-item', {
+  gsap.from('.cdm-item', {
     opacity: 0, y: 22,
     duration: .65, stagger: .11,
     ease: 'power3.out',
@@ -5747,7 +5710,7 @@ function failsafeVisibles(){
       io.unobserve(el);
     });
   });
-  document.querySelectorAll('section .lbl, section .ttl, .loc-card, .fam-col, .fam-god, .gf-card, .hs-card, .tl-row-inner, .fam-n, .cd-ring-item, .alb-qr-frame, .cal-card, .dc-look')
+  document.querySelectorAll('section .lbl, section .ttl, .loc-card, .fam-col, .fam-god, .gf-card, .hs-card, .tl-row-inner, .fam-n, .cdm-item, .alb-qr-frame, .cal-card, .dc-look')
     .forEach(function(el){ io.observe(el); });
 }
 </script>
