@@ -3312,6 +3312,23 @@ body::before{opacity:.6 !important}
 
 .rsvp-para-lbl{color:#D9C477 !important}.pd-amp{color:#E3C65B !important}
 .pd-icon{background:radial-gradient(circle,#2A3B20,#141B10) !important;box-shadow:inset 0 0 0 1px rgba(212,175,55,.7) !important}.pd-icon svg{stroke:#E3C65B !important}
+
+/* ═════ PLANTAS GEMINI: siempre en las orillas ═════ */
+.orn-float:not(.orn-leaf):not([class*="orn-lat"]){width:clamp(132px,40vw,172px) !important;opacity:1 !important}
+.orn-soft:not([class*="orn-lat"]){width:clamp(138px,42vw,178px) !important;opacity:.3 !important}
+.orn-tl{left:-40px !important;top:-54px !important}.orn-tr{right:-40px !important;top:-54px !important}
+.orn-bl{left:-40px !important;bottom:-62px !important}.orn-br{right:-40px !important;bottom:-62px !important}
+.orn-lat-l,.orn-lat-r{width:clamp(88px,25vw,108px) !important;top:-34px !important;opacity:1 !important}
+.orn-lat-l{left:-64px !important;right:auto !important}.orn-lat-r{right:-64px !important;left:auto !important}
+#family .lbl,#clima .lbl,#rsvp .lbl{letter-spacing:.17em}
+.orn-leaf{width:clamp(22px,7vw,30px) !important;opacity:.95 !important}
+.orn-leaf-a{left:5px !important;top:47% !important}
+.orn-leaf-b{right:5px !important;top:29% !important}
+.gui{position:relative;z-index:1;display:block;width:min(112%,430px);max-width:none;height:auto;margin:0 50% 18px;translate:-50% 0;filter:drop-shadow(0 8px 12px rgba(0,0,0,.42))}
+#location .sec-draw,#family .sec-draw,#hospedaje .sec-draw,#gifts .sec-draw,#rsvp .sec-draw,#location .sec-medal,#family .sec-medal,#hospedaje .sec-medal,#gifts .sec-medal,#rsvp .sec-medal{display:none !important}
+.vel{display:block;width:clamp(128px,40vw,158px);height:auto;margin:24px auto 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5))}
+.vel-ft{margin:0 auto 14px}.ft-orn{display:none}
+#location .orn-leaf,#calendar .orn-leaf,#family .orn-leaf,#rsvp .orn-leaf,#clima .orn-leaf,#hospedaje .orn-leaf,#gifts .orn-leaf,#album .orn-leaf,#itinerary .orn-leaf{top:58px !important}
 </style>
 </head>
 <body>
@@ -3449,8 +3466,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
-  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-bl orn-soft" src="orn/rbs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v1" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">Paulette &amp; Alberto</span>
   <h2 class="ttl foil-text">Nuestra <span class="ttl-script">historia</span></h2>
@@ -3477,8 +3496,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
-  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-br orn-soft orn-flip" src="orn/r2s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg6.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">El gran día llega en</span>
   <h2 class="ttl foil-text">Cuenta <span class="ttl-script">regresiva</span></h2>
   <div class="gline"></div>
@@ -3494,8 +3515,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
-  <img class="orn orn-tr orn-float" src="orn/ra.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
   <h2 class="ttl foil-text">La <span class="ttl-script">celebración</span></h2>
@@ -3544,8 +3568,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
-  <img class="orn orn-bl orn-float" src="orn/r2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">No lo olvides</span>
   <h2 class="ttl foil-text">Reserva la <span class="ttl-script">fecha</span></h2>
   <div class="gline"></div>
@@ -3573,8 +3599,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
-  <img class="orn orn-br orn-float orn-flip" src="orn/r3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tl orn-soft orn-flip" src="orn/ras.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-float orn-flip" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv5.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg9.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">El día de la boda</span>
   <h2 class="ttl foil-text">Itinerario</h2>
@@ -3585,13 +3613,17 @@ body::before{opacity:.6 !important}
     <li class="it-item"><span class="it-time">6:30 PM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Recepción y banquete</p></div></li>
     <li class="it-item"><span class="it-time">1:30 AM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Fin del evento</p></div></li>
   </ol>
+  <img class="vel" src="orn/vel.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
 </section>
 
 
 <!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
 <section id="family">
-  <img class="orn orn-bl orn-float" src="orn/rb.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tr orn-soft" src="orn/r4s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv6.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v2 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Con la bendición de Dios</span>
   <h2 class="ttl foil-text">y de nuestras <span class="ttl-script">familias</span></h2>
@@ -3641,8 +3673,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
 <section id="dresscode" class="pa-dc" aria-label="Código de vestimenta">
-  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv7.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg7.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v1 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">Código de vestimenta</span>
   <h2 class="ttl foil-text">Formal</h2>
@@ -3692,8 +3726,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
 <section id="hospedaje" class="pa-hs">
-  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-br orn-soft orn-flip" src="orn/rbs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv8.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg12.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">Para tu estancia</span>
   <h2 class="ttl foil-text">Hospedaje <span class="ttl-script">sugerido</span></h2>
   <div class="gline"></div>
@@ -3756,8 +3793,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
 <section id="clima">
-  <img class="orn orn-bl orn-float" src="orn/r2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv9.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg5.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <span class="lbl">Para que vengas preparado</span>
   <h2 class="ttl foil-text">El clima</h2>
   <div class="gline"></div>
@@ -3786,8 +3825,11 @@ body::before{opacity:.6 !important}
 </section>
 
 <section id="gifts" class="pa-gf">
-  <img class="orn orn-tr orn-float" src="orn/ra.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-bl orn-soft" src="orn/r3s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv10.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg10.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v2" aria-hidden="true"><i style="background-image:url(ink/ink-oval.webp)"></i></div>
   <div class="pa-gf-rain" id="paGfRain" aria-hidden="true"></div>
 
@@ -3876,8 +3918,10 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
-  <img class="orn orn-br orn-float orn-flip" src="orn/r3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tl orn-soft orn-flip" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Comparte tus momentos</span>
   <h2 class="ttl foil-text">Álbum de <span class="ttl-script">fotos</span></h2>
@@ -3911,8 +3955,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
-  <img class="orn orn-bl orn-float" src="orn/rb.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tr orn-soft" src="orn/r1s.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv12.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg8.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-footer.webp)"></i></div>
   <span class="lbl">Confirmación de asistencia</span>
   <h2 class="ttl foil-text">¿Nos <span class="ttl-script">acompañas?</span></h2>
@@ -4017,8 +4064,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
-  <img class="orn orn-tr orn-float" src="orn/r1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-tl orn-float orn-flip" src="orn/r4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
+  <img class="vel vel-ft" src="orn/vel.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ft-orn">✦ · ✦ · ✦</div>
   <div class="ft-nms foil-text">Paulette &amp; Alberto</div>
   <div class="gline" style="margin-top:22px"></div>
@@ -4500,7 +4550,7 @@ function initPetals(){
   for(var i = 0; i < N; i++) (function(i){
     var big = i % 4 === 0, n = (i % 6) + 1, w = big ? r(42, 58) : r(16, 28);
     var el = new Image(); el.className = 'pa-leaf'; el.alt = ''; el.onerror = function(){ el.remove(); };
-    el.src = 'orn/h' + n + (big ? 'b' : '') + '.webp'; el.style.width = w + 'px';
+    el.src = 'orn/' + (i % 3 === 2 ? 'hg' + ((i % 12) + 1) : 'hv' + ((i % 12) + 1)) + (big ? 'b' : '') + '.webp'; el.style.width = w + 'px';
     box.appendChild(el);
     function fall(first){
       var H = window.innerHeight || 800, d = big ? r(24, 32) : r(15, 24);
