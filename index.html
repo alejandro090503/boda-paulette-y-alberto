@@ -2047,7 +2047,7 @@ body{color:var(--black);font-family:'Cormorant Garamond',serif;font-weight:500;f
 /* Fondo botánico sutil (idea de la plantilla 181) */
 body::before{
   content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:url('botanica-negro.webp') center/cover no-repeat;opacity:.16;
+  background:url('fondos/lino.webp') center/cover no-repeat;opacity:.16;
 }
 section{position:relative}
 #story,#calendar,#family,#hospedaje,#album{background:transparent}
@@ -2462,7 +2462,7 @@ body > section,body > footer{isolation:isolate}
 .mn-panel{position:fixed;inset:0;z-index:9500;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
   padding:60px 24px calc(40px + env(safe-area-inset-bottom));background:#0E0F0B;
   opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
-.mn-panel::before{content:'';position:absolute;inset:0;z-index:-1;background:url('botanica-negro.webp') center/cover;opacity:.18}
+.mn-panel::before{content:'';position:absolute;inset:0;z-index:-1;background:url('fondos/lino.webp') center/cover;opacity:.18}
 .mn-panel.open{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
 .mn-x{position:absolute;top:calc(14px + env(safe-area-inset-top));right:14px;width:48px;height:48px;border:none;background:none;color:var(--olive);cursor:pointer}
 .mn-x svg{width:26px;height:26px}
@@ -3329,6 +3329,26 @@ body::before{opacity:.6 !important}
 .vel{display:block;width:clamp(128px,40vw,158px);height:auto;margin:24px auto 0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.5))}
 .vel-ft{margin:0 auto 14px}.ft-orn{display:none}
 #location .orn-leaf,#calendar .orn-leaf,#family .orn-leaf,#rsvp .orn-leaf,#clima .orn-leaf,#hospedaje .orn-leaf,#gifts .orn-leaf,#album .orn-leaf,#itinerary .orn-leaf{top:58px !important}
+
+/* ═════ FONDOS GEMINI POR SECCIÓN (sin cortes) ═════ */
+body::before{background-size:cover !important;background-position:center !important;opacity:.36 !important}
+.fx-bg{position:absolute !important;margin:0 !important;left:0;right:0;aspect-ratio:768/1376;z-index:-2;pointer-events:none;overflow:hidden;opacity:.92;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 76%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 76%,transparent 100%)}
+.fx-top{top:-130px}.fx-bot{bottom:-40px}.fx-mid{top:50%;translate:0 -50%}
+.fx-flip{scale:-1 1}
+.fx-bg i{position:absolute;inset:-6%;background-position:center;background-size:cover;background-repeat:no-repeat;animation:fxDrift 24s ease-in-out infinite alternate}
+.fx-v2 i{animation-delay:-7s;animation-direction:alternate-reverse}.fx-v3 i{animation-delay:-13s}.fx-v4 i{animation-delay:-18s;animation-direction:alternate-reverse}
+@keyframes fxDrift{from{transform:translate3d(-2%,-1.5%,0) scale(1.01)}to{transform:translate3d(2%,1.5%,0) scale(1.07)}}
+.fx-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 66% 34% at 50% 34%,rgba(14,15,11,.62) 0%,rgba(14,15,11,.3) 58%,rgba(14,15,11,0) 100%)}
+#footer .fx-bg::after{background:radial-gradient(ellipse 72% 34% at 50% 30%,rgba(14,15,11,.72),rgba(14,15,11,0))}
+@media (prefers-reduced-motion:reduce){.fx-bg i{animation:none}}
+.cal-card{background:url(fondos/beige.webp) center/cover no-repeat,#EFE8CF !important;box-shadow:0 18px 38px rgba(0,0,0,.45),inset 0 0 0 1px rgba(184,150,46,.6) !important}
+.cal-card::after{display:none !important}
+.rsvp-notice{background:url(fondos/beige.webp) center/cover no-repeat,#EFE8CF !important}
+#footer .ft-nms,#footer .ft-dt,#footer .ft-note{position:relative;z-index:1}
+#footer .fx-bot{bottom:-150px}
+#footer .ft-dt,#footer .ft-note{text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.8)}
+#footer{overflow:clip !important}
 </style>
 </head>
 <body>
@@ -3466,11 +3486,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
+  <div class="fx-bg fx-top fx-v1" aria-hidden="true"><i style="background-image:url(fondos/seda.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v1" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">Paulette &amp; Alberto</span>
   <h2 class="ttl foil-text">Nuestra <span class="ttl-script">historia</span></h2>
   <div class="gline"></div>
@@ -3496,6 +3516,7 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
+  <div class="fx-bg fx-mid fx-v2" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
   <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3515,12 +3536,12 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
+  <div class="fx-bg fx-top fx-v3" aria-hidden="true"><i style="background-image:url(fondos/luces.webp)"></i></div>
   <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">¿Dónde y cuándo?</span>
   <h2 class="ttl foil-text">La <span class="ttl-script">celebración</span></h2>
   <div class="gline"></div>
@@ -3568,6 +3589,7 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
+  <div class="fx-bg fx-mid fx-v4" aria-hidden="true"><i style="background-image:url(fondos/tinta.webp)"></i></div>
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3599,11 +3621,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
+  <div class="fx-bg fx-mid fx-v1" aria-hidden="true"><i style="background-image:url(fondos/marmol.webp)"></i></div>
   <img class="orn orn-tl orn-float orn-flip" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv5.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg9.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-top.webp)"></i></div>
   <span class="lbl">El día de la boda</span>
   <h2 class="ttl foil-text">Itinerario</h2>
   <div class="gline"></div>
@@ -3619,12 +3641,12 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
 <section id="family">
+  <div class="fx-bg fx-mid fx-v2 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
   <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv6.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v2 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Con la bendición de Dios</span>
   <h2 class="ttl foil-text">y de nuestras <span class="ttl-script">familias</span></h2>
   <div class="gline"></div>
@@ -3673,11 +3695,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
 <section id="dresscode" class="pa-dc" aria-label="Código de vestimenta">
+  <div class="fx-bg fx-top fx-v3" aria-hidden="true"><i style="background-image:url(fondos/terciopelo.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv7.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg7.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v1 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-hero.webp)"></i></div>
   <span class="lbl">Código de vestimenta</span>
   <h2 class="ttl foil-text">Formal</h2>
   <div class="gline"></div>
@@ -3726,6 +3748,7 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
 <section id="hospedaje" class="pa-hs">
+  <div class="fx-bg fx-bot fx-v4 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/terciopelo.webp)"></i></div>
   <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3793,6 +3816,7 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
 <section id="clima">
+  <div class="fx-bg fx-mid fx-v1" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
   <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv9.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3825,12 +3849,12 @@ body::before{opacity:.6 !important}
 </section>
 
 <section id="gifts" class="pa-gf">
+  <div class="fx-bg fx-mid fx-v2 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/marmol.webp)"></i></div>
   <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv10.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg10.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v2" aria-hidden="true"><i style="background-image:url(ink/ink-oval.webp)"></i></div>
   <div class="pa-gf-rain" id="paGfRain" aria-hidden="true"></div>
 
   <div class="pa-gf-stage">
@@ -3918,11 +3942,11 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
+  <div class="fx-bg fx-mid fx-v3 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/tinta.webp)"></i></div>
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v3" aria-hidden="true"><i style="background-image:url(ink/ink-corner.webp)"></i></div>
   <span class="lbl">Comparte tus momentos</span>
   <h2 class="ttl foil-text">Álbum de <span class="ttl-script">fotos</span></h2>
   <div class="gline"></div>
@@ -3955,12 +3979,12 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
+  <div class="fx-bg fx-top fx-v4 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/luces.webp)"></i></div>
   <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv12.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg8.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <div class="ink-bg ink-v4 ink-flip" aria-hidden="true"><i style="background-image:url(ink/ink-footer.webp)"></i></div>
   <span class="lbl">Confirmación de asistencia</span>
   <h2 class="ttl foil-text">¿Nos <span class="ttl-script">acompañas?</span></h2>
   <div class="gline"></div>
@@ -4064,6 +4088,7 @@ body::before{opacity:.6 !important}
 
 <!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
+  <div class="fx-bg fx-bot fx-v1" aria-hidden="true"><i style="background-image:url(fondos/velas.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
