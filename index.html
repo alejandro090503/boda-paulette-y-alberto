@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&display=swap" rel="stylesheet">
   <style>
 /* ── TOKENS ───────────────────────────────────────────── */
 :root {
@@ -3349,6 +3349,127 @@ body::before{background-size:cover !important;background-position:center !import
 #footer .fx-bot{bottom:-150px}
 #footer .ft-dt,#footer .ft-note{text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.8)}
 #footer{overflow:clip !important}
+
+/* ═════ BRILLO ÓPTICO · negro, verde y oro ═════ */
+.kx-flare{position:absolute;left:var(--x,50%);top:var(--y,0);width:0;height:0;z-index:5;pointer-events:none;display:block;-webkit-text-fill-color:initial}
+.kx-flare b{position:absolute;left:0;top:0;display:block;width:calc(170px*var(--s,1));height:calc(170px*var(--s,1));
+  margin:calc(-85px*var(--s,1)) 0 0 calc(-85px*var(--s,1));background:url(assets/flare.webp) center/contain no-repeat;
+  opacity:.2;transform:scale(.7);animation:kxBloom var(--dur,9s) cubic-bezier(.45,0,.3,1) infinite;animation-delay:var(--del,0s)}
+.kx-flare.is-mini b{background-image:url(assets/flare-mini.webp);width:calc(58px*var(--s,1));height:calc(58px*var(--s,1));
+  margin:calc(-29px*var(--s,1)) 0 0 calc(-29px*var(--s,1));opacity:0;animation-name:kxTwinkle}
+@keyframes kxBloom{0%,36%{opacity:.2;transform:scale(.7)}48%{opacity:.95;transform:scale(1.06)}56%{opacity:.78;transform:scale(1)}74%,100%{opacity:.2;transform:scale(.7)}}
+@keyframes kxTwinkle{0%,42%{opacity:0;transform:scale(.3) rotate(-18deg)}51%{opacity:1;transform:scale(1) rotate(0)}62%,100%{opacity:0;transform:scale(.3) rotate(16deg)}}
+
+.kx-card{border-color:transparent !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important}
+.kx-halo,.kx-rim,.kx-line,.kx-sheen{position:absolute;pointer-events:none;display:block;border-radius:inherit}
+.kx-halo{inset:-1px;z-index:0;background:radial-gradient(150px 90px at 8% 0,rgba(246,226,160,.14),transparent 72%),radial-gradient(130px 80px at 92% 100%,rgba(124,160,84,.13),transparent 72%)}
+.kx-rim{inset:0;padding:1px;overflow:hidden;z-index:3;
+  background:linear-gradient(138deg,#FFF9DF 0%,#F2DC8F 7%,rgba(201,159,61,.66) 19%,rgba(140,106,28,.36) 40%,rgba(140,106,28,.3) 60%,rgba(201,159,61,.62) 84%,#F6E7B4 95%,#FFF9DF 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.kx-rim i{position:absolute;left:50%;top:50%;width:175%;aspect-ratio:1;margin:-87.5% 0 0 -87.5%;
+  background:conic-gradient(from 0deg,transparent 0deg,transparent 150deg,rgba(246,226,160,.2) 166deg,#FFFBEA 179deg,rgba(255,255,255,0) 183deg,transparent 330deg,rgba(246,226,160,.16) 348deg,#FFFBEA 359deg,transparent 360deg);
+  animation:kxSpin 15s linear infinite;animation-delay:var(--del,0s)}
+@keyframes kxSpin{to{transform:rotate(360deg)}}
+.kx-line{inset:6px;z-index:2;border:1px solid rgba(242,220,143,.13);
+  -webkit-mask:linear-gradient(138deg,#000,rgba(0,0,0,.28) 34%,rgba(0,0,0,.28) 66%,#000);mask:linear-gradient(138deg,#000,rgba(0,0,0,.28) 34%,rgba(0,0,0,.28) 66%,#000)}
+.kx-sheen{inset:0;overflow:hidden;z-index:2}
+.kx-sheen i{position:absolute;top:-30%;bottom:-30%;left:0;width:46%;
+  background:linear-gradient(100deg,transparent,rgba(255,246,214,.03) 30%,rgba(255,246,214,.1) 49%,rgba(255,255,255,.03) 56%,transparent);
+  transform:translateX(-140%) skewX(-16deg);animation:kxGlass 12s cubic-bezier(.5,0,.2,1) infinite;animation-delay:var(--del,0s)}
+@keyframes kxGlass{0%,62%{transform:translateX(-140%) skewX(-16deg)}88%,100%{transform:translateX(340%) skewX(-16deg)}}
+/* Tarjeta clara: filo de oro oscuro, sin blanco sobre blanco */
+.kx-light .kx-rim{background:linear-gradient(138deg,#5E4510 0%,#A67E22 9%,rgba(140,106,28,.72) 24%,rgba(94,69,16,.46) 50%,rgba(140,106,28,.72) 80%,#8C6A1C 94%,#5E4510 100%)}
+.kx-light .kx-rim i{background:conic-gradient(from 0deg,transparent 0 160deg,#D4AF37 179deg,transparent 184deg 340deg,#D4AF37 359deg,transparent 360deg)}
+.kx-light .kx-line{border-color:rgba(94,69,16,.3)}
+.kx-light .kx-sheen i{background:linear-gradient(100deg,transparent,rgba(166,126,34,.05) 35%,rgba(166,126,34,.13) 49%,transparent 62%)}
+.kx-light .kx-halo{display:none}
+
+/* Metal líquido en títulos, nombres y contador */
+h2.foil-text,.ft-nms.foil-text,#hero .h-name.foil-text,#countdown .cdm-num{
+  background-image:linear-gradient(104deg,transparent 41%,rgba(255,252,235,.95) 50%,transparent 59%),
+    linear-gradient(178deg,#FFF9DF 6%,#F6E2A0 28%,#C99F3D 45%,#8C6A1C 52%,#E9CB6C 61%,#FFF6D2 79%,#C9A144 98%) !important;
+  background-size:260% 100%,100% 100% !important;background-repeat:no-repeat !important;
+  -webkit-background-clip:text !important;background-clip:text !important;-webkit-text-fill-color:transparent !important}
+h2.foil-text,.ft-nms.foil-text,#countdown .cdm-num{animation-name:kxChrome !important;animation-duration:10s !important;animation-timing-function:cubic-bezier(.5,0,.2,1) !important;animation-iteration-count:infinite !important}
+h2.foil-text,.ft-nms.foil-text{position:relative}
+#countdown .cdm-num{padding:.08em .1em;margin:-.08em -.1em}
+#countdown .cdm-item:nth-child(2) .cdm-num{animation-delay:-1.4s !important}#countdown .cdm-item:nth-child(3) .cdm-num{animation-delay:-2.8s !important}#countdown .cdm-item:nth-child(4) .cdm-num{animation-delay:-4.2s !important}
+@keyframes kxChrome{0%,48%{background-position:135% 0,0 0}86%,100%{background-position:-35% 0,0 0}}
+.h-name-wrap{position:relative}
+
+/* Reflejo sobre adornos usando su propio PNG como máscara */
+.orn-gl{display:block;background:none}
+.orn-gl s{position:absolute;inset:0;overflow:hidden;display:block;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.orn-gl:not(.on) s,.orn-gl:not(.on) .kx-flare{display:none}
+.orn-gl s i{position:absolute;top:-10%;bottom:-10%;left:0;width:42%;background:linear-gradient(100deg,transparent,rgba(255,244,200,.2) 34%,rgba(255,252,232,.74) 50%,rgba(255,244,200,.18) 66%,transparent);
+  transform:translateX(-130%) skewX(-14deg);animation:kxOrn 13s cubic-bezier(.5,0,.2,1) infinite;animation-delay:var(--del,0s)}
+@keyframes kxOrn{0%,60%{transform:translateX(-130%) skewX(-14deg)}86%,100%{transform:translateX(300%) skewX(-14deg)}}
+.vel-w{position:relative;display:block;width:fit-content;margin:24px auto 0}.vel-w .vel{margin:0}
+
+/* Itinerario: horas en Bodoni y estela de luz */
+.it-list::before{display:none !important}
+.it-item{grid-template-columns:96px 24px 1fr !important}
+.it-time{display:flex;justify-content:flex-end;align-items:baseline;gap:4px;padding-top:0 !important;font-family:'Bodoni Moda',serif !important;font-weight:500 !important;
+  font-size:27px !important;line-height:1.08 !important;letter-spacing:.005em !important;color:#F2E6B8 !important;font-variant-numeric:lining-nums;font-optical-sizing:auto;transition:color .6s ease}
+.kit-m{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:16px;letter-spacing:.03em;text-transform:lowercase;color:#D9C477}
+.it-item.is-lit .it-time{color:#FFFBEA !important}
+.it-svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+.it-svg polyline{fill:none;stroke-linejoin:round;stroke-linecap:round}
+.kit-track{stroke:#B8962E;stroke-opacity:.3;stroke-width:1}
+.kit-line{stroke:#E9CB6C;stroke-opacity:.95;stroke-width:1.25;stroke-dasharray:1 1;stroke-dashoffset:1;stroke-linecap:butt !important}
+.kit-t1{stroke:#7C9A4E;stroke-opacity:.26;stroke-width:6}
+.kit-t2{stroke:#F2DC8F;stroke-opacity:.48;stroke-width:2.6}
+.kit-t3{stroke:#FFFBEA;stroke-opacity:.98;stroke-width:1.5}
+.kit-head{position:absolute;left:0;top:0;width:0;height:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .35s ease}
+.kit-head.is-on{opacity:1}
+.kit-head b{position:absolute;left:-62px;top:-62px;width:124px;height:124px;background:url(assets/flare.webp) center/contain no-repeat;animation:kitLatido 3.4s ease-in-out infinite}
+@keyframes kitLatido{0%,100%{opacity:.82;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+.it-list .it-dot{position:relative;z-index:2;transition:background .5s ease,box-shadow .55s ease}
+.it-item.is-lit .it-dot{background:radial-gradient(circle at 38% 32%,#FFFBEA 0 28%,#F2DC8F 54%,#C99F3D 100%) !important;
+  box-shadow:0 0 0 4px #1A2415,0 0 0 5px rgba(242,220,143,.9),0 0 13px 4px rgba(233,203,108,.6) !important}
+.it-dot::before{content:'';position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;background:url(assets/flare-mini.webp) center/contain no-repeat;opacity:0;pointer-events:none}
+.it-item.is-lit .it-dot::before{animation:kitChispa 1.15s cubic-bezier(.2,.7,.2,1) 1}
+@keyframes kitChispa{0%{opacity:0;transform:scale(.25) rotate(-24deg)}28%{opacity:1;transform:scale(1.08) rotate(0)}100%{opacity:0;transform:scale(.55) rotate(18deg)}}
+@media (max-width:340px){.it-item{grid-template-columns:84px 20px 1fr !important}.it-time{font-size:23px !important}}
+
+/* Secciones fuera de pantalla: sin animar */
+.kx-off .kx-rim i,.kx-off .kx-sheen i,.kx-off .kx-flare b,.kx-off .orn-gl s i,.kx-off .kit-head b{animation:none !important}
+.kx-off h2.foil-text,.kx-off .ft-nms.foil-text,.kx-off .cdm-num{animation-play-state:paused !important}
+
+/* ═════ OBJETO VIVO · esmeralda tallada con montura de oro ═════ */
+#musicBtn.pa-vinyl-btn{width:72px;height:72px;box-shadow:none;overflow:visible;background:none}
+#musicBtn.pa-vinyl-btn::after{content:none !important}
+.gm-glow,.gm-ball{position:absolute;left:4px;top:14px;width:54px;height:54px;border-radius:50%}
+.gm-glow{box-shadow:0 0 0 1px rgba(242,220,143,.34),0 0 16px 3px rgba(212,175,55,.3),0 8px 18px rgba(0,0,0,.65);opacity:.72}
+.gm-ball{overflow:hidden;background:#06140D;box-shadow:0 0 0 1.5px #8C6A1C,0 0 0 2.5px #F2DC8F,0 0 0 3.5px #6E5216}
+.gm-ball canvas{position:absolute;inset:0;display:block;width:100%;height:100%}
+.gm-gloss{position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 33% 26%,rgba(255,252,235,.34),rgba(255,252,235,.05) 25%,transparent 43%),radial-gradient(circle at 50% 50%,transparent 62%,rgba(0,8,4,.5) 100%)}
+.gm-orbit{position:absolute;left:31px;top:41px;width:0;height:0;opacity:0;transition:opacity 1.1s ease;animation:gmOrbita 16s linear infinite;animation-play-state:paused}
+.gm-orbit i{position:absolute;left:-1.5px;top:-1.5px;width:3px;height:3px;border-radius:50%;background:#FFF3C4;box-shadow:0 0 5px 1px rgba(212,175,55,.8);
+  transform:rotate(var(--a)) translateY(var(--o));animation:gmEspejo 2.8s ease-in-out infinite;animation-delay:var(--e)}
+.gm-orbit i:nth-child(1){--a:12deg;--o:-36px;--e:0s}.gm-orbit i:nth-child(2){--a:92deg;--o:-39px;--e:-1.1s}.gm-orbit i:nth-child(3){--a:168deg;--o:-35px;--e:-2.2s}
+.gm-orbit i:nth-child(4){--a:232deg;--o:-39px;--e:-.6s}.gm-orbit i:nth-child(5){--a:298deg;--o:-36px;--e:-1.7s}
+@keyframes gmOrbita{to{transform:rotate(360deg)}}
+@keyframes gmEspejo{0%,100%{opacity:.18}50%{opacity:1}}
+.gm-spark{position:absolute;left:12px;top:18px;width:32px;height:32px;background:url(assets/flare-mini.webp) center/contain no-repeat;opacity:0}
+.gm-feather{position:absolute;right:-9px;top:-22px;width:30px;height:76px;background:url(assets/pluma-aguja.webp) center top/contain no-repeat;
+  transform-origin:54% 2%;transform:rotate(-3deg);transition:transform .7s cubic-bezier(.3,1.25,.5,1)}
+#musicBtn.on .gm-orbit{opacity:1;animation-play-state:running}
+#musicBtn.on .gm-glow{opacity:1;animation:gmPulso 2.8s ease-in-out infinite}
+#musicBtn.on .gm-spark{animation:gmDestello 3.4s ease-in-out infinite}
+#musicBtn.on .gm-feather{transform:rotate(17deg);animation:gmVaiven 4.4s ease-in-out .75s infinite}
+@keyframes gmVaiven{0%,100%{transform:rotate(17deg)}50%{transform:rotate(13.5deg)}}
+@keyframes gmPulso{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.08);opacity:1}}
+@keyframes gmDestello{0%,58%,100%{opacity:0;transform:scale(.4) rotate(-14deg)}72%{opacity:1;transform:scale(1) rotate(0)}}
+
+@media (prefers-reduced-motion:reduce){
+  .kx-flare b,.kx-rim i,.kx-sheen i,.orn-gl s i,h2.foil-text,.ft-nms.foil-text,#countdown .cdm-num,.kit-head,.it-item.is-lit .it-dot::before,
+  #musicBtn .gm-orbit,#musicBtn .gm-orbit i,#musicBtn .gm-glow,#musicBtn .gm-spark,#musicBtn .gm-feather{animation:none !important}
+  .kx-flare b{opacity:.6;transform:none}.kx-flare.is-mini b{opacity:.5}.kit-head{display:none}
+  .gm-feather,.it-time,.it-list .it-dot{transition:none}
+}
 </style>
 </head>
 <body>
@@ -3359,14 +3480,11 @@ body::before{background-size:cover !important;background-position:center !import
 
 <!-- Botón flotante de música · disco de vinilo -->
 <button id="musicBtn" class="pa-vinyl-btn" type="button" aria-label="Reproducir música">
-  <span class="vinyl-tonearm" aria-hidden="true">
-    <span class="vinyl-tonearm-pivot"></span>
-    <span class="vinyl-tonearm-line"></span>
-    <span class="vinyl-tonearm-head"></span>
-  </span>
-  <span class="vinyl-spin" aria-hidden="true">
-    <span class="vinyl-disc"><span class="vinyl-sheen"></span></span>
-  </span>
+  <span class="gm-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+  <span class="gm-glow" aria-hidden="true"></span>
+  <span class="gm-ball" aria-hidden="true"><canvas id="gmCanvas"></canvas><span class="gm-gloss"></span></span>
+  <span class="gm-spark" aria-hidden="true"></span>
+  <span class="gm-feather" aria-hidden="true"></span>
 </button>
 <script>/* ═════════ BOTÓN DE MÚSICA · vinilo — solo apariencia/accesibilidad ═════════
    NO reemplaza la lógica de audio del destino (IIFE "MÚSICA AMBIENTAL" + "ELYSIUM AUDIO v2").
@@ -6074,6 +6192,254 @@ function initPadrinos(){
   if(!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('on', e.isIntersecting); }); }, { rootMargin:'60px' });
   els.forEach(function(e, i){ e.style.animationDelay = (-(i * 1.7) % 8).toFixed(1) + 's'; io.observe(e); });
+})();
+</script>
+<script>
+/* ═════ BRILLO ÓPTICO + ITINERARIO DE LUZ + ESMERALDA EN TIEMPO REAL ═════ */
+(function(){
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, n = 0;
+  function flare(p, x, y, s, mini){
+    var f = document.createElement('i'), b = document.createElement('b');
+    f.className = 'kx-flare' + (mini ? ' is-mini' : '');
+    f.setAttribute('aria-hidden', 'true');
+    f.style.setProperty('--x', x); f.style.setProperty('--y', y); f.style.setProperty('--s', s || 1);
+    var dur = mini ? 7 + (n % 3) * 1.1 : 10 + (n % 3) * 1.3;
+    f.style.setProperty('--dur', dur + 's');
+    f.style.setProperty('--del', (-((n * .618034) % 1) * dur).toFixed(2) + 's');
+    f.appendChild(b); p.appendChild(f); n++;
+  }
+  function capa(p, cl, hijo, k){
+    var e = document.createElement('i');
+    e.className = cl; e.setAttribute('aria-hidden', 'true');
+    if(hijo){ var h = document.createElement('i'); h.style.setProperty('--del', (-(k * 3.1)).toFixed(1) + 's'); e.appendChild(h); }
+    p.appendChild(e);
+  }
+  function deco(c, k){
+    if(c.classList.contains('kx-card')) return;
+    if(getComputedStyle(c).position === 'static') c.style.position = 'relative';
+    c.classList.add('kx-card');
+    if(c.classList.contains('rsvp-notice')) c.classList.add('kx-light');
+    capa(c, 'kx-halo'); capa(c, 'kx-sheen', true, k);
+    if(!c.classList.contains('rsvp-card')) capa(c, 'kx-line');
+    capa(c, 'kx-rim', true, k);
+    flare(c, '18px', '10px', .62);
+    flare(c, 'calc(100% - 18px)', 'calc(100% - 10px)', .8, true);
+  }
+  document.querySelectorAll('.loc-card,.story-card,.fam-grid,.fam-god,.cl-card,.rsvp-card,.gx-card,.rsvp-notice,.pa-hs-hotel').forEach(deco);
+  /* Las tarjetas de hotel se crean después: se decoran al aparecer */
+  var hsL = document.getElementById('paHsList');
+  if(hsL) new MutationObserver(function(){ hsL.querySelectorAll('.pa-hs-hotel').forEach(function(c, i){ deco(c, i + 20); }); }).observe(hsL, { childList: true, subtree: true });
+  document.querySelectorAll('h2.foil-text,.ft-nms.foil-text').forEach(function(t){
+    flare(t, '.72em', '.46em', .62, true);
+    flare(t, 'calc(100% - .55em)', '.52em', .4, true);
+  });
+  function nombres(){
+    [['hN1', -.36], ['hN2', .38]].forEach(function(q){
+      var e = document.getElementById(q[0]), w = e && e.closest('.h-name-wrap');
+      if(w && !w.querySelector('.kx-flare')) flare(w, 'calc(50% + ' + (e.offsetWidth * q[1]).toFixed(0) + 'px)', '34%', .7, true);
+    });
+  }
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(nombres); else nombres();
+
+  /* Adornos: reflejo con su propio PNG como máscara y destello donde pega la luz */
+  var LUZ = { euc: ['40%', '49%'], oli: ['71%', '36%'], lat: ['50%', '32%'] }, RAT = { euc: '460/478', oli: '460/479', lat: '300/725' };
+  var glos = [];
+  document.querySelectorAll('img.orn-float:not(.orn-leaf)').forEach(function(im, k){
+    var src = im.getAttribute('src'), m = src.match(/orn\/(euc|oli|lat)\.webp/);
+    if(!m) return;
+    var c = document.createElement('span'), s = document.createElement('s'), i = document.createElement('i');
+    c.className = im.className.replace(/\bon\b/, '') + ' orn-gl';
+    c.setAttribute('aria-hidden', 'true');
+    c.style.aspectRatio = RAT[m[1]]; c.style.animationDelay = im.style.animationDelay;
+    s.style.webkitMaskImage = s.style.maskImage = 'url(' + src + ')';
+    i.style.setProperty('--del', (-((k * .618034) % 1) * 13).toFixed(2) + 's');
+    s.appendChild(i); c.appendChild(s);
+    if(k % 2 === 0) flare(c, LUZ[m[1]][0], LUZ[m[1]][1], .72, true);
+    im.after(c); glos.push(c);
+  });
+  document.querySelectorAll('img.vel').forEach(function(v){
+    var w = document.createElement('span'); w.className = 'vel-w';
+    v.parentNode.insertBefore(w, v); w.appendChild(v);
+    flare(w, '38%', '10%', .7, true);
+  });
+
+  /* Pausa lo que no se ve */
+  var secs = document.querySelectorAll('section,footer');
+  if('IntersectionObserver' in window){
+    secs.forEach(function(x){ x.classList.add('kx-off'); });
+    var io = new IntersectionObserver(function(E){ E.forEach(function(e){ e.target.classList.toggle('kx-off', !e.isIntersecting); }); }, { rootMargin: '140px 0px' });
+    secs.forEach(function(x){ io.observe(x); });
+    var io2 = new IntersectionObserver(function(E){ E.forEach(function(e){ e.target.classList.toggle('on', e.isIntersecting); }); }, { rootMargin: '60px 0px' });
+    glos.forEach(function(g){ io2.observe(g); });
+  } else glos.forEach(function(g){ g.classList.add('on'); });
+
+  /* ── Itinerario: la luz viaja sobre los puntos reales ── */
+  (function(){
+    var zz = document.querySelector('.it-list');
+    if(!zz) return;
+    var rows = [].slice.call(zz.querySelectorAll('.it-item')), dots = rows.map(function(r){ return r.querySelector('.it-dot'); });
+    zz.querySelectorAll('.it-time').forEach(function(h){
+      var m = h.textContent.trim().match(/^(\S+)\s+(\S+)$/);
+      if(!m) return;
+      h.innerHTML = '<span class="kit-n"></span> <span class="kit-m"></span>';
+      h.firstChild.textContent = m[1]; h.lastChild.textContent = m[2];
+    });
+    var NS = 'http://www.w3.org/2000/svg', svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'it-svg'); svg.setAttribute('aria-hidden', 'true');
+    zz.insertBefore(svg, zz.firstChild);
+    function poly(cl){ var p = document.createElementNS(NS, 'polyline'); p.setAttribute('class', cl); p.setAttribute('pathLength', '1'); svg.appendChild(p); return p; }
+    var track = poly('kit-track'), line = poly('kit-line');
+    var colas = [{ el: poly('kit-t1'), px: 112 }, { el: poly('kit-t2'), px: 70 }, { el: poly('kit-t3'), px: 32 }];
+    var head = document.createElement('i'), core = document.createElement('b');
+    head.className = 'kit-head'; head.setAttribute('aria-hidden', 'true'); head.appendChild(core); zz.appendChild(head);
+    var pts = [], acum = [0], total = 1, hitos = [];
+    function geo(){
+      pts = dots.map(function(d){ return [d.offsetLeft + d.offsetWidth / 2, d.offsetTop + d.offsetHeight / 2]; });
+      var s = pts.map(function(q){ return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' ');
+      [track, line].concat(colas.map(function(c){ return c.el; })).forEach(function(e){ e.setAttribute('points', s); });
+      acum = [0];
+      for(var i = 1; i < pts.length; i++) acum.push(acum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      total = acum[acum.length - 1] || 1;
+      hitos = acum.map(function(v){ return v / total; });
+    }
+    function punto(d){
+      for(var i = 1; i < pts.length; i++){
+        if(d <= acum[i] || i === pts.length - 1){
+          var L = (acum[i] - acum[i - 1]) || 1, k = Math.max(0, Math.min(1, (d - acum[i - 1]) / L)), a = pts[i - 1], b = pts[i];
+          return { x: a[0] + (b[0] - a[0]) * k, y: a[1] + (b[1] - a[1]) * k, ang: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI };
+        }
+      }
+      return { x: 0, y: 0, ang: 90 };
+    }
+    geo();
+    if(RM || typeof ScrollTrigger === 'undefined'){
+      line.style.strokeDashoffset = 0;
+      rows.forEach(function(r){ r.classList.add('is-lit'); });
+      return;
+    }
+    var meta = 0, p = 0, giro = null, raf = 0, last = 0;
+    function pinta(vel){
+      if(pts.length < 2) return;
+      var d = p * total, q = punto(d);
+      line.style.strokeDashoffset = 1 - p;
+      colas.forEach(function(c){
+        var largo = Math.min(d, c.px) / total;
+        c.el.style.strokeDasharray = largo + ' 2';
+        c.el.style.strokeDashoffset = -(p - largo);
+        c.el.style.opacity = p > .002 ? 1 : 0;
+      });
+      if(giro === null) giro = q.ang;
+      giro += (((q.ang - giro + 540) % 360) - 180) * .16;
+      var esc = .8 + Math.min(.42, Math.abs(vel) * 7);
+      head.style.transform = 'translate3d(' + q.x.toFixed(2) + 'px,' + q.y.toFixed(2) + 'px,0) rotate(' + giro.toFixed(2) + 'deg) scale(' + esc.toFixed(3) + ')';
+      head.classList.toggle('is-on', p > .003 && p < .997);
+      rows.forEach(function(r, i){ r.classList.toggle('is-lit', p > .001 && p >= (hitos[i] || 0) - .006); });
+    }
+    function loop(now){
+      raf = 0;
+      if(document.hidden){ last = 0; return; }
+      var dt = last ? Math.min((now - last) / 1000, .05) : .016;
+      last = now;
+      var dv = meta - p;
+      p += dv * (1 - Math.exp(-dt / .17));
+      var quieto = Math.abs(meta - p) < .0005;
+      if(quieto) p = meta;
+      pinta(quieto ? 0 : dv);
+      if(!quieto) raf = requestAnimationFrame(loop); else last = 0;
+    }
+    function kick(){ if(!raf) raf = requestAnimationFrame(loop); }
+    ScrollTrigger.create({ trigger: zz, start: 'top 72%', end: 'bottom 62%',
+      onUpdate: function(s){ meta = s.progress; kick(); },
+      onRefresh: function(s){ geo(); meta = s.progress; kick(); } });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ geo(); ScrollTrigger.refresh(); });
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) kick(); });
+    pinta(0);
+  })();
+
+  /* ── Esmeralda: cada faceta calcula su luz; tabla por píxel precalculada ── */
+  function crearMotorGema(cv, S, ROWS){
+    var PI = Math.PI, TAU = PI * 2;
+    cv.width = cv.height = S;
+    var ctx = cv.getContext('2d');
+    if(!ctx) return null;
+    var img = ctx.createImageData(S, S), D = img.data;
+    var cT = Math.cos(-.32), sT = Math.sin(-.32), cB = Math.cos(.28), sB = Math.sin(.28);
+    function unit(v){ var l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; }
+    var L1 = unit([-.52, -.62, .6]), L2 = unit([.72, -.14, .68]), L3 = unit([-.08, .8, .6]);
+    function azar(k){ var x = Math.sin(k * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+    var filas = [], total = 0, r, c;
+    for(r = 0; r < ROWS; r++){
+      var lat = ((r + .5) / ROWS - .5) * PI, cols = Math.max(5, Math.round(ROWS * 1.7 * Math.cos(lat)));
+      filas.push({ lat: lat, cl: Math.cos(lat), sl: Math.sin(lat), cols: cols, base: total, of: r % 2 ? .5 : 0, par: r % 2 });
+      total += cols * 2;
+    }
+    var R = new Float32Array(total), G = new Float32Array(total), B = new Float32Array(total), a1 = new Float32Array(total), a2 = new Float32Array(total), a3 = new Float32Array(total);
+    for(c = 0; c < total; c++){ a1[c] = azar(c + 1); a2[c] = azar(c * 2.3 + 7); a3[c] = azar(c * 3.7 + 19); }
+    var cap = S * S, I = new Int32Array(cap), LO = new Float32Array(cap), FV = new Float32Array(cap), RI = new Uint8Array(cap), SH = new Float32Array(cap), CA = new Float32Array(cap), AL = new Uint8Array(cap), N = 0;
+    for(var y = 0; y < S; y++) for(var x = 0; x < S; x++){
+      var nx = (x + .5) / S * 2 - 1, ny = (y + .5) / S * 2 - 1, q = nx * nx + ny * ny;
+      if(q >= 1) continue;
+      var nz = Math.sqrt(1 - q), x1 = nx * cT - ny * sT, y1 = nx * sT + ny * cT, y2 = y1 * cB - nz * sB, z2 = y1 * sB + nz * cB;
+      var la = Math.asin(Math.max(-1, Math.min(1, y2))), fr = (la / PI + .5) * ROWS, ri = Math.min(ROWS - 1, Math.floor(fr));
+      I[N] = (y * S + x) * 4; LO[N] = Math.atan2(x1, z2) / TAU; FV[N] = fr - ri; RI[N] = ri;
+      SH[N] = .52 + .6 * Math.pow(nz, .75);
+      CA[N] = Math.pow(Math.max(0, (nx * .55 + ny * .72 + .35)), 2) * .55;   /* luz que atraviesa la piedra */
+      AL[N] = Math.min(255, (1 - Math.sqrt(q)) * S * .5 * 255); N++;
+    }
+    return function(t){
+      for(var k = 0; k < ROWS; k++){
+        var w = filas[k];
+        for(var e = 0; e < w.cols; e++) for(var tr = 0; tr < 2; tr++){
+          var id = w.base + e * 2 + tr, l = (e + .5 + (tr ? .23 : -.23) - w.of) / w.cols * TAU + t;
+          var jx = (a1[id] - .5) * .3, jy = (a2[id] - .5) * .3 + (tr ? .07 : -.07);
+          var fx = w.cl * Math.sin(l) + jx, fy0 = w.sl + jy, fz0 = w.cl * Math.cos(l);
+          var fy = fy0 * cB + fz0 * sB, fz = -fy0 * sB + fz0 * cB, vx = fx * cT + fy * sT, vy = -fx * sT + fy * cT;
+          var d1 = Math.max(0, vx * L1[0] + vy * L1[1] + fz * L1[2]), d2 = Math.max(0, vx * L2[0] + vy * L2[1] + fz * L2[2]), d3 = Math.max(0, vx * L3[0] + vy * L3[1] + fz * L3[2]);
+          var s1 = Math.pow(d1, 30) * 1.45, s2 = Math.pow(d2, 26) * .95, s3 = Math.pow(d3, 12) * .42, am = .2 + a3[id] * a3[id] * .72;
+          R[id] = am * 14 + s1 * 255 + s2 * 240 + s3 * 30;
+          G[id] = am * 92 + s1 * 244 + s2 * 186 + s3 * 118;
+          B[id] = am * 52 + s1 * 196 + s2 * 70 + s3 * 66;
+        }
+      }
+      var giro = t / TAU;
+      for(var m = 0; m < N; m++){
+        var h = filas[RI[m]], u = LO[m] - giro; u -= Math.floor(u);
+        var cc = u * h.cols + h.of, ci = Math.floor(cc), fu = cc - ci, fv = FV[m]; ci = ci % h.cols;
+        var alt = (ci + h.par) % 2, tri = alt ? (fu + fv > 1 ? 1 : 0) : (fu > fv ? 1 : 0), dg = alt ? Math.abs(fu + fv - 1) : Math.abs(fu - fv);
+        var ed = Math.min(1, Math.min(Math.min(fu, 1 - fu), Math.min(fv, 1 - fv), dg * .72) / .055), id2 = h.base + ci * 2 + tri, g = SH[m], o = I[m], f = 1 - ed;
+        D[o] = Math.min(255, R[id2] * g + CA[m] * 16 + f * 92 + 3);
+        D[o + 1] = Math.min(255, G[id2] * g + CA[m] * 76 + f * 72 + 10);
+        D[o + 2] = Math.min(255, B[id2] * g + CA[m] * 42 + f * 20 + 6);
+        D[o + 3] = AL[m];
+      }
+      ctx.putImageData(img, 0, 0);
+    };
+  }
+  var btn = document.getElementById('musicBtn'), cv = document.getElementById('gmCanvas');
+  if(btn && cv){
+    var pinta = crearMotorGema(cv, 124, 11);
+    if(pinta){
+      var TAU = Math.PI * 2, th = .6, vel = 0, obj = 0, lastT = 0, rf = 0, VEL = .82, visible = true;
+      function loopG(now){
+        rf = 0;
+        if(document.hidden || !visible){ lastT = 0; return; }
+        var dt = lastT ? Math.min((now - lastT) / 1000, .05) : .016;
+        lastT = now;
+        vel += (obj - vel) * (1 - Math.exp(-dt / (obj ? .6 : 1.05)));
+        if(!obj && vel < .012){ vel = 0; lastT = 0; return; }
+        th = (th + vel * dt) % TAU;
+        pinta(th);
+        rf = requestAnimationFrame(loopG);
+      }
+      function arranca(){ if(!rf && !RM){ lastT = 0; rf = requestAnimationFrame(loopG); } }
+      function sync(){ obj = btn.classList.contains('on') ? VEL : 0; if(obj || vel) arranca(); }
+      new MutationObserver(sync).observe(btn, { attributes: true, attributeFilter: ['class'] });
+      document.addEventListener('visibilitychange', function(){ if(!document.hidden) sync(); });
+      if('IntersectionObserver' in window) new IntersectionObserver(function(E){ visible = E[E.length - 1].isIntersecting; sync(); }).observe(btn);
+      pinta(th);
+      sync();
+    }
+  }
 })();
 </script>
 </body>
