@@ -3355,7 +3355,7 @@ body::before{background-size:cover !important;background-position:center !import
 
 <!-- LOADER -->
 <!-- Música ambiental -->
-<audio id="bgMusic" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-ciro-y-osmara/cancion.mp3" loop preload="none"></audio>
+<audio id="bgMusic" src="cancion.mp3?v=2" loop preload="none"></audio>
 
 <!-- Botón flotante de música · disco de vinilo -->
 <button id="musicBtn" class="pa-vinyl-btn" type="button" aria-label="Reproducir música">
@@ -4919,12 +4919,12 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-/* ── MÚSICA AMBIENTAL · arranca en el 0:07 ────────────── */
+/* ── MÚSICA AMBIENTAL · Clair de Lune (Debussy), piano ── */
 (function(){
   const audio = document.getElementById('bgMusic');
   const btn   = document.getElementById('musicBtn');
   if(!audio || !btn) return;
-  const START = 7;               /* segundo de arranque de la pista */
+  const START = 0;               /* segundo de arranque de la pista */
   let playing = false, seeked = false;
 
   function seekStart(){
@@ -4983,7 +4983,7 @@ function toast(msg) {
    - Si el archivo de la cancion falla (404, host caido, HTML en vez de mp3) se usa una de respaldo. */
 (function(){
   if(window.__elyAudio2) return; window.__elyAudio2=1;
-  var FALLBACK='https://boda-isaac-y-claudia.vercel.app/cancion.mp3';
+  var FALLBACK='cancion.mp3?r=2';
   var forced=false, gestured=false;
   function A(){ return document.querySelector('audio'); }
   function toFallback(a){
