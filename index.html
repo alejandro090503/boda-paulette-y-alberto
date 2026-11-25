@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Paulette &amp; Alberto · 13 · Marzo · 2027">
   <meta property="og:description" content="Nos casamos. Tequisquiapan, Querétaro. Confirma tu asistencia.">
-  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=4">
+  <meta property="og:image" content="https://boda-paulette-y-alberto.vercel.app/og.jpg?v=5">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3705,6 +3705,20 @@ p,.lbl,.loc-city-sub,.pa-dc-note,.alb-sub,.pa-hs-sub{text-shadow:none !important
 #hero .gline{margin-top:18px !important}
 #hero .h-date-wrap{margin-top:14px !important}
 #hero .h-bg{height:clamp(240px,calc(100% - 390px),60%) !important}
+
+/* ═══ HERO · foto grande a pantalla completa como antes (sin movimiento) ═══ */
+#hero{background:#121212 !important}
+#hero .h-bg{inset:0 !important;height:auto !important;top:0 !important;bottom:0 !important}
+#hero .h-bg::after{display:none !important}
+#hero .hero-drift{animation:none !important;transform:none !important;background-position:center 72% !important}
+#hero .h-ov{display:block !important}
+#hero::after{height:140px !important;background:linear-gradient(to bottom,rgba(247,231,206,0),#F7E7CE) !important}
+#hero .h-we{color:#F7E7CE !important}
+#hero .h-name{color:#FBF3E6 !important;-webkit-text-fill-color:#FBF3E6 !important;text-shadow:0 2px 18px rgba(0,0,0,.45) !important}
+#hero .h-amp{color:#F7E7CE !important;-webkit-text-fill-color:#F7E7CE !important}
+
+/* Todas las hojas/ramas flotantes: difuminadas y por detrás, parejas */
+html body img.orn.orn{filter:blur(3.2px) !important;opacity:.5 !important;z-index:-1 !important}
 </style>
 </head>
 <body>
@@ -3745,8 +3759,8 @@ p,.lbl,.loc-city-sub,.pa-dc-note,.alb-sub,.pa-hs-sub{text-shadow:none !important
 
 <!-- ═══════════════ SOBRE DE APERTURA ═══════════════ -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.webp?v=4" alt="Sobre de la invitación de Paulette y Alberto">
-  <video id="envVideo" src="sobre-apertura.mp4?v=4" muted playsinline preload="auto" poster="sobre.webp?v=4"></video>
+  <img id="envImage" src="sobre.webp?v=5" alt="Sobre de la invitación de Paulette y Alberto">
+  <video id="envVideo" src="sobre-apertura.mp4?v=5" muted playsinline preload="auto" poster="sobre.webp?v=5"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
 
@@ -3784,7 +3798,7 @@ p,.lbl,.loc-city-sub,.pa-dc-note,.alb-sub,.pa-hs-sub{text-shadow:none !important
 <!-- ═══════════════ 1. HERO ════════════════════════════ -->
 <section id="hero">
   <div class="h-bg" id="heroBg">
-    <i class="hero-foto" id="heroPic" style="background-image:url('pareja.jpg')"></i>
+    <i class="hero-drift" id="heroPic" style="background-image:url('pareja-hero.jpg')"></i>
   </div>
   <div class="h-ov"></div>
   <div class="h-frame"></div>
