@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&family=Marcellus&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&display=swap" rel="stylesheet">
   <style>
 /* ── TOKENS ───────────────────────────────────────────── */
 :root {
@@ -3516,13 +3516,202 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
   @keyframes guiMece{from{translate:-50% -4px;rotate:-.9deg}to{translate:-50% 4px;rotate:.9deg}}
   .kx-off .orn-soft,.kx-off .gui,.kx-off .vel-w{animation-play-state:paused}
 }
+
+/* ═════════════ RONDA 24-NOV · FONDO BEIGE (Raiza & Orlando) ═════════════ */
+:root{--ink:#F7E7CE;--ink2:#FBF3E6;--ink3:#F2E4CB;--cream:#1A1D15;--black:#121212;--paper:#F7E7CE;--beige:#F7E7CE;
+  --olive:#3F5229;--peach:#3F5229;--peach-lt:#1A1D15;--peach-accent:#121212;
+  --hs-paper:#F7E7CE;--hs-surface:#FBF3E6;--hs-beige:#F2E4CB;--hs-ink:#121212;--hs-olive:#3F5229;
+  --rv-paper:#F7E7CE;--rv-surface:#FBF3E6;--rv-beige:#F2E4CB;--rv-ink:#121212;--rv-ink-soft:#3A3A30;--rv-olive:#3F5229;--rv-hair:rgba(18,18,18,.35)}
+html,body{background:#F7E7CE !important;color:#121212 !important}
+body{box-shadow:none !important}
+body::before{background:url('fondos/lino-beige.webp') center/cover no-repeat !important;opacity:1 !important;filter:none !important}
+.ink-bg,.fx-bg,.gui,.vel,.vel-w,.vl,.vl-ch,.orn-lat-l,.orn-lat-r,.orn-gl,.kx-flare,.kx-halo,.kx-sheen,.kx-line,.kx-rim,#petals,
+#musicBtn,.sec-draw,.sec-medal{display:none !important}
+section,body > footer{background:transparent !important}
+
+/* Tipografía: la de la fecha del hero (Cinzel) en títulos y subtítulos; sin cursivas */
+.lbl{font-family:'Cinzel',serif !important;font-style:normal !important;color:#3F5229 !important;animation:none !important;text-shadow:none !important}
+.ttl,h2.ttl{font-family:'Cinzel',serif !important;font-weight:500 !important;font-style:normal !important;font-size:clamp(27px,7.6vw,33px) !important;letter-spacing:.06em !important;line-height:1.25 !important;
+  color:#121212 !important;background:none !important;-webkit-text-fill-color:#121212 !important;filter:none !important;text-shadow:none !important;animation:none !important}
+.ttl-script{font-family:inherit !important;font-style:normal !important;font-size:1em !important;font-weight:inherit !important;color:inherit !important;-webkit-text-fill-color:inherit !important;letter-spacing:inherit !important;padding:0 !important}
+.foil-text,.foil-gold{background:none !important;-webkit-text-fill-color:currentColor !important;filter:none !important;animation:none !important;text-shadow:none !important}
+.gline{background:linear-gradient(to right,transparent,#121212,transparent) !important;opacity:.55;animation:none !important}
+p,li,.loc-addr,.story-txt,.alb-sub,.pa-hs-sub,.pa-dc-note,.loc-city-sub{color:#1A1D15}
+.loc-city-sub,.pa-hs-sub,.pa-dc-note,.alb-sub{font-family:'Cormorant Garamond',serif !important;font-style:italic;color:#1A1D15 !important}
+
+/* Hojas verdes y ramas: más difuminadas */
+.orn-leaf{filter:blur(2.4px) !important;opacity:.55 !important}
+.orn-float:not(.orn-leaf),.orn-soft{filter:blur(1.4px) !important;opacity:.5 !important}
+
+/* ═══ HERO · fondo liso, foto del formulario con orilla de papel, sin movimiento ═══ */
+#hero{background:#F7E7CE !important;min-height:100svh !important;display:flex !important;flex-direction:column !important;justify-content:flex-end !important;
+  padding:0 24px 92px !important;overflow:hidden}
+#hero .h-bg{position:absolute !important;inset:0 0 auto 0 !important;top:0 !important;bottom:auto !important;height:70% !important;transform:none !important;will-change:auto !important}
+#hero .hero-foto{position:absolute;inset:0;display:block;background-size:cover;background-position:50% 62%;
+  -webkit-mask:url('assets/hero-mask.webp') center/100% 100% no-repeat;mask:url('assets/hero-mask.webp') center/100% 100% no-repeat}
+#hero .h-bg::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:url('fondos/lino-beige.webp') center/cover;mix-blend-mode:multiply;opacity:.35;
+  -webkit-mask:url('assets/hero-mask.webp') center/100% 100% no-repeat;mask:url('assets/hero-mask.webp') center/100% 100% no-repeat}
+#hero .h-ov,#hero .h-frame,#hero .h-particles,#hero .h-name-wind-line,#hero .h-div,#hero .kx-flare{display:none !important}
+/* degradado hacia la segunda sección */
+#hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(247,231,206,0),#F7E7CE)}
+#hero .h-cnt{position:relative;z-index:2}
+#hero .h-cnt,#hero .h-cnt *,#hero .h-scroll{animation:none !important;transition:none !important}
+#hWe,#hLine,#hDate,#hScroll,#hN1,#hN2,#hAmp,.h-clip,.h-amp-clip,.h-name-wrap{opacity:1 !important;transform:none !important;translate:none !important;filter:none !important;clip-path:none !important}
+#hero .h-we{font-family:'Cinzel',serif !important;color:#3F5229 !important;text-shadow:none !important;font-size:13px !important;letter-spacing:.42em !important}
+#hero .h-name{font-family:'Marcellus',serif !important;font-style:normal !important;font-weight:400 !important;font-size:clamp(46px,13.5vw,62px) !important;letter-spacing:.04em !important;line-height:1.05 !important;
+  color:#121212 !important;background:none !important;-webkit-text-fill-color:#121212 !important;text-shadow:0 0 18px rgba(247,231,206,.9) !important;filter:none !important}
+#hero .h-amp{font-family:'Cormorant Garamond',serif !important;font-style:italic !important;font-size:30px !important;color:#3F5229 !important;-webkit-text-fill-color:#3F5229 !important;background:none !important;text-shadow:none !important;display:block;margin:2px 0}
+#hero .h-name-wrap{display:block !important}
+#hero .h-date{color:#121212 !important;text-shadow:none !important}
+#hero .h-city{color:#3F5229 !important;text-shadow:none !important}
+#hero .gline{opacity:.6 !important}
+#hero .h-scroll{color:#3F5229 !important}#hero .h-scroll-line{background:#3F5229 !important}
+#hero .h-para-lbl{color:#3F5229 !important}#hero .h-para-name{color:#121212 !important;-webkit-text-fill-color:#121212 !important;background:none !important}
+
+/* ═══ Tarjetas: beige claro con orilla y letras en negro ═══ */
+.loc-card,.story-card,.fam-grid,.fam-god,.cl-card,.rsvp-card,.it-list,.gx-card,.rsvp-notice,.cal-card,
+.pa-hs-list.hc-track > .pa-hs-hotel{background:#FBF3E6 !important;border:1px solid #121212 !important;box-shadow:0 10px 26px rgba(80,60,30,.12) !important;color:#121212 !important}
+.loc-card::before,.loc-card::after,.story-card::before,.story-card::after,.pa-hs-hotel::before,.pa-hs-hotel::after,.gx-frame,.cal-card::before{border-color:rgba(18,18,18,.35) !important}
+.loc-name,.loc-dual-time,.loc-addr,.story-txt,.fam-n,.fam-col-nms,.pd-names,.cl-where,.cl-tip,.cl-note,.cl-sky,.gx-title,.gx-txt,.rsvp-title,.rsvp-text,.pa-hs-name,.pa-hs-addr,
+.it-ev,.it-time,.cal-month,.cal-grid span,.rsvp-notice-ttl,.rsvp-notice-msg,.rsvp-notice-script,.pa-env-title,.pa-env-desc,.pa-dc-name,.pa-dc-free,.pa-dc-msg,.pa-dc-fig-label,.pa-dc-fig-sub,.alb-hint,.ft-dt,.ft-note,.ft-nms,
+.rsvp-pases-num,.rsvp-contador-valor,.rsvp-gracias-title,.rsvp-gracias-sub,.rsvp-deadline,.rsvp-names-lbl,.rsvp-contador-nota,.rsvp-contador-pie,.rsvp-pase-ttl,.rsvp-pase-sub{
+  color:#121212 !important;-webkit-text-fill-color:#121212 !important;background-image:none !important;text-shadow:none !important}
+.loc-dual-type,.loc-photo-cap,.fam-col-role,.pd-rol,.cl-kicker,.cl-l,.gx-kicker,.pa-hs-type,.it-pl,.cal-dow,.pa-dc-sub,.rsvp-notice-lbl,.rsvp-pases-label,.rsvp-para-lbl,.rsvp-pase-lbl,.pa-hs-dist-cap,.hc-count{color:#3F5229 !important;-webkit-text-fill-color:#3F5229 !important;text-shadow:none !important}
+.fam-sep,.pd-amp,.loc-dual-time em{color:#3F5229 !important;-webkit-text-fill-color:#3F5229 !important;background:none !important}
+.loc-photo-wrap.tejido{background:#F2E4CB !important}
+.loc-photo-wrap.tejido::before{border-color:rgba(18,18,18,.5) !important}
+.cl-cell{background:#F2E4CB !important;border:1px solid rgba(18,18,18,.25) !important}.cl-n{color:#121212 !important}
+.pd-icon{background:#F2E4CB !important;box-shadow:inset 0 0 0 1px #121212 !important}.pd-icon svg{stroke:#121212 !important}
+.pd-arrow,.hc-arrow,.pa-hs-arrow{background:#FBF3E6 !important;border:1px solid #121212 !important;color:#121212 !important}
+.pd-arrow svg,.hc-arrow svg,.pa-hs-arrow svg{stroke:#121212 !important}
+.pd-dots button,.hc-dots button,.pa-hs-dots button{background:rgba(18,18,18,.25) !important}
+.pd-dots button.on,.hc-dots button.on,.pa-hs-dots button.on{background:#121212 !important}
+.gx-ico,.gx-ico svg{color:#121212 !important;stroke:#121212 !important}
+.gx-card::before,.gx-card::after{display:none !important}
+
+/* Botones: negro satinado */
+.btn,.btn-olive,.loc-btn,#calBtn,#albBtn{background:#121212 !important;color:#F7E7CE !important;border:1px solid #121212 !important;box-shadow:0 8px 18px rgba(18,18,18,.18) !important}
+.btn svg{stroke:#F7E7CE !important}
+.pa-hs-btn--pri,.gx-btn,.rsvp-btn,#rsvpBtn{background:#121212 !important;color:#F7E7CE !important;border:1px solid #121212 !important;animation:none !important}
+#rsvpBtn span,.gx-btn svg{color:#F7E7CE !important;stroke:#F7E7CE !important}
+.pa-hs-btn--sec{background:transparent !important;color:#121212 !important;border:1px solid #121212 !important}
+.pa-hs-chip{background:#F2E4CB !important;color:#121212 !important;border:1px solid rgba(18,18,18,.35) !important}
+.pa-hs-chip svg{stroke:#121212 !important}
+.pa-hs-badge,.pa-hs-badge span{background:#121212 !important;color:#F7E7CE !important}
+.pa-hs-vp{border-color:#121212 !important;background:#F2E4CB !important}
+.pa-hs-ring{background:none !important;box-shadow:0 0 0 1px #121212 !important}
+.pa-hs-thumbs button{background:rgba(18,18,18,.2) !important}.pa-hs-thumbs button.on{background:#121212 !important}
+.pa-hs-thumbs img{border-color:#FBF3E6 !important}
+.pa-hs-toggle{background:#FBF3E6 !important;border:1px solid #121212 !important}
+.pa-hs-ind{background:#121212 !important}
+.pa-hs-tab{color:#121212 !important}.pa-hs-tab[aria-selected="true"]{color:#F7E7CE !important}
+.pa-hs-tab svg{stroke:currentColor !important}
+.pa-hs-frame{background:#FBF3E6 !important;border-color:#121212 !important}
+.mn-btn{background:rgba(251,243,230,.92) !important;color:#121212 !important;border:1px solid #121212 !important}
+.mn-ic i{background:#121212 !important}
+.mn-panel{background:#F7E7CE !important}.mn-list a,.mn-x{color:#121212 !important}.mn-rule{background:#121212 !important;opacity:.4}
+#prog{background:#121212 !important}
+#toast{background:#FBF3E6 !important;color:#121212 !important;border-color:#121212 !important}
+
+/* Cuenta regresiva: horizontal, minimalista, sin círculos */
+#countdown .cdm{display:flex !important;justify-content:center;gap:0 !important;border-top:1px solid #121212;border-bottom:1px solid #121212;padding:16px 0 !important;max-width:340px;margin:26px auto 0 !important;background:none !important}
+#countdown .cdm-item{flex:1;background:none !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;border-left:1px solid rgba(18,18,18,.3) !important;padding:0 4px !important}
+#countdown .cdm-item:first-child{border-left:0 !important}
+#countdown .cdm-item::before,#countdown .cdm-item::after{display:none !important}
+#countdown .cdm-num{font-family:'Cinzel',serif !important;font-weight:500 !important;color:#121212 !important;-webkit-text-fill-color:#121212 !important;background:none !important}
+.cdm-lbl{color:#3F5229 !important}
+
+/* Calendario y puente */
+.cal-card{background:#FBF3E6 !important;box-shadow:0 10px 26px rgba(80,60,30,.12),inset 0 0 0 10px #FBF3E6,inset 0 0 0 11px rgba(18,18,18,.35) !important}
+.cal-heart{fill:#121212 !important;stroke:none !important}.cal-day-on b{color:#F7E7CE !important;-webkit-text-fill-color:#F7E7CE !important}
+.cal-grid span.cal-pu{position:relative;font-weight:700}
+.cal-grid span.cal-pu::after{content:'';position:absolute;left:50%;bottom:-2px;width:18px;height:1.5px;translate:-50% 0;background:#3F5229}
+.cal-puente{max-width:330px;margin:18px auto 0;padding:14px 18px;text-align:center;border:1px dashed rgba(18,18,18,.5);border-radius:12px;background:#FBF3E6;
+  font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.5;color:#121212}
+.cal-puente strong{font-weight:700}
+.cal-puente-k{display:block;font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#3F5229;margin-bottom:6px}
+
+/* Itinerario claro */
+.it-list::before,.it-list::after{display:none !important}
+.it-list .it-dot{background:#FBF3E6 !important;box-shadow:0 0 0 1px #121212 !important;border-color:#121212 !important}
+.it-list svg path,.it-list svg polyline{stroke:#121212 !important}
+.it-time{font-family:'Cinzel',serif !important}
+
+/* Vestimenta */
+.pa-dc-fig img{background:#FBF3E6 !important;box-shadow:0 0 0 1px #121212,0 10px 22px rgba(80,60,30,.14) !important}
+.pa-dc-dot{box-shadow:0 0 0 1px rgba(18,18,18,.5) !important}
+.pa-dc-star{color:#121212 !important}
+.pa-dc-tip{margin-top:8px !important;font-size:16px !important;max-width:300px;margin-left:auto !important;margin-right:auto !important}
+.pa-dc-sub::before,.pa-dc-sub::after{background:#121212 !important}
+
+/* Mesa de regalos: sobre claro con orilla negra */
+.pa-env-svg rect:first-of-type{fill:#FBF3E6 !important;stroke:#121212 !important}
+.pa-env-svg rect:nth-of-type(2),.pa-env-svg path{stroke:rgba(18,18,18,.4) !important}
+.pa-env-flap path:first-child{fill:#F2E4CB !important;stroke:#121212 !important}
+.pa-env-flap path:nth-child(2){stroke:rgba(18,18,18,.35) !important}
+.pa-env-hint{color:#121212 !important;border-color:#121212 !important}
+.pa-gf-rain{display:none !important}
+
+/* RSVP */
+.rsvp-input{background:#FBF3E6 !important;color:#121212 !important;border-color:rgba(18,18,18,.5) !important}
+.rsvp-input::placeholder{color:#6B6650 !important}
+.rsvp-toggle-btn{background:#F2E4CB !important;color:#121212 !important;border-color:rgba(18,18,18,.45) !important}
+.rsvp-toggle-btn.active,.rsvp-toggle-btn.on,.rsvp-toggle-btn[aria-pressed="true"]{background:#121212 !important;color:#F7E7CE !important}
+.rsvp-pases-display{background:#F2E4CB !important;border-color:rgba(18,18,18,.4) !important}
+.rsvp-contador-btn{background:#121212 !important;color:#F7E7CE !important}
+.rsvp-corner path,.rsvp-ornament g{stroke:#121212 !important}.rsvp-corner circle,.rsvp-ornament circle[fill]{fill:#121212 !important}
+.rsvp-divider-heart,.rsvp-deadline svg{color:#121212 !important;fill:#121212 !important}
+.rsvp-para-name{color:#121212 !important;-webkit-text-fill-color:#121212 !important}
+.rsvp-feed{color:#8A2A16 !important}
+.alb-qr-frame{background:#FBF3E6 !important;border:1px solid #121212 !important}
+
+/* Footer */
+.ft-nms{font-family:'Marcellus',serif !important;font-style:normal !important;font-weight:400 !important;font-size:clamp(30px,9vw,40px) !important;letter-spacing:.04em}
+.el-credit,.el-credit span{color:#3F5229 !important}.el-credit svg{stroke:#3F5229 !important}
+.el-sep{background:rgba(18,18,18,.3) !important}
+
+/* Hospedaje: fotos que cambian con fundido */
+.pa-hs-track.pa-hs-fade{position:relative;display:block !important;transform:none !important;transition:none !important}
+.pa-hs-track.pa-hs-fade img{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease}
+.pa-hs-track.pa-hs-fade img.on{opacity:1}
+.pa-hs-list.hc-track{overflow-x:hidden !important;touch-action:pan-y !important;overscroll-behavior-x:auto !important;scroll-snap-type:none !important}
+.pa-hs-vp{touch-action:pan-y !important}
+
+/* ═══ Ajustes ronda 24-nov ═══ */
+#hero .h-cnt::before{display:none !important}
+#hero .h-bg{height:60% !important}
+#hero .hero-foto{background-position:50% 78%}
+#hero{padding-bottom:88px !important}
+#hero .h-cnt{margin-top:0 !important}
+p,.lbl,.loc-city-sub,.pa-dc-note,.alb-sub,.pa-hs-sub{text-shadow:none !important}
+.env-tap{color:#EFE8CF !important}
+#footer .ft-nms.foil-text{background:none !important;-webkit-text-fill-color:#121212 !important;color:#121212 !important;animation:none !important}
+.cal-month{font-family:'Cinzel',serif !important;font-size:26px !important;letter-spacing:.12em;color:#121212 !important}
+.rsvp-title,#rsvp .rsvp-title{font-family:'Cinzel',serif !important;font-style:normal !important;font-weight:500 !important;font-size:24px !important;color:#121212 !important;-webkit-text-fill-color:#121212 !important}
+.rsvp-title em{font-style:normal !important}
+.rsvp-notice-script{font-family:inherit !important;font-style:normal !important}
+.pa-env-flap path:first-of-type{fill:#F2E4CB !important;stroke:#121212 !important}
+.pa-env-flap path:last-of-type{stroke:rgba(18,18,18,.35) !important}
+.pa-env-seal circle:first-of-type{fill:#1A1A1A !important}
+.pa-env-seal circle{stroke:#8E8A80 !important}
+.pa-env-seal text{fill:#E8E2D4 !important}
+#hero .h-bg{height:54% !important}
+#hero .h-scroll{display:none !important}
+#hero .h-name{font-size:clamp(42px,12.5vw,56px) !important}
+#hero .h-clip{padding:2px .2em 4px !important}
+#hero .h-amp{font-size:26px !important;margin:0 !important}
+#hero .h-we{margin-bottom:10px !important}
+#hero .gline{margin-top:18px !important}
+#hero .h-date-wrap{margin-top:14px !important}
+#hero .h-bg{height:clamp(240px,calc(100% - 390px),60%) !important}
 </style>
 </head>
 <body>
 
 <!-- LOADER -->
 <!-- Música ambiental -->
-<audio id="bgMusic" src="cancion.mp3?v=2" loop preload="none"></audio>
+<!-- sin música por ahora (cliente 24-nov) -->
 
 <!-- Botón flotante de música · disco de vinilo -->
 <button id="musicBtn" class="pa-vinyl-btn" type="button" aria-label="Reproducir música">
@@ -3556,8 +3745,8 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ SOBRE DE APERTURA ═══════════════ -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.webp?v=3" alt="Sobre de la invitación de Paulette y Alberto">
-  <video id="envVideo" src="sobre-apertura.mp4?v=3" muted playsinline preload="auto" poster="sobre.webp?v=3"></video>
+  <img id="envImage" src="sobre.webp?v=4" alt="Sobre de la invitación de Paulette y Alberto">
+  <video id="envVideo" src="sobre-apertura.mp4?v=4" muted playsinline preload="auto" poster="sobre.webp?v=4"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
 
@@ -3595,15 +3784,9 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 <!-- ═══════════════ 1. HERO ════════════════════════════ -->
 <section id="hero">
   <div class="h-bg" id="heroBg">
-    <i class="hero-drift" id="heroPic" style="background-image:url('pareja-hero.jpg')"></i>
+    <i class="hero-foto" id="heroPic" style="background-image:url('pareja.jpg')"></i>
   </div>
   <div class="h-ov"></div>
-  <div class="hero-fx" aria-hidden="true">
-    <span class="hf-glow g1"></span><span class="hf-glow g2"></span><span class="hf-glow g3"></span><span class="hf-glow g4"></span>
-    <span class="hf-sweep"></span>
-    <div class="hf-dust" id="hfDust"></div>
-    <span class="hf-vig"></span>
-  </div>
   <div class="h-frame"></div>
 
 
@@ -3618,13 +3801,13 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind foil-text" id="hN1">Paulette</span></div>
+      <div class="h-clip"><span class="h-name" id="hN1">Paulette</span></div>
       <span class="h-name-wind-line"></span>
     </div>
-    <div class="h-amp-clip"><span class="h-amp foil-text foil-gold" id="hAmp">&amp;</span></div>
+    <div class="h-amp-clip"><span class="h-amp" id="hAmp">&amp;</span></div>
     <div class="h-name-wrap">
       <span class="h-name-wind-line"></span>
-      <div class="h-clip"><span class="h-name h-name-wind foil-text" id="hN2">Alberto</span></div>
+      <div class="h-clip"><span class="h-name" id="hN2">Alberto</span></div>
       <span class="h-name-wind-line"></span>
     </div>
 
@@ -3650,7 +3833,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 1b. NOSOTROS ═════════════════════ -->
 <section id="story">
-  <div class="fx-bg fx-top fx-v1" aria-hidden="true"><i style="background-image:url(fondos/seda.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3659,10 +3841,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
   <h2 class="ttl foil-text">Nuestra <span class="ttl-script">historia</span></h2>
   <div class="gline"></div>
 
-  <figure class="story-photo" id="storyPhoto">
-    <div class="story-photo-in"><img src="pareja.jpg" alt="Paulette y Alberto caminando de la mano en la playa al atardecer" loading="lazy" width="694" height="867"></div>
-    <figcaption>Una de nuestras primeras sesiones juntos</figcaption>
-  </figure>
 
   <div class="story-card">
     <span class="story-orn" aria-hidden="true">&#10086;</span>
@@ -3680,7 +3858,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 2. CUENTA REGRESIVA ══════════════ -->
 <section id="countdown">
-  <div class="fx-bg fx-mid fx-v2" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
   <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3700,9 +3877,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 3. UBICACIONES ═══════════════════ -->
 <section id="location">
-  <div class="fx-bg fx-top fx-v3" aria-hidden="true"><i style="background-image:url(fondos/luces.webp)"></i></div>
-  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv3.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3753,7 +3927,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 4. CALENDARIO ════════════════════ -->
 <section id="calendar">
-  <div class="fx-bg fx-mid fx-v4" aria-hidden="true"><i style="background-image:url(fondos/tinta.webp)"></i></div>
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv4.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3768,11 +3941,13 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
       <span class="cal-dow">L</span><span class="cal-dow">M</span><span class="cal-dow">M</span><span class="cal-dow">J</span><span class="cal-dow">V</span><span class="cal-dow">S</span><span class="cal-dow">D</span>
       <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
       <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span class="cal-day-on"><svg viewBox="0 0 40 40" aria-hidden="true"><path class="cal-heart" d="M20 34C9 26 3 20 3 12.5 3 7.4 7 3.6 11.8 3.6c3.4 0 6.3 1.9 8.2 4.9 1.9-3 4.8-4.9 8.2-4.9C33 3.6 37 7.4 37 12.5 37 20 31 26 20 34z"/></svg><b>13</b></span><span>14</span>
-      <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+      <span class="cal-pu">15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
       <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
       <span>29</span><span>30</span><span>31</span><span></span><span></span><span></span><span></span>
     </div>
   </div>
+
+  <p class="cal-puente"><span class="cal-puente-k">Fin de semana largo</span>El <strong>lunes 15 de marzo</strong> es día festivo, así que será puente. Tómalo en cuenta para tus reservaciones de hospedaje.</p>
 
   <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Paulette+%26+Alberto&dates=20270313T220000Z/20270314T073000Z&details=Ceremonia+religiosa+4:00+PM+en+el+Templo+Parroquial+Santa+Mar%C3%ADa+de+la+Asunci%C3%B3n.+Recepci%C3%B3n+5:30+PM+en+Alauda+Jard%C3%ADn+de+Eventos.&location=Tequisquiapan%2C+Quer%C3%A9taro"
      target="_blank" rel="noopener" id="calBtn"
@@ -3785,7 +3960,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 5. ITINERARIO ════════════════════ -->
 <section id="itinerary">
-  <div class="fx-bg fx-mid fx-v1" aria-hidden="true"><i style="background-image:url(fondos/marmol.webp)"></i></div>
   <img class="orn orn-tl orn-float orn-flip" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv5.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3796,18 +3970,14 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
   <ol class="it-list">
     <li class="it-item"><span class="it-time">4:00 PM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Ceremonia religiosa</p><p class="it-pl">Templo Parroquial Santa María de la Asunción</p></div></li>
     <li class="it-item"><span class="it-time">5:30 PM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Cóctel de bienvenida</p><p class="it-pl">Alauda Jardín de Eventos</p></div></li>
-    <li class="it-item"><span class="it-time">6:30 PM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Recepción y banquete</p></div></li>
+    <li class="it-item"><span class="it-time">6:30 PM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Recepción y banquete</p><p class="it-pl">Alauda Jardín de Eventos</p></div></li>
     <li class="it-item"><span class="it-time">1:30 AM</span><span class="it-dot" aria-hidden="true"></span><div class="it-txt"><p class="it-ev">Fin del evento</p></div></li>
   </ol>
-  <img class="vel" src="orn/vel.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
 </section>
 
 
 <!-- ═══════════════ 6. FAMILIA ══════════════════════ -->
 <section id="family">
-  <div class="fx-bg fx-mid fx-v2 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
-  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv6.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg2.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3859,7 +4029,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 7. CÓDIGO DE VESTIMENTA ═════════ -->
 <section id="dresscode" class="pa-dc" aria-label="Código de vestimenta">
-  <div class="fx-bg fx-top fx-v3" aria-hidden="true"><i style="background-image:url(fondos/terciopelo.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv7.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3874,14 +4043,14 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
       <img src="caballero.png?v=2" alt="Caballero con traje formal" width="300" height="620" decoding="async">
       <figcaption>
         <span class="pa-dc-fig-label">Caballeros</span>
-        <span class="pa-dc-fig-sub">Traje formal</span>
+        <span class="pa-dc-fig-sub">Traje formal, con o sin corbata</span>
       </figcaption>
     </figure>
     <figure class="pa-dc-fig">
-      <img src="dama.png?v=2" alt="Dama con vestido formal" width="300" height="620" decoding="async">
+      <img src="dama.png?v=3" alt="Dama con vestido formal" width="300" height="620" decoding="async">
       <figcaption>
         <span class="pa-dc-fig-label">Damas</span>
-        <span class="pa-dc-fig-sub">Vestido largo en tonos de jardín</span>
+        <span class="pa-dc-fig-sub">Vestido largo o midi</span>
       </figcaption>
     </figure>
   </div>
@@ -3896,14 +4065,10 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
     </ul>
   </div>
 
-  <div class="pa-dc-block">
-    <p class="pa-dc-sub">Colores sugeridos</p>
-    <p class="pa-dc-free">A tu elección</p>
-  </div>
-
   <div class="pa-dc-block pa-dc-shoes">
     <p class="pa-dc-sub">Calzado</p>
     <p class="pa-dc-free">Te pedimos <strong>no usar tenis</strong></p>
+    <p class="pa-dc-free pa-dc-tip">Recomendamos evitar el tacón de aguja, ya que el lugar de la celebración tiene área de jardín.</p>
   </div>
 
   <p class="pa-dc-msg"><span class="pa-dc-star" aria-hidden="true">&#10022;</span>El blanco y sus tonos están reservados para la novia. ¡Gracias por tu comprensión!</p>
@@ -3912,8 +4077,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 8. HOSPEDAJE ═══════════════════ -->
 <section id="hospedaje" class="pa-hs">
-  <div class="fx-bg fx-bot fx-v4 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/terciopelo.webp)"></i></div>
-  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-float orn-flip" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv8.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -3980,8 +4143,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 9. MESA DE REGALOS ═══════════════ -->
 <section id="clima">
-  <div class="fx-bg fx-mid fx-v1" aria-hidden="true"><i style="background-image:url(fondos/velo.webp)"></i></div>
-  <img class="orn orn-lat-r orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-soft" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv9.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg5.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -4013,8 +4174,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 </section>
 
 <section id="gifts" class="pa-gf">
-  <div class="fx-bg fx-mid fx-v2 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/marmol.webp)"></i></div>
-  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-br orn-soft orn-flip" src="orn/olis.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv10.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -4106,7 +4265,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 10. ÁLBUM COMPARTIDO ══════════════ -->
 <section id="album">
-  <div class="fx-bg fx-mid fx-v3 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/tinta.webp)"></i></div>
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tl orn-soft orn-flip" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv11.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -4143,9 +4301,6 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 11. RSVP ═════════════════════════ -->
 <section id="rsvp">
-  <div class="fx-bg fx-top fx-v4 fx-flip" aria-hidden="true"><i style="background-image:url(fondos/luces.webp)"></i></div>
-  <img class="gui" src="orn/gui.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="orn orn-lat-l orn-float" src="orn/lat.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-tr orn-soft" src="orn/eucs.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv12.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg8.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
@@ -4252,17 +4407,15 @@ h2.foil-text,.ft-nms.foil-text{position:relative}
 
 <!-- ═══════════════ 12. FOOTER ═══════════════════════ -->
 <footer id="footer">
-  <div class="fx-bg fx-bot fx-v1" aria-hidden="true"><i style="background-image:url(fondos/velas.webp)"></i></div>
   <img class="orn orn-tr orn-float" src="orn/euc.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-bl orn-float" src="orn/oli.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-a orn-float" src="orn/hv1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <img class="orn orn-leaf orn-leaf-b orn-float" src="orn/hg1.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
-  <img class="vel vel-ft" src="orn/vel.webp" alt="" aria-hidden="true" decoding="async" onerror="this.remove()">
   <div class="ft-orn">✦ · ✦ · ✦</div>
   <div class="ft-nms foil-text">Paulette &amp; Alberto</div>
   <div class="gline" style="margin-top:22px"></div>
   <p class="ft-dt">13 · Marzo · 2027</p>
-  <p class="ft-note">Tequisquiapan · Querétaro<br>Con amor, los novios</p>
+  <p class="ft-note">Tequisquiapan · Querétaro</p>
 
   <div class="el-sep"></div>
   <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="el-credit">
@@ -4369,8 +4522,7 @@ window.addEventListener('scroll', () => {
 /* ── HERO ANIMATIONS ─────────────────────────────────── */
 function heroAnim() {
   // Set initial states
-  gsap.set(['#hWe','#hDiv','#hLine','#hDate','#hScroll'], { opacity: 0 });
-  gsap.set(['#hN1','#hN2','#hAmp'], { yPercent: 110 });
+  return; /* sin animación en la portada */
 
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   tl
@@ -5704,19 +5856,16 @@ function initHospedaje(){
       var im = document.createElement('img'); im.src = src; im.alt = ''; im.decoding = 'async'; b.appendChild(im);
       b.addEventListener('click', function(){ go(k); }); thBox.appendChild(b); ths.push(b);
     });
+    var imgs = [].slice.call(track.querySelectorAll('img')), tmr = 0, vis = false;
+    track.classList.add('pa-hs-fade');
     function go(i){
       idx = (i + n) % n;
-      track.style.transform = 'translateX(' + (-idx*100) + '%)';
-      for(var k=0;k<n;k++){ dots[k].classList.toggle('on', k===idx); ths[k].classList.toggle('on', k===idx); }
+      for(var k=0;k<n;k++){ imgs[k].classList.toggle('on', k===idx); dots[k].classList.toggle('on', k===idx); ths[k].classList.toggle('on', k===idx); }
     }
-    art.querySelector('.pa-hs-arrow.prev').addEventListener('click', function(){ go(idx-1); });
-    art.querySelector('.pa-hs-arrow.next').addEventListener('click', function(){ go(idx+1); });
-    var sx = 0, sy = 0;
-    vp.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive:true });
-    vp.addEventListener('touchend', function(e){
-      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-      if(Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? idx+1 : idx-1);
-    }, { passive:true });
+    function auto(){ clearInterval(tmr); if(vis && !REDUCED) tmr = setInterval(function(){ go(idx + 1); }, 3200); }
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis = es[0].isIntersecting; auto(); }, { threshold:.3 }).observe(vp);
+    art.querySelector('.pa-hs-arrow.prev').addEventListener('click', function(){ go(idx-1); auto(); });
+    art.querySelector('.pa-hs-arrow.next').addEventListener('click', function(){ go(idx+1); auto(); });
     go(0);
   }
 
@@ -6177,6 +6326,13 @@ function initHotelCarousel(list){
   new IntersectionObserver(function(es){ vis = es[0].isIntersecting; if(vis) play(); else clearInterval(auto); }, { threshold:.4 }).observe(wrap);
   prev.addEventListener('click', function(){ go(idx-1); });
   next.addEventListener('click', function(){ go(idx+1); });
+  var sx = 0, sy = 0;
+  list.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive:true });
+  list.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if(Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy) * 1.4) go(dx < 0 ? idx + 1 : idx - 1);
+  }, { passive:true });
+  window.addEventListener('resize', function(){ list.scrollTo({ left: cards[idx].offsetLeft - list.offsetLeft }); });
   var t = 0;
   list.addEventListener('scroll', function(){ clearTimeout(t); t = setTimeout(function(){
     var x = list.scrollLeft, best = 0, bd = 1e9;
