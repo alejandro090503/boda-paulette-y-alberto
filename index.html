@@ -3780,6 +3780,25 @@ html body #rsvpPase .rsvp-pase-ttl{color:#121212 !important}
 html body #petals{display:block !important;z-index:-1 !important}
 html body #petals .pa-leaf{filter:blur(2.6px) !important;opacity:.55}
 @media(prefers-reduced-motion:reduce){html body #petals{display:none !important}}
+
+/* ── p30: marco de eucalipto acuarela + líneas negro/oro; fondos de sección bajo el lino ── */
+html body :is(.story-card,.fam-grid,.fam-god,.cl-card,.rsvp-card,.it-list,.cal-card)::after{
+  inset:-60px !important;border:0 !important;border-image:none !important;
+  background:
+    url('orn/marco-tl.webp') 32.1px 32.3px / 150.1px 200.5px no-repeat,
+    url('orn/marco-br.webp') right 9.6px bottom 1.0px / 150.1px 200.5px no-repeat,
+    linear-gradient(#1A1A1A,#1A1A1A) 60px 60px / calc(100% - 120px) 1.3px no-repeat,
+    linear-gradient(#1A1A1A,#1A1A1A) 60px calc(100% - 60px) / calc(100% - 120px) 1.3px no-repeat,
+    linear-gradient(#1A1A1A,#1A1A1A) 60px 60px / 1.3px calc(100% - 120px) no-repeat,
+    linear-gradient(#1A1A1A,#1A1A1A) calc(100% - 60px) 60px / 1.3px calc(100% - 120px) no-repeat,
+    linear-gradient(#C9A961,#C9A961) 65px 65px / calc(100% - 130px) 1px no-repeat,
+    linear-gradient(#C9A961,#C9A961) 65px calc(100% - 65px) / calc(100% - 130px) 1px no-repeat,
+    linear-gradient(#C9A961,#C9A961) 65px 65px / 1px calc(100% - 130px) no-repeat,
+    linear-gradient(#C9A961,#C9A961) calc(100% - 65px) 65px / 1px calc(100% - 130px) no-repeat !important}
+.pb-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('fondos/hojas-acuarela.webp') center top / 100% auto repeat-y;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent)}
+.pb-bg.pb-flip{transform:scaleX(-1)}
+.pb-bg::after{content:'';position:absolute;inset:0;background:url('fondos/lino-beige-luz.webp') center / cover;opacity:.55}
 </style>
 </head>
 <body>
@@ -3988,7 +4007,7 @@ html body #petals .pa-leaf{filter:blur(2.6px) !important;opacity:.55}
       </div>
     </div>
     <div class="loc-photo-wrap tejido">
-      <img src="venue-jardin.jpg" alt="Alauda Jardín de Eventos" loading="lazy" width="720" height="900">
+      <img src="venue-jardin.jpg?v=2" alt="Alauda Jardín de Eventos" loading="lazy" width="720" height="900">
     </div>
     <p class="loc-photo-cap">El jardín</p>
     <p class="loc-addr">Tequisquiapan, Querétaro<br>a 10 minutos de la iglesia</p>
@@ -4976,7 +4995,7 @@ function initPetals(){
   for(var i = 0; i < N; i++) (function(i){
     var big = i % 4 === 0, n = (i % 6) + 1, w = big ? r(42, 58) : r(16, 28);
     var el = new Image(); el.className = 'pa-leaf'; el.alt = ''; el.onerror = function(){ el.remove(); };
-    el.src = 'orn/' + (i % 3 === 2 ? 'hg' + ((i % 12) + 1) : 'hv' + ((i % 12) + 1)) + (big ? 'b' : '') + '.webp'; el.style.width = w + 'px';
+    el.src = 'orn/hoja-acu.webp'; el.style.width = w + 'px';
     box.appendChild(el);
     function fall(first){
       var H = window.innerHeight || 800, d = big ? r(24, 32) : r(15, 24);
@@ -6845,6 +6864,16 @@ function initPadrinos(){
     document.getElementById('rsvpGracias').style.display = 'none';
     document.getElementById('rsvpBandeja').style.display = '';
   }, true);
+})();
+</script>
+<script>
+/* p30: fondo de hojas acuarela por sección, debajo de la tela */
+(function(){
+  ['story','location','calendar','family','dresscode','clima','gifts','rsvp'].forEach(function(id, k){
+    var sec = document.getElementById(id); if(!sec) return;
+    var d = document.createElement('div'); d.className = 'pb-bg' + (k % 2 ? ' pb-flip' : ''); d.setAttribute('aria-hidden', 'true');
+    sec.appendChild(d);
+  });
 })();
 </script>
 </body>
