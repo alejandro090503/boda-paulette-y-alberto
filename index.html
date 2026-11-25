@@ -3635,7 +3635,6 @@ p,li,.loc-addr,.story-txt,.alb-sub,.pa-hs-sub,.pa-dc-note,.loc-city-sub{color:#1
 /* Itinerario claro */
 .it-list::before,.it-list::after{display:none !important}
 .it-list .it-dot{background:#FBF3E6 !important;box-shadow:0 0 0 1px #121212 !important;border-color:#121212 !important}
-.it-list svg path,.it-list svg polyline{stroke:#121212 !important}
 .it-time{font-family:'Cinzel',serif !important}
 
 /* Vestimenta */
@@ -3741,6 +3740,46 @@ html body #hero #hDate .h-city,html body #hero #hLine{display:none !important}
 html body #hero .h-we{color:#3F5229 !important;text-shadow:none !important}
 html body #hero .h-name{color:#121212 !important;-webkit-text-fill-color:#121212 !important;text-shadow:0 0 22px rgba(247,231,206,.85) !important}
 html body #hero .h-amp{color:#3F5229 !important;-webkit-text-fill-color:#3F5229 !important;text-shadow:none !important}
+
+/* ── p27: hero se funde con el lino (sin línea), RSVP nombres asignados ── */
+html body #hero{background:transparent !important}
+html body #hero .h-ov{background:linear-gradient(to bottom,rgba(18,18,18,.42) 0%,rgba(18,18,18,0) 22%) !important}
+html body #hero #heroPic{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 42%,rgba(0,0,0,.55) 64%,rgba(0,0,0,.15) 84%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 42%,rgba(0,0,0,.55) 64%,rgba(0,0,0,.15) 84%,transparent 100%)}
+#rsvpPasesDisp,.rsvp-toggle,#rsvpContWrap,#rsvpNamesLbl,#rsvpGuestsWrap,#rsvpParaWrap{display:none !important}
+.na-demo{margin:0 0 22px;text-align:center}
+.na-lbl{display:block;font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#3F5229}
+.na-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:#121212;opacity:.8;margin:6px 0 14px}
+.na-list{display:flex;flex-direction:column;gap:10px}
+.na-row{display:flex;flex-direction:column;align-items:center;gap:9px;padding:13px 12px;border:1px solid rgba(18,18,18,.22);border-radius:12px;background:rgba(251,243,230,.75)}
+.na-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;line-height:1.2;color:#121212}
+.na-tog{display:flex;gap:8px;width:100%}
+.na-btn{flex:1;font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:10px 6px;border-radius:999px;
+  border:1px solid rgba(18,18,18,.45);background:transparent;color:#121212;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.na-btn[data-v="si"].on{background:#3F5229;border-color:#3F5229;color:#FBF3E6}
+.na-btn[data-v="no"].on{background:#121212;border-color:#121212;color:#FBF3E6}
+.na-err{min-height:1em;margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#8E3440}
+
+/* ── p28: borde inferior del hero = velo salvia que se difumina (como #countdown) ── */
+html body #hero .h-ov{background:linear-gradient(to bottom,rgba(18,18,18,.42) 0%,rgba(18,18,18,0) 22%,rgba(178,189,146,0) 34%,rgba(178,189,146,.5) 58%,rgba(178,189,146,.92) 84%,rgba(178,189,146,0) 100%) !important}
+html body #hero #heroPic{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.4) 82%,transparent 98%) !important;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 55%,rgba(0,0,0,.4) 82%,transparent 98%) !important}
+
+/* p28b: demo RSVP legible en claro */
+#rsvpFeed{display:none !important}
+html body #rsvpGracias{background:#FBF3E6 !important;border:1px solid rgba(18,18,18,.28) !important;box-shadow:none !important}
+html body #rsvpGracias .rsvp-gracias-title{color:#121212 !important}
+html body #rsvpGracias .rsvp-gracias-sub{color:#3F5229 !important}
+html body #rsvpGracias .rsvp-gracias-icon{color:#3F5229 !important}
+html body #rsvpGracias .rsvp-editar-btn{color:#121212 !important;border-color:#121212 !important;background:transparent !important}
+html body #rsvpPase{background:#F2E2C6 !important;border-color:rgba(18,18,18,.35) !important}
+html body #rsvpPase .rsvp-pase-lbl,html body #rsvpPase .rsvp-pase-sub{color:#3F5229 !important}
+html body #rsvpPase .rsvp-pase-ttl{color:#121212 !important}
+
+/* p29: regresan las hojas que caen, difuminadas y por detrás */
+html body #petals{display:block !important;z-index:-1 !important}
+html body #petals .pa-leaf{filter:blur(2.6px) !important;opacity:.55}
+@media(prefers-reduced-motion:reduce){html body #petals{display:none !important}}
 </style>
 </head>
 <body>
@@ -4386,6 +4425,16 @@ html body #hero .h-amp{color:#3F5229 !important;-webkit-text-fill-color:#3F5229 
       </div>
 
       <div id="rsvpBandeja">
+        <div class="na-demo" id="naDemo">
+          <span class="na-lbl">Esta invitación es para</span>
+          <p class="na-hint">Marca quién asistirá</p>
+          <div class="na-list">
+            <div class="na-row"><span class="na-name">Ana Sofía Martínez</span><div class="na-tog"><button type="button" class="na-btn" data-v="si">Asistirá</button><button type="button" class="na-btn" data-v="no">No asistirá</button></div></div>
+            <div class="na-row"><span class="na-name">Luis Fernando Martínez</span><div class="na-tog"><button type="button" class="na-btn" data-v="si">Asistirá</button><button type="button" class="na-btn" data-v="no">No asistirá</button></div></div>
+            <div class="na-row"><span class="na-name">Valeria Martínez</span><div class="na-tog"><button type="button" class="na-btn" data-v="si">Asistirá</button><button type="button" class="na-btn" data-v="no">No asistirá</button></div></div>
+          </div>
+          <p class="na-err" id="naErr"></p>
+        </div>
         <div class="rsvp-pases-display" id="rsvpPasesDisp">
           <div class="rsvp-pases-label">Pases asignados</div>
           <div class="rsvp-pases-num" id="rsvpPasesNum">1</div>
@@ -6764,6 +6813,38 @@ function initPadrinos(){
   var ioV = new IntersectionObserver(function(E){ E.forEach(function(x){ x.target.__ve = x.isIntersecting; }); foot.classList.toggle('vl-off', !foot.__ve); arranca(); }, { rootMargin: '60px 0px' });
   hosts.forEach(function(h){ ioV.observe(h); });
   document.addEventListener('visibilitychange', arranca);
+})();
+</script>
+<script>
+/* RSVP demo · nombres asignados (sin panel todavía) */
+(function(){
+  var demo = document.getElementById('naDemo'); if(!demo) return;
+  var rows = [].slice.call(demo.querySelectorAll('.na-row'));
+  rows.forEach(function(r){
+    r.querySelectorAll('.na-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        r.querySelectorAll('.na-btn').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on'); r.dataset.v = b.dataset.v; document.getElementById('naErr').textContent = ''; if(rows.every(function(x){ return x.dataset.v; })){ var cb = document.getElementById('rsvpBtn'); cb.disabled = false; cb.classList.remove('disabled'); }
+      });
+    });
+  });
+  var btn = document.getElementById('rsvpBtn');
+  btn.addEventListener('click', function(e){
+    e.preventDefault(); e.stopImmediatePropagation();
+    var falta = rows.filter(function(r){ return !r.dataset.v; });
+    if(falta.length){ document.getElementById('naErr').textContent = 'Marca una opción para cada persona'; return; }
+    var si = rows.filter(function(r){ return r.dataset.v === 'si'; }).map(function(r){ return r.querySelector('.na-name').textContent; });
+    document.getElementById('rsvpGraciasTitle').textContent = si.length ? '¡Gracias por confirmar!' : 'Gracias por avisarnos';
+    document.getElementById('rsvpGraciasSub').textContent = si.length ? 'Asistirán: ' + si.join(', ') : 'Lamentamos que no puedan acompañarnos.';
+    document.getElementById('rsvpPase').style.display = si.length ? '' : 'none';
+    document.getElementById('rsvpBandeja').style.display = 'none';
+    document.getElementById('rsvpGracias').style.display = '';
+  }, true);
+  document.getElementById('rsvpEditarBtn').addEventListener('click', function(e){
+    e.stopImmediatePropagation();
+    document.getElementById('rsvpGracias').style.display = 'none';
+    document.getElementById('rsvpBandeja').style.display = '';
+  }, true);
 })();
 </script>
 </body>
