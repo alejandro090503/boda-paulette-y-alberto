@@ -3781,20 +3781,7 @@ html body #petals{display:block !important;z-index:-1 !important}
 html body #petals .pa-leaf{filter:blur(2.6px) !important;opacity:.55}
 @media(prefers-reduced-motion:reduce){html body #petals{display:none !important}}
 
-/* ── p30: marco de eucalipto acuarela + líneas negro/oro; fondos de sección bajo el lino ── */
-html body :is(.story-card,.fam-grid,.fam-god,.cl-card,.rsvp-card,.it-list,.cal-card)::after{
-  inset:-60px !important;border:0 !important;border-image:none !important;
-  background:
-    url('orn/marco-tl.webp') 32.1px 32.3px / 150.1px 200.5px no-repeat,
-    url('orn/marco-br.webp') right 9.6px bottom 1.0px / 150.1px 200.5px no-repeat,
-    linear-gradient(#1A1A1A,#1A1A1A) 60px 60px / calc(100% - 120px) 1.3px no-repeat,
-    linear-gradient(#1A1A1A,#1A1A1A) 60px calc(100% - 60px) / calc(100% - 120px) 1.3px no-repeat,
-    linear-gradient(#1A1A1A,#1A1A1A) 60px 60px / 1.3px calc(100% - 120px) no-repeat,
-    linear-gradient(#1A1A1A,#1A1A1A) calc(100% - 60px) 60px / 1.3px calc(100% - 120px) no-repeat,
-    linear-gradient(#C9A961,#C9A961) 65px 65px / calc(100% - 130px) 1px no-repeat,
-    linear-gradient(#C9A961,#C9A961) 65px calc(100% - 65px) / calc(100% - 130px) 1px no-repeat,
-    linear-gradient(#C9A961,#C9A961) 65px 65px / 1px calc(100% - 130px) no-repeat,
-    linear-gradient(#C9A961,#C9A961) calc(100% - 65px) 65px / 1px calc(100% - 130px) no-repeat !important}
+/* p34: regresa el marco negro con florecitas en relieve (marco-card.webp), a peticion de la clienta */
 .pb-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('fondos/hojas-acuarela.webp') center top / 100% auto repeat-y;
   -webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent)}
 .pb-bg.pb-flip{transform:scaleX(-1)}
