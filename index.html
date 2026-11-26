@@ -3795,6 +3795,13 @@ html body #petals{display:none !important}
 html body :is(h1,h2,h3) :is(em,i,.ttl-script){font-style:normal !important;font-family:inherit !important;font-size:inherit !important;font-weight:inherit !important;text-transform:inherit !important;letter-spacing:inherit !important}
 .na-hint,.na-err{font-style:normal !important}
 html body *:not(svg):not(path){font-style:normal !important}
+
+/* p35: datos bancarios */
+.gx-bk{margin:14px 0 0;display:flex;flex-direction:column;gap:10px;text-align:center}
+.gx-bk dt{font-family:'Cinzel',serif;font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#3F5229}
+.gx-bk dd{margin:3px 0 0;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#121212;letter-spacing:.02em}
+.gx-copy{margin-left:6px;vertical-align:2px;font-family:'Cinzel',serif;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid rgba(18,18,18,.45);background:transparent;color:#121212;cursor:pointer}
+.gx-copy.ok{background:#3F5229;border-color:#3F5229;color:#FBF3E6}
 </style>
 </head>
 <body>
@@ -4340,13 +4347,17 @@ html body *:not(svg):not(path){font-style:normal !important}
         <span class="gx-txt">Elige un detalle de nuestra lista y te lo enviamos directo.</span>
         <span class="gx-btn">Ver mesa de regalos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <div class="gx-card gx-soon">
+      <div class="gx-card gx-bank">
         <span class="gx-frame" aria-hidden="true"></span>
         <span class="gx-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18"/></svg></span>
         <span class="gx-kicker">Transferencia bancaria</span>
         <span class="gx-title">Datos bancarios</span>
-        <!-- PENDIENTE: datos de transferencia del cliente (banco, titular, CLABE) -->
-        <span class="gx-txt">Muy pronto compartiremos aquí los datos para transferencia.</span>
+        <dl class="gx-bk">
+          <div><dt>Banco</dt><dd>BBVA</dd></div>
+          <div><dt>Titular</dt><dd>Paulette Tosky Larque</dd></div>
+          <div><dt>Cuenta</dt><dd>155 732 5170 <button type="button" class="gx-copy" data-copy="1557325170">Copiar</button></dd></div>
+          <div><dt>CLABE</dt><dd>012 180 01557325170 0 <button type="button" class="gx-copy" data-copy="012180015573251700">Copiar</button></dd></div>
+        </dl>
       </div>
     </div>
   </div>
@@ -6871,6 +6882,15 @@ function initPadrinos(){
     sec.appendChild(d);
   });
 })();
+</script>
+<script>
+document.querySelectorAll('.gx-copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = b.dataset.copy, done = function(){ b.textContent = 'Copiado'; b.classList.add('ok'); setTimeout(function(){ b.textContent = 'Copiar'; b.classList.remove('ok'); }, 1800); };
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, done);
+    else { var x = document.createElement('textarea'); x.value = t; document.body.appendChild(x); x.select(); try{ document.execCommand('copy'); }catch(e){} x.remove(); done(); }
+  });
+});
 </script>
 </body>
 </html>
